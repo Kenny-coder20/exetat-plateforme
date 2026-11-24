@@ -306,6 +306,7 @@ const enTete = i => `<div class="q-ent"><div><span class="pastille">${esc(i.disc
 
 async function ouvrir(id) {
   clearInterval(chronoTimer);
+  if ($('#vue-relire').hidden) document.querySelector('.onglets [data-vue=relire]').click();
   courant = await api('/api/items/' + id); const i = courant;
   $('#file').querySelectorAll('li').forEach(li => li.classList.toggle('actif', li.dataset.id === id));
   window.scrollTo({ top: 0, behavior: 'smooth' });
