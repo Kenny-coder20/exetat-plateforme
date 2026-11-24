@@ -192,7 +192,13 @@ OPTIONS = {
 }
 
 # Épreuves dont la banque est ouverte dans la plateforme (les autres sont déclarées, « bientôt »)
-EPREUVES_ACTIVES = {"M.01", "M.46", "M.07"}
+EPREUVES_ACTIVES = {
+    "M.01", "M.46", "M.07",                      # option Sciences
+    "M.02", "M.03", "M.05", "M.036",             # culture générale des autres options (mêmes matières que M.01)
+    "M.49", "M.51", "M.93",                      # sciences de l'éducation
+    "M.06", "M.09", "M.10", "M.12", "M.17", "M.18", "M.21",   # sciences des options non scientifiques
+    "M.36", "M.37", "M.39", "M.40", "M.41", "M.42", "M.43", "M.44", "M.99",  # langues (anglais : programme reconstitué)
+}
 
 
 def verifier():

@@ -147,6 +147,12 @@ PROGRAMME = [
     ("Applications électriques", None, "Installations : avant-projet de force motrice, schémas, sous-stations, tableaux de comptage", 1, OEL),
 ]
 
+# Alias : « Biologie » et « Écologie » des épreuves M.06, M.09, M.10, M.12, M.18 reprennent les chapitres des
+# sous-disciplines SVT du programme 2021 (le niveau attendu dans ces options est plus léger : les enseignants ajustent).
+PROGRAMME += [("Biologie", None, ch, p, src) for d, sd, ch, p, src in PROGRAMME if d == "SVT" and sd == "Biologie"]
+PROGRAMME += [("Écologie", None, ch, p, src) for d, sd, ch, p, src in PROGRAMME if d == "SVT" and sd == "Écologie"]
+
+
 def seed(replace_programme: bool = False) -> None:
     with connect() as con:
         for code, (nom, _eps) in E32_OPTIONS.items():
@@ -171,7 +177,7 @@ def seed(replace_programme: bool = False) -> None:
             for jour, code in enumerate(eps, 1):
                 con.execute("INSERT INTO option_epreuves(option_code, jour, epreuve_code) VALUES(?,?,?)", (opt, jour, code))
         n = con.execute("SELECT COUNT(*) AS n FROM programme").fetchone()["n"]
-        n_off = con.execute("SELECT COUNT(*) AS n FROM programme WHERE source LIKE 'officiel%' AND discipline='Français'").fetchone()["n"]
+        n_off = con.execute("SELECT COUNT(*) AS n FROM programme WHERE source LIKE 'officiel%' AND discipline='Biologie'").fetchone()["n"]
         if n == 0 or replace_programme or n_off == 0:
             con.execute("DELETE FROM programme")
             con.executemany(

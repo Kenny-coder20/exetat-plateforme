@@ -150,6 +150,19 @@
   .synthese{margin:22px 0;padding:18px;background:var(--nuit);color:#fff;border-radius:14px;font-size:15px;line-height:1.6}
   .synthese b{font-family:var(--serif);color:var(--or);display:block;margin-bottom:6px;font-size:17px}
 
+  /* ---------- choix de l'option (premier écran) ---------- */
+  #choix-option .wrap{padding-top:28px}
+  #choix-option h1{font-size:28px;color:var(--nuit);line-height:1.15}
+  #choix-option p{color:var(--encre-2);margin:8px 0 16px}
+  .recherche{width:100%;font:inherit;padding:12px 14px;border:1px solid var(--filet);border-radius:12px;background:var(--blanc);margin-bottom:14px}
+  .famille{margin:14px 0 6px;font-family:var(--serif);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--encre-2)}
+  .options{list-style:none;margin:0;padding:0}
+  .options li button{width:100%;text-align:left;background:var(--blanc);border:1px solid var(--filet);border-radius:12px;padding:12px 14px;margin:6px 0;display:grid;grid-template-columns:52px 1fr 20px;gap:12px;align-items:center;color:var(--encre)}
+  .options li button:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+  .options .code{font-family:var(--serif);font-weight:600;color:var(--nuit);font-size:17px}
+  .options .nom{font-size:15px}
+  .options .dispo{display:block;font-size:12px;color:var(--vert);margin-top:2px}
+  .options .bientot{display:block;font-size:12px;color:var(--encre-2);margin-top:2px}
   .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--nuit);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:30}
   .toast.on{opacity:1}
   [hidden]{display:none !important}
@@ -164,6 +177,16 @@
   <span id="etat" class="etat">…</span>
 </div></header>
 
+<!-- ======================= CHOIX DE L'OPTION ======================= -->
+<section id="choix-option" hidden>
+  <div class="wrap">
+    <h1>Quelle est ton option ?</h1>
+    <p>Choisis ton option telle qu'elle figure sur ta fiche d'inscription à l'Examen d'État. Tu pourras la changer à tout moment.</p>
+    <input class="recherche" id="rech-opt" placeholder="Rechercher : Sciences, Pédagogie, Mécanique…" autocomplete="off">
+    <div id="liste-options"></div>
+  </div>
+</section>
+
 <!-- ======================= ACCUEIL ======================= -->
 <main id="accueil" class="wrap">
   <section class="salut">
@@ -171,7 +194,9 @@
     <p>Des questions au format de l'épreuve, relues par des enseignants, avec une correction qui explique chaque étape.</p>
   </section>
   <div class="etat-banque" style="border-bottom:0;padding-bottom:4px">
-    <span style="flex:1"><label class="champ" style="margin:0 0 4px">Mon option (E.32)</label><select id="opt-accueil"></select></span>
+    <span style="flex:1"><span class="champ" style="margin:0 0 2px;display:block">Mon option</span><b id="opt-nom" style="font-family:var(--serif);font-size:17px;color:var(--nuit)"></b></span>
+    <button class="lien" id="changer-opt">Changer</button>
+    <select id="opt-accueil" hidden></select>
   </div>
   <div class="etat-banque" style="margin-top:0">
     <span id="banque-info">Chargement de la banque…</span>
@@ -301,7 +326,7 @@ async function chargerBanque(force) {
   } catch { if (!BANQUE) $('#banque-info').textContent = 'Aucune question sur cet appareil et pas de réseau. Connecte-toi une première fois.'; else toast('Pas de réseau : la banque locale reste utilisée.'); }
 }
 // --- option courante et ses épreuves
-const optionCourante = () => $('#opt-accueil').value || DB.get('option', '1.02');
+const optionCourante = () => DB.get('option', null) || $('#opt-accueil').value;
 const epreuvesOption = () => (BANQUE.option_epreuves || []).filter(x => x.option_code === optionCourante()).map(x => ({ jour: x.jour, ...BANQUE.epreuves.find(e => e.code === x.epreuve_code) }));
 const epDuJour = j => epreuvesOption().find(e => e.jour === j);
 const quotasEp = code => BANQUE.quotas.filter(q => q.epreuve_code === code);
@@ -310,8 +335,11 @@ function afficherBanque() {
   const d = new Date(BANQUE.telechargee_le);
   const fam = {}; for (const o of BANQUE.options) (fam[o.famille] = fam[o.famille] || []).push(o);
   $('#opt-accueil').innerHTML = Object.entries(fam).map(([f, os]) => `<optgroup label="${esc(f)}">${os.map(o => `<option value="${o.code}">${o.code} — ${esc(o.nom)}</option>`).join('')}</optgroup>`).join('');
-  $('#opt-accueil').value = DB.get('option', '1.02'); if (!$('#opt-accueil').value) $('#opt-accueil').value = '1.02';
+  const memo = DB.get('option', null);
+  if (!memo || !BANQUE.options.find(x => x.code === memo)) { ecranChoixOption(''); return; }
+  $('#opt-accueil').value = memo;
   const o = BANQUE.options.find(x => x.code === optionCourante()); $('#sous-titre').textContent = 'Préparation · ' + (o ? o.code + ' ' + o.nom : '');
+  $('#opt-nom').textContent = o ? `${o.code} — ${o.nom}` : '';
   const codes = codesOption(); const nbOpt = BANQUE.items.filter(i => codes.includes(i.epreuve_code)).length;
   $('#banque-info').innerHTML = `<b>${nbOpt}</b> questions pour cette option (${BANQUE.nb_items} au total) · ${BANQUE.nb_situations || 0} exercice(s) de synthèse · ${d.toLocaleDateString('fr')}`;
   $('#opt').value = optionCourante();
@@ -371,7 +399,17 @@ $('#f-go').onclick = () => {
 };
 
 // ------------------------------------------------------------------ passation : une question par écran
-function montrer(id) { for (const x of ['accueil', 'passation', 'recap', 'resultat']) document.getElementById(x).hidden = x !== id; window.scrollTo(0, 0); }
+function montrer(id) { for (const x of ['choix-option', 'accueil', 'passation', 'recap', 'resultat']) document.getElementById(x).hidden = x !== id; window.scrollTo(0, 0); }
+function ecranChoixOption(filtre) {
+  const f = (filtre || '').trim().toLowerCase();
+  const fam = {}; for (const o of BANQUE.options) if (!f || (o.code + ' ' + o.nom + ' ' + o.famille).toLowerCase().includes(f)) (fam[o.famille] = fam[o.famille] || []).push(o);
+  const codesDe = code => (BANQUE.option_epreuves || []).filter(x => x.option_code === code).map(x => x.epreuve_code);
+  $('#liste-options').innerHTML = Object.entries(fam).map(([nomF, os]) => `<div class="famille">${esc(nomF)}</div><ul class="options">${os.map(o => { const cs = codesDe(o.code); const nb = BANQUE.items.filter(i => cs.includes(i.epreuve_code)).length; const ouvertes = BANQUE.epreuves.filter(e => cs.includes(e.code) && e.actif).length; return `<li><button data-code="${o.code}"><span class="code">${o.code}</span><span><span class="nom">${esc(o.nom)}</span>${ouvertes ? `<span class="dispo">${ouvertes} épreuve(s) ouverte(s) · ${nb} questions</span>` : '<span class="bientot">en préparation</span>'}</span><span class="chev">›</span></button></li>`; }).join('')}</ul>`).join('') || '<p class="vide">Aucune option ne correspond.</p>';
+  $('#liste-options').querySelectorAll('button[data-code]').forEach(b => b.onclick = () => { DB.set('option', b.dataset.code); $('#opt-accueil').value = b.dataset.code; afficherBanque(); montrer('accueil'); });
+  montrer('choix-option');
+}
+$('#rech-opt').oninput = e => ecranChoixOption(e.target.value);
+$('#changer-opt').onclick = () => { $('#rech-opt').value = ''; ecranChoixOption(''); };
 function demarrer(s) {
   S = { ...s, reponses: {}, k: 0, debut: Date.now(), fin: s.duree_min ? Date.now() + s.duree_min * 60000 : null };
   $('#p-titre').textContent = s.titre;
