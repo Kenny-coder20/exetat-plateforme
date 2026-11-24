@@ -18,7 +18,9 @@ PROMPT_SYSTEME = (ROOT / "docs" / "prompt_systeme.md").read_text(encoding="utf-8
 CHARTE = (ROOT / "docs" / "charte.md").read_text(encoding="utf-8")
 CAHIER = (ROOT / "docs" / "cahier_des_charges.md").read_text(encoding="utf-8")
 
-MODELE = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-5")
+MODELE = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
+# si le modèle configuré n'existe pas pour la clé, on essaie ces identifiants dans l'ordre
+MODELES_SECOURS = [m for m in ("claude-sonnet-5-5", "claude-sonnet-4-5", "claude-opus-5-5") if m != MODELE]
 DIFFICULTES = ("facile", "moyen", "difficile")
 
 
@@ -104,13 +106,25 @@ def appeler_claude(commande: str, max_tokens: int = 16000) -> tuple[dict, dict]:
         {"type": "text", "text": "=== CHARTE DE RÉDACTION ===\n" + CHARTE, "cache_control": {"type": "ephemeral"}},
         {"type": "text", "text": "=== CAHIER DES CHARGES ===\n" + CAHIER, "cache_control": {"type": "ephemeral"}},
     ]
-    msg = client.messages.create(
-        model=MODELE,
-        max_tokens=max_tokens,
-        temperature=0.4,
-        system=system,
-        messages=[{"role": "user", "content": commande}],
-    )
+    msg = None
+    essais = [MODELE] + MODELES_SECOURS
+    for k, modele in enumerate(essais):
+        try:
+            msg = client.messages.create(
+                model=modele,
+                max_tokens=max_tokens,
+                system=system,
+                messages=[{"role": "user", "content": commande}],
+            )
+            break
+        except anthropic.NotFoundError as e:
+            if k == len(essais) - 1:
+                raise GenerationError(f"Aucun modèle utilisable pour cette clé API (essayés : {', '.join(essais)}). "
+                                      f"Renseignez CLAUDE_MODEL avec un identifiant valide. ({e})")
+        except anthropic.AuthenticationError:
+            raise GenerationError("Clé API Anthropic refusée : vérifiez ANTHROPIC_API_KEY.")
+        except anthropic.APIStatusError as e:
+            raise GenerationError(f"Erreur de l'API Anthropic ({e.status_code}) : {e.message}")
     texte = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
     usage = {"in": msg.usage.input_tokens, "out": msg.usage.output_tokens}
     return parser_json(texte), usage

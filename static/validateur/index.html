@@ -82,7 +82,7 @@
 
 <script>
 const $ = s => document.querySelector(s);
-const api = async (url, opt) => { const r = await fetch(url, opt); if (!r.ok) throw new Error((await r.json()).detail || r.statusText); return r.json(); };
+const api = async (url, opt) => { const r = await fetch(url, opt); if (!r.ok) { let d = r.statusText; try { d = (await r.json()).detail || d; } catch { } throw new Error(d); } return r.json(); };
 const toast = m => { const t = $('#toast'); t.textContent = m; t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 2600); };
 let CONFIG, courant = null;
 $('#validateur').value = localStorage.getItem('validateur') || '';

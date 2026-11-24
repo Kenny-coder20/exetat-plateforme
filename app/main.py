@@ -137,6 +137,8 @@ def api_generer_situation(c: CommandeSituation):
                                             chapitre=c.chapitre, n=max(3, min(7, c.n)))
     except generation.GenerationError as e:
         raise HTTPException(400, str(e))
+    except Exception as e:  # noqa: BLE001
+        raise HTTPException(500, f"Erreur interne pendant la génération : {type(e).__name__} : {e}")
 
 
 @app.get("/api/situations")
@@ -265,6 +267,8 @@ def api_generer(c: Commande):
         return {"nb": len(r["ids"]), "usage": r["usage"], "anomalies_serie": r["anomalies_serie"]}
     except generation.GenerationError as e:
         raise HTTPException(400, str(e))
+    except Exception as e:  # noqa: BLE001
+        raise HTTPException(500, f"Erreur interne pendant la génération : {type(e).__name__} : {e}")
 
 
 @app.get("/api/prompt")
