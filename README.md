@@ -1,0 +1,139 @@
+# Plateforme de génération d'items EXETAT — version 1
+
+Atelier de production (génération IA + validation humaine + export) et application élève hors ligne,
+pour l'option **1.02 Sciences**, 4e des humanités, selon la *Charte de rédaction des items IA*, le
+*Cahier des charges* et le programme **E.32 session 2026**.
+
+```
+exetat-platform/
+├── app/            backend : base SQLite, génération (API Claude), assemblage, export, API FastAPI, CLI
+├── docs/           charte, cahier des charges, prompt système de l'agent
+├── static/
+│   ├── validateur/ atelier : file d'attente, checklist, génération, import
+│   └── eleve/      application élève (PWA hors ligne)
+├── data/           base exetat.sqlite (créée au premier lancement)
+└── exports/        séries exportées (.json, .tex, .pdf) et banque.json
+```
+
+## Démarrage en un double-clic
+
+1. Installer **Python 3.10 ou plus** une seule fois (python.org ; sur Windows cocher « Add Python to PATH »).
+2. Double-cliquer sur **`Lancer EXETAT.bat`** (Windows) ou **`Lancer EXETAT.command`** (Mac/Linux).
+   Au premier lancement, les composants s'installent et la base se crée avec les items de démonstration ;
+   ensuite la plateforme s'ouvre dans le navigateur. Laissez la petite fenêtre noire ouverte ; la fermer arrête la plateforme.
+3. Pour la génération automatique : ouvrir le fichier `.env` (créé au premier lancement) et coller la clé API.
+
+**Application élève comme une vraie appli** : sur la page `/eleve/`, cliquer « Installer l'application »
+(Chrome/Edge) ou, sur téléphone, « Ajouter à l'écran d'accueil ». L'icône EXETAT s'ouvre alors sans barre
+d'adresse et fonctionne hors ligne. Sur un téléphone, remplacer `127.0.0.1` par l'adresse de l'ordinateur sur le
+réseau local (ex. `http://192.168.1.20:8000/eleve/`) lors de la première ouverture.
+
+## Installation manuelle (alternative)
+
+1. Installer **Python 3.10 ou plus** (python.org ; sur Windows cocher « Add Python to PATH »).
+2. Ouvrir un terminal dans le dossier `exetat-platform` et lancer :
+   ```
+   pip install -r requirements.txt
+   python -m app.cli init
+   python -m app.cli demo
+   ```
+   `init` crée la base et charge le E.32 ; `demo` insère 23 items de démonstration déjà validés.
+3. Copier `.env.example` en `.env` et y coller votre clé API Anthropic (`ANTHROPIC_API_KEY=sk-ant-...`).
+4. Démarrer :
+   ```
+   uvicorn app.main:app --port 8000
+   ```
+   puis ouvrir <http://127.0.0.1:8000> — atelier validateur sur `/validateur/`, application élève sur `/eleve/`.
+
+Facultatif : une distribution LaTeX (MiKTeX, TeX Live) pour produire les PDF ; sans elle, les fichiers `.tex` sont produits et se compilent ailleurs (Overleaf, par exemple).
+
+## Flux de travail
+
+```
+commande ──► génération IA ──► items « en_attente » ──► validateur (checklist) ──► « valide »
+                                                                                      │
+                 application élève ◄── banque.json (hors ligne) ◄── assemblage ◄──────┘
+                 export LaTeX / PDF ◄───────────────────────────────┘
+```
+
+### 1. Générer (atelier, réseau requis)
+Depuis l'interface validateur (bloc « Générer ») ou en ligne de commande :
+```
+python -m app.cli generer --jour 3 --serie A            # épreuve complète M.07 : Chimie 6, Physique 6, TIC 3
+python -m app.cli generer --jour 2 --serie A            # M.46 : Math 15, SVT 15 (Bio 7, Éco 5, Géol 3)
+python -m app.cli generer --discipline Physique -n 6 --chapitre "Optique géométrique"
+python -m app.cli generer --discipline SVT --sous-discipline Écologie -n 5 --difficulte difficile
+```
+Chaque quota du E.32 donne lieu à un appel API ; les items arrivent **en attente**, avec les anomalies
+mécaniques détectées (nombre de mots, 5 propositions, réponse dans 1..5, répartition des réponses…).
+
+Sans clé API : bouton « Copier le prompt », collez-le dans Claude.ai, puis « Importer un JSON ».
+
+### 2. Valider (atelier)
+File d'attente → item → relecture et correction éventuelle des champs → checklist de la charte →
+**Valider** / **Rejeter** (motif). Toute correction avant validation passe l'item en version « corrigée ».
+Seuls les items **validés** atteignent les élèves.
+
+### 3. Servir (élève, hors ligne)
+L'application `/eleve/` télécharge une fois la banque validée (`/api/banque.json`) et l'enregistre sur
+l'appareil ; passation, corrigé détaillé et score fonctionnent ensuite **sans réseau**. Trois modes :
+épreuve du jour (quotas et ordre du E.32, chronomètre), une discipline, un chapitre (n questions,
+difficulté). Les résultats sont gardés localement et envoyés au serveur quand une connexion passe.
+Après une nouvelle vague de validation : bouton « Mettre à jour la banque ».
+
+Distribution sans réseau : `python -m app.cli banque` produit `exports/banque.json` à copier sur clé USB
+(ou servir la plateforme sur le réseau local d'une salle informatique).
+
+### Situations étendues (exercice de synthèse)
+Second format : une situation longue (150–300 mots) avec un document (tableau, fiche, schéma), suivie de 4 à 6
+questions de difficulté croissante qui en découlent, chacune répondable indépendamment, et une synthèse finale.
+- Générer : bouton « Générer une situation étendue » dans l'atelier (discipline, chapitre, nombre de questions) ou
+  `python -m app.cli generer --situation --discipline Physique --chapitre "Électricité : loi d'Ohm, puissance, énergie" -n 5`.
+- Valider : file « Situations étendues » ; chaque question se valide comme un item, puis la situation elle-même.
+- Élève : onglet « Synthèse », situation épinglée en haut, corrigé puis synthèse.
+- Export : `/api/export/situation/<id>?pdf=true` (lien dans la fiche de la situation).
+Les questions de situation ne sont jamais tirées dans les épreuves du jour.
+
+### 4. Exporter (papier)
+```
+python -m app.cli assembler --jour 3 --serie A --pdf
+python -m app.cli assembler --jour 2 --discipline Mathématiques --serie B --pdf
+python -m app.cli assembler --discipline Chimie --chapitre "Acides, bases et pH" -n 10
+```
+Produit `exports/*.json`, `*.tex` (A4, 12 pt, marges 2,2 cm, encadrés consignes/compétences, propositions
+1 à 5, feuille de réponses, corrigé en fin) et `*.pdf` si LaTeX est installé.
+
+## Mettre en ligne (Render)
+
+Voir `DEPLOIEMENT.md` : dépôt GitHub + Blueprint Render (`render.yaml`) avec base PostgreSQL, mot de passe sur l'atelier.
+
+## Programme officiel
+
+Le programme chargé par `init` est **indicatif** (chapitres du cahier des charges et du programme usuel).
+Pour le remplacer par le programme officiel, préparez un CSV :
+```
+discipline,sous_discipline,chapitre,poids
+Mathématiques,,Nombres complexes,2
+SVT,Biologie,Génétique et hérédité,2
+```
+puis `python -m app.cli programme programme.csv`. Le poids règle la part de chaque chapitre dans une série.
+
+## Changer d'année (nouveau E.32)
+
+Modifier `EPREUVES` et `QUOTAS` dans `app/seed.py` (ou ajouter une option), puis `python -m app.cli init`.
+Les gabarits, l'assemblage et l'application élève suivent automatiquement.
+
+## Configuration (.env)
+
+| Variable | Rôle |
+| --- | --- |
+| `ANTHROPIC_API_KEY` | clé API pour la génération |
+| `CLAUDE_MODEL` | modèle utilisé (défaut `claude-sonnet-4-5`) |
+| `EXETAT_DB` | chemin de la base SQLite |
+
+## Limites de cette V1 et suite prévue
+
+- Une seule option (1.02 Sciences) ; Culture générale et Langues sont déclarées mais inactives.
+- Pas de comptes utilisateurs : l'atelier est prévu pour un poste ou un réseau local de confiance.
+- Les figures/tableaux générés sont en LaTeX ; l'application élève les affiche en texte brut (rendu graphique à venir).
+- Suite : déploiement serveur (PostgreSQL, Docker), comptes validateurs, statistiques par chapitre, génération à la volée pour les chapitres pauvres (marquée non validée).

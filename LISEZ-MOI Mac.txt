@@ -1,0 +1,27 @@
+PLATEFORME EXETAT — DÉMARRAGE SUR MAC
+
+1. Prérequis (une seule fois) : le Python officiel 3.10 ou plus.
+   Téléchargez l'installateur : https://www.python.org/downloads/macos/
+   (bouton « Latest Python 3 Release », fichier .pkg), ouvrez-le, Continuer → Installer.
+   ATTENTION : le « python3 » livré avec macOS n'est qu'un raccourci vers Xcode ; sans Xcode ou sans
+   avoir accepté sa licence, il ne fonctionne pas. Le lanceur ignore ce raccourci et cherche le Python
+   officiel ; s'il ne le trouve pas, il ouvre la page de téléchargement.
+
+2. Double-cliquez sur « EXETAT.app » ou sur « Lancer EXETAT.command ».
+
+3. Si macOS affiche « ne peut pas être ouvert car il provient d'un développeur non identifié » :
+   faites un CLIC DROIT (ou Ctrl+clic) sur le fichier → « Ouvrir » → « Ouvrir ».
+   À faire une seule fois ; ensuite le double-clic fonctionne.
+   (Autre voie : Réglages Système → Confidentialité et sécurité → « Ouvrir quand même ».)
+
+4. Si le fichier s'ouvre dans un éditeur de texte au lieu de se lancer (droit d'exécution perdu au
+   dézippage) : ouvrez l'application Terminal, tapez
+       chmod +x
+   suivi d'un espace, glissez le fichier « Lancer EXETAT.command » dans la fenêtre, puis Entrée.
+   Vous pouvez aussi lancer directement : tapez  python3  suivi d'un espace, glissez « lancer.py », Entrée.
+
+5. Au premier lancement, les composants s'installent dans un dossier « .venv » (réseau requis, 1 à 2 min).
+   Ensuite la plateforme s'ouvre dans le navigateur à l'adresse http://127.0.0.1:8000/
+   Si le navigateur ne s'ouvre pas tout seul, tapez cette adresse dans Safari ou Chrome.
+
+6. Laissez la fenêtre Terminal ouverte pendant l'utilisation ; la fermer arrête la plateforme.

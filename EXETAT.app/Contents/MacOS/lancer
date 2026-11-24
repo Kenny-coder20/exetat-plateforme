@@ -1,0 +1,4 @@
+#!/bin/bash
+# Ouvre le lanceur dans le Terminal (la fenêtre reste ouverte tant que la plateforme tourne).
+DIR="$(cd "$(dirname "$0")/../../.." && pwd)"
+open -a Terminal "$DIR/Lancer EXETAT.command"

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier validateur — EXETAT</title>
+<style>
+  :root{--ink:#1E2433;--muted:#5E6677;--line:#DDD6C6;--bg:#F7F4EC;--ok:#2E7D5B;--ko:#B23A3A;--acc:#1B2A4A;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+  header{background:var(--card);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  header h1{font-family:Georgia,'Source Serif 4',serif;font-size:18px;margin:0 auto 0 0;color:var(--acc)}
+  header a{color:var(--acc);text-decoration:none}
+  main{display:grid;grid-template-columns:340px 1fr;gap:16px;padding:16px;max-width:1400px;margin:auto}
+  @media(max-width:900px){main{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .panel h2{font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 10px}
+  select,input,textarea,button{font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:7px;background:#fff;width:100%}
+  textarea{min-height:70px;resize:vertical}
+  button{cursor:pointer;background:var(--acc);color:#fff;border-color:var(--acc);width:auto}
+  button.secondary{background:#fff;color:var(--ink);border-color:var(--line)}
+  button.ok{background:var(--ok);border-color:var(--ok)} button.ko{background:var(--ko);border-color:var(--ko)}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0}
+  .row>*{flex:1} .row>button{flex:0 0 auto}
+  .liste{max-height:60vh;overflow:auto;border-top:1px solid var(--line);margin-top:8px}
+  .liste div{padding:8px 6px;border-bottom:1px solid var(--line);cursor:pointer;font-size:14px}
+  .liste div:hover,.liste div.actif{background:#eef3fb}
+  .tag{display:inline-block;font-size:11.5px;padding:1px 7px;border-radius:10px;background:#eee;color:var(--muted);margin-right:4px}
+  .tag.anom{background:#fde8e6;color:var(--ko)}
+  label{font-size:12.5px;color:var(--muted);display:block;margin-top:8px}
+  .props{display:grid;grid-template-columns:28px 1fr;gap:6px 8px;align-items:center}
+  .props input[type=radio]{width:auto;justify-self:center}
+  .check{columns:2;font-size:13.5px} .check label{display:block;margin:2px 0;color:var(--ink)}
+  @media(max-width:700px){.check{columns:1}}
+  .muted{color:var(--muted);font-size:13px}
+  pre{white-space:pre-wrap;font-size:12.5px;background:#f3f3f5;padding:10px;border-radius:7px;max-height:220px;overflow:auto}
+  .stats td,.stats th{padding:3px 8px;text-align:left;font-size:13px;border-bottom:1px solid var(--line)}
+  .toast{position:fixed;bottom:16px;right:16px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;opacity:0;transition:.3s}
+  .toast.on{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <h1>Examen d'État — Atelier des enseignants</h1>
+  <span class="muted">Validateur :</span><input id="validateur" style="width:160px" placeholder="votre nom" />
+  <a href="/eleve/" target="_blank">App élève ↗</a>
+</header>
+<main>
+  <aside>
+    <section class="panel">
+      <h2>File d'attente</h2>
+      <div class="row">
+        <select id="f-type"><option value="items">Items isolés</option><option value="situations">Situations étendues</option></select>
+        <select id="f-statut"><option value="en_attente">En attente</option><option value="valide">Validés</option><option value="rejete">Rejetés</option><option value="">Tous</option></select>
+      </div>
+      <div class="row"><select id="f-disc"><option value="">Toutes disciplines</option></select></div>
+      <div id="liste" class="liste"></div>
+    </section>
+    <section class="panel" style="margin-top:14px">
+      <h2>Générer (API Claude)</h2>
+      <div class="row"><select id="g-jour"><option value="">— épreuve complète : jour —</option></select></div>
+      <div class="muted" style="text-align:center">ou</div>
+      <div class="row"><select id="g-disc"></select><select id="g-sous"><option value="">sous-discipline</option></select></div>
+      <div class="row"><select id="g-chap"><option value="">chapitre (au prorata)</option></select></div>
+      <div class="row"><input id="g-n" type="number" value="5" min="1" max="30" /><select id="g-diff"><option value="">difficulté 25/50/25</option><option>facile</option><option>moyen</option><option>difficile</option></select></div>
+      <div class="row"><button id="g-go">Générer des items</button><button id="g-sit" class="secondary">Générer une situation étendue</button></div>
+      <div class="row"><button id="g-prompt" class="secondary">Copier le prompt (sans API)</button></div>
+      <div id="g-msg" class="muted"></div>
+      <details style="margin-top:8px"><summary class="muted">Importer un JSON produit dans Claude.ai</summary>
+        <textarea id="imp-json" placeholder='{"items":[...]}'></textarea><div class="row"><button id="imp-go" class="secondary">Importer</button></div></details>
+    </section>
+    <section class="panel" style="margin-top:14px"><h2>Banque</h2><div id="stats"></div>
+      <div class="row"><a class="muted" href="/api/export/latex?jour=3&serie=A" target="_blank">Export LaTeX jour 3</a><a class="muted" href="/api/export/latex?jour=2&serie=A" target="_blank">jour 2</a></div></section>
+  </aside>
+
+  <section class="panel" id="fiche">
+    <h2>Item</h2>
+    <p class="muted">Choisissez un item dans la file. Les champs sont modifiables : une correction avant validation marque l'item « corrigée ».</p>
+  </section>
+</main>
+<div id="toast" class="toast"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const api = async (url, opt) => { const r = await fetch(url, opt); if (!r.ok) throw new Error((await r.json()).detail || r.statusText); return r.json(); };
+const toast = m => { const t = $('#toast'); t.textContent = m; t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 2600); };
+let CONFIG, courant = null;
+$('#validateur').value = localStorage.getItem('validateur') || '';
+$('#validateur').oninput = e => localStorage.setItem('validateur', e.target.value);
+
+const CHECKLIST = [
+  "Le savoir essentiel visé est unique", "Le contexte appartient à une famille de situations du programme",
+  "Lecture rapide, formulation sans ambiguïté (tige 35–75 mots)", "La question a une utilité explicite",
+  "Distracteurs homogènes, plausibles, pédagogiquement utiles", "Réponse correcte indiscutable (recalcul fait)",
+  "Difficulté cohérente avec l'EXETAT", "Contexte crédible pour l'élève", "Chiffres, unités, notations corrects",
+  "Harmonisé avec la série", "Correction compréhensible par un élève seul"];
+
+async function init() {
+  CONFIG = await api('/api/config');
+  const joursActifs = new Set(CONFIG.epreuves.filter(e => e.actif).map(e => e.jour));
+  CONFIG.quotas = CONFIG.quotas.filter(q => joursActifs.has(q.jour));
+  const discs = [...new Set(CONFIG.quotas.map(q => q.discipline))];
+  for (const d of discs) { $('#f-disc').add(new Option(d)); $('#g-disc').add(new Option(d)); }
+  for (const e of CONFIG.epreuves.filter(e => e.actif)) $('#g-jour').add(new Option(`Jour ${e.jour} — ${e.code} (${e.nb_items} items)`, e.jour));
+  $('#g-disc').onchange = majSous; majSous();
+  await chargerListe(); await chargerStats();
+}
+function majSous() {
+  const d = $('#g-disc').value;
+  const sous = [...new Set(CONFIG.quotas.filter(q => q.discipline === d && q.sous_discipline).map(q => q.sous_discipline))];
+  $('#g-sous').innerHTML = '<option value="">sous-discipline</option>' + sous.map(s => `<option>${s}</option>`).join('');
+  const chaps = CONFIG.programme.filter(p => p.discipline === d);
+  $('#g-chap').innerHTML = '<option value="">chapitre (au prorata)</option>' + chaps.map(c => `<option>${c.chapitre}</option>`).join('');
+}
+async function chargerListe() {
+  const p = new URLSearchParams(); if ($('#f-statut').value) p.set('statut', $('#f-statut').value); if ($('#f-disc').value) p.set('discipline', $('#f-disc').value);
+  if ($('#f-type').value === 'situations') {
+    const sits = await api('/api/situations?' + p);
+    $('#liste').innerHTML = sits.map(s => `<div data-sid="${s.id}" class="${courant && courant.id === s.id ? 'actif' : ''}">
+      <span class="tag">${s.discipline}</span><span class="tag">${s.nb_validees}/${s.nb_questions} q. validées</span>
+      ${(s.observations || '').startsWith('ANOMALIES') ? '<span class="tag anom">anomalies</span>' : ''}<br>${s.titre}</div>`).join('') || '<div class="muted">Aucune situation.</div>';
+    $('#liste').querySelectorAll('div[data-sid]').forEach(el => el.onclick = () => ouvrirSituation(el.dataset.sid));
+    return;
+  }
+  const items = await api('/api/items?' + p);
+  $('#liste').innerHTML = items.map(i => `<div data-id="${i.id}" class="${courant && courant.id === i.id ? 'actif' : ''}">
+    <span class="tag">${i.discipline}${i.sous_discipline ? ' · ' + i.sous_discipline : ''}</span><span class="tag">${i.difficulte}</span>
+    ${(i.observations || '').startsWith('ANOMALIES') ? '<span class="tag anom">anomalies</span>' : ''}<br>${i.titre}</div>`).join('') || '<div class="muted">Aucun item.</div>';
+  $('#liste').querySelectorAll('div[data-id]').forEach(el => el.onclick = () => ouvrir(el.dataset.id));
+}
+$('#f-statut').onchange = chargerListe; $('#f-disc').onchange = chargerListe; $('#f-type').onchange = chargerListe;
+
+async function ouvrir(id) {
+  courant = await api('/api/items/' + id);
+  const i = courant;
+  const chaps = CONFIG.programme.filter(p => p.discipline === i.discipline && (!i.sous_discipline || p.sous_discipline === i.sous_discipline));
+  $('#fiche').innerHTML = `
+    <h2>Item ${i.id} <span class="tag">${i.statut_validation}</span><span class="tag">${i.version}</span>${i.modele ? `<span class="tag">${i.modele}</span>` : ''}${i.situation_id ? `<span class="tag">question ${i.ordre_situation} de la situation</span>` : ''}</h2>
+    ${i.situation ? `<details open style="background:#f3f6fb;border-radius:8px;padding:10px 12px;margin-bottom:8px"><summary><b>${esc(i.situation.titre)}</b> <span class="muted">(situation — <a href="#" id="lien-sit">ouvrir la fiche</a>)</span></summary><p style="font-size:14px">${esc(i.situation.texte)}</p><p class="muted" style="font-size:13px">${esc(i.situation.document_texte || '')}</p></details>` : ''}
+    <div class="row"><div><label>Discipline</label><input value="${i.discipline}${i.sous_discipline ? ' / ' + i.sous_discipline : ''}" disabled></div>
+      <div><label>Chapitre</label><select id="e-chap">${chaps.map(c => `<option ${c.chapitre === i.chapitre ? 'selected' : ''}>${c.chapitre}</option>`).join('')}<option ${!chaps.some(c => c.chapitre === i.chapitre) ? 'selected' : ''}>${i.chapitre || ''}</option></select></div>
+      <div><label>Difficulté</label><select id="e-diff">${['facile', 'moyen', 'difficile'].map(d => `<option ${d === i.difficulte ? 'selected' : ''}>${d}</option>`).join('')}</select></div></div>
+    <label>Titre (thème bref dans un cadre situé)</label><input id="e-titre" value="${esc(i.titre)}">
+    <label>Tige — <span id="nbmots">${i.nb_mots_tige || ''}</span> mots (35–75)</label><textarea id="e-tige">${esc(i.tige)}</textarea>
+    ${i.support_latex ? `<label>Support LaTeX</label><pre>${esc(i.support_latex)}</pre>` : ''}
+    <label>Propositions (cochez la bonne réponse)</label>
+    <div class="props">${[1, 2, 3, 4, 5].map(k => `<input type="radio" name="rep" value="${k}" ${i.reponse === k ? 'checked' : ''}><input id="e-p${k}" value="${esc(i['p' + k])}">`).join('')}</div>
+    <label>Correction détaillée</label><textarea id="e-corr">${esc(i.correction_detaillee)}</textarea>
+    <label>Erreurs visées par les distracteurs</label><input id="e-err" value="${esc(i.erreurs_distracteurs || '')}">
+    <label>Savoir essentiel · compétence · contexte</label><div class="muted">${esc(i.savoir_essentiel)} · ${i.competence || ''} · ${i.famille_contexte || ''}</div>
+    ${i.observations ? `<label>Observations (agent / anomalies automatiques)</label><pre>${esc(i.observations)}</pre>` : ''}
+    <label>Checklist de la charte</label><div class="check">${CHECKLIST.map((c, k) => `<label><input type="checkbox" class="ck" style="width:auto"> ${c}</label>`).join('')}</div>
+    <label>Observations du validateur / motif de rejet</label><textarea id="e-obs">${esc(i.validateur && i.observations && !i.observations.startsWith('ANOMALIES') ? i.observations : '')}</textarea>
+    <div class="row" style="margin-top:12px"><button class="ok" id="b-ok">Valider</button><button class="ko" id="b-ko">Rejeter</button><button class="secondary" id="b-save">Enregistrer sans statuer</button></div>`;
+  if (i.situation) $('#lien-sit').onclick = e => { e.preventDefault(); ouvrirSituation(i.situation_id); };
+  $('#e-tige').oninput = e => $('#nbmots').textContent = e.target.value.trim().split(/\s+/).filter(Boolean).length;
+  $('#b-ok').onclick = () => statuer('valide'); $('#b-ko').onclick = () => statuer('rejete'); $('#b-save').onclick = () => statuer('en_attente');
+  chargerListe();
+}
+async function ouvrirSituation(sid) {
+  const s = await api('/api/situations/' + sid); courant = s;
+  $('#fiche').innerHTML = `
+    <h2>Situation ${s.id} <span class="tag">${s.statut_validation}</span><span class="tag">${s.version}</span><span class="tag">${s.discipline}</span></h2>
+    <label>Titre</label><input id="s-titre" value="${esc(s.titre)}">
+    <label>Situation — <span id="s-nbmots">${s.nb_mots || ''}</span> mots (150–300)</label><textarea id="s-texte" style="min-height:160px">${esc(s.texte)}</textarea>
+    <label>Documents (texte lisible)</label><textarea id="s-doc">${esc(s.document_texte || '')}</textarea>
+    <label>Documents (LaTeX)</label><textarea id="s-doclatex" style="font-family:monospace;font-size:12.5px">${esc(s.document_latex || '')}</textarea>
+    <div class="row"><div><label>Chapitres</label><input id="s-chap" value="${esc(s.chapitres || '')}"></div><div><label>Durée (min)</label><input id="s-duree" type="number" value="${s.duree_min || 25}"></div></div>
+    <label>Synthèse finale</label><textarea id="s-synth">${esc(s.synthese || '')}</textarea>
+    ${s.observations ? `<label>Observations</label><pre>${esc(s.observations)}</pre>` : ''}
+    <label>Questions (${s.questions.length}) — à valider une par une</label>
+    <div class="liste" style="max-height:none">${s.questions.map(q => `<div data-id="${q.id}"><span class="tag">Q${q.ordre_situation}</span><span class="tag">${q.difficulte}</span><span class="tag ${q.statut_validation === 'valide' ? '' : 'anom'}">${q.statut_validation}</span> ${esc(q.titre)}</div>`).join('')}</div>
+    <label>Observations du validateur / motif de rejet</label><textarea id="s-obs"></textarea>
+    <div class="row" style="margin-top:12px"><button class="ok" id="s-ok">Valider la situation</button><button class="ko" id="s-ko">Rejeter</button><button class="secondary" id="s-save">Enregistrer sans statuer</button>
+      <a class="muted" href="/api/export/situation/${s.id}?pdf=true" target="_blank">Export LaTeX/PDF</a></div>`;
+  $('#s-texte').oninput = e => $('#s-nbmots').textContent = e.target.value.trim().split(/\s+/).filter(Boolean).length;
+  $('#fiche').querySelectorAll('div[data-id]').forEach(el => el.onclick = () => ouvrir(el.dataset.id));
+  const statuerS = async statut => {
+    const body = { statut, validateur: $('#validateur').value || 'anonyme', observations: $('#s-obs').value || null, motif_rejet: statut === 'rejete' ? ($('#s-obs').value || 'non précisé') : null,
+      titre: $('#s-titre').value, texte: $('#s-texte').value, document_texte: $('#s-doc').value, document_latex: $('#s-doclatex').value, synthese: $('#s-synth').value, chapitres: $('#s-chap').value, duree_min: +$('#s-duree').value };
+    try { await api('/api/situations/' + s.id + '/valider', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); toast('Situation ' + statut); await chargerListe(); await chargerStats(); if (statut !== 'en_attente') { courant = null; $('#fiche').innerHTML = '<h2>Item</h2><p class="muted">Suivant ?</p>'; } }
+    catch (e) { toast('Erreur : ' + e.message); }
+  };
+  $('#s-ok').onclick = () => statuerS('valide'); $('#s-ko').onclick = () => statuerS('rejete'); $('#s-save').onclick = () => statuerS('en_attente');
+  chargerListe();
+}
+const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+
+async function statuer(statut) {
+  if (statut === 'valide') {
+    const nk = [...document.querySelectorAll('.ck')].filter(c => !c.checked).length;
+    if (nk && !confirm(`${nk} point(s) de la checklist non cochés. Valider quand même ?`)) return;
+  }
+  const body = {
+    statut, validateur: $('#validateur').value || 'anonyme', observations: $('#e-obs').value || null,
+    motif_rejet: statut === 'rejete' ? ($('#e-obs').value || 'non précisé') : null,
+    titre: $('#e-titre').value, tige: $('#e-tige').value, correction_detaillee: $('#e-corr').value, erreurs_distracteurs: $('#e-err').value,
+    chapitre: $('#e-chap').value, difficulte: $('#e-diff').value, reponse: +(document.querySelector('input[name=rep]:checked') || {}).value || courant.reponse,
+  };
+  for (const k of [1, 2, 3, 4, 5]) body['p' + k] = $('#e-p' + k).value;
+  try { await api('/api/items/' + courant.id + '/valider', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); toast('Item ' + statut); courant = null; $('#fiche').innerHTML = '<h2>Item</h2><p class="muted">Item suivant ?</p>'; await chargerListe(); await chargerStats(); }
+  catch (e) { toast('Erreur : ' + e.message); }
+}
+
+$('#g-go').onclick = async () => {
+  const jour = $('#g-jour').value; const body = jour ? { jour: +jour } : { discipline: $('#g-disc').value, sous_discipline: $('#g-sous').value || null, chapitre: $('#g-chap').value || null, difficulte: $('#g-diff').value || null, n: +$('#g-n').value };
+  $('#g-msg').textContent = 'Génération en cours… (une épreuve complète prend plusieurs minutes)';
+  try { const r = await api('/api/generer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); $('#g-msg').textContent = 'Reçu : ' + JSON.stringify(r); await chargerListe(); await chargerStats(); }
+  catch (e) { $('#g-msg').textContent = 'Erreur : ' + e.message; }
+};
+$('#g-sit').onclick = async () => {
+  const body = { discipline: $('#g-disc').value, sous_discipline: $('#g-sous').value || null, chapitre: $('#g-chap').value || null, n: Math.min(6, Math.max(4, +$('#g-n').value || 5)) };
+  $('#g-msg').textContent = 'Génération de la situation en cours (1 à 2 minutes)…';
+  try { const r = await api('/api/situations/generer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); $('#g-msg').textContent = `Situation ${r.situation_id} : ${r.nb_questions} questions.`; $('#f-type').value = 'situations'; await chargerListe(); await chargerStats(); }
+  catch (e) { $('#g-msg').textContent = 'Erreur : ' + e.message; }
+};
+$('#g-prompt').onclick = async () => {
+  const p = new URLSearchParams({ discipline: $('#g-disc').value, n: $('#g-n').value }); if ($('#g-sous').value) p.set('sous_discipline', $('#g-sous').value); if ($('#g-chap').value) p.set('chapitre', $('#g-chap').value); if ($('#g-diff').value) p.set('difficulte', $('#g-diff').value);
+  const r = await api('/api/prompt?' + p);
+  await navigator.clipboard.writeText('INSTRUCTIONS SYSTÈME :\n' + r.systeme + '\n\n' + r.commande);
+  toast('Prompt copié : collez-le dans Claude.ai, puis importez le JSON reçu.');
+};
+$('#imp-go').onclick = async () => {
+  try { const j = JSON.parse($('#imp-json').value); const r = await api('/api/importer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items: j.items || j, discipline: $('#g-disc').value }) }); toast(r.nb + ' items importés'); $('#imp-json').value = ''; chargerListe(); chargerStats(); }
+  catch (e) { toast('JSON invalide : ' + e.message); }
+};
+async function chargerStats() {
+  const s = await api('/api/stats');
+  const tot = Object.fromEntries(s.par_statut.map(r => [r.statut, r.n]));
+  const lignes = {}; for (const r of s.par_discipline) { const k = r.discipline + (r.sous_discipline ? ' / ' + r.sous_discipline : ''); lignes[k] = lignes[k] || {}; lignes[k][r.statut] = r.n; }
+  const ts = Object.fromEntries((s.situations || []).map(r => [r.statut, r.n]));
+  $('#stats').innerHTML = `<div class="muted">Items : en attente ${tot.en_attente || 0} · validés ${tot.valide || 0} · rejetés ${tot.rejete || 0}<br>Situations : en attente ${ts.en_attente || 0} · validées ${ts.valide || 0}</div>
+    <table class="stats"><tr><th>Discipline</th><th>att.</th><th>val.</th><th>rej.</th></tr>${Object.entries(lignes).map(([k, v]) => `<tr><td>${k}</td><td>${v.en_attente || 0}</td><td>${v.valide || 0}</td><td>${v.rejete || 0}</td></tr>`).join('')}</table>`;
+}
+init().catch(e => toast(e.message));
+</script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1B2A4A">
+<title>EXETAT — Préparation</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nuit:#1B2A4A; --nuit-2:#24365E; --ivoire:#F7F4EC; --ivoire-2:#EFEADD; --blanc:#FFFFFF;
+    --encre:#1E2433; --encre-2:#5E6677; --filet:#DDD6C6; --or:#B8922E; --or-pale:#F6EBCF;
+    --vert:#2E7D5B; --vert-pale:#E4F1EA; --rouge:#B23A3A; --rouge-pale:#F6E3E3;
+    --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--ivoire)}
+  body{margin:0;font:16px/1.55 var(--sans);color:var(--encre);-webkit-font-smoothing:antialiased;min-height:100dvh}
+  h1,h2,h3,.serif{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;margin:0}
+  button{font:inherit;cursor:pointer}
+  a{color:inherit}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  /* ---------- bandeau ---------- */
+  .bandeau{background:var(--nuit);color:#fff}
+  .bandeau .wrap{display:flex;align-items:center;gap:12px;min-height:58px}
+  .embleme{width:36px;height:36px;border:1.5px solid rgba(255,255,255,.55);border-radius:50%;display:grid;place-items:center;font:600 13px var(--serif);color:var(--or);letter-spacing:.02em}
+  .bandeau .nom{font:600 16px var(--serif);flex:1}
+  .bandeau .nom small{display:block;font:400 11.5px var(--sans);opacity:.7;letter-spacing:.02em}
+  .etat{font-size:12px;opacity:.85;padding:3px 10px;border:1px solid rgba(255,255,255,.35);border-radius:20px}
+  .btn-inst{background:var(--or);color:var(--nuit);border:0;border-radius:20px;padding:6px 12px;font-size:12.5px;font-weight:600;display:none}
+
+  /* ---------- accueil ---------- */
+  .salut{padding:30px 0 10px}
+  .salut h1{font-size:30px;line-height:1.15;color:var(--nuit)}
+  .salut p{margin:8px 0 0;color:var(--encre-2);max-width:48ch}
+  .etat-banque{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:18px 0 4px;padding:12px 0;border-top:1px solid var(--filet);border-bottom:1px solid var(--filet);font-size:13.5px;color:var(--encre-2)}
+  .etat-banque b{color:var(--encre);font-weight:600}
+  .lien{background:none;border:0;color:var(--nuit);text-decoration:underline;text-underline-offset:3px;padding:0;font-size:13.5px}
+
+  .parcours{list-style:none;margin:22px 0 0;padding:0}
+  .parcours li{border-bottom:1px solid var(--filet)}
+  .parcours button{width:100%;text-align:left;background:none;border:0;padding:18px 0;display:grid;grid-template-columns:44px 1fr 20px;gap:14px;align-items:center;color:var(--encre)}
+  .parcours button:focus-visible{outline:2px solid var(--or);outline-offset:4px;border-radius:6px}
+  .parcours .ico{width:44px;height:44px;border-radius:50%;background:var(--blanc);border:1px solid var(--filet);display:grid;place-items:center;color:var(--nuit)}
+  .parcours h3{font-size:18px;color:var(--nuit)}
+  .parcours p{margin:2px 0 0;font-size:13.5px;color:var(--encre-2)}
+  .parcours .chev{color:var(--encre-2)}
+
+  .section-titre{font-family:var(--serif);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--encre-2);margin:30px 0 10px;font-weight:600}
+  .hist{list-style:none;margin:0;padding:0}
+  .hist li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--filet);font-size:14px}
+  .hist li span:first-child{color:var(--encre-2)}
+  .hist li b{font-family:var(--serif);font-size:16px;color:var(--nuit)}
+  .vide{color:var(--encre-2);font-size:14px;padding:8px 0 20px}
+
+  /* ---------- feuille de choix (modal bas) ---------- */
+  .voile{position:fixed;inset:0;background:rgba(27,42,74,.45);display:none;align-items:flex-end;justify-content:center;z-index:20}
+  .voile.on{display:flex}
+  .feuille{background:var(--blanc);width:100%;max-width:720px;border-radius:18px 18px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom));max-height:88dvh;overflow:auto}
+  .feuille h2{font-size:22px;color:var(--nuit);margin-bottom:4px}
+  .feuille p.aide{margin:0 0 14px;color:var(--encre-2);font-size:14px}
+  label.champ{display:block;font-size:12.5px;color:var(--encre-2);margin:12px 0 4px}
+  select,input[type=number]{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--filet);border-radius:10px;background:var(--ivoire)}
+  .quota-apercu{font-size:13px;color:var(--encre-2);margin-top:6px}
+  .choix-sit{list-style:none;margin:8px 0 0;padding:0}
+  .choix-sit li button{width:100%;text-align:left;background:var(--ivoire);border:1px solid var(--filet);border-radius:12px;padding:12px 14px;margin-top:8px}
+  .choix-sit h4{margin:0;font-family:var(--serif);font-size:16px;color:var(--nuit)}
+  .choix-sit small{color:var(--encre-2)}
+  .actions{display:flex;gap:10px;margin-top:18px}
+  .btn{flex:1;padding:13px 16px;border-radius:12px;border:1px solid var(--nuit);background:var(--nuit);color:#fff;font-weight:600;font-size:15px}
+  .btn.sec{background:transparent;color:var(--nuit)}
+  .btn[disabled]{opacity:.5;cursor:default}
+
+  /* ---------- passation ---------- */
+  .barre-pass{position:sticky;top:0;background:var(--ivoire);z-index:5;border-bottom:1px solid var(--filet)}
+  .barre-pass .wrap{display:flex;align-items:center;gap:12px;min-height:52px}
+  .barre-pass .titre{flex:1;font-family:var(--serif);font-size:15px;color:var(--nuit);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .chrono{font-variant-numeric:tabular-nums;font-size:13.5px;color:var(--encre-2)}
+  .chrono.alerte{color:var(--rouge);font-weight:600}
+  .progression{height:3px;background:var(--ivoire-2)}
+  .progression i{display:block;height:100%;background:var(--or);width:0;transition:width .25s}
+  .q-ent{display:flex;justify-content:space-between;align-items:baseline;margin:22px 0 6px;font-size:13px;color:var(--encre-2)}
+  .q-ent b{font-family:var(--serif);font-size:15px;color:var(--nuit)}
+  .q-titre{font-family:var(--serif);font-style:italic;color:var(--encre-2);font-size:15px;margin-bottom:8px}
+  .q-tige{font-size:17px;line-height:1.6;color:var(--encre)}
+  .doc{margin:14px 0 0;padding:12px 14px;background:var(--blanc);border-left:3px solid var(--or);font-size:14px;color:var(--encre-2)}
+  .props{list-style:none;margin:20px 0 0;padding:0}
+  .props li{margin:8px 0}
+  .props label{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 14px;border:1px solid var(--filet);border-radius:12px;background:var(--blanc);cursor:pointer}
+  .props input{position:absolute;opacity:0;width:0;height:0}
+  .props .num{width:30px;height:30px;border-radius:50%;border:1px solid var(--filet);display:grid;place-items:center;font-family:var(--serif);font-weight:600;color:var(--nuit);background:var(--ivoire)}
+  .props input:checked+label{border-color:var(--nuit);box-shadow:inset 0 0 0 1px var(--nuit)}
+  .props input:checked+label .num{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+  .props input:focus-visible+label{outline:2px solid var(--or);outline-offset:2px}
+  .props .txt{padding-top:4px}
+  .nav{display:flex;gap:10px;margin:26px 0 30px}
+  .nav .btn{flex:1}
+  .situation{background:var(--blanc);border:1px solid var(--filet);border-radius:14px;padding:16px;margin-top:18px}
+  .situation summary{cursor:pointer;font-family:var(--serif);font-size:17px;color:var(--nuit);list-style:none;display:flex;justify-content:space-between;align-items:center}
+  .situation summary::-webkit-details-marker{display:none}
+  .situation summary small{font:400 12.5px var(--sans);color:var(--encre-2)}
+  .situation p{font-size:15px;line-height:1.6}
+
+  /* grille récapitulative */
+  .grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:8px;margin:16px 0}
+  .grille button{aspect-ratio:1;border-radius:10px;border:1px solid var(--filet);background:var(--blanc);font-family:var(--serif);font-weight:600;color:var(--nuit)}
+  .grille button.rep{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+  .grille button.cour{outline:2px solid var(--or);outline-offset:1px}
+
+  /* ---------- résultat ---------- */
+  .resultat-ent{text-align:center;padding:34px 0 18px;border-bottom:1px solid var(--filet)}
+  .note{font-family:var(--serif);font-size:56px;line-height:1;color:var(--nuit)}
+  .note small{font-size:22px;color:var(--encre-2)}
+  .mention{margin:8px 0 0;font-size:15px;color:var(--encre-2)}
+  .ruban{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:20px;font-size:12.5px;font-weight:600;background:var(--or-pale);color:var(--or)}
+  .ruban.vert{background:var(--vert-pale);color:var(--vert)}
+  .revue{border-bottom:1px solid var(--filet);padding:20px 0}
+  .revue .verdict{font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .revue .verdict.ok{color:var(--vert)} .revue .verdict.ko{color:var(--rouge)} .revue .verdict.na{color:var(--encre-2)}
+  .revue .props li label{cursor:default}
+  .revue .props .juste{border-color:var(--vert);background:var(--vert-pale)}
+  .revue .props .juste .num{background:var(--vert);color:#fff;border-color:var(--vert)}
+  .revue .props .faux{border-color:var(--rouge);background:var(--rouge-pale)}
+  .revue .props .faux .num{background:var(--rouge);color:#fff;border-color:var(--rouge)}
+  .corr{margin-top:14px;padding:14px 16px;background:var(--blanc);border-left:3px solid var(--or);font-size:15px;line-height:1.6}
+  .corr b{font-family:var(--serif)}
+  .corr .err{display:block;margin-top:8px;font-size:13.5px;color:var(--encre-2)}
+  .synthese{margin:22px 0;padding:18px;background:var(--nuit);color:#fff;border-radius:14px;font-size:15px;line-height:1.6}
+  .synthese b{font-family:var(--serif);color:var(--or);display:block;margin-bottom:6px;font-size:17px}
+
+  .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--nuit);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:30}
+  .toast.on{opacity:1}
+  [hidden]{display:none !important}
+  @media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+<header class="bandeau"><div class="wrap">
+  <div class="embleme" aria-hidden="true">EX</div>
+  <div class="nom">Examen d'État<small>Préparation · Section Sciences</small></div>
+  <button id="installer" class="btn-inst">Installer</button>
+  <span id="etat" class="etat">…</span>
+</div></header>
+
+<!-- ======================= ACCUEIL ======================= -->
+<main id="accueil" class="wrap">
+  <section class="salut">
+    <h1 id="salutation">Bonjour. Que révisons-nous aujourd'hui ?</h1>
+    <p>Des questions au format de l'épreuve, relues par des enseignants, avec une correction qui explique chaque étape.</p>
+  </section>
+  <div class="etat-banque">
+    <span id="banque-info">Chargement de la banque…</span>
+    <button class="lien" id="maj">Mettre à jour</button>
+  </div>
+
+  <ul class="parcours">
+    <li><button data-ouvrir="epreuve">
+      <span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+      <span><h3>L'épreuve d'un jour</h3><p>Le nombre exact de questions par matière, l'ordre et la durée du programme officiel.</p></span>
+      <span class="chev">›</span></button></li>
+    <li><button data-ouvrir="discipline">
+      <span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 19V5a1 1 0 0 1 1-1h9l6 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M14 4v6h6"/></svg></span>
+      <span><h3>Une matière</h3><p>Toutes les questions d'une matière du jour choisi, sans les autres.</p></span>
+      <span class="chev">›</span></button></li>
+    <li><button data-ouvrir="chapitre">
+      <span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></span>
+      <span><h3>Un chapitre</h3><p>Pour travailler un point précis, au nombre de questions et à la difficulté que tu choisis.</p></span>
+      <span class="chev">›</span></button></li>
+    <li><button data-ouvrir="situation">
+      <span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
+      <span><h3>Un exercice de synthèse</h3><p>Une situation réelle et documentée, puis des questions de plus en plus exigeantes.</p></span>
+      <span class="chev">›</span></button></li>
+  </ul>
+
+  <div class="section-titre">Mes derniers résultats</div>
+  <ul class="hist" id="historique"></ul>
+  <div class="section-titre">Résultats à envoyer</div>
+  <div class="etat-banque" style="margin-top:0"><span id="sync-info">—</span><button class="lien" id="sync">Envoyer maintenant</button></div>
+  <p class="vide" style="margin-top:20px;font-size:12.5px">Les questions sont enregistrées sur cet appareil : tu peux t'entraîner sans connexion. Tes résultats partent vers l'école quand le réseau revient.</p>
+</main>
+
+<!-- ======================= FEUILLE DE CHOIX ======================= -->
+<div class="voile" id="voile">
+  <div class="feuille" role="dialog" aria-modal="true" aria-labelledby="f-titre">
+    <h2 id="f-titre"></h2><p class="aide" id="f-aide"></p>
+    <div id="f-epreuve" hidden>
+      <label class="champ">Option</label><select id="opt"></select>
+      <label class="champ">Jour de l'examen</label><select id="jour"></select>
+      <div class="quota-apercu" id="desc-jour"></div>
+    </div>
+    <div id="f-discipline" hidden>
+      <label class="champ">Jour</label><select id="jour2"></select>
+      <label class="champ">Matière</label><select id="disc"></select>
+    </div>
+    <div id="f-chapitre" hidden>
+      <label class="champ">Matière</label><select id="disc3"></select>
+      <label class="champ">Chapitre</label><select id="chap"></select>
+      <label class="champ">Nombre de questions</label><select id="n3"><option value="5">5</option><option value="10" selected>10</option><option value="15">15</option></select>
+      <label class="champ">Difficulté</label><select id="diff3"><option value="">Toutes</option><option value="facile">Facile</option><option value="moyen">Moyen</option><option value="difficile">Difficile</option></select>
+    </div>
+    <div id="f-situation" hidden>
+      <label class="champ">Matière</label><select id="disc4"></select>
+      <ul class="choix-sit" id="liste-sit"></ul>
+    </div>
+    <div class="actions"><button class="btn sec" id="f-annuler">Annuler</button><button class="btn" id="f-go">Commencer</button></div>
+  </div>
+</div>
+
+<!-- ======================= PASSATION ======================= -->
+<section id="passation" hidden>
+  <div class="barre-pass">
+    <div class="wrap"><button class="lien" id="quitter" style="font-size:13px">Quitter</button><span class="titre" id="p-titre"></span><span class="chrono" id="chrono"></span></div>
+    <div class="progression"><i id="prog"></i></div>
+  </div>
+  <div class="wrap">
+    <div id="p-alerte"></div>
+    <div id="p-situation"></div>
+    <div id="question"></div>
+    <div class="nav"><button class="btn sec" id="prec">Précédente</button><button class="btn" id="suiv">Suivante</button></div>
+  </div>
+</section>
+
+<!-- ======================= RÉCAPITULATIF ======================= -->
+<section id="recap" hidden>
+  <div class="barre-pass"><div class="wrap"><span class="titre">Avant de rendre</span><span class="chrono" id="chrono2"></span></div></div>
+  <div class="wrap">
+    <p style="margin:20px 0 4px;color:var(--encre-2);font-size:14.5px" id="recap-txt"></p>
+    <div class="grille" id="grille"></div>
+    <div class="nav"><button class="btn sec" id="revenir">Revenir aux questions</button><button class="btn" id="rendre">Rendre et voir la correction</button></div>
+  </div>
+</section>
+
+<!-- ======================= RÉSULTAT ======================= -->
+<section id="resultat" hidden>
+  <div class="wrap">
+    <div class="resultat-ent">
+      <div class="note" id="r-note"></div>
+      <p class="mention" id="r-mention"></p>
+      <span class="ruban" id="r-ruban"></span>
+    </div>
+    <div id="revue"></div>
+    <div class="nav"><button class="btn sec" id="retour">Accueil</button><button class="btn" id="refaire">Recommencer</button></div>
+  </div>
+</section>
+
+<div id="toast" class="toast"></div>
+
+<script>
+// ------------------------------------------------------------------ outils
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const DB = { get: (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } }, set: (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)) } catch { } } };
+const toast = m => { const t = $('#toast'); t.textContent = m; t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 2600); };
+let BANQUE = DB.get('banque', null), S = null, timer = null, modeChoisi = 'epreuve';
+const ELEVE = DB.get('eleve_id', null) || (() => { const id = 'E-' + Math.random().toString(36).slice(2, 8); DB.set('eleve_id', id); return id })();
+
+// PWA
+let promptInstall = null;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); promptInstall = e; $('#installer').style.display = 'inline-block'; });
+$('#installer').onclick = async () => { if (!promptInstall) return; promptInstall.prompt(); await promptInstall.userChoice; promptInstall = null; $('#installer').style.display = 'none'; };
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => { });
+const majEtat = () => { $('#etat').textContent = navigator.onLine ? 'En ligne' : 'Hors ligne'; };
+window.addEventListener('online', () => { majEtat(); synchroniser(true); }); window.addEventListener('offline', majEtat);
+
+const h = new Date().getHours();
+$('#salutation').textContent = (h < 12 ? 'Bonjour. ' : h < 18 ? 'Bon après-midi. ' : 'Bonsoir. ') + 'Que révisons-nous aujourd\'hui ?';
+
+// ------------------------------------------------------------------ banque locale
+async function chargerBanque(force) {
+  if (BANQUE && !force) { afficherBanque(); return; }
+  try {
+    const r = await fetch('/api/banque.json', { cache: 'no-store' }); if (!r.ok) throw 0;
+    BANQUE = await r.json(); BANQUE.telechargee_le = new Date().toISOString(); DB.set('banque', BANQUE); afficherBanque(); if (force) toast('Banque mise à jour');
+  } catch { if (!BANQUE) $('#banque-info').textContent = 'Aucune question sur cet appareil et pas de réseau. Connecte-toi une première fois.'; else toast('Pas de réseau : la banque locale reste utilisée.'); }
+}
+function afficherBanque() {
+  const d = new Date(BANQUE.telechargee_le);
+  $('#banque-info').innerHTML = `<b>${BANQUE.nb_items}</b> questions et <b>${BANQUE.nb_situations || 0}</b> exercice(s) de synthèse sur cet appareil · ${d.toLocaleDateString('fr')}`;
+  $('#opt').innerHTML = BANQUE.options.map(o => `<option value="${o.code}">${o.code} — ${o.nom}</option>`).join('');
+  const optJ = BANQUE.epreuves.map(e => `<option value="${e.jour}">Jour ${e.jour} — ${e.libelle}</option>`).join('');
+  $('#jour').innerHTML = optJ; $('#jour2').innerHTML = optJ; majJour(); majDisc();
+  const discs = [...new Set(BANQUE.quotas.map(q => q.discipline))]; $('#disc3').innerHTML = discs.map(d => `<option>${d}</option>`).join(''); majChap();
+  const sd = [...new Set((BANQUE.situations || []).map(s => s.discipline))]; $('#disc4').innerHTML = sd.length ? sd.map(d => `<option>${d}</option>`).join('') : '<option value="">Aucun exercice disponible</option>'; majSit();
+  afficherHistorique(); majSyncInfo();
+}
+const majJour = () => { const j = +$('#jour').value, e = BANQUE.epreuves.find(x => x.jour === j); const qs = BANQUE.quotas.filter(q => q.jour === j); $('#desc-jour').textContent = `${e.nb_items} questions · ${e.duree_h} h — ` + qs.map(q => `${q.discipline}${q.sous_discipline ? ' (' + q.sous_discipline + ')' : ''} ${q.nb_items}`).join(', '); };
+const majDisc = () => { const j = +$('#jour2').value; $('#disc').innerHTML = [...new Set(BANQUE.quotas.filter(q => q.jour === j).map(q => q.discipline))].map(d => `<option>${d}</option>`).join(''); };
+const majChap = () => { const d = $('#disc3').value; const chs = [...new Set(BANQUE.items.filter(i => i.discipline === d).map(i => i.chapitre))]; $('#chap').innerHTML = chs.length ? chs.map(c => `<option>${c}</option>`).join('') : '<option value="">(aucune question validée)</option>'; };
+let sitChoisie = null;
+function majSit() {
+  const d = $('#disc4').value; const sits = (BANQUE.situations || []).filter(s => s.discipline === d); sitChoisie = sits[0] || null;
+  $('#liste-sit').innerHTML = sits.map((s, k) => `<li><button data-k="${k}" style="${k === 0 ? 'border-color:var(--nuit);box-shadow:inset 0 0 0 1px var(--nuit)' : ''}"><h4>${esc(s.titre)}</h4><small>${esc(s.chapitres || '')} · ${s.questions.length} questions · ${s.duree_min || 25} min</small></button></li>`).join('') || '<li class="vide">Rien pour cette matière.</li>';
+  $('#liste-sit').querySelectorAll('button').forEach(b => b.onclick = () => { sitChoisie = sits[+b.dataset.k]; $('#liste-sit').querySelectorAll('button').forEach(x => x.style.cssText = ''); b.style.cssText = 'border-color:var(--nuit);box-shadow:inset 0 0 0 1px var(--nuit)'; });
+}
+$('#jour').onchange = majJour; $('#jour2').onchange = majDisc; $('#disc3').onchange = majChap; $('#disc4').onchange = majSit;
+$('#maj').onclick = () => chargerBanque(true);
+
+// ------------------------------------------------------------------ feuille de choix
+const TITRES = { epreuve: ["L'épreuve d'un jour", "Les quotas, l'ordre et la durée du programme E.32. Un chronomètre t'accompagne."], discipline: ['Une matière', 'Les questions d\'une seule matière du jour choisi, sans limite de temps.'], chapitre: ['Un chapitre', 'Choisis le point à travailler, le nombre de questions et la difficulté.'], situation: ['Un exercice de synthèse', 'Lis la situation et ses documents, puis réponds aux questions dans l\'ordre.'] };
+document.querySelectorAll('[data-ouvrir]').forEach(b => b.onclick = () => { if (!BANQUE) { toast('La banque n\'est pas encore chargée.'); return; } modeChoisi = b.dataset.ouvrir; $('#f-titre').textContent = TITRES[modeChoisi][0]; $('#f-aide').textContent = TITRES[modeChoisi][1]; for (const m of Object.keys(TITRES)) $('#f-' + m).hidden = m !== modeChoisi; $('#voile').classList.add('on'); });
+$('#f-annuler').onclick = () => $('#voile').classList.remove('on');
+$('#voile').onclick = e => { if (e.target === $('#voile')) $('#voile').classList.remove('on'); };
+
+// ------------------------------------------------------------------ assemblage local (même logique que le serveur)
+const rep = n => { const f = Math.round(n * .25), d = Math.round(n * .25); return { facile: f, moyen: n - f - d, difficile: d } };
+const melanger = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]] } return a };
+function tirer({ discipline, sous_discipline, n, chapitre, difficulte }) {
+  let pool = BANQUE.items.filter(i => i.discipline === discipline && (!sous_discipline || i.sous_discipline === sous_discipline) && (!chapitre || i.chapitre === chapitre));
+  melanger(pool); const vus = {}; const prendre = (c, k) => { c.sort((a, b) => (vus[a.chapitre] || 0) - (vus[b.chapitre] || 0)); const p = c.slice(0, k); p.forEach(r => vus[r.chapitre] = (vus[r.chapitre] || 0) + 1); return p };
+  const cibles = difficulte ? { [difficulte]: n } : rep(n); let choisis = [];
+  for (const [d, k] of Object.entries(cibles)) { const p = prendre(pool.filter(i => i.difficulte === d), k); choisis.push(...p); pool = pool.filter(i => !p.includes(i)); }
+  if (choisis.length < n) choisis.push(...prendre(pool, n - choisis.length));
+  return choisis;
+}
+function assemblerEpreuve(jour, disciplineSeule) {
+  const qs = BANQUE.quotas.filter(q => q.jour === jour && (!disciplineSeule || q.discipline === disciplineSeule)); let items = [], manques = [];
+  for (const q of qs) { const p = tirer({ discipline: q.discipline, sous_discipline: q.sous_discipline, n: q.nb_items }); if (p.length < q.nb_items) manques.push(`${q.discipline}${q.sous_discipline ? ' / ' + q.sous_discipline : ''} : ${q.nb_items - p.length} manquante(s)`); items.push(...p); }
+  return { items, manques };
+}
+$('#f-go').onclick = () => {
+  let s;
+  if (modeChoisi === 'epreuve') { const j = +$('#jour').value, e = BANQUE.epreuves.find(x => x.jour === j); s = { mode: 'epreuve', jour: j, titre: `Jour ${j} — ${e.code}`, duree_min: e.duree_h * 60, ...assemblerEpreuve(j) }; }
+  else if (modeChoisi === 'discipline') { const j = +$('#jour2').value, d = $('#disc').value; s = { mode: 'discipline', jour: j, discipline: d, titre: `Jour ${j} — ${d}`, duree_min: 0, ...assemblerEpreuve(j, d) }; }
+  else if (modeChoisi === 'chapitre') { const d = $('#disc3').value, c = $('#chap').value, n = +$('#n3').value; const items = tirer({ discipline: d, n, chapitre: c, difficulte: $('#diff3').value || null }); s = { mode: 'chapitre', discipline: d, chapitre: c, titre: c, duree_min: 0, items, manques: items.length < n ? [`${n - items.length} question(s) manquante(s)`] : [] }; }
+  else { if (!sitChoisie) return; s = { mode: 'situation', discipline: sitChoisie.discipline, chapitre: sitChoisie.chapitres, titre: sitChoisie.titre, duree_min: sitChoisie.duree_min || 25, items: sitChoisie.questions, manques: [], situation: sitChoisie }; }
+  if (!s.items.length) { toast('Aucune question validée pour cette sélection.'); return; }
+  $('#voile').classList.remove('on'); demarrer(s);
+};
+
+// ------------------------------------------------------------------ passation : une question par écran
+function montrer(id) { for (const x of ['accueil', 'passation', 'recap', 'resultat']) document.getElementById(x).hidden = x !== id; window.scrollTo(0, 0); }
+function demarrer(s) {
+  S = { ...s, reponses: {}, k: 0, debut: Date.now(), fin: s.duree_min ? Date.now() + s.duree_min * 60000 : null };
+  $('#p-titre').textContent = s.titre;
+  $('#p-alerte').innerHTML = s.manques.length ? `<div class="doc" style="margin-top:14px;border-color:var(--rouge)">Banque incomplète : ${s.manques.join(' ; ')}. L'épreuve est servie avec les questions disponibles.</div>` : '';
+  $('#p-situation').innerHTML = s.situation ? `<details class="situation" open><summary>Situation <small>replier / déplier</small></summary><p>${esc(s.situation.texte)}</p><div class="doc"><b>Documents.</b> ${esc(s.situation.document_texte || '')}</div></details>` : '';
+  clearInterval(timer);
+  if (S.fin) timer = setInterval(tic, 1000); else { $('#chrono').textContent = ''; }
+  tic(); rendreQuestion(); montrer('passation');
+}
+function tic() {
+  if (!S || !S.fin) return; const r = Math.max(0, S.fin - Date.now()); const t = `${Math.floor(r / 60000)} min ${String(Math.floor(r / 1000) % 60).padStart(2, '0')}`;
+  $('#chrono').textContent = t; $('#chrono2').textContent = t; $('#chrono').classList.toggle('alerte', r < 5 * 60000);
+  if (!r) { clearInterval(timer); toast('Temps écoulé : correction.'); terminer(); }
+}
+function rendreQuestion() {
+  const it = S.items[S.k], n = S.items.length, r = S.reponses[S.k];
+  $('#prog').style.width = ((S.k + 1) / n * 100) + '%';
+  $('#question').innerHTML = `
+    <div class="q-ent"><b>Question ${S.k + 1} <span style="font-weight:400;color:var(--encre-2)">/ ${n}</span></b><span>${esc(it.discipline)}${it.sous_discipline ? ' · ' + esc(it.sous_discipline) : ''} · ${it.difficulte}</span></div>
+    ${S.situation ? '' : `<div class="q-titre">${esc(it.titre)}</div>`}
+    <div class="q-tige">${esc(it.tige)}</div>
+    ${it.support_latex && !S.situation ? `<div class="doc">${esc(it.support_latex)}</div>` : ''}
+    <ul class="props">${[1, 2, 3, 4, 5].map(p => `<li><input type="radio" id="o${p}" name="rep" value="${p}" ${r === p ? 'checked' : ''}><label for="o${p}"><span class="num">${p}</span><span class="txt">${esc(it['p' + p])}</span></label></li>`).join('')}</ul>`;
+  $('#question').querySelectorAll('input[name=rep]').forEach(i => i.onchange = e => { S.reponses[S.k] = +e.target.value; });
+  $('#prec').disabled = S.k === 0; $('#suiv').textContent = S.k === n - 1 ? 'Terminer' : 'Suivante';
+  if (S.situation && S.k > 0) $('#p-situation details').open = false;
+  window.scrollTo(0, 0);
+}
+$('#prec').onclick = () => { if (S.k > 0) { S.k--; rendreQuestion(); } };
+$('#suiv').onclick = () => { if (S.k < S.items.length - 1) { S.k++; rendreQuestion(); } else recap(); };
+$('#quitter').onclick = () => { if (confirm('Quitter sans rendre ? Les réponses seront perdues.')) { clearInterval(timer); S = null; montrer('accueil'); } };
+function recap() {
+  const n = S.items.length, nb = Object.keys(S.reponses).length;
+  $('#recap-txt').textContent = nb === n ? `Tu as répondu aux ${n} questions. Touche un numéro pour y revenir, ou rends ta copie.` : `${n - nb} question(s) sans réponse. Touche un numéro pour y revenir, ou rends ta copie telle quelle.`;
+  $('#grille').innerHTML = S.items.map((_, k) => `<button class="${S.reponses[k] ? 'rep' : ''}" data-k="${k}" aria-label="Question ${k + 1}">${k + 1}</button>`).join('');
+  $('#grille').querySelectorAll('button').forEach(b => b.onclick = () => { S.k = +b.dataset.k; rendreQuestion(); montrer('passation'); });
+  montrer('recap');
+}
+$('#revenir').onclick = () => { montrer('passation'); };
+$('#rendre').onclick = terminer;
+
+// ------------------------------------------------------------------ résultat et revue
+function terminer() {
+  clearInterval(timer); const s = S; let score = 0; const details = [];
+  s.items.forEach((it, k) => { const r = s.reponses[k] ?? null; const ok = r === it.reponse; if (ok) score++; details.push({ item_id: it.id, reponse_donnee: r, juste: ok }); });
+  const res = { eleve: ELEVE, mode: s.mode, option_code: $('#opt').value || '1.02', jour: s.jour ?? null, discipline: s.discipline ?? null, chapitre: s.chapitre ?? null, nb_items: s.items.length, score, details, date_passation: new Date().toISOString(), titre: s.titre, duree_s: Math.round((Date.now() - s.debut) / 1000) };
+  const hist = DB.get('historique', []); hist.unshift(res); DB.set('historique', hist.slice(0, 50));
+  const att = DB.get('a_synchroniser', []); att.push(res); DB.set('a_synchroniser', att);
+  const pct = Math.round(100 * score / s.items.length);
+  $('#r-note').innerHTML = `${score}<small> / ${s.items.length}</small>`;
+  $('#r-mention').textContent = `${s.titre} · ${pct} % · ${Math.max(1, Math.round(res.duree_s / 60))} min`;
+  const rub = $('#r-ruban'); rub.className = 'ruban' + (pct >= 50 ? ' vert' : ''); rub.textContent = pct >= 80 ? 'Très bien' : pct >= 60 ? 'Bien' : pct >= 50 ? 'Réussi' : 'À retravailler';
+  $('#revue').innerHTML = s.items.map((it, k) => { const r = s.reponses[k]; const v = r === it.reponse ? ['ok', 'Juste'] : r ? ['ko', 'Faux'] : ['na', 'Sans réponse']; return `<div class="revue">
+    <div class="q-ent"><b>Question ${k + 1}</b><span class="verdict ${v[0]}">${v[1]}</span></div>
+    <div class="q-titre">${esc(it.titre)}</div><div class="q-tige" style="font-size:15.5px">${esc(it.tige)}</div>
+    <ul class="props">${[1, 2, 3, 4, 5].map(p => `<li><label class="${p === it.reponse ? 'juste' : p === r ? 'faux' : ''}"><span class="num">${p}</span><span class="txt">${esc(it['p' + p])}</span></label></li>`).join('')}</ul>
+    <div class="corr"><b>Réponse ${it.reponse}.</b> ${esc(it.correction_detaillee)}${it.erreurs_distracteurs ? `<span class="err">Erreurs fréquentes — ${esc(it.erreurs_distracteurs)}</span>` : ''}</div></div>`; }).join('')
+    + (s.situation && s.situation.synthese ? `<div class="synthese"><b>Synthèse</b>${esc(s.situation.synthese)}</div>` : '');
+  afficherHistorique(); majSyncInfo(); synchroniser(true); montrer('resultat');
+}
+$('#retour').onclick = () => { S = null; montrer('accueil'); };
+$('#refaire').onclick = () => { const s = S; demarrer({ ...s, reponses: {} }); };
+function afficherHistorique() { const h = DB.get('historique', []); $('#historique').innerHTML = h.length ? h.slice(0, 6).map(r => `<li><span>${new Date(r.date_passation).toLocaleDateString('fr', { day: 'numeric', month: 'short' })} · ${esc(r.titre)}</span><b>${r.score}/${r.nb_items}</b></li>`).join('') : '<li class="vide">Aucun résultat pour l\'instant. Ton premier essai apparaîtra ici.</li>'; }
+function majSyncInfo() { const n = DB.get('a_synchroniser', []).length; $('#sync-info').textContent = n ? `${n} résultat(s) en attente d'envoi` : 'Tout est envoyé'; }
+async function synchroniser(silencieux) {
+  const att = DB.get('a_synchroniser', []); if (!att.length) { if (!silencieux) toast('Rien à envoyer.'); return; }
+  try { const r = await fetch('/api/resultats', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(att.map(({ titre, duree_s, ...x }) => x)) }); if (!r.ok) throw 0; DB.set('a_synchroniser', []); majSyncInfo(); if (!silencieux) toast(att.length + ' résultat(s) envoyé(s).'); }
+  catch { majSyncInfo(); if (!silencieux) toast('Pas de réseau : envoi reporté.'); }
+}
+$('#sync').onclick = () => synchroniser(false);
+majEtat(); chargerBanque(false);
+</script>
+</body>
+</html>

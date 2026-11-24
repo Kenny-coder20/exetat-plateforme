@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plateforme EXETAT</title>
+<link rel="icon" href="/eleve/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --encre:#1B2A4A; --bleu:#24365E; --bleu-clair:#E9EEF7; --jaune:#B8922E; --jaune-fonce:#8F6F1E;
+    --papier:#F7F4EC; --papier-2:#EFEADD; --texte:#1E2433; --texte-2:#5E6677; --vert:#2E7D5B; --vert-clair:#E4F1EA;
+    --rouge:#B23A3A; --trait:#DDD6C6;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--papier)}
+  body{margin:0;font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--texte);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .page{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ------------------------------------------------ en-tête */
+  .haut{display:flex;align-items:center;justify-content:space-between;padding:22px 0 8px}
+  .marque{display:flex;align-items:center;gap:12px;font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:19px;color:var(--encre);text-decoration:none}
+  .marque i{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--encre);display:grid;place-items:center;color:var(--jaune);font-style:normal;font-size:13px;font-weight:600}
+  .haut nav a{text-decoration:none;color:var(--texte-2);font-size:14px;margin-left:18px}
+  .haut nav a:hover{color:var(--encre)}
+
+  /* ------------------------------------------------ héros */
+  .heros{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:48px 0 32px}
+  .heros h1{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(36px,5.4vw,60px);line-height:1.05;letter-spacing:-.015em;font-weight:600;margin:0 0 18px;color:var(--encre)}
+  .heros p{font-size:17px;color:var(--texte-2);margin:0 0 28px;max-width:46ch}
+  .entrees{display:grid;gap:14px}
+  .entree{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center;padding:20px 22px;border-radius:16px;text-decoration:none;transition:transform .15s ease}
+  .entree:hover{transform:translateY(-2px)}
+  .entree:focus-visible{outline:3px solid var(--jaune);outline-offset:3px}
+  .entree strong{font-size:20px;letter-spacing:-.02em;display:block;font-family:"Source Serif 4",Georgia,serif;font-weight:600}
+  .entree span{font-size:14px;opacity:.85}
+  .entree b{font-family:"Source Serif 4",Georgia,serif;font-size:32px;font-weight:600;line-height:1}
+  .entree small{display:block;font-size:12px;font-weight:400;opacity:.8}
+  .entree.eleve{background:var(--encre);color:#fff}
+  .entree.eleve b{color:#E2C063}
+  .entree.atelier{background:#fff;color:var(--encre);border:1.5px solid var(--trait)}
+  .entree.atelier b{color:var(--bleu)}
+
+  /* la fiche E.32 à droite */
+  .fiche{background:#fff;border:1.5px solid var(--trait);border-radius:20px;padding:22px;box-shadow:0 24px 60px -36px rgba(15,42,90,.35)}
+  .fiche header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+  .fiche header h2{font-size:15px;margin:0;color:var(--encre);font-family:"Source Serif 4",Georgia,serif;font-weight:600}
+  .fiche header span{font-size:12.5px;color:var(--texte-2)}
+  .jours{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .jour{border-radius:12px;padding:12px 10px 10px;min-height:150px;display:flex;flex-direction:column;background:var(--papier-2);color:var(--texte-2)}
+  .jour.actif{background:var(--bleu-clair);color:var(--encre)}
+  .jour .num{font-size:11px;font-weight:600;opacity:.75}
+  .jour .code{font-family:"Source Serif 4",Georgia,serif;font-size:22px;font-weight:600;line-height:1.1;margin:2px 0 8px}
+  .jour ul{list-style:none;margin:0;padding:0;font-size:11.5px;line-height:1.35}
+  .jour li{display:flex;justify-content:space-between;gap:6px}
+  .jour li b{font-weight:600}
+  .jour .pied{margin-top:auto;font-size:11px;padding-top:8px;line-height:1.3}
+  .jour.actif .pied{color:var(--bleu);font-weight:600}
+  .fiche footer{display:flex;gap:16px;margin-top:14px;font-size:12px;color:var(--texte-2)}
+  .fiche footer i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;font-style:normal}
+
+  /* ------------------------------------------------ bande des trois principes */
+  .principes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1.5px solid var(--trait);border-bottom:1.5px solid var(--trait);margin:40px 0}
+  .principe{padding:26px 24px 26px 0}
+  .principe+.principe{padding-left:24px;border-left:1.5px solid var(--trait)}
+  .principe h3{margin:0 0 6px;font-size:16px;letter-spacing:-.01em;color:var(--encre);font-family:"Source Serif 4",Georgia,serif;font-weight:600}
+  .principe p{margin:0;font-size:14px;color:var(--texte-2)}
+  .principe .pastille{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;margin-bottom:14px}
+  .pastille.j{background:var(--jaune)} .pastille.v{background:var(--vert-clair);color:var(--vert)} .pastille.b{background:var(--bleu-clair);color:var(--bleu)}
+
+  /* ------------------------------------------------ état de la banque */
+  .banque{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:8px 0 56px;align-items:start}
+  .banque h2{font-size:22px;letter-spacing:-.02em;margin:0 0 6px;color:var(--encre);font-family:"Source Serif 4",Georgia,serif;font-weight:600}
+  .banque p{margin:0 0 16px;color:var(--texte-2);font-size:14.5px;max-width:44ch}
+  .barres{display:grid;gap:10px}
+  .barre{display:grid;grid-template-columns:150px 1fr 56px;gap:10px;align-items:center;font-size:13.5px}
+  .barre .nom{color:var(--texte)}
+  .barre .fond{height:12px;border-radius:6px;background:var(--papier-2);overflow:hidden;position:relative}
+  .barre .fond i{position:absolute;inset:0 auto 0 0;background:var(--vert);border-radius:6px}
+  .barre .fond em{position:absolute;inset:0 auto 0 0;background:var(--jaune);border-radius:6px;opacity:.9}
+  .barre .n{text-align:right;font-weight:600;color:var(--encre);white-space:nowrap}.barre .n small{font-weight:400;color:var(--texte-2);font-size:11px}
+  .legende{font-size:12px;color:var(--texte-2);margin-top:12px}
+  .legende i{display:inline-block;width:10px;height:10px;border-radius:3px;margin:0 5px 0 12px;vertical-align:-1px}
+  .vide{padding:18px;border:1.5px dashed var(--trait);border-radius:12px;color:var(--texte-2);font-size:14px}
+
+  footer.bas{border-top:1.5px solid var(--trait);padding:20px 0 36px;font-size:12.5px;color:var(--texte-2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  footer.bas a{color:var(--texte-2)}
+
+  @media (max-width:860px){
+    .heros{grid-template-columns:1fr;gap:28px;padding-top:28px}
+    .principes{grid-template-columns:1fr}
+    .principe,.principe+.principe{padding:20px 0;border-left:0;border-top:1.5px solid var(--trait)}
+    .principe:first-child{border-top:0}
+    .banque{grid-template-columns:1fr}
+    .barre{grid-template-columns:120px 1fr 40px}
+  }
+  @media (max-width:520px){
+    .jours{grid-template-columns:repeat(2,1fr)}
+    .haut nav a{margin-left:12px}
+  }
+  @media (prefers-reduced-motion:reduce){.entree{transition:none}.entree:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="haut">
+    <a class="marque" href="/"><i>EX</i>Examen d'État — Préparation</a>
+    <nav><a href="/eleve/">S'entraîner</a><a href="/validateur/">Atelier</a><a href="/docs">API</a></nav>
+  </header>
+
+  <section class="heros">
+    <div>
+      <h1>Préparer l'Examen d'État, jour après jour.</h1>
+      <p>Des questions au format exact de l'épreuve, dans des situations de chez nous, avec une correction qui explique chaque étape. Section Sciences, 4<sup>e</sup> des humanités.</p>
+      <div class="entrees">
+        <a class="entree eleve" href="/eleve/">
+          <div><strong>Espace élève</strong><span>Épreuve du jour, une matière, un chapitre ou un exercice de synthèse — fonctionne sans connexion.</span></div>
+          <div><b id="n-valides">…</b><small>questions prêtes</small></div>
+        </a>
+        <a class="entree atelier" href="/validateur/">
+          <div><strong>Atelier des enseignants</strong><span>Générer, relire et valider les questions selon la charte.</span></div>
+          <div><b id="n-attente">…</b><small>à relire</small></div>
+        </a>
+      </div>
+    </div>
+
+    <aside class="fiche" aria-label="Programme E.32, option Sciences">
+      <header><h2>Programme E.32 — option 1.02 Sciences</h2><span id="session">session 2026</span></header>
+      <div class="jours" id="jours"></div>
+      <footer><span><i style="background:var(--bleu-clair)"></i>Disponible dans la plateforme</span><span><i style="background:var(--papier-2)"></i>Bientôt</span></footer>
+    </aside>
+  </section>
+
+  <section class="principes">
+    <div class="principe"><div class="pastille j" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2A5A" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 10v10"/></svg></div>
+      <h3>Comme le vrai examen</h3><p>Même nombre de questions par matière, même ordre, même durée : les quotas viennent du programme officiel E.32.</p></div>
+    <div class="principe"><div class="pastille v" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h3>Relu par des enseignants</h3><p>Chaque question est rédigée avec l'aide de l'IA puis vérifiée, corrigée et validée par un enseignant avant d'arriver jusqu'à toi.</p></div>
+    <div class="principe"><div class="pastille b" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg></div>
+      <h3>Sans connexion</h3><p>Installe l'application sur ton téléphone : les questions restent disponibles même sans réseau, et ta progression est gardée.</p></div>
+  </section>
+
+  <section class="banque">
+    <div>
+      <h2>Où en est la banque de questions</h2>
+      <p>Les questions validées sont servies aux élèves ; celles en relecture attendent un enseignant dans l'atelier.</p>
+      <div class="legende"><i style="background:var(--vert)"></i>validées<i style="background:var(--jaune)"></i>en relecture</div>
+    </div>
+    <div class="barres" id="barres"><div class="vide">Chargement…</div></div>
+  </section>
+
+  <footer class="bas">
+    <span>Plateforme d'entraînement — Charte de rédaction des items IA, Cahier des charges, programme E.32.</span>
+    <span><a href="/docs">API</a></span>
+  </footer>
+</div>
+
+<script>
+(async () => {
+  const [cfg, st] = await Promise.all([fetch('/api/config').then(r => r.json()), fetch('/api/stats').then(r => r.json())]);
+  const tot = Object.fromEntries(st.par_statut.map(r => [r.statut, r.n]));
+  document.getElementById('n-valides').textContent = tot.valide || 0;
+  document.getElementById('n-attente').textContent = tot.en_attente || 0;
+  if (cfg.options[0]) document.getElementById('session').textContent = 'session ' + cfg.options[0].session;
+
+  // Fiche E.32
+  const jours = cfg.epreuves.filter(e => e.option_code === '1.02').sort((a, b) => a.jour - b.jour);
+  document.getElementById('jours').innerHTML = jours.map(e => {
+    const qs = cfg.quotas.filter(q => q.epreuve_id === e.id);
+    const lignes = {};
+    for (const q of qs) lignes[q.discipline] = (lignes[q.discipline] || 0) + q.nb_items;
+    return `<div class="jour ${e.actif ? 'actif' : ''}">
+      <div class="num">Jour ${e.jour}</div><div class="code">${e.code}</div>
+      <ul>${Object.entries(lignes).map(([d, n]) => `<li><span>${d}</span><b>${n}</b></li>`).join('')}</ul>
+      <div class="pied">${e.nb_items} questions<br>${e.duree_h} h</div></div>`;
+  }).join('');
+
+  // Barres par discipline
+  const actifs = new Set(jours.filter(e => e.actif).map(e => e.jour));
+  const discs = [...new Set(cfg.quotas.filter(q => actifs.has(q.jour)).map(q => q.discipline))];
+  const cible = Object.fromEntries(discs.map(d => [d, cfg.quotas.filter(q => q.discipline === d && actifs.has(q.jour)).reduce((s, q) => s + q.nb_items, 0) * 4])); // 4 séries
+  const agg = {};
+  for (const r of st.par_discipline) { agg[r.discipline] = agg[r.discipline] || { valide: 0, en_attente: 0 }; if (r.statut in agg[r.discipline]) agg[r.discipline][r.statut] += r.n; }
+  document.getElementById('barres').innerHTML = discs.map(d => {
+    const v = agg[d]?.valide || 0, a = agg[d]?.en_attente || 0, c = cible[d] || 1;
+    const pc = x => Math.min(100, x / c * 100);
+    return `<div class="barre"><span class="nom">${d}</span><span class="fond"><em style="width:${pc(v + a)}%"></em><i style="width:${pc(v)}%"></i></span><span class="n">${v}<small>/${c}</small></span></div>`;
+  }).join('') + `<div class="legende">La barre pleine = de quoi composer quatre séries complètes de la matière.</div>`;
+})().catch(() => { document.getElementById('barres').innerHTML = '<div class="vide">Impossible de lire l\'état de la banque. Le serveur est-il démarré ?</div>'; });
+</script>
+</body>
+</html>
