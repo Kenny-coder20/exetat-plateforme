@@ -60,6 +60,26 @@
 | Phrase 2 : phénomène observé, grandeur utile, contrainte ou but recherché. |
 | Phrase 3 : question directe conduisant à une réponse unique.               |
 
+## 3.2. Variété des entrées en matière (règle anti-moule)
+
+Le gabarit 3.1 décrit l’ordre logique des informations, pas une formule à répéter. Appliqué mécaniquement, il produit le moule « Dans une classe de [ville], un élève… » à chaque item. Il est donc complété par les règles suivantes, appliquées série par série :
+
+> • **Le cadre scolaire n’est pas le cadre par défaut.** Les mots élève, professeur, école, classe, devoir n’apparaissent que dans un item au plus par série, jamais dans deux items consécutifs.
+>
+> • **Un lieu nommé dans un item sur trois au plus.** Les autres items restent sans géographie (« une boutique », « un dispensaire », « au bord d’une rivière ») ou se passent dans un univers qui se suffit à lui-même. Les lieux nommés tournent : villes moyennes, territoires, cours d’eau, régions naturelles, pas seulement les grandes villes.
+>
+> • **Au moins un item sur trois sans personnage.** La première phrase part alors d’un objet, d’un document (étiquette, facture, notice, affiche, bulletin, panneau), d’une mesure, d’un tableau de chiffres ou d’un constat.
+>
+> • **Quatorze formes d’entrée possibles**, à faire tourner sans répétition dans une série : document à lire ; donnée brute ; objet observé de près ; phénomène constaté ; court dialogue ; décision d’un professionnel ; protocole suivi par une équipe ; événement collectif (marché, récolte, panne, match, cérémonie, inondation) ; question d’un enfant ou d’un grand-parent ; comparaison de deux options ; erreur à repérer dans un document déjà rédigé ; règle ou texte officiel appliqué à un cas ; fait historique attesté ; scène de travail observée.
+>
+> • **Des personnages au rôle précis et varié** quand il y en a : sage-femme, mécanicien, vendeuse de poisson, agent de la SNEL, arbitre, pêcheur, pharmacienne, chauffeur de bus, animatrice radio, géomètre, chef de chantier, menuisier, apiculteur, brasseur, notaire… Jamais le même rôle deux fois dans la série.
+>
+> • **Varier l’angle de la question** : prévoir, vérifier, choisir, expliquer un constat, corriger une erreur, comparer, estimer un ordre de grandeur, décider.
+>
+> • **Le contexte reste utile et sobre.** La variété ne dispense pas de la règle fondamentale : au moins une donnée du contexte sert à la résolution, rien n’est décoratif.
+
+Mise en œuvre dans l’atelier : la commande envoyée au modèle attribue à chaque item un contexte imposé (forme d’entrée, univers, lieu ou non, personnage ou non), tiré sans répétition. Le relecteur peut rejeter un item pour « contexte plaqué ou répétitif ».
+
 # 4. Exigences de longueur et de lisibilité
 
 > • 35 à 75 mots pour la tige de la plupart des items.
