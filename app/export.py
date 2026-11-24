@@ -29,7 +29,8 @@ def exporter_json(serie: dict, nom: str) -> Path:
 
 
 def latex_serie(serie: dict, *, titre_epreuve: str, option: str = "1.02 Sciences", session: int = 2026,
-                code_epreuve: str = "", serie_lettre: str = "A", duree: str = "", competences: list[str] | None = None) -> str:
+                code_epreuve: str = "", serie_lettre: str = "A", duree: str = "", competences: list[str] | None = None,
+                dossier: Path | None = None) -> str:
     items = serie["items"]
     n = len(items)
     comp = competences or ["Calculer, modéliser et raisonner à partir d'une situation",
@@ -42,6 +43,7 @@ def latex_serie(serie: dict, *, titre_epreuve: str, option: str = "1.02 Sciences
 \usepackage[margin=2.2cm]{{geometry}}
 \usepackage{{amsmath,amssymb}}
 \usepackage{{tikz,pgfplots}}
+\usepackage{{graphicx}}
 \pgfplotsset{{compat=1.18}}
 \usepackage{{tcolorbox}}
 \usepackage{{enumitem}}
@@ -81,7 +83,9 @@ Chaque question comporte cinq propositions numérotées de 1 à 5. Une seule est
             corps.append(rf"\subsection*{{{tex(d)}}}")
             disc_courante = d
         corps.append(rf"\textbf{{Q{it['numero']}.}} \textit{{({tex(it['titre'])})}}\\" + "\n" + tex(it["tige"]) + "\n")
-        if it.get("support_latex"):
+        if it.get("figure_svg"):
+            corps.append(figure_latex(it, dossier))
+        elif it.get("support_latex"):
             corps.append("\n\\begin{center}\n" + it["support_latex"] + "\n\\end{center}\n")
         props = " \\quad ".join(f"\\textbf{{{k}.}} {tex(it[f'p{k}'])}" for k in range(1, 6))
         corps.append("\n" + props + "\n\\vspace{6pt}\n")
@@ -102,8 +106,24 @@ Chaque question comporte cinq propositions numérotées de 1 à 5. Une seule est
 def exporter_latex(serie: dict, nom: str, **kw) -> Path:
     EXPORTS.mkdir(exist_ok=True)
     p = EXPORTS / f"{nom}.tex"
-    p.write_text(latex_serie(serie, **kw), encoding="utf-8")
+    p.write_text(latex_serie(serie, dossier=EXPORTS, **kw), encoding="utf-8")
     return p
+
+
+def figure_latex(it: dict, dossier: Path | None) -> str:
+    """Inclut la figure SVG d'un item : convertie en PDF (cairosvg) si possible, sinon légende seule."""
+    legende = tex(it.get("figure_legende") or "Figure")
+    if dossier is not None:
+        try:
+            import cairosvg  # optionnel
+
+            chemin = dossier / f"fig_{nom_fichier(it['id'])}.pdf"
+            cairosvg.svg2pdf(bytestring=it["figure_svg"].encode(), write_to=str(chemin))
+            return (f"\n\\begin{{center}}\\includegraphics[width=0.6\\linewidth]{{{chemin.name}}}\\\\"
+                    f"\\small\\textit{{{legende}}}\\end{{center}}\n")
+        except Exception:  # noqa: BLE001 — bibliothèque absente ou SVG non convertible
+            pass
+    return f"\n\\begin{{center}}\\fbox{{\\parbox{{0.8\\linewidth}}{{\\centering\\textit{{Figure : {legende}}}}}}}\\end{{center}}\n"
 
 
 def compiler_pdf(tex_path: Path) -> Path | None:

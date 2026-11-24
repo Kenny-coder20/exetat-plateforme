@@ -209,17 +209,18 @@ def inserer_items(con, items: list[dict], *, option_code=None, jour=None, epreuv
         obs = it.get("observations") or ""
         if anomalies:
             obs = ("ANOMALIES AUTO : " + " ; ".join(anomalies) + ". " + obs).strip()
-        iid = f"GEN-{uuid.uuid4().hex[:10]}"
+        iid = it.get("id") or f"GEN-{uuid.uuid4().hex[:10]}"
         p = it["propositions"] + [""] * (5 - len(it["propositions"]))
+        support = it.get("support") or ("figure" if it.get("figure_svg") else "aucun")
         con.execute(
             """INSERT INTO items(id, option_code, jour, epreuve_code, serie, numero, discipline, sous_discipline,
-               chapitre, savoir_essentiel, competence, difficulte, famille_contexte, support, support_latex, titre, tige,
-               p1,p2,p3,p4,p5, reponse, correction_detaillee, erreurs_distracteurs, nb_mots_tige, modele, observations)
-               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-            (iid, option_code, jour, epreuve_code, serie, numero_depart + k, it["discipline"],
+               chapitre, savoir_essentiel, competence, difficulte, famille_contexte, support, support_latex, figure_svg, figure_legende,
+               titre, tige, p1,p2,p3,p4,p5, reponse, correction_detaillee, erreurs_distracteurs, nb_mots_tige, modele, observations)
+               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (iid, option_code, jour, it.get("epreuve_code") or epreuve_code, serie, numero_depart + k, it["discipline"],
              it.get("sous_discipline") or None, it.get("chapitre"), it["savoir_essentiel"], it.get("competence"),
-             it.get("difficulte", "moyen"), it.get("famille_contexte"), it.get("support") or "aucun",
-             it.get("support_latex"), it["titre"], it["tige"], p[0], p[1], p[2], p[3], p[4],
+             it.get("difficulte", "moyen"), it.get("famille_contexte"), support,
+             it.get("support_latex"), it.get("figure_svg"), it.get("figure_legende"), it["titre"], it["tige"], p[0], p[1], p[2], p[3], p[4],
              int(it.get("reponse") or 1), it["correction_detaillee"], it.get("erreurs_distracteurs"),
              it.get("nb_mots_tige"), modele, obs or None),
         )

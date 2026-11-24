@@ -83,6 +83,8 @@ CREATE TABLE IF NOT EXISTS items (
   famille_contexte TEXT,
   support TEXT DEFAULT 'aucun',   -- aucun | tableau | figure
   support_latex TEXT,             -- tabular / TikZ si support
+  figure_svg TEXT,                -- figure vectorielle (SVG) affichée à l'écran
+  figure_legende TEXT,            -- légende courte de la figure
   titre TEXT NOT NULL,
   tige TEXT NOT NULL,
   p1 TEXT NOT NULL, p2 TEXT NOT NULL, p3 TEXT NOT NULL, p4 TEXT NOT NULL, p5 TEXT NOT NULL,

@@ -27,7 +27,7 @@ app = FastAPI(title="Plateforme items EXETAT", version="0.2")
 # Chaque enseignant se connecte avec ses identifiants (cookie de session signé). Les écritures et les pages de
 # l'atelier exigent une session ; l'espace élève et l'API de lecture restent libres.
 PREFIXES_PROTEGES = ("/validateur", "/api/generer", "/api/importer", "/api/situations/generer", "/api/export/", "/api/taches",
-                     "/api/comptes", "/api/qualite", "/api/relectures", "/api/moi/relectures", "/docs", "/openapi.json")
+                     "/api/comptes", "/api/qualite", "/api/relectures", "/api/moi/relectures", "/api/lots", "/docs", "/openapi.json")
 PAGES_LIBRES = ("/validateur/connexion.html",)
 from starlette.responses import RedirectResponse as _Redir, Response
 
@@ -523,16 +523,70 @@ class Import(BaseModel):
     items: list[dict]
     discipline: Optional[str] = None
     epreuve_code: Optional[str] = None
+    source: Optional[str] = None
 
 
 @app.post("/api/importer")
-def importer(imp: Import):
-    """Importer un JSON produit avec un assistant IA (mode sans API)."""
+def importer(imp: Import, request: Request):
+    """Importer un lot JSON préparé hors plateforme (items avec ou sans figure SVG). Réservé aux administrateurs.
+    Un item dont l'identifiant existe déjà est ignoré (ré-import sans doublon)."""
+    u = getattr(request.state, "utilisateur", None)
+    if not u or u["role"] != "admin":
+        raise HTTPException(403, "Réservé aux administrateurs.")
     with connect() as con:
+        nouveaux = []
         for it in imp.items:
             it.setdefault("discipline", imp.discipline or "")
-        ids = generation.inserer_items(con, imp.items, modele="import manuel", epreuve_code=imp.epreuve_code)
-    return {"nb": len(ids)}
+            if it.get("id") and one(con, "SELECT 1 FROM items WHERE id=?", (it["id"],)):
+                continue
+            if it.get("figure_svg"):
+                svg = str(it["figure_svg"]).strip()
+                import re as _re
+                if not svg.startswith("<svg") or _re.search(r"<script|<foreignObject|javascript:|\son\w+\s*=", svg, _re.I) or len(svg) > 200_000:
+                    raise HTTPException(400, f"Figure invalide pour « {it.get('titre')} »")
+                it["figure_svg"] = svg
+            nouveaux.append(it)
+        ids = generation.inserer_items(con, nouveaux, modele=imp.source or "lot préparé", epreuve_code=imp.epreuve_code)
+    return {"nb": len(ids), "ignores": len(imp.items) - len(nouveaux)}
+
+
+LOTS = Path(__file__).resolve().parent.parent / "lots"
+
+
+@app.get("/api/lots")
+def api_lots(request: Request):
+    """Lots préparés livrés avec la plateforme (dossier lots/), avec leur état d'import."""
+    u = getattr(request.state, "utilisateur", None) or utilisateur_courant(request)
+    if not u or u["role"] != "admin":
+        raise HTTPException(403, "Réservé aux administrateurs.")
+    out = []
+    with connect() as con:
+        for f in sorted(LOTS.glob("*.json")):
+            try:
+                j = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:  # noqa: BLE001
+                continue
+            items = j.get("items") or []
+            ids = [i.get("id") for i in items if i.get("id")]
+            presents = 0
+            for i in ids:
+                if one(con, "SELECT 1 FROM items WHERE id=?", (i,)):
+                    presents += 1
+            disc = {}
+            for i in items:
+                disc[i.get("discipline")] = disc.get(i.get("discipline"), 0) + 1
+            out.append({"fichier": f.name, "source": j.get("source") or f.stem, "nb": len(items), "importes": presents,
+                        "figures": sum(1 for i in items if i.get("figure_svg")), "disciplines": disc})
+    return out
+
+
+@app.post("/api/lots/{nom}/importer")
+def api_lot_importer(nom: str, request: Request):
+    f = LOTS / nom
+    if not f.is_file() or f.suffix != ".json" or "/" in nom or ".." in nom:
+        raise HTTPException(404)
+    j = json.loads(f.read_text(encoding="utf-8"))
+    return importer(Import(items=j.get("items") or [], source=j.get("source") or f.stem), request)
 
 
 # ------------------------------------------------------------------ assemblage (élève)

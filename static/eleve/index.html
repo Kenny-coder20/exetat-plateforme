@@ -105,6 +105,7 @@
   .q-ent b{font-family:var(--serif);font-size:15px;color:var(--nuit)}
   .q-titre{font-family:var(--serif);font-style:italic;color:var(--encre-2);font-size:15px;margin-bottom:8px}
   .q-tige{font-size:17px;line-height:1.6;color:var(--encre)}
+  .figure{margin:14px auto 4px;max-width:520px;text-align:center} .figure svg{max-width:100%;height:auto;display:block;margin:0 auto;background:#fff;border:1px solid var(--filet);border-radius:12px;padding:8px} .figure figcaption{font-size:13px;color:var(--encre-2);margin-top:6px;font-style:italic}
   .doc{margin:14px 0 0;padding:12px 14px;background:var(--blanc);border-left:3px solid var(--or);font-size:14px;color:var(--encre-2)}
   .props{list-style:none;margin:20px 0 0;padding:0}
   .props li{margin:8px 0}
@@ -318,7 +319,7 @@ const h = new Date().getHours();
 $('#salutation').textContent = (h < 12 ? 'Bonjour. ' : h < 18 ? 'Bon après-midi. ' : 'Bonsoir. ') + 'Que révisons-nous aujourd\'hui ?';
 
 // ------------------------------------------------------------------ banque locale
-const FORMAT_BANQUE = 3; // changer ce numéro force le rechargement de la banque sur tous les appareils
+const FORMAT_BANQUE = 4; // changer ce numéro force le rechargement de la banque sur tous les appareils
 async function chargerBanque(force) {
   if (BANQUE && BANQUE.format !== FORMAT_BANQUE) force = true;
   if (BANQUE && !force) { afficherBanque(); return; }
@@ -433,7 +434,7 @@ function rendreQuestion() {
     <div class="q-ent"><b>Question ${S.k + 1} <span style="font-weight:400;color:var(--encre-2)">/ ${n}</span></b><span>${esc(it.discipline)}${it.sous_discipline ? ' · ' + esc(it.sous_discipline) : ''} · ${it.difficulte}</span></div>
     ${S.situation ? '' : `<div class="q-titre">${esc(it.titre)}</div>`}
     <div class="q-tige">${esc(it.tige)}</div>
-    ${it.support_latex && !S.situation ? `<div class="doc">${esc(it.support_latex)}</div>` : ''}
+    ${it.figure_svg ? `<figure class="figure">${it.figure_svg}${it.figure_legende ? `<figcaption>${esc(it.figure_legende)}</figcaption>` : ''}</figure>` : ''}
     <ul class="props">${[1, 2, 3, 4, 5].map(p => `<li><input type="radio" id="o${p}" name="rep" value="${p}" ${r === p ? 'checked' : ''}><label for="o${p}"><span class="num">${p}</span><span class="txt">${esc(it['p' + p])}</span></label></li>`).join('')}</ul>`;
   $('#question').querySelectorAll('input[name=rep]').forEach(i => i.onchange = e => { S.reponses[S.k] = +e.target.value; });
   $('#prec').disabled = S.k === 0; $('#suiv').textContent = S.k === n - 1 ? 'Terminer' : 'Suivante';
@@ -471,6 +472,7 @@ function terminer() {
   $('#revue').innerHTML = s.items.map((it, k) => { const r = s.reponses[k]; const v = r === it.reponse ? ['ok', 'Juste'] : r ? ['ko', 'Faux'] : ['na', 'Sans réponse']; return `<div class="revue">
     <div class="q-ent"><b>Question ${k + 1}</b><span class="verdict ${v[0]}">${v[1]}</span></div>
     <div class="q-titre">${esc(it.titre)}</div><div class="q-tige" style="font-size:15.5px">${esc(it.tige)}</div>
+    ${it.figure_svg ? `<figure class="figure">${it.figure_svg}${it.figure_legende ? `<figcaption>${esc(it.figure_legende)}</figcaption>` : ''}</figure>` : ''}
     <ul class="props">${[1, 2, 3, 4, 5].map(p => `<li><label class="${p === it.reponse ? 'juste' : p === r ? 'faux' : ''}"><span class="num">${p}</span><span class="txt">${esc(it['p' + p])}</span></label></li>`).join('')}</ul>
     <div class="corr"><b>Réponse ${it.reponse}.</b> ${esc(it.correction_detaillee)}${it.erreurs_distracteurs ? `<span class="err">Erreurs fréquentes — ${esc(it.erreurs_distracteurs)}</span>` : ''}</div></div>`; }).join('')
     + (s.situation && s.situation.synthese ? `<div class="synthese"><b>Synthèse</b>${esc(s.situation.synthese)}</div>` : '');

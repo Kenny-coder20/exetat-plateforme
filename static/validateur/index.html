@@ -97,6 +97,7 @@
   .ligne-q{display:grid;grid-template-columns:1fr 150px 90px;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--filet);font-size:13.5px}
   .ligne-q .barre{height:10px} .barre u{position:absolute;inset:0 auto 0 0;background:var(--rouge);border-radius:4px}
   .diff{font-size:12.5px} .diff del{color:var(--rouge);background:var(--rouge-pale);text-decoration:line-through} .diff ins{color:var(--vert);background:var(--vert-pale);text-decoration:none}
+  .figure{margin:14px auto;max-width:560px;text-align:center} .figure svg{max-width:100%;height:auto;display:block;margin:0 auto;background:#fff;border:1px solid var(--filet);border-radius:10px;padding:8px} .figure figcaption{font-size:13px;color:var(--encre-2);margin-top:6px;font-style:italic}
   .kpis-s{grid-template-columns:repeat(3,1fr);gap:6px} .kpis-s .kpi{padding:8px 10px} .kpis-s .kpi b{font-size:20px}
   .props.choix li{cursor:pointer} .props.choix li:hover{border-color:var(--nuit)} .props.choix li.choisie{border-color:var(--nuit);background:var(--ivoire)} .props.choix li.choisie .num{background:var(--nuit);color:#fff;border-color:var(--nuit)}
   .props li.mienne-ko{border-color:var(--rouge);background:var(--rouge-pale)} .props li.mienne-ko .num{background:var(--rouge);color:#fff;border-color:var(--rouge)}
@@ -168,6 +169,12 @@
           <div class="actions"><button class="btn sec" id="g-prompt">Copier la consigne</button></div>
           <textarea id="imp-json" placeholder="Collez ici le résultat (format {&quot;items&quot;:[...]})"></textarea>
           <div class="actions"><button class="btn sec" id="imp-go">Importer</button></div></details>
+        <details style="margin-top:10px" id="lot-bloc" hidden><summary>Importer un lot préparé (questions avec figures)</summary>
+          <p class="muted">Fichier .json fourni par la coordination. Chaque question porte sa matière, son épreuve et sa figure ; elles arrivent « en attente » et passent par la relecture habituelle. Un lot déjà importé n'est pas dupliqué.</p>
+          <div class="form-ligne"><input type="file" id="lot-fichier" accept=".json,application/json"><button class="btn sec" id="lot-go">Importer le lot</button></div>
+          <div class="muted" id="lot-info"></div>
+          <h3 style="font-size:14px;margin:14px 0 6px">Lots livrés avec la plateforme</h3>
+          <table class="comptes" id="lots-table"></table></details>
       </div>
       <div class="carte" style="margin-top:14px">
         <h2>Exercices de synthèse</h2>
@@ -224,7 +231,7 @@ const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const api = async (url, opt) => { const r = await fetch(url, opt); if (!r.ok) { let d = r.statusText; try { d = (await r.json()).detail || d; } catch { } throw new Error(d); } return r.json(); };
 const toast = m => { const t = $('#toast'); t.textContent = m; t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 2600); };
 const POINTS = ["La réponse marquée est la bonne (j'ai vérifié)", "Une seule réponse possible, les autres sont fausses", "La question est claire, sans ambiguïté", "C'est au programme et au niveau de la classe", "Les chiffres, unités et noms sont exacts", "La correction est compréhensible par un élève seul"];
-const MOTIFS = ["Réponse marquée fausse", "Plusieurs réponses possibles", "Hors programme ou niveau inadapté", "Énoncé confus ou trop long", "Données ou faits inexacts", "Contexte artificiel ou irréaliste", "Doublon d'une autre question", "Autre (préciser ci-dessous)"];
+const MOTIFS = ["Réponse marquée fausse", "Plusieurs réponses possibles", "Hors programme ou niveau inadapté", "Énoncé confus ou trop long", "Données ou faits inexacts", "Contexte artificiel ou irréaliste", "Doublon d'une autre question", "Figure ou tableau incorrect", "Autre (préciser ci-dessous)"];
 
 let CFG, courant = null, statutFile = 'en_attente', vue = 'relire';
 $('#deco').onclick = async () => { await fetch('/api/deconnexion', { method: 'POST' }); location.href = '/validateur/connexion.html'; };
@@ -238,7 +245,7 @@ async function init() {
   try { MOI = await api('/api/moi'); } catch { location.href = '/validateur/connexion.html'; return; }
   $('#qui').textContent = MOI.nom + ' · ' + ({ admin: 'administrateur', redacteur: 'rédacteur', validateur: 'validateur' })[MOI.role];
   $('#validateur').value = MOI.nom;
-  if (MOI.role === 'admin') $('#ong-comptes').hidden = false;
+  if (MOI.role === 'admin') { $('#ong-comptes').hidden = false; $('#lot-bloc').hidden = false; }
   if (MOI.role !== 'validateur') $('#ong-qualite').hidden = false;
   if (MOI.role === 'validateur') $('#ong-produire').hidden = true;
   CFG = await api('/api/config');
@@ -312,6 +319,7 @@ function afficherAveugle(i) {
   $('#fiche').innerHTML = `${enTete(i)}
     <div class="q-titre">${esc(i.titre)}</div>
     <div class="q-tige">${esc(i.tige)}</div>
+    ${i.figure_svg ? `<figure class="figure">${i.figure_svg}${i.figure_legende ? `<figcaption>${esc(i.figure_legende)}</figcaption>` : ''}</figure>` : ''}
     <ul class="props choix" id="props">${[1, 2, 3, 4, 5].map(k => `<li data-k="${k}"><span class="num">${k}</span><span class="txt">${esc(i['p' + k])}</span></li>`).join('')}</ul>
     <div class="actions"><button class="btn" id="b-rep" disabled>C'est ma réponse <span class="raccourci">Entrée</span></button><span class="chrono" id="chrono">Choisissez une proposition (touches 1 à 5). La clé et la correction s'afficheront ensuite.</span><button class="btn sec" id="b-suiv" style="margin-left:auto" title="Passer sans répondre">Suivante <span class="raccourci">→</span></button></div>`;
   let choix = null;
@@ -347,7 +355,8 @@ function afficherFiche(i, rel) {
     ${anomalies ? `<div class="alerte">Points signalés automatiquement : ${esc(anomalies)}</div>` : ''}
     <div class="q-titre" id="e-titre" contenteditable="true" spellcheck="true">${esc(i.titre)}</div>
     <div class="q-tige" id="e-tige" contenteditable="true" spellcheck="true">${esc(i.tige)}</div>
-    ${i.support_latex ? `<p class="aide-edit">Cette question s'accompagne d'un tableau ou d'une figure, visible dans la version imprimée.</p>` : ''}
+    ${i.figure_svg ? `<figure class="figure">${i.figure_svg}${i.figure_legende ? `<figcaption>${esc(i.figure_legende)}</figcaption>` : ''}</figure>` : ''}
+    ${!i.figure_svg && i.support_latex ? `<p class="aide-edit">Cette question s'accompagne d'un tableau ou d'une figure, visible dans la version imprimée.</p>` : ''}
     <ul class="props" id="props">${[1, 2, 3, 4, 5].map(k => `<li class="${i.reponse === k ? 'bonne' : mienne && !mienne.concordant && mienne.reponse_donnee === k ? 'mienne-ko' : ''}" data-k="${k}"><span class="num" title="Marquer comme bonne réponse">${k}</span><span class="txt" contenteditable="true" id="e-p${k}">${esc(i['p' + k])}</span></li>`).join('')}</ul>
     <p class="aide-edit">Pour corriger : cliquez dans un texte et modifiez-le. Pour changer la bonne réponse : cliquez sur son numéro.</p>
     <div class="corr"><b>Correction.</b> <span id="e-corr" class="corr-txt" contenteditable="true">${esc(i.correction_detaillee)}</span>${i.erreurs_distracteurs ? `<br><span class="muted">Erreurs visées par les autres propositions : <span id="e-err" contenteditable="true">${esc(i.erreurs_distracteurs)}</span></span>` : '<span id="e-err" hidden></span>'}</div>
@@ -420,6 +429,20 @@ async function suivre(tid) {
   tick();
 }
 $('#g-prompt').onclick = async () => { const ep = epCourante(); const p = new URLSearchParams({ discipline: $('#g-disc').value, n: $('#g-n').value, epreuve: ep.code }); if ($('#g-chap').value) p.set('chapitre', $('#g-chap').value); const r = await api('/api/prompt?' + p); await navigator.clipboard.writeText('INSTRUCTIONS :\n' + r.systeme + '\n\n' + r.commande); toast('Consigne copiée.'); };
+async function chargerLots() {
+  try { const lots = await api('/api/lots');
+    $('#lots-table').innerHTML = lots.length ? `<tr><th>Lot</th><th>Questions</th><th>Avec figure</th><th>Déjà importées</th><th></th></tr>` + lots.map(l => `<tr><td>${esc(l.source)}<div class="muted">${Object.entries(l.disciplines).map(([d, n]) => esc(d) + ' ' + n).join(' · ')}</div></td><td>${l.nb}</td><td>${l.figures}</td><td>${l.importes}</td><td>${l.importes >= l.nb ? '<span class="pastille ok">importé</span>' : `<button class="btn sec" data-lot="${esc(l.fichier)}">Importer</button>`}</td></tr>`).join('') : '<tr><td class="muted">Aucun lot sur le serveur.</td></tr>';
+    $('#lots-table').querySelectorAll('[data-lot]').forEach(b => b.onclick = async () => { b.disabled = true; try { const r = await api('/api/lots/' + encodeURIComponent(b.dataset.lot) + '/importer', { method: 'POST' }); toast(r.nb + ' questions importées'); chargerLots(); chargerFile(); chargerAvancement(); } catch (e) { toast('Import impossible : ' + e.message); b.disabled = false; } });
+  } catch { $('#lots-table').innerHTML = ''; }
+}
+$('#lot-bloc').addEventListener('toggle', () => { if ($('#lot-bloc').open) chargerLots(); });
+$('#lot-go').onclick = async () => {
+  const f = $('#lot-fichier').files[0]; if (!f) { toast('Choisissez un fichier .json'); return; }
+  try { const j = JSON.parse(await f.text()); const items = j.items || j; $('#lot-info').textContent = 'Import de ' + items.length + ' questions…';
+    const r = await api('/api/importer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items, source: j.source || ('lot ' + f.name) }) });
+    $('#lot-info').textContent = `${r.nb} questions importées (en attente de relecture)${r.ignores ? ', ' + r.ignores + ' déjà présentes ignorées' : ''}.`; toast(r.nb + ' questions importées'); chargerFile(); chargerAvancement(); }
+  catch (e) { $('#lot-info').textContent = ''; toast('Import impossible : ' + e.message); }
+};
 $('#imp-go').onclick = async () => { try { const j = JSON.parse($('#imp-json').value); const r = await api('/api/importer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items: j.items || j, discipline: $('#g-disc').value, epreuve_code: epCourante().code }) }); toast(r.nb + ' questions importées'); $('#imp-json').value = ''; chargerFile(); chargerAvancement(); } catch (e) { toast('Import impossible : ' + e.message); } };
 async function chargerSituations() {
   const ep = epCourante(); if (!ep) return;

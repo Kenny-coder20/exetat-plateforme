@@ -28,6 +28,7 @@ CONSIGNES_PAR_MOTIF = {
     "Énoncé confus ou trop long": "énoncé de 35 à 75 mots, phrases courtes, une seule question, grandeur demandée nommée explicitement",
     "Données ou faits inexacts": "n'utilise que des données vérifiables et réalistes (ordres de grandeur, dates, noms, constantes) ; en cas de doute, choisis une donnée simple et sûre",
     "Contexte artificiel ou irréaliste": "le contexte doit fournir une donnée réellement utilisée dans la résolution ; supprime tout habillage décoratif ; situation plausible dans la vie congolaise",
+    "Figure ou tableau incorrect": "la figure doit être exacte, cotée et cohérente avec l'énoncé ; la donnée lue sur la figure doit conduire à la bonne réponse",
     "Doublon d'une autre question": "varie le savoir essentiel, les données et l'angle de la question par rapport aux items déjà produits sur le chapitre",
 }
 

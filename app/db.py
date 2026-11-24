@@ -142,6 +142,9 @@ def migrer() -> None:
         if "situation_id" not in cols:
             con.execute("ALTER TABLE items ADD COLUMN situation_id TEXT REFERENCES situations(id)")
             con.execute("ALTER TABLE items ADD COLUMN ordre_situation INTEGER")
+        if "figure_svg" not in cols:
+            con.execute("ALTER TABLE items ADD COLUMN figure_svg TEXT")
+            con.execute("ALTER TABLE items ADD COLUMN figure_legende TEXT")
         if "famille" not in colonnes(con, "options"):
             con.execute("ALTER TABLE options ADD COLUMN famille TEXT")
         if "epreuve_code" not in colonnes(con, "programme"):
