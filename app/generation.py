@@ -67,9 +67,32 @@ def repartir_chapitres(con, discipline: str, sous_discipline: str | None, n: int
     return out
 
 
+# Part d'items « décision » (QCM situationnel à calcul justificatif implicite) selon la discipline, en mode mélange
+PART_DECISION = {"Mathématiques": 0.4, "Physique": 0.5, "Chimie": 0.5, "SVT": 0.35, "Géographie": 0.35, "TIC": 0.35,
+                 "Civisme": 0.25, "Histoire": 0.15, "Philosophie": 0.2}
+PART_DECISION_DEFAUT = 0.4  # disciplines techniques et commerciales
+
+
+def plan_types(discipline: str, n: int, type_item: str | None) -> list[str]:
+    """Attribue à chaque item son type : « classique » ou « decision », répartis sur la série."""
+    if type_item in ("classique", "decision"):
+        return [type_item] * n
+    part = PART_DECISION.get(discipline, PART_DECISION_DEFAUT)
+    k = round(n * part)
+    if n >= 2:
+        k = max(1, k)
+    types = ["classique"] * n
+    if k:
+        pas = n / k
+        for i in range(k):
+            types[min(n - 1, int(i * pas + pas / 2))] = "decision"
+    return types
+
+
 def composer_commande(con, *, discipline: str, sous_discipline: str | None, n: int,
                       chapitre: str | None = None, difficulte: str | None = None,
-                      serie: str | None = None, jour: int | None = None, epreuve_code: str | None = None) -> str:
+                      serie: str | None = None, jour: int | None = None, epreuve_code: str | None = None,
+                      type_item: str | None = None) -> str:
     if chapitre:
         chapitres = [chapitre] * n
     else:
@@ -83,9 +106,11 @@ def composer_commande(con, *, discipline: str, sous_discipline: str | None, n: i
         diffs = sorted(diffs, key=lambda d: DIFFICULTES.index(d))
         diffs = diffs[::2] + diffs[1::2]
     ctx = plan_contextes(n)
+    types = plan_types(discipline, n, type_item)
+    libelle_type = {"classique": "classique", "decision": "DÉCISION (QCM situationnel à calcul justificatif implicite : aucune consigne de calcul dans l'énoncé ; 5 propositions « décision + car + justification chiffrée »)"}
     plan = "\n".join(
-        f"- Item {i+1} : chapitre « {c} », difficulté {d}\n    contexte imposé → {decrire(ctx[i])}"
-        for i, (c, d) in enumerate(zip(chapitres, diffs))
+        f"- Item {i+1} : chapitre « {c} », difficulté {d}, type {libelle_type[t]}\n    contexte imposé → {decrire(ctx[i])}"
+        for i, (c, d, t) in enumerate(zip(chapitres, diffs, types))
     )
     sd = f" (sous-discipline : {sous_discipline})" if sous_discipline else ""
     s = f", série {serie}" if serie else ""
@@ -183,6 +208,13 @@ def verifier_item(it: dict) -> list[str]:
     for champ in ("titre", "tige", "savoir_essentiel", "correction_detaillee"):
         if not it.get(champ):
             pb.append(f"champ manquant : {champ}")
+    if it.get("type_item") == "decision":
+        tige = (it.get("tige") or "").lower()
+        if re.search(r"\b(calcul\w*|détermin\w*|combien|quelle est la valeur|quelle valeur)\b", tige):
+            pb.append("type décision : consigne de calcul explicite dans l'énoncé")
+        just = sum(1 for p in props if re.search(r"\bcar\b|parce qu|puisque|\bdonc\b", p.lower()))
+        if just < 4:
+            pb.append(f"type décision : propositions sans justification ({just}/5 avec « car »)")
     return pb
 
 
@@ -212,15 +244,16 @@ def inserer_items(con, items: list[dict], *, option_code=None, jour=None, epreuv
         iid = it.get("id") or f"GEN-{uuid.uuid4().hex[:10]}"
         p = it["propositions"] + [""] * (5 - len(it["propositions"]))
         support = it.get("support") or ("figure" if it.get("figure_svg") else "aucun")
+        type_item = it.get("type_item") if it.get("type_item") in ("classique", "decision") else "classique"
         con.execute(
             """INSERT INTO items(id, option_code, jour, epreuve_code, serie, numero, discipline, sous_discipline,
                chapitre, savoir_essentiel, competence, difficulte, famille_contexte, support, support_latex, figure_svg, figure_legende,
-               titre, tige, p1,p2,p3,p4,p5, reponse, correction_detaillee, erreurs_distracteurs, nb_mots_tige, modele, observations)
-               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+               type_item, titre, tige, p1,p2,p3,p4,p5, reponse, correction_detaillee, erreurs_distracteurs, nb_mots_tige, modele, observations)
+               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (iid, option_code, jour, it.get("epreuve_code") or epreuve_code, serie, numero_depart + k, it["discipline"],
              it.get("sous_discipline") or None, it.get("chapitre"), it["savoir_essentiel"], it.get("competence"),
              it.get("difficulte", "moyen"), it.get("famille_contexte"), support,
-             it.get("support_latex"), it.get("figure_svg"), it.get("figure_legende"), it["titre"], it["tige"], p[0], p[1], p[2], p[3], p[4],
+             it.get("support_latex"), it.get("figure_svg"), it.get("figure_legende"), type_item, it["titre"], it["tige"], p[0], p[1], p[2], p[3], p[4],
              int(it.get("reponse") or 1), it["correction_detaillee"], it.get("erreurs_distracteurs"),
              it.get("nb_mots_tige"), modele, obs or None),
         )
@@ -232,11 +265,11 @@ def inserer_items(con, items: list[dict], *, option_code=None, jour=None, epreuv
 
 def generer(*, discipline: str, sous_discipline: str | None = None, n: int = 5, chapitre: str | None = None,
             difficulte: str | None = None, jour: int | None = None, serie: str | None = None,
-            epreuve_code: str | None = None, numero_depart: int = 1) -> dict:
+            epreuve_code: str | None = None, numero_depart: int = 1, type_item: str | None = None) -> dict:
     """Génère n items d'une discipline et les enregistre en attente de validation."""
     with connect() as con:
         commande = composer_commande(con, discipline=discipline, sous_discipline=sous_discipline, n=n,
-                                     chapitre=chapitre, difficulte=difficulte, serie=serie, epreuve_code=epreuve_code)
+                                     chapitre=chapitre, difficulte=difficulte, serie=serie, epreuve_code=epreuve_code, type_item=type_item)
         lot = con.execute("INSERT INTO lots_generation(commande, modele, nb_demandes) VALUES(?,?,?)",
                           (commande, MODELE, n)).lastrowid
         try:

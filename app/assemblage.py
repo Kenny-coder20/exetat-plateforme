@@ -9,7 +9,7 @@ from .generation import repartition_difficulte
 
 CHAMPS_ELEVE = ("id", "epreuve_code", "discipline", "sous_discipline", "chapitre", "difficulte", "titre", "tige",
                 "p1", "p2", "p3", "p4", "p5", "reponse", "correction_detaillee", "erreurs_distracteurs",
-                "support", "support_latex", "figure_svg", "figure_legende", "competence", "savoir_essentiel")
+                "support", "support_latex", "figure_svg", "figure_legende", "type_item", "competence", "savoir_essentiel")
 
 
 def tirer(con, *, discipline: str, sous_discipline: str | None, n: int, chapitre: str | None = None,

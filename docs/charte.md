@@ -80,6 +80,28 @@ Le gabarit 3.1 décrit l’ordre logique des informations, pas une formule à r�
 
 Mise en œuvre dans l’atelier : la commande envoyée au modèle attribue à chaque item un contexte imposé (forme d’entrée, univers, lieu ou non, personnage ou non), tiré sans répétition. Le relecteur peut rejeter un item pour « contexte plaqué ou répétitif ».
 
+## 3.3. Deux types d'items : « classique » et « décision »
+
+**Item classique.** La question demande une valeur, une identification, une interprétation ou une explication (gabarit 3.1).
+
+**Item « décision » — QCM situationnel à calcul justificatif implicite.** Question à choix multiples ancrée dans une situation pratique où l'énoncé ne demande pas explicitement un calcul, mais où l'élève doit effectuer un calcul intermédiaire et l'interpréter pour sélectionner la décision, le diagnostic ou la justification correcte parmi des distracteurs fondés sur des erreurs typiques. Quatre caractéristiques, toutes exigées :
+
+> • **Ancrage contextuel (APS)** : un problème concret, réaliste et finalisé, où quelqu'un ou un document doit trancher.
+>
+> • **Format QCM** : une question unique (« Quelle décision… et pourquoi ? », « Que doit conclure… ? ») suivie de cinq propositions exclusives ; chaque proposition associe une décision à sa justification chiffrée.
+>
+> • **Calcul implicite** : aucune consigne du type « calcule… », « détermine… », « combien… » ; le calcul est un moyen requis pour trancher, jamais la question posée.
+>
+> • **Finalité décisionnelle ou justificative** : la bonne option lie un résultat ou un ordre de grandeur à une action, une règle de sécurité, une norme, une faisabilité, un coût ou une explication.
+
+*Exemple de référence.* Une glacière électrique de 60 W est branchée sur la prise 12 V d'un minibus pour un trajet de 2 h 30 ; le circuit est protégé par un fusible de 10 A. Le conducteur se demande si la glacière peut fonctionner sans risque pour le fusible. **Quelle décision doit-il prendre, et pourquoi ?** — Bonne réponse : il peut la brancher, car l'intensité appelée, 60/12 = 5 A, reste inférieure au calibre de 10 A. Distracteurs : renoncer, car 60 W dépasse 10 A (grandeurs non comparables) ; brancher 2 h au plus, car au-delà l'intensité dépasse 10 A (confusion durée/intensité) ; remplacer le fusible par 15 A, car 60/12 impose une marge (marge imaginaire) ; renoncer, car l'énergie consommée, 150 Wh, excède ce que le fusible tolère (grandeur hors sujet).
+
+*Règles propres.* Tige jusqu'à 90 mots ; propositions de même structure (décision + « car » + justification) et de longueur comparable ; la correction explicite le calcul que l'élève devait conduire seul, puis l'erreur de chaque autre décision. Les distracteurs sont des décisions plausibles fondées sur : mauvaise grandeur comparée, unité ou facteur oublié, confusion entre grandeurs (durée/intensité, puissance/énergie), raisonnement inversé, marge de sécurité imaginaire, bon calcul mais mauvaise conclusion.
+
+*Part dans une série (mode mélange de l'atelier).* Physique et Chimie : environ 1 item sur 2 ; Mathématiques : 2 sur 5 ; SVT, Géographie, TIC : 1 sur 3 ; Civisme : 1 sur 4 ; Philosophie 1 sur 5 ; Histoire 1 sur 6 ; disciplines techniques et commerciales : 2 sur 5. En Civisme, Histoire et Philosophie, la « décision » s'appuie sur une règle, une date ou un concept à mobiliser implicitement plutôt que sur un calcul. Le rédacteur peut imposer un type unique pour une commande.
+
+*Contrôles automatiques.* Un item « décision » dont l'énoncé contient « calcule », « détermine », « combien » ou « quelle est la valeur » est signalé ; de même si moins de quatre propositions comportent une justification (« car », « parce que », « puisque », « donc »).
+
 # 4. Exigences de longueur et de lisibilité
 
 > • 35 à 75 mots pour la tige de la plupart des items.

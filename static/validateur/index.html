@@ -162,6 +162,7 @@
           <div id="g-mat" hidden><label class="ch">Matière</label><select id="g-disc"></select></div>
           <div id="g-chap-b" hidden><label class="ch">Chapitre (facultatif)</label><select id="g-chap"><option value="">Au choix de l'assistant, selon le programme</option></select></div>
           <div id="g-n-b" hidden><label class="ch">Nombre</label><select id="g-n"><option>5</option><option>6</option><option>8</option><option>10</option><option>15</option></select></div>
+          <div id="g-type-b" hidden><label class="ch">Type de questions</label><select id="g-type"><option value="">Mélange selon la matière (recommandé)</option><option value="classique">Classiques : valeur, identification, interprétation</option><option value="decision">Décision : situation à trancher, calcul implicite</option></select></div>
         </div>
         <div class="actions"><button class="btn" id="g-go">Lancer la production</button><span class="muted" id="g-ep"></span></div>
         <div class="journal" id="g-journal" hidden></div>
@@ -277,7 +278,7 @@ function majChapitres() { const d = $('#g-disc').value; const chs = CFG.programm
 $('#opt').onchange = () => { majJours(); majEpreuve(); }; $('#jour').onchange = majEpreuve; $('#disc').onchange = () => chargerFile(); $('#g-disc').onchange = majChapitres;
 document.querySelectorAll('.onglets [data-vue]').forEach(b => b.onclick = () => { vue = b.dataset.vue; document.querySelectorAll('.onglets [data-vue]').forEach(x => x.classList.toggle('on', x === b)); for (const v of ['relire', 'produire', 'banque', 'qualite', 'comptes']) $('#vue-' + v).hidden = v !== vue; if (vue === 'banque') chargerBanque(); if (vue === 'comptes') chargerComptes(); if (vue === 'qualite') chargerQualite(); });
 document.querySelectorAll('[data-statut]').forEach(b => b.onclick = () => { statutFile = b.dataset.statut; document.querySelectorAll('[data-statut]').forEach(x => x.classList.toggle('on', x === b)); chargerFile(); });
-$('#g-quoi').onchange = () => { const q = $('#g-quoi').value; $('#g-mat').hidden = q === 'epreuve'; $('#g-chap-b').hidden = q === 'epreuve'; $('#g-n-b').hidden = q === 'epreuve'; };
+$('#g-quoi').onchange = () => { const q = $('#g-quoi').value; $('#g-mat').hidden = q === 'epreuve'; $('#g-chap-b').hidden = q === 'epreuve'; $('#g-n-b').hidden = q === 'epreuve'; $('#g-type-b').hidden = q !== 'matiere'; };
 
 // ------------------------------------------------------------ file
 async function chargerFile() {
@@ -300,7 +301,7 @@ async function chargerAvancement() {
 
 // ------------------------------------------------------------ fiche : la question comme l'élève la voit
 let chronoDebut = 0, chronoTimer = null;
-const enTete = i => `<div class="q-ent"><div><span class="pastille">${esc(i.discipline)}${i.sous_discipline ? ' · ' + esc(i.sous_discipline) : ''}</span><span class="pastille">${i.difficulte}</span><span class="pastille">${esc(i.chapitre || '')}</span>${i.publication && i.publication.requis > 1 ? `<span class="pastille ${i.publication.publiable ? 'ok' : 'att'}" title="Relectures concordantes requises avant publication aux élèves">${i.publication.concordants}/${i.publication.requis} relectures concordantes</span>` : ''}</div>
+const enTete = i => `<div class="q-ent"><div><span class="pastille">${esc(i.discipline)}${i.sous_discipline ? ' · ' + esc(i.sous_discipline) : ''}</span><span class="pastille">${i.difficulte}</span>${i.type_item === 'decision' ? '<span class="pastille" style="background:var(--nuit);color:#fff" title="QCM situationnel à calcul justificatif implicite : l\'énoncé ne demande pas de calcul, mais il faut en faire un pour choisir la bonne décision">décision</span>' : ''}<span class="pastille">${esc(i.chapitre || '')}</span>${i.publication && i.publication.requis > 1 ? `<span class="pastille ${i.publication.publiable ? 'ok' : 'att'}" title="Relectures concordantes requises avant publication aux élèves">${i.publication.concordants}/${i.publication.requis} relectures concordantes</span>` : ''}</div>
       <span class="pastille ${i.statut_validation === 'valide' ? 'ok' : i.statut_validation === 'rejete' ? 'ko' : 'att'}">${i.statut_validation === 'en_attente' ? 'en attente' : i.statut_validation === 'valide' ? 'validée' : 'rejetée'}</span></div>
     ${i.situation ? `<div class="corr" style="border-color:var(--nuit)"><b>Situation : ${esc(i.situation.titre)}.</b> ${esc(i.situation.texte)}<br><span class="muted">${esc(i.situation.document_texte || '')}</span></div>` : ''}`;
 
@@ -415,7 +416,7 @@ document.addEventListener('keydown', e => { if (!courant || e.target.isContentEd
 $('#g-go').onclick = async () => {
   const ep = epCourante(); const quoi = $('#g-quoi').value;
   let url = '/api/generer', body = { epreuve_code: ep.code };
-  if (quoi === 'matiere') body = { ...body, discipline: $('#g-disc').value, chapitre: $('#g-chap').value || null, n: +$('#g-n').value };
+  if (quoi === 'matiere') body = { ...body, discipline: $('#g-disc').value, chapitre: $('#g-chap').value || null, n: +$('#g-n').value, type_item: $('#g-type').value || null };
   if (quoi === 'situation') { url = '/api/situations/generer'; body = { ...body, discipline: $('#g-disc').value, chapitre: $('#g-chap').value || null, n: Math.min(6, Math.max(4, +$('#g-n').value)) }; }
   try { const r = await api(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); suivre(r.tache); } catch (e) { toast('Erreur : ' + e.message); }
 };

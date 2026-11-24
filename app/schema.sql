@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS items (
   support_latex TEXT,             -- tabular / TikZ si support
   figure_svg TEXT,                -- figure vectorielle (SVG) affichée à l'écran
   figure_legende TEXT,            -- légende courte de la figure
+  type_item TEXT DEFAULT 'classique', -- classique | decision (QCM situationnel à calcul justificatif implicite)
   titre TEXT NOT NULL,
   tige TEXT NOT NULL,
   p1 TEXT NOT NULL, p2 TEXT NOT NULL, p3 TEXT NOT NULL, p4 TEXT NOT NULL, p5 TEXT NOT NULL,

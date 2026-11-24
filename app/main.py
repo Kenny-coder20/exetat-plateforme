@@ -475,6 +475,7 @@ class Commande(BaseModel):
     chapitre: Optional[str] = None
     difficulte: Optional[str] = None
     n: int = 5
+    type_item: Optional[str] = None  # None = mélange selon la matière ; classique ; decision
 
 
 @app.post("/api/generer")
@@ -489,7 +490,7 @@ def api_generer(c: Commande):
             raise HTTPException(400, "discipline ou épreuve requise")
         return {"tache": taches.lancer_items(discipline=c.discipline, sous_discipline=c.sous_discipline, n=c.n,
                                              chapitre=c.chapitre, difficulte=c.difficulte, serie=c.serie,
-                                             epreuve_code=c.epreuve_code)}
+                                             epreuve_code=c.epreuve_code, type_item=c.type_item)}
     except generation.GenerationError as e:
         raise HTTPException(400, str(e))
     except Exception as e:  # noqa: BLE001
@@ -515,7 +516,7 @@ def prompt_pour_copier(discipline: str, sous_discipline: Optional[str] = None, n
     """Commande prête à coller dans un assistant IA si l'API n'est pas configurée."""
     with connect() as con:
         cmd = generation.composer_commande(con, discipline=discipline, sous_discipline=sous_discipline, n=n,
-                                           chapitre=chapitre, difficulte=difficulte, epreuve_code=epreuve)
+                                           chapitre=chapitre, difficulte=difficulte, epreuve_code=epreuve, type_item=type_item)
     return {"systeme": generation.PROMPT_SYSTEME, "commande": cmd}
 
 

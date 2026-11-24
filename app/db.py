@@ -145,6 +145,8 @@ def migrer() -> None:
         if "figure_svg" not in cols:
             con.execute("ALTER TABLE items ADD COLUMN figure_svg TEXT")
             con.execute("ALTER TABLE items ADD COLUMN figure_legende TEXT")
+        if "type_item" not in cols:
+            con.execute("ALTER TABLE items ADD COLUMN type_item TEXT DEFAULT 'classique'")
         if "famille" not in colonnes(con, "options"):
             con.execute("ALTER TABLE options ADD COLUMN famille TEXT")
         if "epreuve_code" not in colonnes(con, "programme"):
