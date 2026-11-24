@@ -1,0 +1,2606 @@
+ REPUBLIQUE DEMOCRATIQUE DU CONGO
+MINISTERE DE L’ENSEIGNEMENT PRIMAIRE,
+    SECONDAIRE ET PROFESSIONNEL
+
+    Direction des Programmes Scolaires
+            et Matériel Didactique
+
+
+
+
+   PROGRAMME NATIONAL
+      ELECTRONIQUE
+
+
+
+
+                   2009
+                                                    2
+
+
+
+                       CYCLE LONG TECHNIQUE INDUSTRIELLE
+                       OPTION ELECTRONIQUE INDUSTRIELLE
+
+                                    BAREME DES POINTS
+
+                                         3°                   4°               5°               6°
+        DISCIPLINES                Pts        Max       Pts        Max   Pts        Max   Pts        Max
+
+    COURS GENERAUX
+Anglais
+Chimie                              2         30        2          30    2          30    1          20
+                                    2         20        1          20    -           -    -           -
+Education Civique et Politique
+                                    2         40        2          40    2          40    2          40
+Education Physique                  1         20        1          20    1          20    1          20
+Français                            5         60        5          60    4          50    3          50
+Géographie                          1         20        -           -    -           -    -           -
+H.G.A.                              -          -        1          20    1          20    1          20
+Histoire                            1         20        -           -    -           -    -           -
+Mathématiques                       6         60        6          60    5          60    5          40
+Organisation                        -          -        -           -    -           -    1          20
+Physique                            2         20        1          20    -           -    -           -
+           TOTAL                    22        290       19         270   15         220   13         190
+
+     COURS TECHNIQUES
+Circuits logiques                   -          -        -           -    2          20    2          20
+Dessin électronique                 -          -        -           -    2          20    2          20
+Dessin Industriel                   2         30        -           -    -           -    -           -
+Dessin et schémas électriques       2         20        2          20    -           -    -           -
+Electricité générale                3         40        4          40    -           -    -           -
+Electricité industrielle            -          -        -           -    3          30    3          30
+Electronique générale               3         30        5          50    4          50    -           -
+Electronique industrielle           -          -        -           -    -           -    3          30
+Instruments et appareillage et      -          -        1          20    1          20    1          20
+méthode mesure
+Mécanique générale                  2         20         -           -    -           -    -          -
+Radio électricité                    -         -         -           -   3           20    -          -
+Radio T.V.                           -         -         -           -    -           -   2          20
+Régulation                           -         -         -           -    -           -   2          20
+Technologie électrique              2         20         -           -    -           -    -          -
+Technologie électronique             -         -        2           20   1           20    -          -
+Télécommunications                   -         -         -           -    -           -   2          20
+               TOTAL                14        160       14         150   16         180   17         180
+
+COURS PRATIQUES
+Atelier électrique                  5         50         -           -    -           -    -          -
+Atelier électronique                 -         -        4           40   6           60   7          90
+Labo électronique                    -         -        4           40   4           40   3          40
+               TOTAL                5         50        8           80   10         100   10         130
+        TOTAL GENERAL               41        500       41         500   41         500   41         500
+
+
+
+
+               Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                     3
+
+
+
+
+                        CYCLE LONG TECHNIQUE INDUSTRIELLE
+                        OPTION ELECTRONIQUE INDUSTRIELLE
+
+NOMBRE DE PERIODE : PAR SEMAINE, PAR ANNEE                               TOTAL GENERAL DES PERIODES
+
+                                  3°                          4°               5°            6°         TOTAL
+         DISCIPLINES              Pis        Pi an   Pis       Pis n     Pis   Pi an   Pis    Pi an     GENERAL
+    COURS GENERAUX
+Anglais                                 2      60        2          60   2       60     1         30      210
+Chimie                                  2      60        1          30   -        -     -          -       90
+Education Civique et Politique          2      60        2          60   2        6     2         60      240
+                                        1      30        1          30   1       30     1         30      120
+Education Physique
+                                        5     150        5         150   4      120     3         90      510
+Français                                1      30        -           -   -        -     -          -       30
+Géographie                              -       -        1          30   1       30     1         30       90
+H.G.A.                                  1      30        -           -   -        -     -          -       30
+Histoire                                6     180        6         180   5      150     5         150     660
+Mathématiques                           -       -        -           -   -        -     1         30       30
+Organisation                            2      60        1          30   -        -     -          -       90
+Physique
+           TOTAL                        22    660        19        570   15     450     14        420    2100
+     COURS TECHNIQUES
+Circuits logiques                       -       -        -           -   2       60     2         60      120
+Dessin électronique                     -       -        -           -   2       60     2         60      120
+Dessin Industriel                       2      60        -           -   -        -     -          -       60
+Dessin et schémas électrique            2      60        2          60   -        -     -          -      120
+Electricité générale                    3      90        4         120   -        -     -          -      210
+Electricité industrielle                -       -        -           -   3       90     3         90      180
+Electronique générale                   3      90        5         150   4      120     -          -      360
+Electronique industrielle               -       -        -           -   -        -     3         90       90
+Instruments et appareillage et          -       -        1          30   1       30     1         30       90
+méthode mesure
+Mécanique générale                       2     60         -          -    -       -      -         -      60
+Radio électricité                        -      -         -          -   3       90      -         -      90
+Radio T.V.                               -      -         -          -    -       -     2         60      60
+Régulation                               -      -         -          -    -       -     2         60      60
+Technologie électrique                   2     60         -          -    -       -      -         -      60
+Technologie électronique                 -      -        2          60   1       30      -         -      90
+Télécommunications                       -      -         -          -    -       2     2         60      60
+              TOTAL                     14    420        14        420   16     480     17        510    1830
+
+COURS PRATIQUES
+Atelier électrique                       5    150         -      -        -       -      -      -         150
+Atelier électronique                     -     -         4      120      6       180    7     210         510
+Labo électronique                        -     -         4      120      4       120    3      90         330
+TOTAL                                    5    150        8      240      10      300    10    300         990
+TOTAL GENERAL                           41   1230        41    1230      41     1230    41    1230       4920
+
+
+
+
+               Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                        4
+
+
+
+
+CLASSE  : 3° CL Electronique
+BRANCHE : DESSIN INDUSTRIEL
+         2 Périodes / Semaine
+
+PRO GRAMME               SUIVI
+
+
+CHAPITRE 1 : MODE OPERATOIRE :
+
+
+        L’élève doit être capable de :
+
+1.1. ELABORER le mode opératoire
+1.2. DISTINGUER les différents formats standards
+1.3. INTERPRETER un cartouche d’inacription
+1.4. RESTITUER ET DISTINGUER les différents methods des tracés
+1.5. UTILISER les différentes échelles
+
+CHAPITRE 11 : METHODE DE REPRESENTATION EN DESSIN INDUSTRIEL
+
+
+        L’élève doit être capable de :
+
+.1. REPRESENTER PAR LES DIFFERENTES METHODES :
+    - Un cube rainuré
+    - Un parallélépipède
+    - Un coulisseau
+    - Un té
+    - Un support etc.…
+
+CHAPITRE 111 : CORRESPONDANCE ET CHOIX DE VUE
+
+
+        L’élève doit être capable de :
+
+3.1. DISTINGUER et CHOISIR la meilleure vue
+
+CHAPITRE IV : TERMINOLOGIE
+
+          L’élève doit être capable de :
+4.1. Définir et APPLIQUER les terminologies à quelques exercices
+     tel que : - bride
+      - boîtier
+4.2. Consulter efficacement les livres et catalogues relatifs aux normes.
+
+CHAPITRE V : COTATION
+
+          L’élève doit être capable de :
+5.1. Utiliser les traits conventionnels
+5.2. Représenter les 3 vues et les COTER
+5.3. Définir les termes relatifs aux tolérances, CALCULER les ajustements, LIRE le tableau des ajustements et
+     Coter avec tolérance.
+5.4. Extraire d’un plan d’ensemble les dimensions d’un élément en vue d’un dessin de détail de cet élément.
+
+
+
+
+                Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                       5
+
+CHAPITRE VI : SIGNES DE FACONNAGE
+
+          L’élève doit être capable de :
+6.1. Placer les signes d’usinage : adéquat sur une surface donnée,
+     Interpréter la représentation normalisée et les symboles :
+  - des signes d’usinage – des tolérances – des ajustements appliqués a des pièces simples.
+CHAPITRE V11 : PERSPECTIVE CAVELIERE
+
+        L’élève doit être capable de :
+7.1. Représenter un croquis en perpective cavalière
+7.2. Lire et Interpréter un croquis en perspective cavalière des pièces simples avec coupe,
+     section et cotation complète
+
+CHAPITRE V111 : LEFILETAGE
+
+       L’élève doit être capable de :
+8.1. Représenter le filetage
+
+CHAPITRE IX : LES FUYANTES
+
+       L’élève doit être capable de :
+9.1. Représenter Les fuyantes
+
+CHAPITRE X : ORGANES DE LIAISON FILETES NORMALISES
+
+        L’élève doit être capable de :
+
+10.1. Représenter Les organes de liaison filetés normalisés.
+
+
+CHAPITRES
+
+X1,X I i , XIII,
+
+X I V, XV : LIAISON VIS D’ASSEMBLAGE, DE PRESSION, DE REGLAGE, D’ARRET
+
+        L’élève doit être capable de :
+
+11.1. Représenter, Coter les diffèrents écrous, vis, goujons, goupilles, rivets, boulons etc.…
+
+CHAPITRE
+
+XVI:       ASSEMBLAGES SOUDES
+
+        L’élève doit être capable de :
+
+16.1. REPRESENTER les pièces soudées
+
+
+
+
+               Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               6
+
+
+
+
+CLASSE  : 3° Electronique
+BRANCHE : DESSIN + SCHEMAS ELECTRIQUES
+          2 Périodes / Semaine
+
+P R O G R A M M E SUIVI
+
+CHAPITRE : LES SYMBOLES ELECTRIQUES ET ELECTRONIQUES
+
+        L’élève doit être capable de :
+1.1. Représenter les différents symboles électriques et électroniques normalisés :
+     - systèmes de courants, modes de couplage,
+     - des générateurs, récepteurs, protections
+     - des connexions et canalisations
+     - L’appareillage industriel
+     - Des appareils de mesures
+     - de la signalisation
+
+CHAPITRE I I : SCHEMAS LECTRIQUES D’ECLAIRAGE :
+
+       L’élève doit être capable de :
+2.1. Dessiner les schémas de principe de câblage, de puissance et architecturaux
+
+2.1.1. – d’une lampe simple
+2.1.2. – d’une lampe avec une prise de courant
+2.1.3. - d’une commande, d’une prise par SCH2
+2.1.4 – de deux lampes en série et en parallèle
+2.1.5. – de deux lampes à double allumage
+2.1.6 – d’une à deux directions
+2.1.7 – d’une lampe à trois directions
+
+CHAPITRE II : MONTANGES DE SONNERIES
+
+       L’élève doit être capable de :
+3.1. Schématiser et réaliser les montages de sonnerie :
+1. – Sonnerie en parallèle, en série
+2. – Sonnerie à plusieurs directions
+3.. – APPEL par sonnerie et réponse simple
+
+3.2. IDENTIFIER, NUMEROTER et REPERER les différents éléments du schéma.
+
+CHAPITRE IV : CONCEPTION DES MONTAGES
+
+        L’élève doit être capable de :
+4.1. Concevoir et Schématiser les montages suivants :
+4.1.1. – une lampe à deux directions avec 2 inverseurs
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               7
+
+4.1.2. – montage en escalier
+4.1.3. – appel par sonnerie et réponse par voyants lumineux
+4.1.4. – montages avec des tubes TL
+4.1.5. – Identifier, numéroter et Repérer les différents éléments du schéma.
+
+CHAPITRE V : MONTAGES A CONTACTEURS
+
+        L’élève doit être capable de :
+5.1. Concevoir et dessiner le schéma de principe du circuit de :
+5.1.1. – commande d’une lampe simple
+5.1.2. – commande par rupture de fil
+5.1.3. – Inverseur de pôles.
+
+5.2. Identifier, Numérotage, Repérer les différents éléments du schéma.
+5.3. Ajouter sur le schéma de principe d’un circuit de commande les contacts qui permettront
+     la signalisation :
+5.3.1. contacteur déclenché
+5.3.2. contacteur enclenché
+5.3.3. thermique déclenché
+5.4. Représenter le schéma de principe du circuit de commande par boutons poussoirs
+     « marche et arrêt ».
+5.5. Concevoir et Dessiner le schéma de principe du circuit de commande permettant une
+     commande manuelle ou une commande automatique.
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                  8
+
+
+
+
+CLASSE : 3° CL Electronique
+BRANCHE : ELECTRICITE GENERALE
+          3 Périodes / Semaine
+
+PROGRA MME                 SUIVI
+
+CHAPITRE I. LES PHENOMENES FONDAMENTAUX D’ELECTROSTATIQUE
+
+       L’élève doit être capable de :
+
+1.1. Expliquer et Décrire les phénomènes fondamentaux de l’électrostatique
+1.2. Expliquer le comportement des structures de la matière et leur influence électrostatique.
+1.3. Expliquer la loi de Coulomb
+1.4. Restituer, Expliquer et Utiliser les relations qui unissent
+
+   - le champ électrique, le potentiel électrique et la rigidité diélectrique.
+
+CHAPITRE II : NOTIONS DE COURANT ELECTRIQUE
+
+       L’élève doit être capable de :
+
+2.1. Différencier et Expliquer les caractères généraux
+     - d’un courant électrique, Restituer la notion de différence de potentiel, de travail,
+       d’énergie et de puissance électrique.
+2.2. Citer et Appliquer la loi d’Oum et la loi de Pouillet.
+2.3. DECRIRE un circuit élémentaire comportant :
+     un générateur, un récepteur, un interrupteur et des conducteurs.
+2.4. Définir l’intensité de courant.
+2.5. Citer les unités dans lesquelles ces grandeurs sont exprimées (U.T.R.)
+
+A. RESISTANCE :
+
+2.6. Calculer les intensités, la résistance équivalente et les résistances partielles, les
+     tensions dans un circuit composé de résistances en série et/ou en parallèle.
+
+B. ENERGIE – PUISSANCE
+
+ 2.7. Différence les notions d’énergie et de puissance ainsi que les unités qui y
+      correspondent (j-kwh – w – Kw)
+
+2.8. Citer les différentes transformations de l’énergie l’électrique dans les autres formes
+     d’énergie – Expliquer l’effet Joule.
+2.9. Citer et Appliquer les relations P=U.I et W = U.I.t
+2.10. Citer et Appliquer les relations P = RI2 et P = UR2
+2.11. Etablir le bilan des puissances pour un générateur et pour un récepteur.
+
+
+              Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                9
+
+2.12. En Déduire les notions de rendement, de résistance interne, de f.e.m et de f.c.e.m.
+
+
+
+
+C. PILES ET ACCUMULATEURS
+
+2.13. Décrire une pile Leclanche et une pile alcaline et de les Différencier
+2.14. Décret et Différence un accumulateur au plomb et un accumulateur alcalin.
+2.15. Définir la capacité d’un accumulateur ou d’une pile
+2.16. Citer les indices de charge et de décharge d’un accumulateur.
+2.17. Différencier piles et accumulateurs
+
+CHAPITRE III.        LES CONDENSATEURS
+
+        L’élève doit être capable de :
+3.1. Décrire un condensateur
+3.2. Citer les principaux types de condensateurs et leurs utilisations
+3.3. Restituer et Utiliser les relations : C = E DS
+                                   1
+Q = C.U          W = 12 C.U 2  Q.U
+                                   2
+- Coupler ou Regrouper les condensateurs en série ou en parallèle
+   C = C 1 C2  C3....3 C1 . C11  C12  C13  ....
+3.4. Restituer le théorème de CAUSS et sa formulation mathématique
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                      10
+
+
+
+
+CLASSE : 3° CL Electronique
+BRANCHE : ELECTRONIQUE GENERALE
+          3 Périodes / Semaine
+
+PROGRAMME SUIVI
+
+CHAPITRE I.          STRUCTURE DE LA MATIERE
+
+       L’élève doit être capable de :
+1.1. Décrire la structure physique et chimique de la matière
+1.2. Restituer les notions de : - couchés électroniques
+    - énergie d’ionisation
+    - charge libre
+    - nombre d’Avogadro
+
+CHAPITRE II : L’ELECTRON DANS LES DIFFENCE COURS PHYSIQUES
+
+        L’élève doit être capable de :
+
+2.1. Expliquer le comportement d’un électron dans les milieux tels que :
+     - le vide
+     - le gaz
+     - les solides.
+2.2. Identifier et décrire les semi-conducteurs intrinsèques et extrinsèques.
+2.3. Restituer la structure des atomes de Ge et de Si.
+
+CHAPITRE III. : LA JONCTION P.N.
+
+       L’élève doit être capable de :
+3.1. Décrire et Reconnaître la jonction p. N.
+3.2. Identifier l’anode et la cathode d’un DIODE
+3.3. Expliquer : l’existence de la barrière de potentiel
+     Expliquer le comportement d’une jonction pobarisée en direct et en inverse.
+3.4 Restituer l’allure de la caractéristique d’une diode au cristal.
+3.5.. En citer les grandeurs caractéristiques limites.
+3.6. Ex pliquer la convention et le principe de fonctionnement d’une diode à pointe et en Restituer les
+     caractéristiques.
+
+
+
+
+               Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                         11
+
+
+
+
+CLASSE : 3°CL Electronique
+BRANCHE : MECANIQUE
+         2 Périodes / Semaine
+
+PROGRAMME                    SUIVI
+
+CHAPITRE 1 : CINEMATIQUE
+
+        L’élève doit être capable de :
+1.1. Restituer la notion d’un corps en mouvement et ses caractéristiques : - sens, vitesse, trajectoire
+1.2. Identifier et Décrire les différents types de mouvement : rectiligne uniforme, uniformément varié.
+1.2.1. CALCULER ET APPLIQUER les différentes relations – espace, vitesse et temps dans le cas du
+        mouvement rectiligne uniforme          e = v. t ; e = e + v. t ;
+        v = t ; t  v ; e  e  v.t
+             e      e
+
+             ee           ee e
+        v=    t;
+                    ;t      v
+
+1.2.2. Restituer l’étude graphique des lois de mouvement rectiligne uniforme :
+        - diagramme de la vitesse
+        - diagramme de l’espace parcouru
+1.3. Calculer et Appliquer les différentes relations
+        - vitesse de rotation
+        - vitesse circonférentielle
+        - vitesse angulaire dans le cas d’un mouvement circulaire uniforme
+                                   DN ;; N ; N  602V
+          V= 2 60
+                . R. N
+                       ;V                 60
+
+
+1.4. Calculer et Appliquer les différentes relations,
+     - vitesse moyenne
+     - espace
+     - accélération dans le cas d’un mouvement uniformément (accéléré, retardé, chute des
+       corps
+     En établir les diagrammes des espaces y afférents.
+
+CHAPITRE II : STATIQUE
+L’élève doit être capable de :
+2.1. Enoncer et expliquer la principe d’inertie
+2.2. Citer et définir les éléments d’une force
+2.3. Représenter une forcer par un vecteur
+2.4. Restituer le principe de l’action et de la réaction.
+2.5. Calculer et Représenter graphiquement la résultante et l’équilibrante des forces parallèles
+     et des forces concourantes.
+2.6. Définir et Expliquer le moment d’une fonce, sa valeur etc.…
+2.7. Définir et Expliquer, un couple, le moment d’un couple.
+2.8. Définir et expliquer, le centre de gravité et le Déterminer expérimentalement.
+
+
+
+
+                   Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                             12
+
+
+
+
+CHAPITRE III. : DYNAMIQUE
+
+       L’élève doit être capable de :
+
+3.1. Restituer et expliquer le principe la dynamique.
+3.2. Restituer la notion de mise en DEDU des effets d’une force sur un corps libre.
+3.3. Restituer les formules fondamentales de force et de masse exprimées dans leurs unités
+     respectives.
+3.4. Définir la notion du travail mécanique dans ses unités
+3.4.1. Evaluer le travail mécanique dans les cas suivants :
+      - déplacement suivant la direction de la force
+      - la force de déplacement faisant un angle avec la direction de la force.
+      - un force appliquée à un corps solide mobile autour d’un axé.
+      - un couple.
+3.5. Restituer la notion de principe mécanique exprimée dans ses unités.
+3.5.1. Evaluer la puissance mécanique dans les cas suivants :
+      - translation,
+      - rotation
+      - variation de couple entre deux axes de vitesses différentes.
+3.6. Restituer la notion de l’énergie mécanique exprimée dans ses unités.
+3.6.1. Définir l’énergie potentielle,
+3.6.2. Définir l’énergie cinétique,
+3.6.3. Etablir les différentes relations de l’énergie cinétique dans les cas suivants :
+      - translation
+      - rotation
+      - mouvement hélicoïdal
+3.7. Restituer la notion de force centrifuge, force centripète et appliquer selon les cas des
+     différentes formules,
+
+
+
+
+            Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               13
+
+
+
+
+CLASSE : 3° CL Electronique
+BRANCHE : Technologie Electrique
+          2 Périodes / Semaine
+
+CHAPITRE I. : LES MATERIAUX
+
+        L’élève doit être capable de :
+1.1. Identifier les matériaux suivants ; les conducteurs, les isolants, les semi-conducteurs, les
+     corps magnétiques
+1.2. Décrire les propriétés des matériaux cités ci-haut
+
+CHAPITRE II : LES CANALISATIONS
+         L’élève doit être capable de :
+2.1. Identifier les canalisations électriques :
+     - Installations fixes à usage domestique ou industriel,
+     - Installations mobiles et équipements de lustrerie.
+
+CHAPITRE III. : APPARILLAGE ELECTRIQUE DOMESTIQUE
+
+        L’élève doit être capable de :
+3.1. Identifier et décrire les matériels électriques suivants et Citer leurs utilisation :
+      interrupteurs, lampes à incandescence, au sodium, au mercure, à arc, tubes fluorescents,
+      prises de courant, fiches, fusibles et coffrets de distribution.
+
+CHAPITRE IV : APPAREILLAGE ELECTRIQUE INDUSTRIEL.
+
+        L’élève doit être capable de :
+4.1. Identifier et décrire les matériels électriques suivants et en Citer leurs utilisation :
+     contacteurs, disjoncteurs, auto rupteurs, télérupteurs, interrpteurs horaires et minuteries.
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                14
+
+
+
+
+CLASSE : 4° CL Electronique
+BRANCHE : Electricité Générale
+          6 Périodes / Semaine
+
+
+PROGRAMME SUIVI
+
+CHAPITRE I.: LE DECOUPAGE AVEC PINCE A DENUDER ET LE CANIF
+D’ELECTRICIEN
+
+       L’élève doit être capable de :
+1.1. Couper un fil avec une pince coupante et un canif d’électricien.
+1.2. Réaliser un œillet, une ligature simple, torsadée
+1.3. Réaliser une dérivation fixe sur fil, fil sur câble
+1.4. Réaliser une jonction de câble, un croisement de câble.
+
+CHAPITRE II. : LA SOUDURE.
+
+        L’élève doit être capable de :
+2.1. Réaliser un étamage sur fer et à la lampe à souder
+2.2. Utiliser les souliers de câbles, le serre fil
+2.3. Réaliser le câblage d’une baladeuse, d’une rallonge, d’une sonnerie simple
+
+CHAPITRE III. : LES MONTAGES D’UNE SONNERIE « APPEL ET REPONSE »
+
+        L’élève doit être capable de :
+3.1. Réaliser ou installer une sonnerie « appel et réponse »
+3.2. Réaliser l’installation électrique d’une sonnerie commandée par deux boutons-poussoirs
+3.3. Réaliser l’installation électrique d’une lampe commandée par l’interrupteur CH l
+     a) avec fil
+     b) avec câbles
+3.4. Réaliser l’installation électrique de deux lampes et une prise de courant commandées par
+     CH I
+3.5. Réaliser l’installation électrique d’une lampe commandée en deux endroits différents
+
+CHAPITRE IV. : LES MONTAGES
+
+        L’élève doit être de :
+4.1. Réaliser l’installation électrique d’une lampe commandée par les CH 3 (fil ou câble)
+4.2. Réaliser l’installation électrique à l’aide de matériels suivants : télérupteurs, contacteurs
+     (Fil ou câble)
+
+
+
+
+              Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              15
+
+
+
+
+CLASSE : 4° CL Electronique
+BRANCHE : Electricité Générale
+          4 Périodes / semaine
+
+
+   PROGRAMME SUIVI
+
+   CHAPITRE I : ETUDE DES CIRCUITS EN D.C.
+
+          L’élève doit être capable de :
+   1.1. Définir et interpréter les lois fondamentales des circuits en D.C.
+   1.2. Enoncer et appliquer les lois de « KIRCHHOFF »
+   1.3. Enoncer et appliquer le théorème de :
+   - superposition
+   - KENNELY
+   - NORTON, THEVENIN
+   - Réciprocité, etc.…
+
+CHAPITRE II. : LE CHAMP MAGNETIQUE
+
+                L’élève doit être capable de :
+2.1. Enoncer la loi d’action mécanique entre pôles d’aimants.
+2.2. Définir la notion de champ magnétique et en Restituer les propriétés
+2.3 Définir la notion de flux magnétique, d’induction magnétique et Citer les unités
+     correspondantes.
+     2.4. Définir la perméabilité
+2.5. Restituer la relation qui exprime l’induction au centre, d’un solénoïde parcouru par un
+      courant et déterminer le sens du flux.
+2.6. Reproduire l’allure d’une courbe d’aimantation et l’Interpréter
+2.7. Reproduire l’allure d’un cycle d’hystérésis et l’Interpréter (aimantation permanente,
+      champ coercitif), y ASSOCIER la notion de pertes par hystérésis.
+
+A. INDUCTION FLECTROMAGNETIQUE
+2.8. Associer les notions de conducteur (rectiligne ou bobine), variation du flux et f.é.m.
+     inédite
+2.9. Enoncer et appliquer les formules :
+
+    E = 
+         t
+              :   Bnx .  x v
+2.10. Déterminer le sens de la f .é.m induite au moyen d’une des règles connues
+2.11. Enoncer et appliquer la loi de L.ENZ
+2.12. Définir les courants de FOUCAULT et Citer leurs conséquences (pertes – freinage…)
+2.13. Associer les notions de courant – champ magnétique et forces de LAPLACE
+2.14. Restituer et appliquer les formules :
+
+       F = Bn . l .    et w = l .Δ 
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               16
+
+2.15. Déterminer le sens de cette forme.
+
+
+
+
+CHAPITRE III. : LE COURANT ALTERNATIF MONOPHASE
+
+         L’élève doit être capable de :
+3.1. Définir la période, fréquence, amplitude, pulsation, valeur instantanée d’une grandeur
+      sinusoïdale.
+3.2. Définir la valeur moyenne et la valeur efficace d’une grandeur périodique
+3.3. Représenter mathématiquement, graphiquement et vectoriellement une grandeur
+       sinusoïdale (vecteur de FRESNEL)
+3.4. Restituer et calculer la valeur efficace et la valeur moyenne d’une fonction sinusoïdale.
+3.5. Représenter mathématiquement, graphiquement et vectoriellement deux grandeurs
+       sinusoïdales déphasées
+3.6. Calculer I. V, X, Q , P, S et Q dans les cas des circuits fondamentaux R, L, C
+3.7. Calculer I, V, Z, P, Q, S et Q dans les cas des circuits R, L, C (groupement en série et / ou
+     en parallèle)
+3.8. Etablir les conditions de résonance dans le cas d’un circuit R, L, Série ou parallèle,
+       Entirer les conséquences.
+3.9. Etablir le bilan des puissances dans une installation alimentée en C.A.
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               17
+
+
+
+
+CLASSE : 4° CL Electronique
+BRANCHE : Electronique Générale
+         4 Périodes / semaine
+
+
+PROGRAMME SUIVI
+
+
+CHAPITRE I.      LES DIODES AU CRISTAL
+
+       L’élève doit être capable de :
+
+1.1. Enumerer, citer les différents types de diodes et leurs caractéristiques
+1.2. Expliquer le principe de fonctionnement des différents types de diodes
+1.3. Restituer leurs utilisations
+
+CHAPITRE II. : LES APPLICATIONS DES DIODES
+
+       L élève doit être capable de :
+
+   A. REDRESSEMENT :
+
+   1. Expliquer le principe physique de fonctionnement des trois montages redresseurs
+       fondamentaux (simple alternance, double alternance à transformateur, à point milieu et
+       en pont) débitant sur une résistance et sur une inductance.
+   2.2. Identifier dans les circuits ci-dessus, les formes de I et U en différents points du
+        circuit.
+   2.3. Calculer les caractéristiques limites des diodes nécessaires dans ces circuits (Vmay ,
+        Vmoy, Veff. , et Vinverse)
+   2.4. Restituer le schéma des redresseurs fondamentaux.
+
+   B. FILTRAGE
+
+2.5. Expliquer physiquement.
+    - l’allure de la tension aux bornes de la charge
+    - l’effet du condensateur sur les diodes (tension inverse, courant de pointe et sur la
+        tension redressée
+2.6. Expliquer physiquement le rôle des éléments des filtres complémentaires RC et DC.
+2.7. Restituer et justifier à forme des tensions en différents points des circuits, avec ou sans
+     filtrage - Définir le taux d’ondulation
+2.8. Calculer ; à l aide d’un formulaire le taux d’ondulation en différents du circuit.
+
+   C. MULTIPLICAEURS DE TENSION :
+
+2.9. Restituer les schémas des multiplicateurs de tension.
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                18
+
+
+2.10. Expliquer le principe de fonctionnement :
+    - du doubleur de tension
+   - du tripleur de tension
+    - du quadripleur de tension etc.…
+
+   D. STABILISATION :
+
+2.11. Expliquer la stabilisation
+2.12. Justifier la nécessité de :
+    - la stabilisation en amont et en aval
+    - l’efficacité de la stabilisation
+2.13. Calculer les différents éléments de la stabilisation.
+
+CHAPITRE III : LES TRANSISTORS UNIPOLAIRES ET BIPOLAIRES
+
+         L’élève doit être capable de :
+3.1. Restituer le symbole des différents types de transistor à l’effet de champ
+     la polarité des tensions qui assurent leur conduction normale et le sens conventionnel des
+     courants qui les traversent.
+3.2. Restituer la constitution d’un transistor à effet de champ
+3.3. Expliquer le principe de fonctionnement de (F E T)
+     Différents types de transistors à effet de champ et M.O S
+3.4. Déterminer le sens des ΔU et ΔI dan un montage simple F.E.T. dont on fait varier le
+     signal d’entrée et en donner les caractéristiques limites
+3.5. Restituer le symbole des transistors NPN et PNP, la polarité des tensions qui assurent leur
+     conduction normale et le sens conventionnel des courants qui les traversent
+3.6. Expliquer l’influence d’une variation de tension d’une quelconque des électrodes du
+     transistor sur l’intensité des courants qui le traversent.
+3.7. Définir les relations :
+                                 IC =  IE + ICBO,, = ß IB, + (1 + ß ) . ICB,O,
+
+                                 IB + (1 -  ) . IE – ICBO
+3.8. Restituer et utiliser les formules simplifiées
+
+                               IC = ß IB ; IC = IC + IB  IC
+
+3.9. Restituer l’allure des caractéristiques statiques et les interpréter
+3.10. Déterminer le sens de variation des tensions et courants dans un montage à un transistor
+      dont on fait varier le signal d’entrée
+3.11. Distinguer les différents types des transistors et expliquer l’effet transistor
+3.12. Déterminer la polarisation des transistors unipolaires et bipolaires
+3.13. Expliquer la nécessité du point de repos, la droite de charge statique et les différents
+      modes de polarisation
+3.14. Définir et expliquer la stabilisation en température des transistors unipolaires et
+      bipolaires.
+3.15. Citer effets de la température
+3.16. Déterminer le facteur de stabilité
+3.17. Citer les procédés de stabilisation.
+
+
+
+              Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                 19
+
+
+
+
+CLASSE   : 4° CL Electronique
+BRANCHE : INSTRUMENTS – APPARELLAGE ET METHODES DES MESURES
+         1 Période / semaine
+
+
+PROGRAMME SUIVI
+
+CHAPITRE I. INSTALLATION EQUIPEMENT DE LABORATOIRE
+
+        L’élève doit être capable de :
+    choisir l’installation et l’équipement adéquat pour la réalisation d’un travail.
+
+CHAPITRE II. : CALCULS D’ERREURS
+
+       L’élève doit être capable de :
+2.1. Evaluer les erreurs et en identifier les causes.
+
+CHAPITRE III. INDICATEURS GALVANOMETRIQUES
+
+        L’élève doit être capable de :
+3.1. Expliquer le fonctionnement différents indicateurs galvanométriques.
+3.2. Distinguer les différents types d’appareils de mesure
+3.3. Citer leur classe de précision
+
+CHAPITRE IV. : MESURE DE I, U, R, L et C
+
+       L’élève doit être capable de :
+4.1. Expliquer comment effectuer les mesures de I, U, R, L et C à l’aide des appareils
+     appropriés.
+
+
+
+
+              Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              20
+
+
+
+
+CLASSE : 4° CL Electronique
+BRANCHE : SHEMAS ELECTRONIQUES
+        2 Périodes / Semaine
+
+
+PROGRAMME
+
+CHAPITRE I. : NORMES DE L’ETABLISSEMENT DES SCHEMAS
+
+   L’élève doit être capable de :
+Classifier les différents types de schémas
+ Disposer les éléments sur les schémas
+Etablir la nomenclature des éléments
+
+CHAPITRE II. : APPLICATIONS SUR LES ALIMENTATIONS
+
+         L’élève doit être capable de :
+2.1. Dresser les schémas de principe et de câblage d’une alimentation avec redressement
+      mono et bialternance
+2.2. Dresser les schémas de principe et de câblage d’une alimentation avec filtrage et
+       disposition stabilisateur à diode zener
+2.3. Identifier les composants à utiliser
+2.4. Dessiner les schémas et déterminer les éléments des montages multiplicateurs de
+      tensions.
+
+CHAPITRE III. : APPLICATIONS SUR LA POLARISATION DES TRANSISTORS
+
+        L’élève doit être capable de :
+3.1. Dessiner les schémas de principe et de câblage des transistors unipolaires et bipolaires
+     polarisés
+3.2. Calculer les éléments du polarisation
+3.3. Tracer les droites de charges statiques et dynamiques.
+
+CHAPITRE IV : EXERCICES SUR LES PREAMPLICATEURS A TRANSISTORS
+
+        L’élève doit être capable de :
+4.1. Dessiner des schémas de principe et de câblage
+4.2. Lire le schéma d’un préamplificateur
+4.3. En déterminer les éléments
+4.4. Etablir la nomenclature de différents du schéma.
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                  21
+
+
+
+
+CLASSE  : 4° CL Electronique
+BRANCHE : TECHNOLOGIE
+        2 Périodes / Semaine
+
+
+PROGRAMME SUIVI
+
+CHAPITRE I. LES RESISTANCES FIXES ET VARIABLES
+
+        L’élève doit être capable de :
+1.1. Identifier, expliquer les procédés de fabrication des résistances fixes et variables. En
+     restituer leur marquage et leurs caractéristiques.
+1.2. Expliquer l’utilisation des composants électroniques ci-après : résistances fixes,
+     résistances variables, résistances non-linéaires, (VDR, CTN, CTP)
+
+CHAPITRE II. LES CONDENSATEURS FIXES ET VARIABLES
+
+        L’élève doit être capable de :
+    Identifier, Expliquer Les procédés de fabrication des condensateurs fixes et variables. en
+     restituer leur marquage et leurs caractéristiques.
+    Expliquer L’utilisation des composants électroniques ci- prés :
+     Condensateurs fixes, condensateurs variables
+
+CAPITRE III : LES BOBINAGES POUR CIRCUITS D’ALIMENTATION ET B. F.
+
+        L’élève doit être capable de :
+3.1. Expliquer les procédés de montage des transformateurs B.F. et des transformateurs
+     d’alimentation.
+3.2. Expliquer l’utilisation dans les transformateurs des tôles magnétiques, des fils et
+     des isolants.
+
+CHAPITRE IV : LES BOBINAGES POUR CIRCUITS B.F.
+        L’élève doit être capable de :
+4.1. Restituer et Expliquer Les notions des pertes dans les bobinages.
+4.2. Calculer les bobinages
+4.3. Identifier les supports non – magnétiques et magnétiques
+4.4. Justifier leur utilisation et celles de ferrites.
+
+CHAPITRE V : LA PIEZOELECTRICITE
+
+       L’élevé doit être capable de :
+5.1. Expliquer le phénomène de la piezoéletricité
+5.2. Décrire les types de quartz utilisés et justifier leurs utilisations
+
+CHAPITRE VI : LES ELEMENTS SEMI-CONDUCTEURS
+
+
+              Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               22
+
+
+L’élève doit être capable de :
+6.1. Identifier et expliquer les procédés de fabrication des diodes et transistors. En restituers
+     leurs caractéristiques et marquage.
+6.2. Justifier leurs utilisations.
+CLASSE          : 4° CL Electronique
+BRANCHE : ATELIER ELECTRONIQUE
+                 4 Périodes / Semaine
+
+
+PROGRAMME SUIVI
+
+
+CHAPITRE I
+        L’élève doit être capable de:
+1.1. Réaliser un châssis de travail sur bakélite ou sur de l’aluminium
+1.2. Réaliser sur un châssis en bakélite une boîte de substitution
+1.3. Monter un voltmètre à cadre mobile, un ohmmètre et un ampèremètre à cadre mobile.
+1.4. Réaliser une alimentation comprenant un transformateur, un redresseur et un disposition
+     de filtrage.
+1.5. Réaliser sur châssis en bakélite ou en aluminium les différents montages multiplicateurs
+     de tension (doubleur, tripleur, quadripleur)
+1.6. Réaliser des montages didactiques pour le labo à savoir des montages pour mesures des
+     tensions, des courants, des résistances, essais des condensateurs bobines, diodes et
+     transistors.
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               23
+
+
+
+
+CLASSE  : 4° CL Electronique
+BRANCHE : LABORATOIRE D’ELECTRONIQUE
+          4 périodes / semaine
+
+
+   PROGRAMME SUIVI
+
+
+CHAPITRE I: UTILISATION DES MULTIMETRE
+
+       L’élève doit être capable de:
+1.1. Décrire les parties d’un multimètre et de lire une mesure à l’aide d’un multimètre
+     analogique et à affichage digital.
+
+CHAPITRE II : MESURE DE U ET I
+
+        L’élève doit être capable de :
+2.1. Effectuer les mesures directes des tensions et courants continus.
+2.2. Vérifier la loi d’ohm, le théorème de kennely, le théorème de kirchoff.
+2.3. Effectuer les mesures de puissance en DC
+2.4. Effectuer les mesures de tension et courant en AC
+
+CHAPITRE III : MESURES DES RESISTANCES
+
+       L’élève doit être capable de :
+3.1 Effectuer les mesures de la résistance en appliquant les méthodes suivantes : méthode
+    industrielle, méthode de l’ohmmètre, méthode du voltmètre, méthode du pont de
+    Wheatstone, méthode du pont universel.
+
+CHAPITRE IV : LES ESSAIS
+
+        L’élève doit être capable de :
+4.1. Effectuer les essais et mesures des composants suivants : résistances, condensateurs,
+      bobines, transformateurs.
+4.2. Effectuer les relèves des courbes caractéristiques et déduire les différents paramètres des
+     composants suivants : diodes et transistors unipolaires.
+
+
+CHAPITRE V : MESURE SUR LES CIRCUITS
+
+        L’élève doit être capable de :
+5.1. Effectuer les mesures sur les circuits et les montages préamplificateurs à transistors.
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               24
+
+
+
+
+CLASSE : 5° CL Electronique
+BRANCHE : CIRCUITS LOGIQUES
+        2 Périodes / Semaine
+
+PROGRAMME SUIVI
+
+CHAPITRE : GENERALITES SUR L’ALGEBRE DE BOOLE
+
+        L’élève doit être capable de :
+1.1. Restituer les éléments essentiels de l’algèbre de Boole et de MONTRER l’analogie
+     électrique.
+
+CHAPITRE II. : FONCTIONS LOGIQUES ET DERIVES
+
+       L’élève doit être capable de :
+2.1. Définir les fonctions logiques suivantes : ou , ET, PAS, NOR et NAD.
+2.2. Enoncer leurs propriétés.
+2.3. Les représenter à l’aide des contacts, des diodes et transistors.
+
+CHAPITRE III. RELATIONS FONDAMENTALES DE L’ALGEBRE BINAIRE
+
+       L’élève doit être capable de :
+3.1. Définir la somme booléenne, le produit booléen.
+3.2. Enoncer leurs propriétés et les règles générales de simplification des équations.
+
+CHAPITRE IV. GRAPHIQUES DE L’ALGEBRE BINAIRE
+
+        L’élève doit être capable de :
+4.1. Représenter à l’aide des diagrammes de Venn, d’Euler et les tableaux de Karnaugh, les
+     fonctions à plusieurs variables.
+4.2. Utiliser la table de Karnagh pour la simplification des équations.
+4.3. Simplifier les logigramm
+
+CHAPITRE V. NOTIONS SUR LES CODES
+
+        L’élève doit être capable de :
+5.1. Représenter un .nombre dans un des systèmes suivants :
+     décimal, binaire, octal, hexadécimal.
+5.2. Passer d’un système de numération à un autre.
+5.3. R restituer les différents codes à savoir : les codes binaire pondéré, le code binaire non
+     pondéré.
+5.4. Définir le décodage et ENONCER son utilisation
+
+CHATRE VI : LES FAMILLES LOGIQUES
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                25
+
+        L’élève doit être capable de :
+6.1. Identifier les différentes logiques.
+6.2. Réaliser. les schémas des fonction logiques en différances familles.
+6.3. Citer leurs utilisations et leur performances des familles logiques telles que : (DL RTL,
+     DCTL, TTL, CMOS, ECL, LSI, VLST)
+CLASSE         : 5° CL Electronique
+BRANCHE : ELECTRICITE INDUSTRIELLE
+                 3 périodes / semaine
+
+
+PROGRAMME SUIVI
+
+CHAPITRE 1 : LE COURANT ALTERATIF TRIPHASE
+
+       L’élève doit capable de :
+1.1. Décrire, Différencier, Restituer et Représenter :
+1.1.1. les relations qui expriment une tension simple et composée.
+1.1.2. les autres systèmes polyphasé (diphasé – tétrapasé –héxaphasé)
+1.1.3. le montage –étoile équilibré – déséquilibré.
+
+      - Enoncer leurs propriétés (U, V, I, J, P )
+
+1.1.4. le montage – triangle équilibré – déséquilibré
+       - Enoncer leurs propriétés (U, V, I , J, P = 3 UI cos  )
+1.1.5. le montage zig-zag.
+1.1.6. Déterminer les puissances en triphasé des différents montages. En justifier l’intérêt.
+
+1.2. Représenter graphiquement, mathématiquement et vectoriellement des grandeurs
+     triphasées équilibrées.
+1.3. Choisir le couplage d’un récepteur triphasé en fonction de ses caractéristiques et de
+     celles du réseau.
+
+CHAPITRE II : LES LOIS DES CICUITS MAGNETIQUES
+
+        L’élève doit être capable de :
+2.1. Définir les des circuits magnétiques.
+2.2. Expliquer la constitution d’un circuit magnétique.
+2.3. Différencier ou distinguer les différents types des circuits magnétiques.
+
+CHAPITRE III : LES ELECTROAIMANTS
+
+        L’élève doit être capable de :
+3.1 Définir l’électroaimant et énoncer la loi d’action mécanique entre pôles d’aimants.
+3.2. Expliquer la constitution de l’électroaimant.
+3.3. Distinguer les différents types d’électroaimants.
+3.4. Restituer et appliquer la relation de la force portante.
+3.5. Restituer et justifier leurs applications
+
+CHAPITRE IV : LES        MACHINES A COURANT CONTINU
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                             26
+
+
+        L’élève doit être capable de :
+4.1. Décrire une machine à courant continu.
+4.2. Justifier l’existence d’une f. e. m. (f.  . e. m.) induite.
+4.3. Justifier le rôle du collecteur.
+4.4. Indiquer le sens f. e. m. dans les conducteurs d’un enroulement d’induit simple.
+4.5. Enoncer, discuter et appliquer la formule :
+     E = a . . n . 66n 
+           p
+
+
+4.6. Enoncer, discuter et appliquer la formuler :
+     E= U± rI
+4.7. Expliquer le phénomène de réaction d’induit.
+4.7.1. En déduire les conséquences.
+4.7.2. En proposer les remèdes.
+4.8. Justifier les inconvénients qui accompagnent la commutation et proposer les remèdes.
+4.9. Distinguer les dynamos selon leur mode d’excitation et en donner leur utilisation.
+4.10. Reproduire et discuter l’allure
+      - de la caractéristique à vide
+      - des caractéristiques en charge des dynamos.
+4.11. Expliquer le principe de fonctionnement du moteur à courant continu.
+4.12. pour un moteur à courant continu, restituer, discuter et appliquer les formules :
+      C = k .  . I et n = k. U rI
+      EN DEDUIRE les modes de réglage de la vitesse du moteur à couple constant.
+4.13. Distinguer les moteur à courant continu suivant leur mode d’excitation.
+4.14. Justifier la nécessité du rhéostat de démarrage.
+4.15. Restituer et justifier le schéma de raccordement des moteurs
+      Shunt et série.
+4.16. Justifier, discuter, comparer l’allure des caractéristiques électromécaniques et
+      mécaniques des moteurs shunt et série.
+      en déduire les applications particulières.
+4.17. A Partir des caractéristiques mécaniques de types d’engins entraînés et de la
+      caractéristique mécanique du moteur, figurer le point de fonctionnement et discuter les
+       conditions de stabilité de l’ensemble.
+4.18. Dresser l’inventaire des puissances et des pertes d’une machine à courant continu.
+
+
+
+
+            Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                27
+
+
+
+
+CLASSE  : 5° CL Electronique
+BRANCHE : ELECTRONIQUE GENERALE
+          4 PERIODES / SEMAINE
+
+
+PROGRAMME SUIVI
+
+
+CHAPITRE I : ETUDE EN FAIBLE SIGNAUX DES TRANSISTORS UNIPOLAIRES ET
+             BIPOLAIRES
+
+        L’élève doit être capable de :
+1.1. Définir les différents paramètres d’un transistor unipolaire.
+1.2. Etablir l’expression de l’amplification en tension.
+1.3. Restituer les expressions de l’impédance d’entrée et de sortie
+1.4. Restituer le bilan de puissance.
+1.5. Expliquer et justifier les performances de trois montages fondamentaux.
+1.6. Restituer et expliquer le circuit équivalent d’un montage E.C.
+1.7. Définir et calculer les différents paramètres (z, y, h….) d’un transistor bipolaire.
+1.8. Restituer le circuit équivalent universel.
+1.9. Calculer et définir A1, Av, Ap, Re, Rs pour un montage E.C.
+1.10. Expliquer et justifier les performances de trois montages fondamentaux.
+
+CHAPITRE II. LE PREAMPLIFICATEUR
+
+        L’élève doit être capable de :
+2.1. Expliquer physiquement le phénomène de l’application.
+2.2. Décrire le préamplificateur et en restituer le schéma ;
+2.3. Etudier l’influence de RE ou RS sur Ai, Av, Ap, ZE, ZS.
+2.4. Déterminer la valeur des condensateurs de découplage des résistances d’émetteur et de
+     source.
+2.5. Donner les causes du découplage.
+2.6. Tracer la droite d’attaque et de charge dynamique.
+2.7. Expliquer l’influence des éléments de polarisation sur Av, Ai, Ap, Ze, Zs.
+
+CHAPITRE III. LES AMPLIFICATEURS DE PUISSANCE B.F.
+
+       L’élève doit être capable de :
+3.1. Restituer la classification des amplificateurs
+3.2. Expliquer une commande en courant et une commande en tension et énoncer leurs
+     caractéristiques.
+3.3. Définir la température de jonction maximale, expliquer son utilité et déterminer la
+     dissipation collectrice.
+3.4. Calculer le refroidisseur.
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                28
+
+3.5 Définir la classe de fonctionnement A d’un amplificateur et en expliquer le
+     fonctionnement.
+3.6. Etablir le bilan de puissance.
+3.7. Expliquer l’intérêt du montage Push-pull
+3.8. Expliquer son principe de fonctionnement.
+3.9. Etablir le bilan de puissance.
+3.10. Expliquer le but et les fonctionnements des étages driver.
+3.11. Dresser le schéma et expliquer le fonctionnement d’un étage PP complémentaire.
+
+CHAPITRE IV. LA CONTRE – REACTION
+
+       L’élève doit être capable de :
+
+4.1. Définir la contre-réaction.
+4.2. Enoncer les propriétés de la contre-réaction.
+4.3. Restituer et expliquer les différents types de la contre – réaction.
+4.4. Expliquer le principe d’une oscillateur à partir d’un amplificateur avec boucle de contre –
+     réaction.
+4.5. Définir un oscillateur.
+4.6. Restituer les schémas, expliquer le principe de fonctionnement d’un oscillateur, énoncer
+      les caractéristiques, établir ou restituer les expressions des fréquences des oscillateurs
+      suivants :
+      à résistance négative, à réseau déphaseur, à réseau déphaseur sélectif, Hartley, Colpitts et
+      à quartz.
+
+CHAPITRE V : LES TRANSISTORS EN HAUTES FREQUENCES
+
+L’élève doit être capable de :
+
+5.1. Définir les paramètres admittances.
+5.2. Restituer le schéma équivalent à deux générateurs et calculer Ai, Av,      Ze, et Zs.
+5.3. Restituer et expliquer le schéma équivalent en r
+5.4. Restituer le schéma équivalent naturel et expliquer la signification physique des éléments
+     du schéma équivalent naturel.
+5.5. Calculer les fréquences de coupure.
+5.6. Etablir les expressions de fréquences de coupure de bêta, alpha et de la pente externe.
+5.7. Restituer les expressions des impédances d’entrées et de sortie.
+5.8. Etablir les expressions de l’amplification en courant et l’amplification en tension d’un
+      étage chargé.
+5.9. Expliquer le but de l’unilatéralisation et de la neutrodynation.
+5.10. Restituer les processus de l’unilatéralisation et de la neutrodynation.
+5.11. Donner les caractéristiques d’un étage neutrodyné et unilatéralisé.
+
+CHAPITRE VI. : LES ALIMENTATIONS STABILISEES
+
+       L’élève doit être capable de :
+6.1. Restituer la nécessité et l’efficacité de la stabilisation.
+6.2. Expliquer la stabilisation par transistor (monté en série ou en parallèle).
+6.3. Déterminer les éléments d’une alimentation stabilisée.
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                 29
+
+6.4. Dessiner les schémas des alimentations stabililissée.avec dispositifs de l’imitation de
+     courant.
+
+
+
+
+CLASSE : 5° CL Electronique
+BRANCHE : INSRUMENTS – APPAREILLACE ET METHODES DES MESURES
+        3 P2RIODES / SEMAINE
+
+
+    PROGRAMME SUIVI
+
+
+CHAPITRE I.         L’OSCILLOSCOPE
+
+        L’élève doit être capable de :
+
+1.1. Restituer le schéma bloc d’un oscilloscope.
+1.2. Décrire le tube à rayon cathodique et expliquer son fonctionnement.
+1.3. Restituer le schéma bloc d’une base de temps et identifier les différents types et expliquer
+     le fonctionnement.
+1.4. Expliquer l’utilisation de l’oscilloscope pour effectuer les mesures de tension continues et
+     alternatives, des déphasages et des fréquences.
+
+CHAPITRE II. : GENERATEURS DES SIGNAUX SINUSOIDAUX
+
+L’élève doit être capable de :
+
+2.1. Restituer la classification des générateurs.
+2.2. Restituer leurs caractéristiques et leurs utilisations.
+
+CHAPITRE III. : GENERATEURS DES SIGNAUX NON SINUSOIDAUX
+
+        L’élève doit être capable de :
+
+3.1. Expliquer la transformation d’ondes sinusoïdales en rectangulaires.
+3.2. Expliquer le procédé de production directe d’ondes rectangulaires et d’impulsions.
+
+CHAPITRE IV.          FREQUENCEMETRE
+
+        L’élève doit être capable de :
+
+4.1. Restituer le principe et l’utilisation d’un fréquencemètre.
+
+CHAPITRE V. : MESURES DE PUISSANCE – WATTMETRE
+
+        L’élève doit être capable de :
+
+
+
+              Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              30
+
+5.1. Expliquer le principe de fonctionnement d’un wattmètre.
+5.2. Réaliser des mesures de puissance à l’aide d’un wattmètre.
+
+
+
+
+CLASSE  : 5° CL ELECTRONIQUE
+BRANCHE : RADIOELECTRICITE
+        4 PERIODES / SEMAINE
+
+PROGRAMME SUIVI
+
+CHAPITRE I. : GENERALITES
+
+        L’élève doit être capable de :
+1.1. Restituer les notions fondamentales des ondes électromagnétiques, leur classification et
+     leur mode de propagation.
+1.2. Décrire les différents types de récepteurs et les identifier.
+
+CHAPITRE II. LES CIRCUITS RADIOFREQUENCES
+
+       L’élève doit être capable de :
+2.1. Restituer les différents types de circuits R.F.
+2.1. Schématiser, représenter leurs courbes de réponse et énoncer leurs caractéristiques.
+
+CHAPITRE II. ETAGE D’ENTRE H.F.
+
+        L’élève doit être capable de :
+3.1. Décrire et schématiser les différents modes de réception et énoncer leurs caractéristiques.
+3.2. Justifier les rôles de chaque élément de l’étage d’entrée.
+
+CHAPITRE IV. CHANGEMENT DE FREQUENCE
+
+        L’élève doit être capable de :
+4.1. Enoncer le principe de changement de fréquence.
+4.2. Justifier le but du changement de fréquence.
+4.3. Expliquer la méthode de battement et définir la fréquence image.
+4.4. Citer les avantages et inconvénient du changement de fréquence.
+4.5. Expliquer la commande unique.
+
+
+CHAPITRE V. : LA MODULATION
+
+        L’élève doit être capable de :
+5.1. Justifier le but de la modulation et en expliquer le principe.
+5.2. Restituer l’expression d’un signal modulé en amplitude et en fréquence.
+5.3. Décrire et déduire les puissances dissipées dans une charge par un signal modulé
+5.4. Identifier les différentes classes de modulation et en citer les avantages et les
+      inconvénients.
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               31
+
+
+CHAPITRE VI. : LA DEMODULATION
+
+        L’élève doit être capable de :
+6.1. Justifier le but de la détection ou la démodulation et expliquer son principe de
+     fonctionnement.
+6.2. Décrire les différents montages et en énoncer les performances.
+CLASSE : 5° CL ELECTRONIQUE
+BRANCHE : SCHEMAS ELECTRIQUES
+                2 PERIODES / SEMAINE
+
+PROGRAMME SUIVI
+
+CHAPITRE I : PREAMPIIFICATEURS A TRANSISTORS
+
+        L’élève doit être capable de :
+1.1. Dresser les différents schémas et plans d’un préamplificateur.
+1.2. Tracer les droites des charges statiques et dynamiques de transistors.
+1.3. Déterminer les différents éléments de polarisation.
+1.4. Etablir la nomenclature des éléments.
+
+CHAPITRE II : LES OSCILLOCRAMMES
+
+       L’élève doit être capable de :
+2.1. Montrer à l’aide d’un croquis l’obtention d’un signal à l’oscilloscope.
+
+CHAPITRE III. LES AMPLIFICATEURS DE PUISSANCE
+
+        L’élève doit être capable de :
+3.1. Dresser les différents schémas d’amplificateurs classe A, B.
+3.2. Tracer les droites de charge statique et dynamique.
+3.3. Déterminer les différents éléments et en établir la nomenclature.
+
+CHAPITRE IV. : LES ALIMENTATIONS STABILISEES
+
+        L’élève doit être capable de :
+4.1. Dresser les différents schémas des alimentations stabilisées.
+4.2. Calculer les différents éléments des alimentations stablilisées.
+4.3. Etablir la nomenclature.
+4.4. Réaliser les applications des alimentations.
+
+CHAPITRE V. LES OSCILLATEURS
+
+       L’élève doit être capable de :
+5.1. Dresser les différents schémas de divers types d’oscillateurs.
+5.2. Calculer les différents éléments d’un oscillateur.
+5.3. Réaliser les applications des oscillateurs.
+
+CHAPITRE VI. ANALYSE DES SCHEMAS DES RECEPTEURS AM et FM
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                    32
+
+       L’élève doit être capable de :
+6.1. Dresser les différents schémas des fonctions logiques suivants :
+     ET, OU, NON, PAS, NOR, NAND ainsi que de leurs applications.
+
+CHAPITRE VII. ANALYSE DES SCHEMAS DES RECEPTEURS AM et FM
+        L’élève doit être capable de :
+7.1. Lire les schémas des récepteurs AM ET FM.
+CLASSE : 5° CL ELECTRONIQUE
+BRANCHE : TECHNOLOGIE ELECTRONIQUE
+               1 PERIODE / SEMAINE
+
+
+PROGRAMME SUIVI
+
+
+CHAPITRE I : TRANSDUCTEURS ELECTROACOUSTIQUES
+
+       L’élève doit être capable de :
+
+    Décrire et expliquer les principes de fonctionnement et justifie l’utilisation des
+    transducteurs électroacoustiques ci-après : microphones, à pression et à vélocité (au
+    charbon – électrodynamique - piézoélectrique) haut parleurs électrodynamiques,
+    électrostatiques, piézoélectrique et par rayons lasers.
+
+CHAPITRE II. ENREGISTREMENT ET REPRODUCTIONDU SON
+
+       L’élève doit être capable de :
+
+2.1. Expliquer les procédés d’enregistrement et de reproduction du son.
+
+CHAPITRE III. OPTO-ELECTRONIQUE
+
+       L’élève doit être capable de :
+
+3.1. Identifier et expliquer le principe de fonctionnement des éléments protosensibles et
+     photovoltaïques
+3.2. Donner les applications des éléments photosensibles et photovoltaïques.
+
+CHAPITRE IV. CIRCUITS INTECRES
+
+        L’élève doit être capable de :
+4.1. Identifier et expliquer les procédés de fabrication des circuits intégrés.
+4.2. Justifier l’utilisation et restituer le marquage des circuits intégrés.
+
+
+CHAPITRE V . AFFICHAGE :
+
+       L’élève doit être capable de :
+
+5.1. Identifier les différents types d’affichage.
+
+
+              Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               33
+
+5.2. Expliquer leur procédé de fabrication et leur principe de fonctionnement.
+
+
+
+
+CLASSE  : 5° CL ELECTRONIQUE
+BRANCHE : ATELIER ELECTRONIQUE
+          5 PERIODES / SEMAINE
+
+
+PROGRAMME SUIVI
+
+
+CHAPITRE I : LES ALIMENTATIONS STABILISEES
+
+       L’élève doit être capable de :
+
+1.1. Réaliser sur circuits imprimés les alimentations stabilisées comprenant un transformation,
+     un redresseur, un dispositif de filtrage et une unité de stabilisation.
+
+CHAPITRE II. LES AMPLIFICATEURS B.F. DE TENSION
+
+       L’élève doit être capable de :
+
+2.1. Réaliser sur circuits imprimés les préamplificateurs de tension à 2 ou trois transistors
+     avec circuits de réglage de tonalité.
+
+CHAPITRE III. : LES AMPLIFICATEURS BF DE PUISSANCE
+
+       L’élève doit être capable de :
+
+3.1. Réaliser sur circuits imprimés les amplificateurs de puissance BF.
+3.2. Réaliser sur circuits imprimés les oscillateurs de types suivants RC, LC, à quartz.
+
+CHAPITRE IV. LES AMPLIFICATEURS HF
+
+       L’élève doit être capable de :
+
+4.1. Réaliser sur circuits imprimés les amplificateurs à large bande, à bande étroite.
+
+CHAPITRE V. : LES PORTES LOGIQUES
+
+       L’élève doit être capable de :
+
+5.1. Réaliser sur circuits imprimés avec les diodes, les résistances, les condensateurs et les
+     transistors les portes logiques suivantes ET, OC, NON, NON-NT, NON-pl, OU exclusif.
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                34
+
+
+
+
+CLASSE : 5° CL ELECTRONIQUE
+BRANCHE : LABORATOIRE ELECTRONIQUE
+          5 PERIODES / SEMAINE
+
+PROGRAMME SUIVI
+
+CHAPITRE I. MESURES SUR LES CIRCUITS
+
+       L’élève doit être capable de :
+
+1.1. Effectuer et interpréter les mesures sur les circuits suivants :
+     - les circuits résonnants série et parallèle (courbe de réponse – déphasage –
+       amortissement)
+     - les circuits intégrateurs et différentiateurs
+     - les filtres passe-bas, passe-haut, passe-bande et coupe-bande.
+
+CHAPITRE II : MESURES SUR LES TRANSISTORS
+
+       L’élève doit être capable de :
+
+2.1. Effectuer et interpréter les mesures sur : les grandeurs statiques des transistors en EC,
+BC,       et CC et en relever les courbes caractéristiques.
+2.2. Evaluer influence du point de fonctionnement sur le paramètre
+2.3. Effectuer et interpréter les mesures sur les transistors en dynamique.
+
+CHAPITRE III. LES AMPLIFICATEURS
+
+       L’élève doit être capable de :
+
+3.1. Effectuer et interpréter les mesures sur les préamplificateurs
+     - le gain, la sensibilité, la courbe de réponse, la distorsion, l’impédance d’entrée,
+       l’impédance de sorte.
+3.2. Evaluer l’influence d’un deuxième étage sur le premier.
+
+CHPITRE IV. : MESURES SUR LES AMPLIFICATEURS B.F.
+
+       L’élève doit être capable de :
+
+4.1. Effectuer et interpréter les mesures sur les amplificateurs :
+     le gain en tension, les gains en courant, en puissance.
+4.2. Relever la courbe de réponse de l’amplificateur.
+
+CHAPITRE V. : LES OSCILLATEURS
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                35
+
+
+       L’élève doit être capable de :
+
+5.1. Effectuer et interpréter les mesures sur les oscillateurs : l’amplitude, la fréquence.
+5.2. Evaluer l’influence de la charge.
+     (oscillateurs à transistors RC, colpitts à pont de Wien, Hartley)
+
+CLASSE  : 6 CL ELECTRONIQUE
+BRANCHE : CIRCUITS LOGIQUES
+        2 PERIODE / SEMAINE
+
+PROGRAMME SUIVI
+
+CHAPITRE I. NOTIONS DE COMPTAGE
+
+        L’élève doit être capable de :
+1.1. Identifier les différents types de bistables
+1.2. Expliquer leur principe de fonctionnement.
+1.3. Citer leurs utilisations.
+1.4. Schématiser et donner les tables de vérité des compteurs binaire pur – binaire décimal
+     (décade 1.2.4.8., 1.2.4.2., Aïken, rétrograde).
+1.5. Définir les registres.
+1.6. Expliquer le fonctionnement des registres et les utiliser dans le comptage.
+
+CHAPITRE II. LE DIAGRAMME FONCTIONNEL OU CRAFCET
+
+        L’élève doit être capable de :
+2.1. Restituer le but du diagramme fonctionnel.
+2.2. Enoncer les principe de base et la règle d’emploi du grafcet.
+2.3. Identifier les grafcet de niveau 1 et niveau 2.
+2.4. Utiliser le grafcet pour faciliter la description, la résolution et l’automatisation d’un
+      processus séquentiel.
+
+CHAPITRE III. INTRODUCTION AUX MICROPROCESSEURS
+        L’élève doit être capable de :
+3.1. Effectuer les opérations mathématiques sur des nombres signés et non signés.
+3.2. Restituer l’architecture générale d’un système simple à microprocesseur.
+3.3. Définir le rôle de chacun des éléments.
+3.4. Restituer l’architecte interne d’un microprocesseur standard.
+3.5. Définir le rôle de chacun des éléments
+3.6. Restituer la structure d’une instruction.
+3.7. Restituer le cheminement des informations lors de l’exécution d’une instruction simple.
+3.8. Expliquer le rôle des entrées et sorties PIA et ACIA.
+3.9. Exprimer en langage courant la signification d’une instruction en mnémonique.
+3.10. Passer d’une instruction et hexadécimal à une instruction en mnémonique et
+       inversement.
+      Utiliser un système réel à microprocesseur.
+      Vérifier l’action d’une instruction simple.
+3.11. Expliquer le rôle de différents éléments d’un interface entrée-sortie simple.
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              36
+
+REMARQUE : Parmi les différents types de microprocesseurs, nous suggérons actuellement
+                les types suivants : 6800 – 8080 – Z 80.
+3.12. Retrouver le programme en mnémonique d’un programme simple écrit en mémoire
+      Déduire l’ordinogramme et le Traduire en langage courant.
+
+CHAPITRE IV. : ACQUISITION D’INFORMATIONS
+       L’élève doit être capable de :
+4.1. Restituer le principe de la conversion analogique numérique et numérique analogique.
+CLASSE        : 6° CL ELECTRONIQUE
+BRANCHE : ELECTRICITE INDUSTRIELLE
+              3 PERIODES / SEMAINE
+
+
+PROGRAMME SUIVI
+
+CHAPITRE I : LE TRANSFORMATEUR
+
+       L’élève doit être capable de :
+
+1.1. Justifier l’intérêt du transformateur en fonction des problèmes du transport de l’énergie
+     électrique.
+1.2. Décrire un transformateur (y compris le système de refroidissement).
+1.3. Expliquer le principe de fonctionnement à vide du transformateur.
+     Donner l’expression du rapport de transformation et de la f.é.m. induite par spire.
+1.4. Expliquer le principe de fonctionnement du transformateur en charge et donner la
+     relation entre les At (transformateur parfait).
+     En déduire le diagramme vectoriel du transformateur parfait.
+1.5. Etablir les actions du transformateur réel et en déduire le diagramme vectoriel.
+1.6. Etablir le diagramme de KPP.
+1.7. A partir du diagramme précédent, établir la caractéristique en charge pour différentes
+     valeurs de cos Q
+1.8. Décrire la conduite d’un essai à vide et d’un essai en court-circuit.
+     En déduire les pertes cuivre, les pertes fer, la tension de court-circuit, le triangle des
+     chutes de tension et le rendement.
+1.9. Justifier l’emploi du transformateur à « pertes réduites ».
+1.10. Décrire l’autotransformateur (rapport fixe, rapport variable) et le comparer au
+        transformateur (avantages, inconvénients).
+1.11. Schématiser un transformateur triphasé (circuit magnétique, enroulements et
+     couplages étoile, triangle, zing-zag).
+                                             N      V    J
+1.12. Reproduire et appliquer la relation 1  1  1
+                                             N 2 V2 J 2
+        En déduire le rapport de transformation externe.
+1.13. Justifier les conditions d’emploi d’un transformateur de mesure.
+1.14. Citer les conditions de mise en parallèle de deux transformateurs.
+
+CHAPITRE II. LES ALTERNATEURS
+
+       L’élève doit être capable de :
+2.1. Décrire le principe de la production d’une F.E.M. alternative sinusoïdale.
+2.2. Décrire les principaux types d’alternateur :
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                37
+
+     - monophasé – triphasé – multipolaire et expliquer leur fonctionnement à vide et en
+       charge et en dégager les avantages.
+2.3. Justifier le choix de l’alternateur monophasé.
+2.4. Etudier le fonctionnement à vide.
+2.4.1. Exprimer la valeur de la f. é. M. et les moyens de la faire varier.
+2.4.2. Exprimer la valeur de la fréquence
+2.4.3. Exprimer la valeur de l’angle électrique.
+2.4.4. Définir et tracer la caractéristique à vide.
+2.5. Enoncer les paramètres de fonctionnement (n, Iex, U, I)
+2.6. Citer les causes de la chute de tension en charge.
+2.7. Enoncer l’hypothèse de « BEHN-ESCIENBURG ».
+2.8. Décrire l’essai à vide et en court-circuit.
+
+     En déduire la valeur de la réactance synchrone.
+2.9. Utiliser le diagramme de BEHN-ESCIENRURG.
+2.10. Enoncer les conditions de couplage d’un alternateur sur le réseau.
+      Décrire les actions permettant la mise en charge active et réactive.
+
+CHAPITRE III. LES MOTEURS A COURANT ALTERNATIF
+
+       L’élève doit être capable de :
+
+3.1. Enoncer le théorème de LEBLANC.
+3.2. Citer les caractéristiques (grandeur, vitesse de rotation)
+     du champ tournant crée par un système de bobines triphasées alimentées par des tensions
+     triphasées équilibrées.
+3.3. Enoncer la modification à apporter à ce système pour inverser le sens de rotation du
+     champ tournant.
+3.4. Citer les caractéristiques du champ tournant crée par un système de bobines diphasés
+     alimentées par des tensions diphasées.
+3.5. Enoncer le principe de fonctionnement du moteur asynchrone triphasé.
+3.6. Donner l’expression de la vitesse angulaire et de la vitesse de rotation du champ tournant.
+3.7. Donner l’expression du glissement et l’interpréter.
+3.7.1. Donner l’expression de la fréquence des courants rotorique.
+3.8. Donner l’expression de la f ; e ; m induite au rotor (rotor ouvert E2 – rotor en rotation : g .
+     E2 )
+3.9. Donner l’expression de la réactance du rotor (à l’arrêt X2 = L2.  en marche g . X2 = C .
+     L2 . 
+3.10. Tracer le diagramme des tensions du rotor
+        En déduire la valeur du courant rotorique I2.
+3.11. Etablir le bilan énergétique du moteur et en déduire l’expression du rendement et
+        puissance.
+3.12. La formule du couple étant donnée, déduire l’allure de la caractéristique mécanique du
+        moteur pour différentes valeurs de R2.
+3.13. Reproduire l’alterne des courbes représentant l’intensité absorbée en fonction du
+        glissement pour différentes valeurs de R2.
+3.14. Déduire l’utilité du rhéostat rotorique.
+3.15. Donner la valeur du glissement correspondant au couple maximal.
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              38
+
+3.16. Justifier qu’en marche industrielle (faible valeur de g) à résistance rotorique égale, le
+      couple est proportionnel au glissement et qu’à glissement égal, le couple est
+      inversement proportionnel à la résistance du rotor.
+3.17. Décrire, expliquer le principe de fonctionnement des moteurs asynchrones :
+      - à cage
+      - à double cage
+      - à rotor bobiné
+      et en restituer leur fonctionnement à vide et en charge.
+3.18. Décrire et restituer le schéma des procédés de démarrage des moteurs asynchrones :
+      - étoile-triangle
+      - résistances statoriques
+      - autotransformateur
+      - résistances rotoriques Idd  Id
+3.19. Restituer et justifier les courbes e = f(N) et I = f(N) correspondant.
+3.20. Etablir les rapports entre les courants de démarrage par chaque procédé et les courants
+      de démarrage direct.
+                                                    Cdd
+3.21. Idem pour les couples : établir le rapport
+                                                     Cd
+3.22. Les moteurs monophasés : l’élève doit être capable de :
+      a. Décrire et expliquer le principe de fonctionnement d’un moteur monophasé.
+      b. Tracer la caractéristique mécanique
+      c. Expliquer le démarrage par phase axillaire
+      d. Décrire le moteur aspire de « FRACER »
+      e. Le moteur universel : L’élève doit être capable de :
+           Démontrer la possibilité de fonctionnement en alternatif du moteur à courant
+           continu
+      - Enoncer les modifications à apporter au moteur série à courant continu pour
+          l’utiliser en alternatif.
+      - Citer les avantages et inconvénients.
+3.23. Les Moteurs synchrones : L’élève doit être capable de :
+      a. Expliquer le principe de fonctionnement et l’existence du couple du moteur
+          synchrone.
+      b. Décrire les procédés de démarrage.
+      c. Etablir et utiliser le diagramme de fonctionnement
+      - Fonctionnement à couple constant et excitation variable (courbe en V).
+      - Fonctionnement à excitation constante et couple variable (Avantages et
+          inconvénients).
+      d. Expliquer le fonctionnement du moteur asynchrone synchronisé.
+
+N.B. : MOTEURS PARTICULIERS (facultatif) C.C.M.
+
+             L’élève doit être capable de :
+3.24. Donner la constitution, le principe de fonctionnement des moteurs particuliers tels
+      que :
+      1. – Moteur linéaire
+      2. – Moteur pas à pas – à aimant permanent – à réluctance variable.
+      3. – Moteur à entrefer axial
+      4. – Les synchromachines
+      5. – Les micromoteurs
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               39
+
+CHAPITRE IV. : PRODUCTION, TRANSPORT ET DISTRIBUTION DE L’ENERGIE
+                     ELECTRIQUE.
+A. PRODUCTION :
+4.1. Citer et expliquer les principes de production de l’énergie électrique à partir des usines ci-
+     après : hydraulique, thermique, nucléaire, photovoltaïque et solaire.
+4.2. Reproduire le schéma simplifié d’une centrale classique (hydraulique, thermique)
+
+
+
+
+   B. TRANSPORT :
+
+               L’élève doit être capable de :
+   4.3. Justifier l’intérêt de transporter l’énergie électrique sous la forme H.T. triphasé.
+   4.4. Reproduire le schéma électrique simplifié du transport et de la distribution de
+         l’énergie électrique.
+   4.5. Indiquer l’intérêt de l’interconnexion des réseaux H.T.
+   4.6. Etablir le calcul sommaire d’une ligne H.T. afin d’en déterminer la tension au départ.
+
+C. DISTRIBUTION :
+
+                 L’élève doit être capable de :
+4.7. Reproduire les schémas simplifiés d’une distribution en structure radiale, en boucle,
+      maillée.
+4.8. Traiter une application numérique conduisant à la détermination de la section d’une ligne
+B.T. par calculs.
+                                                    1
+4.9. Justifier l’influence du cos Q et de la pointe     horaire sur la facturation de l’énergie
+                                                    4
+     électrique H.T.
+
+CHAPITRE V. TELECOMMANDE – TELESIGNALISATION.
+                  A partir du schéma de principe du circuit de puissance d’un contacteur
+                  bipolaire ou tripolaire alimenté alternatif, l’élève doit être capable de :
+5.1. Dessiner le schéma de principe du circuit de commande ;
+5.2. Identifier le matériel de puissance et de commande
+5.3. Numéroter les contacts et indiquer les caractéristiques du réseau d’alimentation (tension
+     et fréquence)
+
+INCIDENCE DE LA PROTECTION.
+
+               L’élève doit être capable de :
+   Désigner les types de protection et leur utilité
+   Représenter sur un schéma de principe du circuit de puissance la protection thermique et
+    la protection magnéto-thermique.
+   Identifier sur un schéma de principe du circuit de commande les contacts y afférents et
+    actionnés par la protection.
+
+SIGNATURE :
+     L’élève doit être capable de :
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                40
+
+    Ajouter sur le schéma de principe d’un circuit de comande les contacts qui permettront la
+     signalisation
+    - contacteur enclenché
+    - contacteur déclenché
+    - thermique déclenché
+
+Commande manuelle et commande automatique
+        L’élève doit être capable de :
+5.8. Concevoir et dessiner le schéma de principe du circuit de commande permettant une
+      commande manuelle ou une commande automatique.
+5.9 . Identifier, numéroter, repérer les différents éléments du schéma.
+CLASSE         : 6° CL ELECTRONIQUE
+BRANCHE : ELECTRONIQUE INDUSTRIELLE
+                 4 Périodes / Semaine
+
+
+PROGRAMME SUIVI
+
+
+CHAPITRE I: LE TRANSISTOR EN REGIME TOUT OU RIEN
+
+         L’élève doit être capable de :
+
+1.1. Définir le régime tout ou rien
+1.2. Expliquer le fonctionnement du transistor en tout ou rien
+1.3. Restituer les avantages du régime tout ou rien
+1.4. Restituer les caractéristiques statiques et dynamiques du transistor utilisé en régime tout
+     ou rien.
+1.5. Identifier les différents types de multivibrateurs.
+1.6. Dresser les schémas, expliquer le principe de fonctionnement et restituer les
+     oscillogrammes des multivibrateurs suivants : astables, monostables et bistables.
+1.7. Etablir les expressions des périodes des multivibrateurs astables et monostables.
+1.8. Restituer les caractéristiques des signaux des multivibrateurs astables, monostables et
+     bistables.
+
+1.9. Restituer le principe de générateur des signaux en dents de scie.
+1.10. Expliquer le processus de la linéarisation et symétrisation de la dent de scie.
+1.11. Citer les dispositifs de charge et de décharge utilisés dans les générateurs de signaux
+       en dents de scie et expliquer leur fonctionnement.
+
+CHAPITRE II. LES ELEMENTS A QUATRE COUCHES
+
+2.1. Le diac et le triac
+
+         L’élève doit être capable de :
+2.1.1.   Identifier, décrire un diac et un triac.
+2.1.2.   Restituer les courbes caractéristiques du diac et du triac
+2.1.3.   Expliquer leur fonctionnement
+2.1.4.   Citer leurs utilisations.
+
+
+
+              Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                41
+
+2.2.     Le thyristor
+
+         L’élève doit être capable de :
+2.2.1.   Restituer la définition et la constitution d’un thyristor.
+2.2.2.   Expliquer son principe de fonctionnement.
+2.2.3.   Expliquer les processus d’amorçage d’un thyristor.
+2.2.4.   Restituer les caractéristiques d’anode et de gâchette.
+2.2.5.   Expliquer la commande horizontale et la commande verticale.
+2.2.6.   Expliquer la commande par U.J.T.
+2.2.7.   Donner les formes de tensions et courants dans les circuits de commande cités ci-haut.
+
+2.2.8. Montrer le processus de blocage du thyristor quand il est alimenté en continu ou en
+        alternatif.
+2.2.9. Restituer les règles d’association des thyristors et les procédés de protection.
+2.2.10. Définir les fonctions « redresseur, contacteur onduleur.
+2.2.11. Restituer les schéma et expliquer le fonctionnement d’un redresseur à thyristors, d’un
+        onduleur, d’un contacteur, d’un hacheur, d’un chargeur de batterie, des gradateurs,
+        cycloconventisseurs, onduleurs à circuit intermédiaire.
+
+CHAPITRE III. : LES AMPLIFICATEURS OPERATIONNELS
+
+       L’élève doit être capable de :
+3.1. Définir un amplificateur différentiel
+3.2. Expliquer son principe de fonctionnement en mode commun et en mode différentiel.
+3.3. Restituer les propriétés et caractéristiques d’un A.D.
+3.4. Analyser le schéma d’un amplificateur différentiel.
+3.5. Définir un amplificateur opérationnel
+3.6. Restituer ses propriétés et caractéristiques.
+3.7. Analyser le schéma d’un µA 741 TL 071
+3.8. Utiliser l’amplificateur opérationnel pour réaliser les applications suivantes : l’inverseur,
+     suiveur, sommateur, soustracteur, dérivateur, intégrateur, multivibrateurs et les filtres.
+
+CHAPITRE IV : ORGANISATION DES ORDINATEURS
+
+       L’élève doit être capable de :
+4.1. Définir, Décrire brièvement un ordinateur et d’en citer quelques types.
+4.2. Restituer le rôle et le schéma bloc d’une unité arithmétique.
+4.3. Décrire et expliquer le principe de fonctionnement d’une unité arithmétique.
+4.4. Expliquer la construction d’un registre à mémoire et un registre à décalage.
+4.5 Restituer le rôle et le schéma bloc d’une mémoire.
+4.6. Expliquer la condition des registres à mémoire et de registres tampon.
+4.7. Restituer le rôle et la constitution de l’unité de commande.
+4.8. Restituer leur principe de fonctionnement et les caractéristiques des unité à disques, à
+     bandes magnétiques, les imprimantes, les terminaux et le contrôleur de communication.
+4.9. Utiliser un système à microprocesseurs pour réaliser une signalisation routière, un
+     central d’alarme – effraction etc…
+
+
+
+
+               Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                             42
+
+
+
+
+CLASSE : 6 CL Electronique
+BRANCHE : INSTRUMENTS – APPAREILLAGE et METHODES DES MESURES
+          1 Période / Semaine
+
+PROGRAMME SUIVI
+
+       L’élève doit être capable de:
+Restituer, Explique les principes de fonctionnement et les différents cas d’utilisation de
+transducteurs ci - après
+
+CHAPITRE I : TRANSDUCTREURS POUR LA MESURE DE DEPLACEMENTS
+              LINEAIRES
+             - Effet doppler – potentiomètre – jauge de contrainte transformateur de
+               différence, transducteurs capacitif
+
+CHAPITRE II : TRANSDUCTEURS POUR LA MESURE                            DE DEPLACEMENTS
+              ANGULAIRES
+
+                  - Potentiomètre – inductance – l’invars – transducteurs capacitifs,
+                    transformateurs de différence – machine synchro.
+
+CHAPITRE III : TRANSDUTEURS POUR LA MESURE DE POIDS
+
+CHAPITRE IV : TRANSDUTEURS POUR LA MESURE DES PRESSIONS
+
+                Tubes en u, à flotter, tube de bourdon, à membrane.
+
+CHAPITRE V : TRANSDUTEURS POUR LA MESURE DES NIVEAUX ET DES DEBITS
+
+                Transducteurs à étranglement – tubes de Pitot, transducteur à turbine,
+                électromagnétique, à ultrasons, radioactifs.
+
+CHAPITRE VI : TRANSTEURS POUR LA MESURE DES TEMPERATURES
+
+                 Thermocouple - pyromètre
+
+CHAPITRE VII : TRANSDUTEURS POUR LA MESURE DES GRANDEURES
+               Phmétre – humidimètre.
+
+
+
+            Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                 43
+
+
+
+
+CLASSE : 6° CL Eletronique
+BRANCHE : RADIO T.V.
+          2 Périodes / Semaine
+
+
+PROGRAMME SUIVI
+
+
+
+CHAPITRE I : GENERALITES
+
+        L’élève doit être capable de :
+1.1 Restituer le principe de la télévision
+1.2 Explique le balayage simple et balayage entrelacé
+1.3 Déterminer la bande de fréquence à transmettre
+1.4 Décrire un signal de télévision noir et blanc.
+1.5 Définir la teinte, la saturation, la luminance et la chrominance.
+1.6 Restituer une chaîne de transmission pour T.V. couleur.
+1.7 Décrire et identifier les systèmes de t.v. couleurs suivants : NTSC, PAS, SECAM.
+1.8 Restituer le schéma blocs des récepteurs T.V. noir blanc et couleurs.
+1.9 Justifier le but de chaque bloc fonctionnel dans leurs tévision
+
+
+CHAPITRE II/ SELECTEURS DES CANAUX
+
+        L’élève doit être capable de :
+2.1. Justifier le but du s électeur des canaux
+2.2. Décrire et énoncer leurs caractéristiques
+
+
+CHAPITRE III. : CHAINE FI VISION
+
+L’élève doit être capable de :
+3.1. Justifier le rôle de l’ampli FI vision.
+3.2. Expliquer la forme et l’obtention de la courbe de réponse.
+3.3. Déterminer le nombre d’étages.
+3.4. Expliquer la détection de signaux, amortissement.
+3.5. Justifier le rôle de circuit de correction
+3.6. Restituer les rôles des éléments sur un schéma d’un ampli vidéo
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                                 44
+
+
+
+CHAPITRE IV : SEPARATION ET TRIAGES IMPULSIONS
+
+        L’élève doit être capable de :
+4.1. Justifier l’utilité d’un étage séparateur et d’un étage trieur.
+4.2. Expliquer leur principe de fonctionnement.
+
+
+
+
+CHAPITRE V : BASES DE TEMPS VERTICALE ET HORIZONTALE.
+
+        L’élève doit être capable de :
+
+5.1. Justifier l’utilité des bases de temps.
+5.2. Enoncer leur principe de fonctionnement.
+5.3. Les identifier et les décrire.
+5.4. Justifier et expliquer la production HT.
+5.5. Restituer le but de la récupération d’énergie.
+
+
+CHAPITRE VI : LES TUBES CATHODIQUES
+
+       L’élève doit être capable de :
+6.1. Décrire les tubes cathodiques.
+6.2. Restituer leur principe de fonctionnement.
+
+
+CHAPITRE VII : LES CIRCUITS ANNEXES
+
+        L’élève doit être capable de :
+7.1. Justifier les rôles des circuits annexes suivants : C A G C A F, télécommande.
+7.2. Les identifier et les décrire brièvement.
+7.3. Expliquer leur principe de fonctionnement.
+
+
+
+
+              Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               45
+
+
+
+
+CLASSE : 6° CL ELECTRONIQUE
+BRANCHE : REGULATION
+        2 PERIODES / SEMAINE
+
+PROGRAMME SUIVI
+
+CHAPITRE I : INTRODUCTION
+
+       L’élève doit être capable de :
+1.1. Restituer le schéma bloc général et l’utilité d’une boucle de régulation.
+
+CHAPITRE II : NOTIONS DE SUSTEMES ASSERVIS
+
+        L’élève doit être capable de :
+2.1. Restituer les notions de la commande d’un système asservi.
+2.2. Identifier chacune des fonctions représentées dans ce schéma.
+2.3. Identifier chacune des grandeurs intervenant dans ce schéma
+
+       L’élève disposant du schéma théorique d’un système simple doit être capable de :
+2.4.Déterminer si ce système est bouclé ou non.
+
+       L’élève disposant du schéma théorique d’un système bouclé simple doit être
+       capable de :
+
+2.5.Décomposer ce schéma en blocs fonctionnels.
+2.6. Identifier, dans ce schéma théorique, les éléments qui remplissent chacune des fonctions
+      du schéma bloc correspondant.
+2.7. Identifier les principales perturbations.
+2.8. Décrire les effets, de ces perturbations, sur les signaux présents aux différents points de la
+      boucle.
+
+CHAPITRE III. : BOUCLE DE REGLAGE
+
+        L’élève doit être capable de :
+3.1. Représenter sous forme graphique, la réponse indicielle du système réglé et y mesurer le
+     temps de retard et le temps de montée de ce système.
+3.2. Calculer la réglabilité de ce système.
+3.3. Etablir le degré de complexité du régulateur qui est le mieux adapté à ce système.
+3.4. Déterminer les grandeurs caractéristiques d’une boucle de régulation.
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               46
+
+3.5. Représenter sous forme de schéma bloc.
+
+CHAPITRE IV. : SYSTEMES REGLES
+
+         L’élève doit être capable de :
+4.1. Restituer les caractéristiques générales des systèmes :
+     - le gain statique
+     - le comportement dynamique.
+
+4.2. Restituer, décrire et schématiser les différents modes de systèmes réglés :
+     - proportionnels
+     - à capacité
+     - à constante de temps
+     - à temps morts.
+4.3. Simplifier les schémas fonctionnels par :
+     - Règle de transformation des schémas.
+     - Règle de Maison.
+
+4.4. Restituer les notions des télémesures et contrôle à distance par :
+     1. – Transducteurs
+     2. – Mesure des pressions
+     3. – Mesure des niveaux
+     4. – Mesure des températures
+     5. – Mesure des débits des fluides.
+
+CHAPITRE V. : MODE DE REGLAGE DISCONTINU
+
+        L’élève disposant d’une liste des différentes grandeurs caractéristiques d’un
+        régulateur doit être capable de :
+5.1. Distinguer les différents régulateurs et leur mode de réglage discontinu.
+5.2. Calculer son étendue de mesure et son étendue réglant.
+5.3. Restituer le rôle de chacun des hou ton de réglage de régulateur.
+
+CHAPITRE VI : MODE DE REGLAGE CONTINU
+
+         L’élève doit être capable de :
+6.1. Restituer les définitions générales des régulateurs :
+     - action directe, inverse, discontinuer, étendue de mesure, étendue églante.
+6.2. Régulateur tout ou rien: (tout ou peu) :
+6.2.1. Restituer l’allure de la caractéristique statique,le rôle et influence de la fourchette ,
+        l’obtention d’un comportement tout ou rien en électronique et en pneumatique.
+
+6.3. Régulateur p
+6.3.1. Restituer la définition d’un régulateur p, la réponse indicielle et paramètres (gain
+       et bande proportionnelle. p. )
+6.3.2. Etudier l’influence de B P sur l’allure de la réponse indicielle.
+6.3.3. Restituer l’écart permanent et la stabilité.
+6.3.4. Obtenir un comportement p en électronique et en pneumatique.
+
+6.4. Régulateur P I
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              47
+
+6.4.1. Restituer la définition, la réponse indicielle, les avantages et les paramètres suivants :
+       bande proportionnelle B P et temps d’intégration Ti )
+6.4.2. Etudier leur influence sur l’allure de la réponse indicielle et le comportement de la
+        boucle.
+6.4.3. Obtenir un comportement P. I en électronique et en pneumatique
+
+6.5. Régulateur p i d
+6.5.1 Restituer la définition, la réponse indicielle, ses avantages et les paramètres (.BP, Ti,
+Td)
+6.5.2.Etudier leur influence sur l’allure de la réponse indicielle et le comportement de la
+       boucle.
+6.5.3. Obtenir un comportement P I D d en électronique et en pneumatique.
+CHAPITRE VII : EXEMPLES DE CHAINE DE REGULATION (facultatif)
+
+       L’élève doit être capable de :
+
+7.1. Chaîne de broyage
+7.1.i. R restituer une chaîne de régulation de broyage.
+7.1.2. Expliquer le processus de mesure de niveau , de volume de matière , de densité.
+7.1.3 Expliquer le principe de régulation de vitesse de la bande transporteuse.
+
+7.2. Chaîne de préparation de sulfate ferrique et pulpe
+7.2.1. Restituer la chaîne de préparation.
+7.2.2. Identifier et décrire les chaînes de régulation de niveau, de potentiel, de débit et
+       densité.
+
+7.3. Chaîne de lixiviation
+7.3.1. Restituer la chaîne complète.
+7.3.2. Identifier et décrire le capteur de mesure de PH et la chaîne de régulation de la marche
+       de la section.
+
+7.4. Chaîne de décuivrage
+7.4.1. Restituer la chaîne complète.
+7.4.2 Identifier et décrire les différents paramètres à maîtriser pour assurer une meilleure
+       régulation de la section décuivrage.
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                               48
+
+
+
+
+CLASSE  : 6° Eletronique
+BRANCHE : SCHEMAS ELECTRONIQUES
+          3 Périodes / Semaine
+
+
+PROGRAMME                SUIVI
+
+
+CHAPIRE I : GENRATEURS DES SIGNAUX NON SINUSOIDAUX
+
+       L’élève doit être capable de :
+
+I.I. Dresser les différents schémas des multivibrateurs à transistors et des générateurs de
+     signaux en dents de scie.
+I.2. Déterminer les différents éléments de montage.
+I.3. Réaliser les applications sur les multivibrateurs
+
+CHAPITRE II. : SCHEMAS LOGIQUES
+
+       L’élève doit être capable de :
+
+2.1. Dresser les schémas de multivibrateurs à l’aide des circuits intégrés.
+2.2. Utiliser les circuits intégrés dans les réalisations des schémas des compteurs.
+2.3. Déterminer les éléments du schéma.
+
+CHAPITRE III. APPLICATIONS DES AMPLIFICATEURS OPERATIONNELS
+
+       L’élève doit être capable de :
+
+3.1. Dresser les schémas des générateurs de signaux.
+3.2. Déterminer les éléments de ce schéma.
+3.3. Réaliser les applications des amplificateurs opérationnels.
+
+CHAPITRE IV. APPLICATIONS SUR LES SEMI-CONDUCTEURS SPECIAUX.
+
+       L’élève doit être capable de :
+
+4.1. Dresser les schémas des applications sur les semi-conducteurs à quatre couches.
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              49
+
+4.2. Déterminer les éléments de ce montage.
+
+
+
+
+CLASSE  : 6° CL Electronique
+BRANCHE : atelier électronique
+         7 Périodes / Semaine
+
+
+
+
+PROGRAMME                SUIVI
+
+
+
+CHAPITRE I : DEPANNAGE RADIO. T.V. – APPAREILS DES MESURES
+
+        L’élève doit être capable de :
+1.1. Exécuter un dépannage de poste de radio, de poste de T.V. et des appareils de mesures
+     divers.
+
+CHAPITRE II : APPLICATIONS DES TRANSISTORS EN TOUT OU RIEN
+
+        L’élève doit être capable de :
+2.1. Réaliser sur circuits imprimés à l’aide des transistors et des portes logiques les montages
+     suivants : multivibrateurs astables, monostables, bistables.
+2.2. Réaliser les applications des montages tels que générateurs d’ondes rectangulaires,
+     triangulaires, de tensions en escaliers diviseurs de fréquence, clignotant, alarmes,
+     système d’allumage, relais temporisé.
+
+CHAPITRE III. : APPLICATIONS DES AMPLIFICATEURS OPERATIONNELS
+
+       L’élève doit être de :
+
+3.1. Réaliser les montages suivants avec les amplificateurs opérationnels ; multivibrateurs
+     astables, monostable, bistables, les intégrateurs, différentiateurs, sommateurs.
+3.2. Réaliser les applications des montages ci-haut cités.
+
+CHAPITRE JV. : APPLICATIONS SUR LES THYRISTORS
+
+       L’élève doit être capable de :
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              50
+
+4.1. Réaliser à l’aide des thyristors sur circuits imprimés les montages suivantes : redresseurs,
+     relais, commande de puissance, onduleurs.
+
+
+
+
+CLASSE  : 6° CL ELECTRONIQUE
+BRANCHE : LABORATOIRE ELECTRONIQUE
+         3 PERIODES / SEMAINE
+
+
+
+PROGRAMME SUIVI
+
+
+
+CHAPITRE I : MESURES SUR LES AMPLIFICATEURS H.F
+
+        L’élève doit être capable de :
+1.1. Effectuer et interpréter les mesures des gains en puissance, en tension et en courant d’un
+     amplificateur H.F.
+1.2. Effectuer le relevé de la courbe de réponse.
+1.3. Evaluer l’influence d’une charge quelconque.
+
+CHAPITRE II. : MESURES SUR LES MULTIVIBRATEURS
+
+        L’élève doit être capable de :
+2.1. Effectuer et interpréter les mesures sur les multivibrateurs à transistors et à portes.
+2.2. Evaluer l’influence des éléments sur la fréquence, la période et les seuils de basculement
+     des multivibrateurs (à savoir astables, monostable, bi monostables)
+
+CHAPITRE III. : LES ELEMENTS A QUATRE COUCHES
+
+       L’élève doit être capable de :
+
+3.1. Effectuer et interpréter les mesures sur la commande horirontale et la commande verticale
+     du thyristor.
+3.2. Evaluer l’influence des éléments sur le déphasage et la tension de sortie.
+3.3. Effectuer et interpréter les mesures sur le transistor à jonction unique.
+
+CHAPITRE IV. : LES AMPLIFICATEURS DIFFERENTIELS ET OPERATIONNELS
+
+       L’élève doit être capable de :
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              51
+
+4.1. Effectuer et interpréter les mesures de différents paramètres des amplificateurs
+     opérationnels et différentiels.
+4.2. Etudier à partir des mesures, les montages fondamentaux à amplificateurs opérationnels
+     (sommateur, différentiateur, intégrateur, dérivateur, soustracteur…)
+
+
+
+
+CLASSE      : 6° ELECTRONIQUE
+BRANCHE : INFORMATIQUE
+2 PERIODES / SEMAINE
+
+        NOTIONS                     OBJECTIFS PEDAGOGIQUE : L’élève doit être
+                                                            capable de :
+
+PREMIERE PARTIE :
+LE HARDWARE
+
+CHAPITRE I.
+NOTIONS DE COMPTAGE
+1. les compteurs synchrones et Enumérer, décrire leurs modes de fonctionnement et
+   asynchrones                 établir les schémas fonctionnels des compteurs et registres
+2. les registres.              Décrire quelques applications des compteurs et registres.
+
+CHAPITRE II.
+DES MEMOIRES
+1. Classification :  à      semi   Enumérer les différents types
+   conducteurs,     magnétiques
+   optiques
+2. Caractéristiques générales :    Définir les caractéristiques générales
+   capacité organisation accès     Représenter le structure des mémoires à accès direct et
+   fonctionnement rapidité ;       des mémoires en général.
+3. Structure des mémoires à
+   accès direct.
+
+CHAPITRE III.
+DES MICROPROCESSEURS
+1. Microprocesseurs :              Définir le microprocesseur
+ Définition                       Représenter sa structure interne et expliquer son
+ Structure interne élémentaire    fonctionnement.
+ Fonctionnement
+
+2. Architecture d’un système Restituer l’architecture d’un système micro-ordinateur et
+   micro-ordinateur              expliquer son principe de fonctionnement
+3. Ordinateur :     organisateur Restituer l’organisation et l’architecture d’un ordinateur et
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              52
+
+  architecture fonctionnement.    expliquer son mode de fonctionnement
+                                  Restituer l’architecture simplifiée d’une ou de
+                                  microprocesseur
+4. Microprocesseur          8080 Décrire le p p 8080 INTRI et expliquer le rôle de ses
+   INTER.                         différentes broches
+ Organisation d’un OCM Restituer le rôle, l’organisation interne et le
+   élémentaire                    fonctionnement de l’unité arithmétique et logique U A I
+ Présentation                 du
+   microprocesseur          8080
+   INTER         Caractéristiques
+   générales
+   Boîtier et brochage UAI. et
+   AIU                            Expliquer le rôle de l’hologe et de ses différents cycles
+   Horloge         et       cycle Expliquer le rôle et le fonctionnement de chaque unité de
+   d’instruction organisation des la structure interne du p p 8080 INTRI.
+   mémoires Structure interne.
+5. Les opérations arithmétiques Expliquer le fonctionnement des circuits arithmétiques et
+   et logiques                    logiques de l’AIU d’un microprocesseur
+ Circuits arithmétiques          Restituer leurs schémas symboliques
+ Circuits logiques
+
+6. Les modes d’adressage       Enumérer les différents modes d’adressage, décrire et
+ Différents modes d’adressage expliquer leur mode d’action pendant le fonctionnement
+ Description                  d’un microprocesseur
+
+7. Circuits d’interfaces et unité   Expliquer le rôle et l’utilité des circuits d’interfaçage et
+   d’entrée / sortie                d’entrée / sortie
+                                    Restituer le schéma d’un système avec interfaçage avec
+ Rôle et utilité
+                                    les ROM et RAM et expliquer son fonctionnement
+ Interfaçage d’un p p avec les
+   ROM et RAM
+ Principes de base pour            Citer et expliquer quelques principes de base pour
+   l’interfaçage     des   portes
+                                    l’interfaçage des portes d’entrée / sortie.
+   d’entrée / sortie
+ Les circuits d’entrée sortie et   Expliquer le principe de transfert par P I A et en
+   le transfert par P I A           représenter la structure.
+DEUXIEME PARTIE :
+DE SOFTWARE
+
+    CHAPITRE I.
+PROGRAMMATION               D’UN
+MICROPROCESSEUR (8080
+INTER)
+1. Les instructions d’un NP :       Interpréter et expliquer le sens, la signification et le
+ instructions arithmétiques        fonctionnement de chaque instruction d’un p p
+ logiques
+ de transfert
+ de branchement                    Ecrire un programme en suivant les différentes étapes
+ pile et pointeurs de pile         nécessaires.
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+                                              53
+
+ d’appel à sous programme et Ecrire un programme séquentiel, branchement, à boucle
+  retour
+
+2. programmation en langage Utiliser un sous programme
+   machine et d’assemblage
+ Ecriture d’un programme
+ Programmes séquentiels à
+   branchement, à boucle
+ Sous programmes
+
+CHAPITRE II.
+INITIATION AU LANGAGE
+DE PROGRAMMATION
+BASIC
+1. Langage         évolué      de Expliquer : langage évolué, compilation, assembleur et
+   programmation (compilateur, interpréteur
+   interpréteur et assembleur)    Citer les différents types de langages évolués et leurs
+                                  applications.
+
+2. Eléments de programmation :      Ecrire un algorithme en utilisant les symboles appropriés
+   algorithme                       Utiliser correctement l’alphabet, les constantes et
+3. Introduction au Basic            variables numériques, les expressions arithmétiques et les
+ L’alphabet, les constantes et     fonctions du langage Basic.
+   variables numériques,
+ Les                expressions
+   arithmétiques                    Ecrire un programme en Basic
+ Les fonctions
+ Les                instructions
+   fondamentales du langage
+   Basic
+
+
+
+
+             Direction des Programmes Scolaires et Matériel Didactique EDIDEPS 2006
+

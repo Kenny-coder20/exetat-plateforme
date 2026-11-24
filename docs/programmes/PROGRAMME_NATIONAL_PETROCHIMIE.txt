@@ -1,0 +1,1364 @@
+ REPUBLIQUE DEMOCRATIQUE DU CONGO
+MINISTERE DE L’ENSEIGNEMENT PRIMAIRE,
+     SECONDAIRE ET PROFESSIONNEL
+
+  DIRECTION DES PROGRAMMES SCOLAIRES ET
+           MATERIEL DIDACTIQUE
+
+
+
+
+    PROGRAMME NATIONAL
+       DE PETROCHIMIE
+
+
+
+COURS GENERAUX ET TECHNIQUES
+
+
+
+
+           CYCLE LONG (A2)
+
+
+   ▪ SECTION : TECHNIQUE INDUSTRIELLE
+
+   ▪ OPTION : PETROCHIMIE INDUSTRIELLE
+
+
+
+
+              EDIDEPS 2004
+I. LES OBJECTIFS
+
+1.1. Considérations générales
+
+              Aucune personne avisée n’ignore l’importance économique du pétrole et du gaz
+naturel dans notre société. Le pétrole est dans l’économie d’un pays ce qu’est le sang dans le
+corps humain.
+
+                 En effet, le pétrole a depuis longtemps été utilisé comme source d’énergie ; aussi
+évalue-t-on l’énergie à l’échelle d’un pays ou à l’échelle mondiale en tonnes équivalentes en
+pétrole « t.e.p. » en sigle.
+
+                Progressivement, le pétrole est devenu une source de plusieurs produits chimiques
+dans les domaines très variés : l’habillement, la santé, l’automobile …
+Selon une source autorisée, la part du pétrole dans la consommation mondiale de l’énergie est
+passée de 53 % en 1965 à 44 % en 1985 après avoir atteint 69 % en 1973, mais en valeur
+absolue elle a progressé en passant de 1.110 millions à 1.635 millions de tep.
+
+                 Les réserves prouvées sont importantes : elles représentent au coût actuel une
+durée de 34 ans dans la consommation mondiale. Les réserves de gaz naturel sont plus
+importantes soit 50 ans de consommation. Malgré l’immensité de ces réserves mondiales, le
+pétrole reste une source d’énergie non renouvelable. Ce fait est parfois à l’origine de grands
+conflits entre les nations (guerres d’Israël, de Koweït…)
+
+                La raffinerie est une installation complexe qui permet d’extraire certains
+constituants du pétrole brut d’une part et de produire des composés qui ne se trouvent pas dans
+le brut ou qui s’y trouvent en proportions infimes.
+
+                La pétrochimie, chimie dérivée du pétrole, couvre à la fois le secteur de l’industrie
+pétrolière et le secteur de l’industrie chimique qui utilise comme matière première les produits
+pétroliers.
+
+               Vu la complexité des produits pétrochimiques, la pétrochimie est devenue
+incontournable dans l’industrie chimique en générale. A titre indicatif, citons quelques produits à
+bases pétrochimiques : les détergents, les colorants, les explosifs, les insecticides, les peintures,
+les solvants, les alcools, les fibres synthétiques … Ceci montre à suffisance la nécessité de
+former un personnel qualifié à tout niveau aptes à œuvrer dans ces usines
+
+
+
+
+1. André Cros et Claude Moreau dans Chimie 1 ère S/E
+                                                1
+              Notre Pays, la République Démocratique du Congo, en particulier, possède des
+réserves importantes de pétrole (dans la Cuvette congolaise, dans les Grands Lacs, dans le Bas-
+Congo) qui ne sont malheureusement exploitées qu’en partie jusqu’à ce jour. Leur exploitation
+complète future pourrait apporter un grand coup de pouce au redressement économique de notre
+Pays. S’intéresser à la pétrochimie, c’est aimer son Pays en général et sa jeunesse scolarisée en
+particulier.
+
+1.2.   Les Tâches
+
+               L’élève ainsi formé devra être capable de maîtriser les techniques rencontrées
+dans les industries pétrolières dans le monde en général et dans notre Pays en particulier.
+
+              Il aura pour tâches :
+
+              a) Sur le plan de l’environnement :
+
+                    - Eclairer toutes les personnes manipulant les produits pétroliers sur les
+                      dangers de la pollution, d’incendies, …
+                    - Il pourra être associé dans la gestion des ressources naturelles du sous-sol de
+                      notre Pays (carrières, mines, …)
+
+              b) A l’usine :
+
+                    - Assister l’Ingénieur sur la prise de certaines décisions sur la production,
+                      la maintenance, …
+                    - Conduire les travaux de forage au chantier
+                    - Effectuer des analyses ou des tests propices sur les produits de raffinage
+                      avant leur utilisation.
+                    - Travailler dans les bureaux d’étude …
+
+II. LE CORPS ENSEIGNANT
+
+              L’enseignement conduisant à la formation complète de l’élève comprend des
+cours généraux et des cours spécifiques (techniques). Le corps enseignant devra donc être
+composé de 2 catégories professeurs :
+
+              1. Pour les cours généraux, la qualification des professeurs est la même que celle
+                 de la section scientifique et les programmes dispensés sont ceux des options
+                 techniques industrielles.
+
+              2. Pour les cours techniques, l’enseignement des cours techniques devra
+                 s’appuyer sur les méthodes à la fois actives et interrogatives. De ce fait, la
+                 section devra disposer d’un laboratoire d’analyse des réactifs chimiques. Dès
+                 la fin de la 4ème année, les élèves seront recommandés à faire un stage de
+                 laboratoire dans les entreprises pétrolières et raffinerie du milieu.
+
+              3. Les Enseignants des cours techniques devront être :
+                  • Des ingénieurs en sciences pétrolières ;
+                                              -2-
+
+                   • Des techniciens de chimie industrielle ;
+                   • Des ingénieurs électroniciens ;
+                   • Des techniciens de mécanique générale ;
+                   • Des ingénieurs en électromécanique.
+
+PROGRAMMES
+
+1. Cours généraux
+
+              Les mêmes que ceux des options techniques industrielles, sauf les cours de
+              « Ecologie » et de « Sécurité » qui sont spécifiques à l’Option de Pétrochimie
+              Industrielle.
+
+II. Cours techniques
+
+   1. Electricité : le même programme qu’en option Electricité Générale, sauf « les machines
+      électriques à courant alternatif » (les transformateurs, les moteurs asynchrones et les
+      alternateurs).
+
+   2. Chimie Organique : le même programme avec les sections scientifiques A ou B.
+
+   3. Chimie Analytique : le même programme avec la chimie industrielle pour la classe de
+      4ème chimie industrielle.
+
+   4. Chimie Industrielle : le même programme que celui dispensé en 5 ème chimie industrielle.
+
+   5. Physique Industrielle : le même programme que celui de la 5ème chimie et 6ème chimie
+      industrielle.
+
+   6. Régulation : le même programme que celui de la 5ème chimie industrielle.
+
+   7. Dessin technique : le même programme que celui de la 3ème année Chimie industrielle
+
+   8. Pratique Electrique : le même programme que celui de la 3ème et de la 4ème Chimie
+      industrielle.
+
+BIBLIOGRAPHIE
+
+   1. André Cros et Claude Moreau, Chimie 1ère S et E
+   2. J. Dologne et Dessaert, Chimie minérale
+   3. Groupe des Professeurs, Nature et Science, classe de 4 ème, édition Castella, Paris.
+   4. Groupe des Professeurs, Géologie/Biologie, classe de 4 ème, édition Belin, Paris.
+   5. Jean Borjeix, Paul Claval, Albert Harold Saural et Léopold Sémery, Le pétrole et le gaz,
+      Librairie Larousse, Paris.
+   6. André Gérard, la pêche à pied, éd. Ouest, France.
+   7. Programme national des cours techniques et pratiques de l’option chimie industrielle.
+                                       -3-
+
+
+GRILLE HORAIRE
+
+
+   1. Cours Généraux                         3ème    4ème    5ème    6ème    Total
+
+
+1. Français                                  5 h.    5 h.    5h      5 h.    20 h.
+2. Mathématique                              5 h.    5 h.    5 h.    5 h.    20 h.
+3. Physique                                  3 h.    3 h.     …       …      6 h.
+4. Chimie générale                           3 h.    2 h.     …       …      5 h.
+5. Histoire                                  2 h.    2 h.     …       …      4 h.
+6. Géographie                                2 h.    2 h.     …       …      4 h.
+7. Anglais                                   3 h.    3 h.    2 h.    2 h.    10 h.
+8. Religion                                  1 h.    1 h.    1 h.    1 h.    4 h.
+9. Education Civique et Morale               1 h.    1 h.    1 h.    1 h.    4 h.
+10. Actualité                                 …       …      1 h.    1 h.    2 h.
+11. Sécurité industrielle                     …       …       …      1 h.    1 h.
+12. Ecologie                                  …       …       …      1 h.    1 h.
+
+                         Total               25 h.   24 h.   15 h.   17 h.   81 h.
+
+
+1. Cours Techniques                          3ème    4ème    5ème    6ème    Total
+1. Electricité générale                      2 h.    2 h.    2h       …       6 h.
+2. Chimie organique                           …      3 h.     …       …       3 h.
+3. Chimie analytique                          …       …      2 h.     …       2 h.
+4. Chimie industrielle                        …       …      3 h.     …       3 h.
+5. Pétrochimie                                …       …       …      4 h.     4 h.
+6. Raffinage                                  …       …       …      4 h.     4 h.
+7. Physique industrielle                      …       …      3 h.    3 h.     6 h.
+8. Régulation                                 …       …       …      3 h.     3 h.
+9. Géologie                                  2 h.    3 h.    3 h.    3 h.    11 h.
+10. Technologie du pétrole et du gaz         3 h.    3h.      …       …       6 h.
+11. Forage et production pétrolière           …       …      4 h.     …       4 h.
+12. Labo de chimie                           4 h.    4 h.    4 h.    5 h.    17 h.
+13. Pratique électrique                      3 h.    2 h.     …       …       5 h.
+14. Dessin technique                         2 h.     …       …       …       2 h.
+15. Hydraulique                               …      1 h.     …       …       1 h.
+
+                         Total               16 h.   18 h.   21 h.   22 h.   77 h.
+
+
+                                             3ème    4ème    5ème    6ème    Total
+                    Total Général
+                                             41 h.   42 h.   36 h.   39 h.   158 h.
+                                                  -4-
+
+  Collège Thérésien                                     Branche    : Ecologie
+   Muanda – Cité                                        Classe     : VIème Pétrochimie
+       B.P. 52                                          Période : 1 heure / Semaine
+
+
+                 Notions                          Objectifs : l’élève doit être capable d (d’)
+
+1. Connaissance du milieu marin
+   1.1. Présentation                          1.1. Evaluation la fraction de globe occupée par
+                                                   les océans et les mers, décrire le relief sous
+                                                   marin, distinguer les ensembles du milieu
+                                                   marin au point de vue de la température.
+
+    1.2. Les mouvements de la mer             1.2. Définir les différents mouvements des masses d’eaux
+         sur le littoral                           marines : les marées, le houle et les vagues.
+                                                   - Expliquer le phénomène des marées.
+
+    1.3.    Les peuplements marins            1.3. Donner un panorama des communautés végétales et
+                                                   animales du littoral.
+
+
+II. Quelques notions d’écologie
+
+   2.1. Définition des termes                 2.1. Définir les termes : écologie, autoécologie, synéco-
+                                                   logie, biotope, biocoenose, écosystème.
+
+   2.2. Les caractéristiques économiques      2.2. Montrer l’importance relative de l’immersion et de
+        de la zone intertidale                     l’émersion sur la vie des être marins.
+
+   2.3. Les facteurs physico-chimiques        2.3. Expliquer l’action de la lumière, de la salinité, de la
+        agissant sur les être vivants              température, la nature du substrat et les mouvements
+        marins                                     marins sur la vie des espèces marines.
+
+
+III. Les pollutions du littoral
+
+    3.1. Généralités.                         3.1. Définir la pollution et citer ses conséquences sur
+                                                   l’environnement du littoral.
+
+   3.2. Les types polluants                   3.2. Citer et expliquer les 3 origines de pollution :
+                                                   biologique, chimique, physique.
+
+    3.3. La protection contre la pollution.   3.3. Montrer la nécessité de protéger le milieu écologique
+                                                   du littoral.
+                                                   - Restituer la réglementation en matière de la
+                                                     protection du littoral.
+                                          -5-
+
+  Collège Thérésien                                  Branche    : Sécurité industrielle
+   Muanda – Cité                                     Classe     : VIème Pétrochimie
+       B.P. 52                                       Période : 1 heure / Semaine
+
+                Notions                         Objectifs : l’élève doit être capable d (d’)
+
+I. Sécurité dans l’industrie
+
+  1.1. Obligations de l’employeur et de   1.1. Connaître les obligations de l’employeur et de
+       l’employé (travailleur).                l’employé dans l’industrie pétrolière.
+  1.2. Notions sur la sécurité            1.2. Définir le concept « Sécurité ».
+  1.3. Accidents du travail.              1.3. Identifier les accidents du travail, connaître ses causes
+                                               et savoir donner la synthèse de causes de ces accidents
+  1.4. Maladies professionnelles          1.4. Connaître les sortes de maladies professionnelles, le
+                                               mode d’action de toxiques, et la pénétration de
+                                               substances toxiques par certaines voies de l’organisme
+                                               et avoir une notion sur les radiations.
+2. Equipement de protection.
+
+  2.1. Protection individuelle            2.1. Savoir comment on doit se protéger individuellement.
+  2.2. Equipement de protection des       2.2. Connaître les différents matériels de protection des
+                                               voies respiratoires mis à sa disposition.
+
+3. La combustion.
+
+  3.1. Définition de la combustion        3.1. Définir la combustion
+  3.2. Différents états de combustibles   3.2. Citer les différents états de combustibles et les
+  3.3. Analyse de différentes condi-           Expliquer.
+       tions de combustion d’un com-      3.3. Définir les concepts « Combustible, comburant et
+       bustible.                               température ».
+  3.4. Les sources auxiliaires            3.4. Relever les différentes sources auxiliaires dans la
+                                                combustion et savoir les expliquer.
+  3.5. Classification des produits        3.5. Classifier les différents produits pétroliers et leur point
+       pétroliers.                             d’inflammabilité.
+  3.6. Classification des incendies.      3.6. Classifier les types d’incendies (feux) et savoir leurs
+                                                graves dangers.
+
+4. Méthodes et moyens d’extinction.
+
+   4.1. Méthodes d’extinction.            4.1. Savoir comment obtenir l’arrêt de la combustion.
+   4.2. Moyens d’extinction               4.2. Connaître les différents moyens d’extinction du feu
+   4.3. Agents extincteurs.               4.3. Savoir citer les agents extincteurs couramment utilisés
+                                               en cas d’incendie et connaître leur mode d’emploi.
+                                                   -6-
+
+
+
+  Collège Thérésien                                      Branche    : Géologie
+   Muanda – Cité                                         Classe     : IIIème Pétrochimie
+       B.P. 52                                           Période :2 heures / Semaine
+
+               Notions                            Objectifs : l’élève doit être capable d (d’)
+
+Chapitre I : Introduction à l’étude de la
+              géologie.
+
+1. Objet de la géologie et outils du        - Définir la géologie citer les outils de l’enseignement de la
+   géologue amateur.                          géologie.
+2. Le sol et le sous-sol                    - Donner la différence entre le sol et le sous-sol en parlant de
+3. Propriétés physiques                       la constitution roches et de l’épaisseur.
+4. Nature chimique du calcaire et du        - A partir de quelques échantillons de sol calcaire et de sol
+   granite                                    granitique, déterminer le comportement du calcaire et du
+5. Sous-sol sablonneux et sous-sol            granite devant l’eau.
+   calcaire.                                - Montrer la différence sur le comportement devant l’acide
+                                              chlorhydrique de chaque roche ; Mettre en évidence le
+                                              principal constituant chimique du calcaire.
+                                            - Mettre en évidence de propriétés physiques du sable vis-à-
+                                              vis de l’eau et de la chaleur ; Montrer la différence d’un
+                                              sous-sol sableux avec un sous-sol caillouteux (calcaire) du
+                                              point de vues des cultures.
+
+
+Chapitre II : Activités humaines et
+              géologie : Le gypse.
+
+   1. Les gisements de gypse                - Expliquer la présentation du gypse dans la nature. Citer
+   2. L’exploitation du gypse                 une propriété du gypse qui explique la conservation des
+   3. Utilisation du gypse.                   gisements au cours des temps très anciens.
+                                            - Décrire comment se fait l’exploitation du gypse : Citer une
+                                               exploitation du gypse.
+                                            - Enumérer les grands domaines d’utilisation du gypse sous
+                                              forme de plâtre.
+
+Chapitre III : Régions au sous-sol
+               argileux.
+
+   1. L’argile et ses propriétés            - Expliquer la porosité, la plasticité et la friabilité de l’argile ;
+                                              Montrer que l’argile en poudre sèche est imperméable à
+                                              l’eau
+   2. Transformation du granite en          - Citer et expliquer les facteurs mis en jeu dans ce
+      argile.                                  phénomène d’altération.
+                                              -7-
+
+                                                    Branche   : Géologie
+                                                    Classe    : IIIème Pétrochimie
+                                                    Période : 2 heures / Semaine
+
+
+3. Les utilisations de l’argile.    - Enumérer les applications dans les domaines de la construc-
+                                      tion, la médecine, l’art, la fabrication de la porcelaine.
+
+Chapitre IV : Activités du globe    - Citer les matières observables dans une éruption volcanique
+              terrestre.              (cas du Nyiragongo en République Démocratique du
+                                      Congo).
+1. Volcanisme continental           - Citer les signes annonciateurs d’une manifestation volcanique.
+2. Volcanisme sous-marin            - Citer les outils utilisés pour l’observation.
+3. Séismes.                           Définir la dorsale océanique.
+   - Description                    - Définir, décrire et citer les effets d’un séisme sur
+   - La zone épicentrale              l’environnement (édifies, vies humaines).
+   - Enregistrement d’un séisme.    - Expliquer la détermination de la zone d’intensité maximum
+                                       d’un séisme.
+                                    - Expliquer le principe de fonctionnement d’un sismographe ;
+                                      Expliquer la méthode de la sismique – réflexion.
+Chapitre V : Structure du globe
+             Terrestre
+
+1. La croître terrestre             - Distinguer la croûte continentale et la croûte océanique
+2. La lithosphère                     sur le plan des roches qu’elles renferment.
+3. Les moyens d’exploration des     - Définir et indiquer sa position dans le globe.
+   fonds marins.                    - Citer et expliquer les moyens suivants : Le forage, les sondages
+                                      sismiques, les submersibles habités.
+
+Chapitre VI : Croûte océanique
+
+1. Les basaltes                     - Définir un basalte ou roche magmatique.
+                                      Donner la structure semi cristalline et microlithique des roches
+                                      magmatiques.
+                                      Citer les minéraux qui permettent leur différenciation.
+2. Les laves de fonds océaniques.   - Distinguer les différents aspects des laves de fonds océaniques.
+                                      Présenter une coupe schématique des parties constitutives de la
+                                      Croûte océanique.
+                                         - 8-
+
+
+Collège Thérésien                                 Branche    : Géologie générale
+ Muanda – Cité                                    Classe     : IVème Pétrochimie
+     B.P. 52                                      Période     :3 heures / Semaine
+
+
+                            PROGRAMMES AVEC OBJECTIFS
+
+
+
+           Notions                          Objectifs : l’élève doit être capable d (d’)
+
+
+I. Volcaniser sous-marin
+   1. Les manifestations          - Citer les différentes manifestations du volcanisme sous-
+                                                        marin :
+                                    • La nature basaltique de la croûte océanique.
+                                    • Les édifices volcaniques.
+                                    • Les fumeurs noirs, les sulfures métalliques des sédiments
+                                      superficiels.
+
+ 2. Les édifices volcaniques      - Classer les édifices volcaniques en fonction de leur aspect et
+    sous-marins.                    de leur constitution.
+
+                                  - Citer les deux types de gisements de basaltes observés lors
+ 3. Les basaltes océaniques         des explorations océanographiques.
+
+ 4. Le fonds océaniques.          - Définir le terme de dorsale sismique :
+                                    Expliquer la formation de la croûte océanique.
+
+
+II. Roches métamorphiques et
+    Magmatiques.
+     1. Définition                - Définir le phénomène de métamorphisme de roches citer
+                                    quelques exemples de roches métamorphiques.
+
+    2. Le schiste ; le            - Indiquer les caractéristiques de chaque roche et la nature des
+       Micaschiste et le gneiss     minéraux qui différencient micaschiste et le gneiss ; citer les
+                                    points communs à ces types de roches.
+
+    3. Le métamorphisme des       - Enumérer les roches obtenues par le métamorphisme d’un
+       Roches d’origines            calcaire : d’un basalte ; d’un granite.
+       diverses
+
+    4. Les facteurs favorisant    - Citer les facteurs qui permettent le métamorphisme.
+       le métamorphisme
+                                                                          Branche     : Géologie Générale
+                                                                          Classe      : IVème Pétrochimie
+                                                -9-                       Période      : 3 heures / Semaine
+
+
+II. Etude du granite
+
+   1. Définition et constitution      - Donner la définition du granite en le décrivant. Citer ses
+                                        constituants essentiels.
+                                        Décrire les gisements du granite.
+   2. L’altération du granite         - Expliquer les agents destructeurs du granite.
+                                        Indiquer l’ordre dans lequel les trois principaux constituants
+                                        du granite sont altérés. Tracer les courbes d’évolution de la
+                                        teneur en minéraux d’une roche de type granite quand
+                                        l’altération augmente.
+   3. Origine des roches              - Définir un magma ; distinguer les deux principaux magmas ;
+      magmatiques.                      Expliquer l’origine de chaque type.
+
+
+
+IV. Etude des roches
+    Sédimentaires
+
+   1. La sédimentation                - Définir la sédimentation : Expliquer la formation des roches
+                                        sédimentaires. Citer et décrire les roches sédimentaires : le
+                                        gré : le calcaire. Définir un strate ; Expliquer la stratigraphie
+   2. Historique d’un bassin          - Définir un bassin sédimentaire.
+      sédimentaire.
+
+     - Reconstitution de l’histoire   - Citer et expliquer les outils utilisés en géologie pour
+       d’un bassin sédimentaire.        reconstituer l’histoire d’un bassin sédimentaire : la
+                                        géographie ancienne (Paléogéographie) le climat ancien
+                                        (Paléoclimatologie) du bassin et environs immédiates.
+
+    - Evénements ayant affecté        - L’apport de la stratigraphe sur les événements qui ont affecté
+      un bassin et ses abords           le bassin au cours des temps en citant deux événements
+                                        importants.
+
+V. Le pétrole brut.                   - Définir étymologiquement le terme « Pétrole » en déduire la
+                                        définition du pétrole.
+
+   1. Hydrocarbure                    - Définir un hydrocarbure : donner sa propriété essentielle.
+
+   2. Formation du pétrole            - Expliquer l’origine du pétrole et les facteurs qui ont concouru
+                                        à sa formation (facteurs biologiques, physiques).
+
+   3. Migration du pétrole            - Expliquer le motif de sa migration en surface : Définir un
+                                        piège à pétrole.
+                                      - Schématiser une roche – réservoir de pétrole
+                                              - 10 -
+Collège Thérésien                                      Branche   : Géologie générale
+ Muanda – Cité                                         Classe    : Vème Pétrochimie
+     B.P. 52                                           Période    :3 heures / Semaine
+
+
+                              PROGRAMMES AVEC OBJECTIFS
+
+
+             Notions                           Objectifs : l’élève doit être capable d (d’)
+
+
+I. Rappel sur la géologie
+   historique
+
+  - Echelle                          - Expliquer son utilité en géologie
+    Stratigraphique
+  - Les origines de la Terre         - Enoncer les hypothèses sur l’origine de la Terre
+  - L’âge de la Terre :              - Expliquer les méthodes utilisées pour déterminer l’âge de la
+    Méthodes de détermination          Terre
+ - Les temps géologiques             - Utilisation de l’échelle stratigraphique pour déterminer les
+                                       temps géologiques.
+
+2. Les minéraux
+  - Les principales propriétés des   - Citer les principales propriétés au point de vue de la couleur
+    Minéraux (la couleur, la           et de la forme.
+    forme)
+ - Classifications des minéraux.
+
+1) Les minéraux des roches
+    sédimentaires
+   a. Processus sédimentaires et     - Décrire comment se forme une roche sédimentaire.
+       évolution                     - Montrer son évolution
+   b. Structures                     - Définir ce qu’est une roche primaire
+       sédimentaires primaires
+   c. Phénomène de diagenèse         - Expliquer la diagenèse et la cimentation.
+   d. La cimentation
+
+2) Les roches magmatiques et
+    les minéraux
+   a. Définition, classification
+       et composition chimique
+       des magmas
+   b. Structure des roches           - Expliquer comment se forme la roche magmatique
+        magmatiques
+   c. Les principaux minéraux        - Citer les principaux minéraux des roches magmatiques.
+        des roches magmatiques
+                                               - 11 -
+Collège Thérésien                                       Branche   : Hydraulique
+ Muanda – Cité                                          Classe    : Vème Pétrochimie
+     B.P. 52                                            Période    :3 heures / Semaine
+
+Chapitre I : Etude de l’écoulement permanent d’un fluide incompressible.
+
+L’élève doit être capable de (d’) :
+1.1. Restituer les caractéristiques d’un fluide incompressible et un fluide compressible.
+1.2. Ecrire la formule de calcul de débit d’un fluide en écoulement permanent.
+     Montrer la constance de débit massique dans une conduite traversée par un fluide
+     incompressible.
+1.3. Appliquer la formule :
+                                     qm = S 1 . C1 = S2 . C2
+      dans le cas d’un étranglement de la conduite.
+1.4. Ecrire la relation de la conservation de l’énergie pour un fluide traversant une machine et
+      pour un fluide ne traversant pas une machine (équation de Bernoulli)
+1.5. Appliquer l’équation de Bernoulli dans les cas suivants :
+     a. la conduite forcée d’un barrage
+     b. la masure de débit volumique d’un fluide incompressible
+
+Chapitre II : Etude de l’écoulement d’un fluide incompressible (Gaz)
+
+2.1. Définir la notion d’enthalpie par sa variation
+2.2. Ecrire l’équation de la conservation de l’énergie en général. Montrer la petitesse du terme :
+                 1. (C² - C² ) dans le cas du compresseur d’air
+                 2
+
+Chapitre III : Ecoulement d’un fluide avec frottements
+
+L’élève doit être capable de (d’) :
+3.1. Expliquer le phénomène de viscosité d’un fluide qui coule.
+3.2. Expliquer l’existence de perte de charges dans les coudes, les raccords, les branchements de
+     robinets le long d’une conduite.
+3.3. Ecrire l’équation généralisée de Bernoulli en tenant compte de perte de charges.
+3.4. Appliquer l’équation de Bernoulli généralisée au calcul de la pression d’eau à ; la sortie
+     d’une pompe et au calcul du débit d’une installation hydraulique.
+
+Chapitre IV : Circuit hydraulique
+
+L’élève doit être capable de (d’) :
+4.1. Schématiser un circuit hydraulique en utilisant les normes pour représenter les appareils.
+4.2. Expliquer les caractéristiques d’un bon fluide hydraulique (point de congélation, point
+     d’aniline, point éclair, pouvoir lubrifiant, pouvoir antimoussant, indice d’acidité, densité,
+     indice de viscosité).
+                                                - 12 –
+
+Collège Thérésien                           Branche            : Pétrochimie
+ Muanda – Cité                              Classe             : VIème Pétrochimie
+     B.P. 52                                 Période            : 4 heures / Semaine
+                               PROGRAMME SUIVI
+
+
+             Notions                          Objectifs : l’élève doit être capable d (d’)
+
+
+I. Généralités
+
+ 1. Définition et but               - Définir et restituer le but de la pétrochimie ;
+                                      Préciser sa place dans l’industrie.
+ 2. Historique                      - Donner les circonstances de la naissance de l’industrie des
+                                      dérivés du pétrole ; Montrer son essor depuis 2ème guerre
+                                      mondiale et donner les perspectives de l’avenir de la pétro-
+                                      chimie.
+ 3. Les produits pétroliers         - Définir un produit pétrolier et les citer.
+    * Les essences
+    - Définition                    - Restituer la définition d’une essence et sa température de
+    - Types d’essence                 fractionnement.
+    - Utilisations                  - Citer les domaines d’utilisation des essences (automobile,
+                                       aviation).
+     - Production                   - Décrire les procédés de raffinage.
+     - Qualités                       Citer et définir les qualités des essences : (Indice d’octane,
+                                      anti-détonnance, Tension de vapeur ou volatibilité, point
+                                      congélation …
+
+     * Les essences spéciales       - Citer les facteurs qui permettent leur obtention en raffinerie
+                                      (la température).
+                                    - Restituer la classification des essences spéciales (de A à H).
+
+     * Le gasoil                    - Donner la composition chimique et l’emploi du gasoil.
+                                    - Montrer sa place sur la colonne de distillation.
+
+     * Le fuel oil ou mazout        - Donner sa composition chimique, son emploi.
+                                    - Montrer l’effet de la température sur la viscosité du fuel oil.
+
+     * La bitume                    - Définir, faire une classification des bitumes.
+                                    - Expliquer comment on fabrique les bitumes
+                                    - Citer leurs emplois.
+
+     * Les paraffines               - Définir, montrer que les paraffines sont des sous-produits
+                                      indésirables à éliminer dans les huiles lubrifiants.
+                                    - Enumérer quelques exemples d’utilisation
+                                      (bougies, emballages cartons…).
+                                    - Définir, citer quelques exemples des paraffines.
+                                                                   Branche : Pétrochimie
+                                                                   Classe : VIème Pétrochimie
+                                                 -   13 -          Période : 4 heures / Semaine
+* Les lubrifiants
+  - Définitions               - Définir et citer les lubrifiants utilisés.
+  - Caractéristiques          - Citer et définir leurs propriétés (onctuosité, viscosité,
+                                couleur, point de congélation, …
+  - Exemples                  - Citer des exemples de lubrifiants.
+
+* Les solvants
+  - Solvant pétrolier         - Définir les solvants par leur utilisation.
+  - Solvant pétrochimique     - Expliquer le mode d’obtention de différents solvants pétro-
+     • Aromatiques              chimiques et restituer leur utilisation dans les industries
+     • Oxygénés                 chimiques et pharmaceutiques.
+     • Chlorés
+
+* L’additif pétrolier
+  - Antidétonant              - Définir et donner le rôle de chaque type d’additif pétrolier.
+  - Antioxydants
+  - Anticorrosion
+  - Antiusure
+  - Antirouille
+  - Détergents
+  - Dispergents
+  - Antipréallumage
+  - Antigivre
+  - Anticongélation
+  - Antifumée
+  - Antipollution
+  - Additifs divers.
+
+4. Les bases pétrochimiques   - Définir les oléfines, dire leur principale source (l’éthylène).
+   1. Les oléfines
+
+     a. L’éthylène            - Restituer la formule brute de l’ L’éthylène, dire son état
+                                naturel.
+                              - Expliquer le mode de sa fabrication
+                              - Faire une étude chimique de l’éthylène.
+
+     b. Les polyéthylènes     - Distinguer les 2 espèces de polymères éthyléniques, spécifier
+                                leur mode de fabrication.
+                              - Citer et expliquer les techniques de stockage et de transport
+                                 de l’éthylène liquéfié.
+                              - Importance économique de l’éthylène.
+
+     c. Le propylène          - Donner sa formule brute.
+                              - Restituer son mode de production.
+                              - Etablir la chimie du propylène.
+                              - Citer, donner le mode de fabrication et les emplois de ses
+                                dérivés (l’isopropanol, l’acrylonitrile, le polypropylène…).
+                                                                Branche : Pétrochimie
+                                                      - 14 -    Classe : VIème Pétrochimie
+                                                                Période : 4 heures / Semaine
+
+
+ d. Les hydrocarbures
+    aromatiques
+    - Fabrication de benzène par    - Expliquer les procédés de :
+      carbonisation de la houille      • Reforming catalytique des essences
+                                       • Vapocraquage
+
+    - Matières premières            - Citer les principales matières 1ère pour la fabrication du
+      benzéniques                     benzène : le platine, le toluène.
+
+    - Les procédés d’extraction     - Citer et expliquer les procédés UDEX
+      des aromatiques                 (Universal Oil Products) et le DMSO.
+
+    - Utilisation des aromatiques   - Citer les principales utilisations des produits aromatiques
+      et de leurs dérivés.            (solvant, gomme, résine, matières plastiques).
+
+
+5. L’ammoniac                       - Reconnaître le gaz ammoniac.
+                                    - Dire sa principale utilité.
+                                    - Expliquer le mode de fabrication par synthèse à partir de
+                                      l’hydrogène d’origine pétrolière et d’azote.
+                                    - Montrer l’importance de la température en présence d’un
+                                      catalyseur à base d’un oxyde de fer (Procédé Kellogg).
+
+6. Les polymères
+   Pétrochimiques
+   - Classification                 - Citer les 4 grandes classes de hauts polymères. Expliquer
+                                      leurs différences physiques et chimiques (Les thermoplasti-
+                                      ques, les thermodurcissables, les élastomères et les fibres
+                                      textiles de synthèse).
+
+   - Le polymère (C2 H2) n          - Etudier les principaux polymères (densité, mode de
+                                      fabrication).
+    et le polymère (C3 H6) n
+  - Les polystyrènes
+  - Les polydioléfines
+  - Procédé de polymérisation.
+                                    - Expliquer le procédé de polymérisation.
+                                              - 15 -
+
+Collège Thérésien                                      Branche   : Raffinage
+ Muanda – Cité                                         Classe    : VIème Pétrochimie
+     B.P. 52                                           Période    : 4 heures / Semaine
+
+
+               Notions                        Objectifs : l’élève doit être capable d (d’)
+
+
+1. Le raffinage                     - Définir le raffinage et donner le but du raffinage.
+
+   1. Etapes préparatoires          - Définir et indiquer le rôle de chaque étape.
+      La séparation,
+      L’épuration (désulfuration)
+      La synthèse.
+
+   2. Distillation                  - Définir la distillation, donner le principe de distillation.
+                                    - Enumérer les produits de distillation.
+   3. La désulfuration du brut      - Défini, donner l’importance de la désulfuration.
+                                    - Citer les réactifs employés pendant la désulfuration.
+   4. Le cracking
+      - Définition                  - Expliquer le procédé de l’hydrodésulfuration.
+                                    - Définir le cracking thermique.
+       - But                        - Donner son but sur les qualités d’une essence.
+
+       - Les types de cracking      - Citer les types de cracking therming et expliquer chaque type
+          • cracking thermique      - Dire les avantages de chaque type.
+          • reformage thermique
+          • crackage catalytique
+          • reformage catalytique
+
+II. Les produits pétroliers         N.B. : Suivre le même plan d’étude qu’en Pétrochimie avec les
+                                           mêmes objectifs.
+   1. Essences
+      - Définition                  - Définir.
+      - Usages                      - Citer les usages et les types.
+      - Types
+      - Classification              - Citer les critères de classification.
+
+   2. Le gasoil
+      - Définition                  - Définir, expliquer l’obtention à la raffinerie
+      - Production                  - Citer les utilisations du gasoil.
+                                              - 16 -
+
+                                                                      Branche : Raffinage
+                                                                      Classe : VIème Pétrochimie
+                                                                      Période : 4 heures / Semaine
+
+
+
+
+   3. Le fuel oil
+      - Définition                  - Définir et décrire le fuel oil
+      - Fuel domestique             - Différencier les fuels d’après la fluidité, et la viscosité.
+      - Fuel léger                  - Définir les notions de :
+      - Fuels spéciaux                 • Viscosité
+      - Fuels lourds n° 1 et n° 2      • Température de figeage
+                                       • Point d’écoulement
+                                       • Teneur en soufre
+   4. Les bitumes                   - Définir les trois principaux groupes de bitumes.
+                                    - Citer et expliquer les caractéristiques des bitumes.
+                                    - Enumérer les principales utilisations de bitumes.
+
+
+
+
+N.B. : Les autres produits sont
+       étudiés en pétrochimie.
+                                             - 17 -
+
+
+Collège Thérésien                                     Branche   : Technologie du pétrole de gaz.
+ Muanda – Cité                                        Classe    : IIIème Pétrochimie
+     B.P. 52                                          Période    : 3 heures / Semaine
+
+
+              Notions                         Objectifs : l’élève doit être capable d (d’)
+
+
+Chapitre 1
+
+1.1. Pétrole brut                   - Définir le pétrole brut, d’expliquer son origine et de parler
+                                      des besoins sédimentaires dans le monde et dans le R.D.C.
+                                      notre pays.
+
+1.2. Gisements de pétrole
+     - coupe d’un gisement de       - Décrire un gisement contenant du pétrole brut à l’aide d’une
+       Pétrole                        coupe en justifiant la position qu’occupe chaque constituant.
+
+    - exploration                   - Citer et expliquer les différentes étapes qui conduisent de la
+                                      découverte à l’exploitation d’une nappe de pétrole.
+
+1.3. Critères de localisation des   - Enumérer les outils utilisés dans la recherche depuis la
+     réserves d’hydrocarbure.         surface, de structures susceptibles de contenir des accumula-
+                                      tions de pétrole.
+
+1.3. Forage                         - Expliquer le but du forage d’exploration ainsi que d’autre
+                                      forages qui suivant.
+                                    - Schématiser un appareil de forage en appliquant le rôle du
+                                      derrick, du trépan, des moteurs, de la pompe à boue…
+
+1.5. Exploitation onshore et        - Expliquer ces types d’exploitation et en faire voir les diffé-
+     Exploitation offshore.           rences.
+                                    - Citer et expliquer les types de plates-formes utilisées en
+                                      exploitation offshore.
+Chapitre II
+
+2.1. Le pétrole, une source         - Parler des ressources et des réserves mondiales du pétrole (en
+     d’énergie mondiale.              1986) en expliquant l’unité utilisée (tep).
+                                    - Parler brièvement de la production du brut dans le bassin
+                                      côtier de la R.D.C. notre pays.
+                                      Détermine l’équivalence du baril au litre.
+
+2.2. Les pays producteurs du        - Nommer et localiser les pays grands producteurs du pétrole
+     pétrole dans le monde            en citant le continent.
+                                    - Expliquer le but premier des ays qui forment l’OPEP.
+                                    - Citer quelques grandes entreprises pétrolières dans le monde.
+                                              - 18 -
+Collège Thérésien                                      Branche   : Technologie du pétrole de gaz.
+ Muanda – Cité                                         Classe    : IVème Pétrochimie
+     B.P. 52                                           Période    : 3 heures / Semaine
+
+
+
+                              PROGRAMME AVEC OBJECTIFS
+
+
+Chapitre I : Le pétrole brut.
+
+L’élève doit être capable de (d’) :
+
+1.1. Restituer la nature chimique du pétrole brut
+
+1.2. Différencier les types de bruts qu’on trouve dans le monde.
+
+
+Chapitre II : L’industrie pétrolière
+
+L’élève doit être capable de (d’) :
+
+2.1. Définir une industrie pétrolière, donner des exemples d’industrie pétrolière dans notre pays
+     et ailleurs dans le monde.
+
+2.2. Expliquer comment procèdent les ingénieurs pour déterminer un gisement de pétrole en
+     parlant successivement de :
+
+     - la reconnaissance géologique du site
+     - techniques de prospection pétrolière sur terre (on shore) et sur met (offshore)
+     - la nécessité du forage des puits d’exploration.
+
+
+Chapitre III : L’outillage pétrolier
+
+L’élève doit être capable de (d’) :
+
+3.1. Citer et décrire les instruments utilisés dans l’industrie pétrolière (tuyauteries, brides,
+     raccords, filetages) dans les circuits hydrauliques et dans les opérations de forage (outils à
+     lame, outils à molette, outils à jet) et dans les mesures de la température et de la pression
+     (thermomètres, manomètres).
+
+3.2. Enumérer les procédés utilisés pour le stockage et les moyens de transport des produits
+     pétroliers prêts à la consommation.
+                                                       - 19 -
+
+                                                     Branche    : Technologie du pétrole de gaz.
+                                                     Classe     : IVème Pétrochimie
+                                                     Période     : 3 heures / Semaine
+
+
+
+Chapitre IV : L’industrie de raffinerie
+
+L’élève doit être capable de (d’) :
+
+
+4.1. Restituer le but d’une raffinerie.
+
+4.2. Expliquer la technique de distillation fractionnée du brut et énumérer les différents produits
+     pétroliers fabriqués dans une raffinerie.
+
+4.3. Citer et expliquer les différents tests classiques que doit subir un produit de raffinerie avant
+     d’être livré à la consommation (l’antidétonnance, inflammabilité, la fluidité, la teneur en
+     souffre, la résistance à la fusion, la pénétration, la ductilité et la résistance au
+     ramollissement…).
+
+
+Chapitre V : Les gaz.
+
+L’élève doit être capable de (d’) :
+
+5.1. Situer le gaz à l’état naturel dans les cas de gisements de pétrole, des hydrocarbures et dans
+     l’atmosphère.
+
+5.2. Montrer l’utilité des gaz d’hydrocarbures en particulier. Expliquer la fabrication de gaz par
+     voie chimique : cas de l’hydrogène et du monoxyde de carbone à partir de l’éthane ou du
+     méthane.
+
+5.3. Expliquer comment est exploité le gaz dans les gisements de LACQ en France (méthode
+     d’épuration en souffre).
+                                                                 - 20 -
+
+
+          Collège Thérésien                                     Branche     : Forage et Production
+           Muanda – Cité                                        Classe      : Vème Pétrochimie
+               B.P. 52                                          Période      : 4 heures / Semaine
+
+                                         PROGRAMMES AVEC OBJECTIFS
+
+
+                         Notions                           Objectifs : l’élève doit être capable d (d’)
+
+
+          Chapitre I :
+
+          1.1. Objectif du cours                 - Préciser l’objectif du cours de forage et de production.
+
+          1.2. Définition du forage              - Définir ce qu’est le forage en indiquant le but visé.
+
+          1.3. But des travaux de forage
+
+
+          Chapitre II : Les puits
+
+          2.1. Matériels de forage :             - Définir et décrire chaque matériel à l’aide d’un schéma.
+          * Le derrick, le trépan, le train de
+            sondes.
+
+          2.2. Matériel de soutien :             - Expliquer comment on constitue le train de virolles.
+          * Les virolles, le tubage en
+            maçonnerie.
+
+          2.3. Les fluides de forage :
+          * Le rôle du fluide de forage          - Montrer la nécessité de fluide de forage.
+          * Classification de fluide de          - Donner les types de fluides utilisés en forage.
+            Forage
+          * L’eau comme fluide de forage         - Citer les avantages et les défauts de l’eau comme fluide de
+                                                   forage.
+
+          * Forage à l’ai sec.                   - Montrer l’inconvénient de forer un puit à sec
+
+          Chapitre III : Les méthodes de         - Définir chaque procédé de forage.
+                         forage.
+          3.1. Le forage à percussion
+          3.2. Le forage rotary ou rotatif
+          3.3. Le forage par écrasement
+          3.4. Le forage de coupage
+          3.5. Le forage d’usure.
+Le fora
+                                               - 21 -
+
+
+                                                          Branche     : Forage et Production
+                                                          Classe      : Vème Pétrochimie
+                                                          Période      : 4 heures / Semaine
+
+
+Chapitre IV: Description d’un        - Décrire l’appareil utilisé en forage rotatif.
+             appareil de forage
+             rotary.
+
+Chapitre V : Les temps               - Définir les temps de forage improductif.
+             Improductifs
+
+Chapitre VI : Production
+6.1. Définition de la production     - Définir la production pétrolière
+
+6.2. Les grandeurs physiques         - Rappeler et expliquer les unités techniques pour la mesure de
+     intervenants dans la              chaque grandeur.
+     production pétrolière :
+     - Le poids, la quantité de
+       chaleur, la densité, la
+       température, le débit, la
+       pression.
+
+6.3. La mesure d’un débit et de la   - Expliquer la méthode pour mesurer un débit, décrire un
+     pression                          manomètre.
+
+6.4. Exploitation de gisement de
+     pétrole et de gaz.
+     * les parties d’un gisement
+       pétrolier.
+     * la production en mer          - Expliquer les plates-formes utilisées en eau peu profonde et
+       (offshore)                      en eau très profonde.
+     * la production sous faible     - Expliquer le fonctionnement des dispositifs de pompage à
+       pression naturelle              balanciers mécaniques.
+     * la production sous des        - Montrer l’importance de la pression sur la sortie du pétrole.
+       forces pressions
+
+Chapitre VII : Le Centre de
+               Production
+7.1. Rôles d’un Centre de            - Citer les rôles ‘un Centre de production pétrolière
+     production
+7.2. Echantillonnage et mesures      - Expliquer comment prélever un échantillon d’un produit et
+                                       effectuer les mesures de la pression, de la température, du
+                                       niveau d’huile dans l’espace annulaire, de la charge sur le
+                                       puit.
+
+N.B. : Pour éviter un enseignement livresque, les leçons seront appuyés par des visites guidées
+       des chantiers de forage.
+
+                                                - 22 -
+Collège Thérésien                                        Branche   : Laboratoire de Chimie
+ Muanda – Cité                                           Classe    : IIIème Pétrochimie
+     B.P. 52                                             Période    : 4 heures / Semaine
+
+
+
+                              PROGRAMMES AVEC OBJECTIFS
+
+Chapitre I : Filtration, Décantation, Distillation
+
+L’élève doit être capable d’épurer une solution contenant des matières solides indissolubles par
+filtration ; une solution trouble (eau trouble) par le principe de la décantation ; purifier l’eau ou
+d’autres liquides par distillation.
+
+Chapitre II : Utilisation de la verrerie
+
+L’élève doit être capable de :
+  - reconnaître une burette et s’en servir
+  - prélever une solution par une pipette
+  - peser les échantillons à l’aide d’une balance analytique.
+
+Chapitre III : Acides, Bases et Sels
+
+L’élève doit être capable de (d’) :
+  - utiliser les indicateurs colorés pour déterminer le changement du milieu réactionnel
+  - déceler un précipité après une réaction de précipitation
+  - déterminer le point d’équivalence chimique après une réaction d’oxydoréduction, déterminer
+    les quantités des réactifs pour déplacer un acide ou une base faible.
+
+Chapitre IV : Etude qualitative des cations :
+
+L’élève doit être capable de :
+  - déterminer les caractères analytiques des différents cations
+  - classer les cations en groupes
+  - reconnaître les cations par leur réaction avec les réactifs généraux et spécifiques :
+
+ * 1er groupe : Pb + + , Ag+ et Hg ++
+ * 2ème groupe : AS3 + , AS 4+ , Sb3+ , Sn++ , Sn 4+
+ * 3ème groupe : Hg++ , Bi 3+ , Cu ++ , Cd ++
+ * 4ème groupe : Al 3 + , Cr3 + , Fe3 + , Fe + +
+ * 5ème groupe : Zn+ + , Mn+ + , Ni+ + , Co+ +
+ * 6ème groupe : Ca + + , Sr+ , Ba+ +
+ * 7ème groupe : Mg+ + , K + , Na + , NH4 +
+
+Chapitre V : Caractères analytiques des principaux anions
+
+L’élève doit être capable de déterminer les caractères analytiques des principaux anions.
+                                                    - 23 -
+Collège Thérésien                                    Branche     : Laboratoire de Chimie
+ Muanda – Cité                                       Classe      : IVème Pétrochimie
+     B.P. 52                                          Période     : 4 heures / Semaine
+
+
+                            PROGRAMMES AVEC OBJECTIFS
+
+
+
+             Notions                             Objectifs : l’élève doit être capable d (d’)
+
+
+Chapitre I : Analyse quantitative
+
+1.1. Notions théoriques               - Utiliser en pratique les ustensiles de laboratoire : le verre, la
+                                        Porcelaine, le quartz, le platine, le polyéthylène …
+                                      - Donner le principe de la volumétrie, sa relation fondamentale,
+                                        ses subdivisions et ses principales étapes.
+
+1.2. Solutions titrées acides bases   - Titrer une solution d’acide donné par une solution de base de
+                                        concentration connue et vice-versa en remarquant le point
+                                        d’équivalence (P.E.)
+
+1.3. Alcalimétrie - Acidimétrie       - Préparer une solution d’acide ou de base de concentration
+                                        connue telle : 0,1 N ; 1 N ; 0,01 N
+                                      - Préparer une solution : 0,1 N de KMnO4
+                                      - Standardiser cette solution par l’Oxalate de Sodium 0,1 N
+                                         Préalablement préparée
+
+1.4. Manganimétrie                    - Titrer le fer par manganimétrie
+
+
+Chapitre II : Traitement des eaux
+              de boisson et
+              d’industrie
+
+2.1. Notions théoriques :             - Distinguer les procédés d’épuration par précipitation et par
+                                        permutation d’ions (citer les réactifs utilisés).
+
+2.2. Traitement des eaux à la         - Décrire sommairement les appareils intervenant dans
+     SOCIR / Muanda                     l’épuration des eaux pour la cité par SOCIR.
+                                               - 24 -
+
+                                                        Branche   : Laboratoire de Chimie
+                                                        Classe    : IVème Pétrochimie
+                                                        Période    : 4 heures / Semaine
+
+
+
+
+2.3. Détermination de pH, de la         - Définir les notions, donner le but et expliquer la procédure
+     conductivité électrique et de la     utilisée pour leur détermination.
+     turbidité.
+
+2.4. Détermination de la silice, de     - Citer les réactifs et donner la procédure
+     phosphate, de l’ammoniac, de
+     l’alcalinité, du chlore libre
+
+2.5. Détermination des substances       - Expliquer les procédés et comparer au résultat des calculs.
+     organiques.
+
+2.6. Détermination de l’alcalinité à    - Expliquer la procédure pour déterminer : le titre alcalimétri-
+     la phénophtaléine et méthylo-        que (TA) et le titre alcalimétrique complet (TAC).
+     range.                             - Etablir la formule de calcul de TA et de TAC.
+
+2.7. Détermination de CO2               - Expliquer le procédé et écrire une formule de calcul du taux
+                                          de CO2
+                                               - 25 -
+
+
+
+Collège Thérésien                                       Branche   : Laboratoire de Chimie
+ Muanda – Cité                                          Classe    : Vème Pétrochimie
+     B.P. 52                                            Période    : 4 heures / Semaine
+
+
+                              PROGRAMMES AVEC OBJECTIFS
+
+
+
+             Notions                             Objectifs : l’élève doit être capable d (d’)
+
+
+Chapitre I : Rappels
+
+1.1. Pipetage                         - Pipeter une solution donnée au moyen d’une pipette graduée.
+
+1.2. Pesage de produit                - Utiliser la balance de précision pour peser les produits
+                                        chimiques.
+
+1.3. Séparation de produits           - Séparer les produits chimiques de mélanges : solide - solide et
+                                        et liquide – liquide non miscibles.
+
+Chapitre II : Dosage
+
+2.1. Volumétrie                       - Déterminer le point d’équivalence de la substance à doser en
+                                        observant le virage de l’indicateur coloré. Utiliser les autres
+                                        méthodes ne faisant pas intervenir un indicateur coloré.
+2.2. Gravimétrie
+     - But                            -Transformer par des réactions chimiques de précipitation
+                                       l’élément à doser en un composé insoluble de composition
+                                       chimique où l’on peut bien déterminer la masse.
+
+     - Exemples : le fer, l’argent,   - Dans chaque cas, déterminer la quantité de l’élément contenu
+       l’aluminium, le baryum, le       dans l’échantillon choisi.
+       plomb.                           N.B. : l’échantillon choisi doit contenir l’élément à doser.
+
+2.3. Dosage par manganimétrie :       - Déterminer la quantité d’un élément dans un échantillon à
+     - But                              partir de la solution tirée de KMnO4.
+     - Exemples : le fer, le
+       calcium.
+                                                       - 26 -
+
+                                                      Branche    : Laboratoire de Chimie
+                                                      Classe     : Vème Pétrochimie
+                                                      Période     : 4 heure / Semaine
+
+
+Chapitre III : Préparation des
+               réactifs.
+
+3.1. Techniques de préparation      - Distinguer les modes de préparation selon la forme physique
+                                      du réactif (solide, liquide)
+
+3.2. Appellations de solution.      - Restituer la définition de solution molaire (1M) et de solution
+                                      normale (IN) ou n fois molaire et n fois normale.
+
+3.3. Dilution                       - Définir « diluer une solution ».
+
+3.4. Exemples des préparations :
+     - Préparation d’une solution   - Expliquer le mode opératoire, prendre des précautions pour
+       de H2SO4 de concentration      éviter des dangers de brûlure.
+       et de densité connues.
+
+     - Préparation d’un litre de    - Expliquer le mode opératoire et faire la manipulation.
+       H2SO4 1 N
+
+     - Préparation d’une solution   - Expliquer et préparer 1 litre de solution de C2Na2O4 N/8
+       d’oxalate de sodium N/8        normale. Indiquer le mode opératoire.
+
+    - Préparation d’une solution    - Expliquer et préparer 1 litre de solution de KMnO4 N/8
+      d’oxalate de permanganate       normale. Indiquer le mode opératoire. Constater la durée de la
+      de potassium N/8                conservation.
+
+    - Préparation de un litre de    - Indiquer le mode opératoire pour préparer une quantité exacte
+      KMnO4 N/80 à partir d’une       de 1 litre N/80.
+      solution de N/8.
+
+3.5. Préparation des solutions      - Donner dans chaque cas le mode opératoire.
+     d’indicateur coloré :
+     - Rouge de méthyle
+     - Rouge de crésol
+     - Méthyle orange
+     - Bleu de Thymol
+     - Phénophtaléine.
+                                               - 27
+
+ Thérésien                                            Branche : Laboratoire de Chimie
+ Muanda – Cité                                        Classe  : VIème Pétrochimie
+    B.P. 52                                           Période  : 5 heures / Semaine
+
+
+                           PROGRAMMES AVEC OBJECTIFS
+
+
+
+             Notions                            Objectifs : l’élève doit être capable d (d’)
+
+
+Chapitre I : Notions
+             d’oxydoréductimétrie
+
+1.1. Dosage du fer par le KMnO4      - En partant du sel de MOHR comme échantillon, préparer une
+     0,1 N par :                       solution ferreuse qu’on va titrer. Expliquer le mode opératoire
+     * Manganimétrie                   suivi.
+                                     - Titrer la solution ainsi préparée et calculer la masse de fer qui a
+                                       réagi connaissant la masse de sel de MOHR du départ.
+                                       N.B. : Sel de MORH = (NJ4)2SO4. 6H2O
+
+1.2. Dosage du cuivre par l’iode     - Préparer la solution à titrer à partir de l’échantillon du cuivre
+     0,1 N                             qui peut être un sel (Cu2SO4.5H2O)
+                                     - Titrer la solution à partir de la solution de
+                                        Na2S2O3.0,1 N ainsi préparé
+                                     - Calculer la masse de cuivre pur contenu dans l’échantillon,
+                                       donc déterminer la teneur en cuivre de l’échantillon.
+
+Chapitre II. Analyse de produits
+             pétroliers.
+
+2.1. Détermination de sels dans le - Expliquer le procédé utilisé à la SOCIR Muanda.
+     brut par extraction.
+
+2.2. Distillation « HEMPEL »         - Expliquer le procédé HEMPEL
+                                     - Distinguer les autres type de distillation :
+                                       TODE, ASTM.
+
+2.3. Détermination du pour-          - Expliquer le procédé.
+     centage d’eau dans le brut ou
+     le fuel par distillation.
+                                           - 28 -
+
+
+                                                    Branche     : Laboratoire de Chimie
+                                                    Classe      : VIème Pétrochimie
+                                                    Période      : 5 heures / Semaine
+
+
+2.4. Détermination de l’eau et de - Expliquer le procédé de la centrifugation, expliquer aussi le
+     sédiments dans le brut.        procédé d’extraction.
+
+2.5. Détermination de la viscosité - Définir et citer les sortes de viscosité, déterminer pratiquement
+     du produit.                     la viscosité d’un produit pétrolier.
+
+2.6. Le point d’écoulement.          - Donner le but et expliquer l’essai à faire.
+
+2.7. Le point de congélation.        - Indiquer le mode opératoire utilisé à la SOCIR Muanda.
+
+2.8. Le point éclaire (flash point) - Définir, donner le but et faire l’essai de détermination.
+     et le point d’inflammabilité   - Restituer la formule pour estimer le point d’inflammabilité du
+     (fire point)                     gasoil.
+
+2.9. Le point de fumée, le point - Restituer dans chaque cas le procédé de détermination et
+     d’aniline, l’indice diesel, donner les valeurs normales.
+     l’indice d’octane.
+
+2.10. Le test de souffre.            - Donner le but et la procédure utilisée à la société de raffinage
+                                       de Muanda (SOCIR).
+                                           - 29 -
+
+
+           PROPOSITION DE BAREME DE COTATION DES EXAMENS D’ETAT
+
+
+
+
+                   1ER jour        2ème jour        3ème jour           4ème jour
+
+
+1. Type          Traditionnel        Choix            Choix               Choix
+                                    multiple         multiple            multiple
+
+2. Nombre de          20              25                15                  25
+   questions
+
+
+3. Examen       Pratique          15 Math           3 Actualité   9 Pétrochimie
+                Professionnelle    7 Géologie       3 Anglais     8 Raffinage
+                                   3 Ecologie       2 Civisme     6 Physique Industrielle
+                                                    7 Français    2 Sécurité Industrielle
+
+
+4. Durée           5 heures         4 heures         3 heures            5 heures
+                                - 30 -
+
+                  TABLE DES MATIERES
+
+  I. LES OBJECTIFS ……………………………………………………………………………1
+    1.1. Considérations générales ………………………………………………………………1
+    1.2. Les Tâches ……………………………………………………………………………..2
+  II. LE CORPS ENSEIGNANT ……………………………………… ...………………………3
+  PROGRAMMES ………………………………………………………………………...............3
+    I. Cours généraux ……………………………………………….…………………………..3
+    II. Cours techniques ……………………………………….…………………………………3
+BIBLIOGRAPHIE ………………………………………………………………………………….4
+GRILLE HORAIRE ………………………………………………………………………………...5
+Ecologie 6ème ………………………………………………………………………………………..6
+Sécurité industrielle 6ème ……………………………………………………………………………8
+Géologie 3ème ………………………………………………………………………………………10
+Géologie générale 4ème …………………………………………………………………………….13
+Géologie générale 5ème …………………………………………………………………………….16
+Hydraulique 4ème …………………………………………………………………………………..18
+Pétrochimie 6ème …………………………………………………………………………………...20
+Raffinage 6ème ……………………………………………………………………………………..24
+Technologie du pétrole de gaz 3ème ……………………………………………………………….26
+Technologie du pétrole de gaz 4ème ……………………………………………………………….28
+Forage et Production 5 ème …………………………………………………………………………30
+Laboratoire de Chimie 3 ème ……………………………………………………………………….33
+Laboratoire de Chimie 4 ème ……………………………………………………………………….35
+Laboratoire de Chimie 5 ème ……………………………………………………………………….37
+Laboratoire de Chimie 6 ème ……………………………………………………………………….39
+
+
+PROPOSITION DE BAREME DE COTATION DES EXAMENS D’ETAT …………………..41
+TABLE DES MATIERES ……………………………………………………………………….. 31
+

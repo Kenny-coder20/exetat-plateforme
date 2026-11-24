@@ -30,7 +30,7 @@ conditions actuelles de Render et passer à l'offre payante pour un usage réel)
 ## 3. Utiliser
 - Accueil : `https://<votre-service>.onrender.com/`
 - Élèves : `/eleve/` — bouton « Installer » (Chrome/Edge) ou « Ajouter à l'écran d'accueil » (téléphone).
-- Enseignants : `/validateur/` — le navigateur demande l'identifiant et le mot de passe.
+- Enseignants : `/validateur/` — page de connexion ; premier compte : `atelier` + `ATELIER_MOT_DE_PASSE`, puis créez les comptes dans l'onglet Comptes.
 - API : `/docs` (protégée par le même mot de passe).
 
 ## 4. Mettre à jour
@@ -46,6 +46,7 @@ format `{"items":[...]}` ; ou exécutez localement `python -m app.cli banque` et
 | --- | --- |
 | `DATABASE_URL` | renseignée par Render (PostgreSQL) ; vide = SQLite local |
 | `ANTHROPIC_API_KEY` | génération IA |
-| `ATELIER_MOT_DE_PASSE`, `ATELIER_UTILISATEUR` | protection de l'atelier et des écritures |
+| `ATELIER_MOT_DE_PASSE`, `ATELIER_UTILISATEUR` | compte administrateur initial |
+| `CLE_SECRETE` | signature des sessions (générée automatiquement par le Blueprint) |
 | `MODELE_IA` | identifiant du modèle IA utilisé pour la génération |
 | `EXETAT_DEMO` | `1` charge la démo si la banque est vide |

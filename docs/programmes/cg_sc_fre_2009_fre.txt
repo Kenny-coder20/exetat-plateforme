@@ -1,0 +1,1940 @@
+ REPUBLIQUE DEMOCRATIQUE DU CONGO
+MINISTERE DE L’ENSEIGNEMENT PRIMAIRE,
+     SECONDAIRE ET PROFESSIONNEL
+
+
+
+
+
+
+            
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+              Dépôt légal :
+                                     SOMMAIRE
+
+
+    i.    PREFACE
+   ii.    INTRODUCTION
+ iii.     FONDEMENTS
+  iv.     FINALITES
+   v.     BUTS
+  vi.     OBJECTIFS TERMINAUX D’INTEGRATION (OTI)
+ vii.     COMPETENCES PEDAGOGIQUES DE BASE
+viii.     OBJECTIFS INTERMEDIAIRES
+  ix.     PROGRAMME DE CHAQUE DEGRE
+   x.     RECOMMANDATION PARTICULIERE PAR OPTION
+
+
+         I. DEGRE INFERIEUR (1e et 2e ANNEES) Secondaire Général
+
+              1. OBJECTIFS INTERMEDIAIRES
+              2. SOUS-BRANCHES
+
+    II. PROGRAMME DU DEGRE MOYEN (3e et 4e ANNEES DES
+               HUMANITES)
+
+              1. OBJECTIFS INTERMEDIAIRES
+              2. SOUS-BRANCHES
+
+
+   III. PROGRAMME DU DEGRE SUPERIEUR (5e et 6e ANNEES DES
+               HUMANITES)
+
+              1. OBJECTIFSINTERMEDIAIRES
+              2. SOUS-BRANCHES
+
+
+   IV. DISPOSITIONS PARTICULIERES PAR OPTION
+
+
+              1. ENSEIGNEMENT SECONDAIRE NORMAL
+              2. ENSEIGNEMENT TECHNIQUE
+                              
+                                         
+           Le Ministère de l’Enseignement Primaire, Secondaire et
+Professionnel, conscient de l’évolution rapide de la science et de la technologie
+à travers le monde, avait émis le vœu d’une nouvelle réforme des programmes
+de l’enseignement en République Démocratique du Congo à l’occasion de la
+«Journée Nationale de l’Enseignement », commémorée le…. Avril 200…
+
+
+             En ce qui concerne le programme des mathématiques, les
+préoccupations du Ministère se trouvent confrontées par l’état surannée 1970.
+En effet, la mathématique dite moderne introduite par le programme de 1970 ne
+s’enseigne plus sous d’autres cieux de façon systématique depuis [lus d’une
+décennie alors qu’elle continue à faire l’objet de l’enseignement dans notre pays.
+
+
+             Aussi, faisant siennes ces réalités, le Secrétariat Général à l’EPSP, à
+travers la Direction des Programmes Scolaires et Matériel Didactique, a conçu
+un Projet de relecture et de réécriture de certains programmes d’enseignement
+dont celui des mathématiques.
+
+              Pour faire, un questionnaire d’enquête a été distribué à certains
+enseignants expérimentés, chercheurs, inspecteurs et conseillers d’enseignement
+de la Ville de kinshasa.
+Du dépouillement de ce            questionnaire, il ressort que les enquêtes sont
+unanimes pour la relecture et la réécriture du programme des mathématiques et
+ont proposé l’introduction, dans le cursus de l’enseignement secondaire, de la
+statistique et du calcul de la probabilité.
+
+              Ce document, né de la confrontation des propositions des enquêtés
+aux programmes des mathématiques de certains pays dont la Belgique, la France
+et les pays francophones d’Afrique et de l’Océan Indien, prend en considération
+deux principes directeurs à savoir : l’unité fondamentale des mathématiques et la
+coordination de l’enseignement des mathématiques et celui des autres sciences.
+
+             Afin de moderniser notre discipline, demeurée jusqu-là presque
+traditionnelle, il est urgent que les professeurs des mathématiques adaptent leur
+enseignement aux nouvelles technologies. En effet, l’ordinateur et la calculatrice
+étant devenus des piliers de la société moderne, le mathématicien ne peut
+échapper à leur utilisation.
+L’introduction de l’une ou l’autre matière du programme ou la résolution d’un
+problème par l’ordinateur attirera chez l’élève plus d’attention et pourrait
+susciter chez lui un plus grand intérêt pour le cours de mathématique.
+
+             Ce programme propose une construction progressive des concepts.
+Il préconise le recours à des situations-problèmes comme points de départ à une
+structuration théorique. Cette construction, appelée parfois enseignement en
+spirale, requiert une bonne organisation de différentes étapes de
+l’enseignement : utiliser, renforcer, mettre en relation et généraliser différentes
+notions.
+Négliger certaines étapes sous prétexte qu’une notion figure au programme
+d’une année est préjudiciable à l’élève.
+
+              Une telle construction du savoir développe de multiples
+compétences chez l’élève : entretenir une relation dynamique au savoir,
+conjecturer, vérifier, tester, argumenter, améliorer ses outils de communication
+orale et écrite,…
+
+             Les sujets d’étude retenus trouvent un ancrage dans des intuitions et
+des connaissances des élèves, et se prêtent à des activités de recherche, de
+conjecture et de démonstration.
+
+             Pour chaque entité de matière, le programme précise l’une ou
+l’autre approche, cerne l’essentiel et indique les objectifs spécifiques.
+
+
+                         La Direction des Programmes Scolaires
+                                  et Matériel Didactique.
+                               (1)
+
+Puisqu'il s'agit
+
+   - d'une pédagogie par objectifs ou par
+     compétences, - d'une pédagogie centrée sur
+     l'élève,
+   - visant à la maîtrise d'une langue seconde,
+   - mettant en application les nouvelles approches didactique et
+     méthodologiques, - s'adressant à des jeunes élèves,
+   - visant leur développement sur tous les plans,
+     les objectifs devront tenir compte des recommandations suivantes
+
+   1/ Sur le plan politique
+
+     initier et développer le sens de responsabilité et de droiture
+     développer une société égalitaire, juste, démocratique (Conférence
+      Nationale)
+     Souveraine, CNS, Art.2) (2)
+
+     développer les valeurs républicaines (CNS, Art.5)
+
+2 /Sur le plan pédagogique
+ • Eveiller de la conscience nationale (CNS, Art.3)
+ • Initier au sens de la justice, du bien, de la vérité
+ • Développer des valeurs de responsabilité, de solidarité, de spiritualité (CNS,
+   Art.2)
+
+3/ Sur le pan pédagogique
+
+ • Faire acquérir à l'enfant des outils d'apprentissage (CNS. Art. 19)
+ • Initier l'élève à l'autoévaluation... (CNS, Art. 19)
+ • Responsabiliser l'élève à "apprendre à apprendre"
+
+ (1) Les fondements sont des principes qui guident l'action pédagogique, ils
+    émanent de deux sources :
+    le le profil du type d'homme congolais à former, tel que défini par
+       l'instance politique, notamment dans la charte en annexe,
+    2e du profil du développement psychologique de l'enfant à l'âge de l'école
+       secondaire.
+
+ (2) Conférence Nationale Souveraine, Commission de l'Education, Charte
+     Nationale de l'Education, Kinshasa, 1992
+• Fournir aux élèves des situations d'apprentissage concrètes à l'aide de
+  thèmes, de documents qui leur sont familiers, des personnages qui jouent un
+  rôle important dans leur vie.
+• Intégrer l'enseignement de la langue aux autres activités de la classe, en
+  tenant compte notamment des actes de parole à maîtriser et notions
+  développées dans les différentes disciplines et en s'appuyant sur des
+  techniques de classes appropriées,
+• Donner aux élèves l'occasion de s'adonnera des activités d'expression
+  culturelle et esthétique.
+
+4/ Sur le plan social
+
+• Initier à intégration sociale
+• Développer des valeurs de responsabilité, de solidarité et de modernité
+  (CHS, Art. 2)
+
+• Développer l'esprit d'initiative (CNS, Art.7)
+• Former l'élève en tant qu'individu membre d'un groupe social
+• Développer des relations harmonieuses et d'interactions au sein du groupe
+• Aider les enfants à intégrer la seconde langue dans leur vie quotidienne en
+  classe et hors de classe.
+
+5/ Sur le plan économique
+• Initier à la production
+• Développer des valeurs de modernité (CNS, Art.2)
+• Cultiver le sens de a sincérité, de l'amour, de l'intérêt et du travail productif
+  (CNS, Art.6)
+• Développer les aptitudes et habilités manuelles (CNS, Art. 19)
+• Mettre l'accent sur l'adaptation des objectifs aux réalités socioculturelles et
+  sur leur orientation vers le développement du pays.
+
+6/ Sur le plan culturel
+
+• Initier à la production
+• Initier au sens du beau (CNS, Art. 12)
+• Initier à la culture générale et à la formation polyvalente (CNS, Art. 9)
+• Donner aux élèves l'occasion de s'adonner à des activités d'expression
+  culturelle et Esthétique.
+    7/ Sur le plan psychologique
+
+    • utiliser les procédés d'apprentissage qui respectent les différents stades de
+      développement de l'élève
+
+    • prendre en compte des motivations, des rythmes et des styles d'apprentissage
+      des élèves individuels
+    • fournir aux élèves es situations d'apprentissage concrètes à l'aide des thèmes,
+      de documents qui leur sont familiers, des personnages qui jouent un rôle
+      important dans leur vie.
+    • tenir compte des préférences des élèves dans le choix des activités (ex. jeux,
+      chansons, histoires, thèmes)
+    • créer des activités et des interactions dans la salle de classe qui permettent
+      aux élèves de se sentir à l'aise et d'avoir confiance en leurs moyens.
+
+    8/ Sur le plan de la didactique des langues
+
+    • enseigner le français comme langue seconde pour l'enfant congolais
+    • appliquer les principes de l'enseignement du français selon les approches
+      communicatives, fonctionnelles.
+
+
+                             
+
+
+               «l’Enseignement National a pour finalité la formation
+                harmonieuse de l’homme congolais, citoyen responsable, utile à
+                lui-même et à la société, capable de promouvoir                    le
+                développement du pays et la culture nationale » (LOI – CADRE
+                n°86-005 de 1986 de l’Enseignement National).
+
+
+            - « L’école doit former des citoyens producteurs, créatifs,
+                cultivés, consciencieux, libres et responsables, ouverts aux
+                valeurs sociales, culturelles et esthétiques, spirituelles et
+                républicaines. » (Charte de l’Education, C.N.S., art.5).
+
+
+            - « Toute institution de l’Education a l’obligation de former non
+                seulement des femmes et des hommes créatifs, pleins
+                d’imagination,   mais    également    des   personnes      capables
+                d’imaginer plusieurs alternatives devant une même situation, de
+                soulever les interrogations que suscitent cette situation et de
+                proposer plusieurs réponses à chacune d’elles » (C.N.S., art.7).
+
+                              
+
+
+    L’enseignement du français au secondaire vise à :
+
+          Faire acquérir aux élèves la maîtrise de la langue française
+          Former un homme complet ayant intégré des valeurs morale,
+           civiques
+
+
+      A l'issue de l'enseignement de la grammaire au degré inférieur,
+             l'élève devra être capable de (d')
+        1. Comprendre tous les discours oraux et écrits de la vie
+            courante ;
+        2. S'exprimer à l'écrit par des textes courants (lettres,
+            formulaires, récits, compositions, rédaction, dissertation) ;
+        3. Soutenir des débats autour du thème ;
+        4. Intégrer des valeurs morales, civiques qui peuvent l'insérer
+            dans la vie courante ;
+        5. Acquérir d'abord une connaissance implicite des structures
+            de base, et ensuite des règles ;
+        6. Maîtriser la pratique de la langue, c'est à dire entendre,
+            comprendre, assimiler et utiliser les structures du français
+            d'abord à l'oral puis à l'écrit dans toute situation de
+            communication en respectant les règles;
+        7. Acquérir un esprit de réflexion, un jugement objectif et
+            raisonné et le goût de l’esthétique;
+
+
+      Situation d’intégration possibles
+                • Variété des textes selon les thèmes choisis.
+                • Les règles grammaticales
+                • Le vocabulaire spécifique courant
+                • Les genres littéraires-Les littéraires et les courants de
+                    chaque époque
+                • Exercices d’orthographe
+                • Exercices d’expression orale
+                • Exercices d’expression écrite
+        
+
+        
+CB.1. Compétence pédagogique de base 1
+                 Dans toute situation de communication courante, l’élève devra être
+capable de s’exprimer oralement en français de façon à se faire comprendre.
+
+
+CB.2. Compétence pédagogique de base 2
+                 Dans toute situation de communication courante, l’élève devra être
+capable d’exprimer ses idées, ses pensées, ses sentiments, ses émotions, ses
+projets, par écrit de façon clair et intelligible en respectant les règles de la langue
+française.
+CB.3. Compétence pédagogique de base 3
+                 Face à une situation de communication courante, l’élève devra être
+capable d’interpréter un message oral ou écrit sans modifier son contenu.
+
+
+CB.4. Compétence pédagogique de base 4
+                 Face à une situation de communication courante, l’élève devra être
+capable d’argumenter un fait, un point de vue, une action en français oral ou en
+français écrit
+                     
+
+
+A. OBJECTIF TERMINAL D’INTEGRATION
+
+           A l'issue du degré inférieur de l'enseignement secondaire, l’élève ayant suivi le cours de français devra être
+capable d’analyser et de produire une situation de communication orale ou écrite constituée :
+
+
+                  Des messages courants de son milieu
+                  Des textes simples courants, réalistes ou imaginaires ;
+                  De petits messages en rapport avec les différents genres littéraires
+
+
+
+    B. OBJECTIFS INTERMEDIAIRES
+
+               A la fin du premier degré ; l'élève devra être capable de (d') :
+        1. écouter et comprendre les messages courants de son milieu (conversation, narration, description) ;
+        2. dire des textes simples et imaginaires (narration, description, conversation simple) ;
+        3. lire et comprendre des textes courants imaginaires, descriptifs, narratifs, dialogués, etc.) ;
+        4. écrire de petits messages (lettres ; narrations, simples descriptions).
+
+
+       1. CENTRES D'INTERET (C.I.) OU THEMES
+  1.1. OBJECTIFS SPECIFIQUES                1.2. CONTENUS                         1.3. RECOMMANDATIONS                 1.4. PRINCIPES
+                                                                                    METHODOLOGIQUES                        D'EVALUATION
+
+A l'issue de deux ans de                    I. Milieu proche de l'enfant      1. Méthodologie active et
+                                                                                                                       1. Questions fermées et/ou
+                                                                                  participative
+l'enseignement des Centres d'intérêt            1. Famille
+                                                                              Amener les élèves par la technique du       ouvertes.
+(C.I.) ou thèmes                                2. Ecole
+                                                                              brainstorming à parler d'abord de leur
+au degré inférieur, l'élève devra être          3. Habitation
+                                                                              milieu socioculturel, de l'expérience, 2. Exercices de réemploi des
+capable de (d') :                               4. Village - Ville, etc.      et ensuite de l'univers extérieur.          informations recueillies à partir
+1. Observer et parler des                   Il. Fêtes et loisirs              Aller donc du connu vers l'inconnu.         des C.I. ou thèmes.
+  réalités socio-culturelles de son
+  milieu ;                                      5. Fêtes
+                                                                              2. Le professeur choisira des centres
+                                                                                                                       3. Rédaction sur le centre
+2. Restituer l'essentiel de                     6. Jeux, sports, etc.             d'intérêt ou thèmes concrets
+                                            III. La nature                                                              d'intérêt ou thème.
+  l'information récoltée et                                                       proches du milieu de l'enfant : Il
+ étudiée sur les centres d'intérêt ;           7. La nature                       peut également tenir compte des      4. Un questionnaire de
+3. réutiliser le vocabulaire et les            8. Les saisons                     attentes des élèves.                    synthèse permettra de faire
+   structures liées à cette information ;      9. Les animaux, ect.                                                       réfléchir les élèves.
+                                                                              3. La leçon est essentiellement orale,
+4. Discuter et prendre position à propos IV. Les valeurs, les anti-valeurs        mais la synthèse est notée au
+ de cette                               10. Les valeurs morales       tableau.
+                                                    et civiques
+
+                                                                             
+     
+                
+                        
+                   
+
+
+
+     
+     
+     
+     
+         
+2. TEXTES
+
+ 2.1. OBJECTIFS SPECIFIQUES 2.2. CONTENUS                                                   2.3. RECOMMANDATIONS                     2.4. PRINCIPES
+                                                                                                METHODOLOGIQUES                          D'EVALUATION
+
+              
+                                                                                                                  
+                                                                                    
+                                                          
+
+                                            
+                                                           
+                                                                                                          
+                                                                 
+                                                               
+                                                                                           
+              
+                                                                                    
+                                          
+                                            
+                                   
+ 
+                                                                               
+                                                                                          
+                                         
+                         
+            
+ 
+                                        
+                                                 
+                                                  
+ 
+                                            
+
+- reconnaître le genre et le type de        
+textes et leurs caractéristiques.
+5. Plan socioculturel                
+
+- Restituer l'information et         
+ prendre position ;                  
+                                     
+B. Sur le plan formel
+                                     
+= Forger l'esprit de réflexion,
+                                     
+ d'analyse, de synthèse,
+                                     
+ d'imagination ;
+                                     
+- Renforcer les valeurs
+ morales ;
+- Approfondir les
+connaissances culturelles.
+3. LA GRAMMAIRE
+
+
+a. Objectifs spécifiques           b. Contenus                             c. Recommandations méthodologiques          d. Principes d’évaluation
+A l’issue de l’enseignement de     I. moyens d’expression de :             I. Partir d’un texte                        I. Evaluer la compétence de
+                                                                                                                          communication par :
+la grammaire au degré inférieur,      1. lieu ;                            Partir toujours d’un texte impliquant une
+l’élève devra être capable de         2. temps ;                           situation de communication, mais jamais
+                                                                                                                       1. des exercices de
+(d’) :                                3. but, de l’intention, la           des phrases isolées ou juxtaposées.
+                                                                                                                           communication (jeux de rôle
+                                           destination ;                   Il peut s’agir :
+                                                                                                                           et autres, cercle de
+   1. utiliser les moyens usuels      4. la cause ;                        1. d’un texte oral
+                                                                                                                           communication) ;
+     d’expression de diverses         5. la conséquence ;                           - qu’on vient d’étudier ou qu’on
+     notions et respecter les         6. manière ;                                    a étudié et bien compris ;
+                                                                                                                       2. des exercices de phraséologie
+     modalités d’énonciation          7. moyen, l’instrument ;                      - qu’on fait comprendre
+                                                                                                                           orale et écrite ;
+     (voir Contenus) ;                8. l’interrogation et la réponse ;              préalablement.
+                                      9. la négation, l’affirmation.
+                                                                                                                       3. des exercices d’appariement ;
+   2. employer à bon escient les   II. divers emplois                      2. d’un texte enregistré ou lu par le
+     mots grammaticaux             Quand et comment employer :                 professeur que les élèves écoutent.
+                                                                                                                       4. des exercices à choix multiple
+   ( déterminants, adjectifs,         1. les articles (défini, indéfini,
+                                                                                                                           visant :
+     pronoms, etc.) ;                       partitif) ;                      L’essentiel est de partir d’un échange
+                                                                                                                             - le réemploi des moyens
+                                      2. les modes et les temps ;            oral, d’un dialogue, ou d’une
+                                                                                                                               d’expression étudiés ;
+   3. maîtriser la variation en       3. les adjectifs qualificatifs ;       conversation : c’est ce qu’on appelle
+                                                                                                                             - l’emploi des autres
+     genre et en nombre des           4. les déterminants ;                  animation grammaticale.
+                                                                                                                               éléments de la langue
+     mots grammaticaux                5. l’adverbe
+                                                                                                                               étudiés.
+                                      6.     la préposition
+    4. de distinguer les divers       7.     les pronoms
+    types de phrases et les    III. La conjugaison                       II. Constituer un échantillon                II. Evaluer la compétence de
+    utiliser en connaissance      1. La forme nominale du verbe :        De ce texte, on tire au fur et à mesure de        linguistique par :
+    de cause ;                        le mode Infinitif ;                son explication ou du déroulement de la
+5. de dire la nature et la        2. Les verbes être et avoir ;          conversation (cas de l’animation             1. des exercices de phraséologie ;
+    fonction des mots dans        3. La conjugaison régulière : les      grammaticale) des phrases (4 ou 5)
+    une phrase.                       verbes en -er , type aimer ;       contenant la notion visée. Ces énoncés       2. des exercices lacunaires ;
+                                  4. L’indicatif (les 8 temps de ce      constitueront un corpus d’exemples sur
+                                      mode) ;                            lesquels se basera l’étude de la notion      3. des exercices d’appariement ;
+                                  5. Les verbes en –ir dont le           grammaticale envisagée.
+                                      radical s’allonge par                                                           4. des exercices à choix multiple ;
+                                      l’insertion de la syllabe –iss-,    III. Conceptualisation
+                                      ( à certaines formes), type                                                     5. d’autres exercices visant :
+                                      finir                              On arrête la conversation pour :
+                                  6. L’impératif (présent)                   1. faire observer les phrases ;                -   l’emploi correct des
+                                  7. Les verbes en –ir sans                                                                     mots grammaticaux ;
+                                      allongement du radical en oir          2. faire dégager les éléments qui              -   l’analyse grammaticale
+                                      et en –re (type recevoir,                  expriment la notion à étudier ;                ou logique, etc.
+                                      prendre)
+                                  8. Les verbes pronominaux                  3. faire réfléchir les élèves pour les
+                                  9. Le subjonctif (présent)                    amener à dégager par eux –
+                                  10. Le conditionnel (présent)                 mêmes quelques règles simples
+                                                                                que le professeur pourra
+                               IV. Autres notions                               éventuellement préciser.
+                                  1. Pluriel des noms et des
+       adjectifs ;                                on constituera ainsi un paradigme
+   2. Féminin des noms et des                     de tous ces éléments qui aident à
+       adjectifs ;                                exprimer la même notion.
+   3. Accord des adjectifs ;                      On les expliquera pour dégager
+   4. Accord des participes passés                les diverses nuances de leur
+       employés seuls ;                           utilisation.
+   5. Accord du participe passé
+       avec les verbes auxiliaires       IV. Appropriation et fixation
+       avoir et être ;
+   6. Participe passé des verbes        L’enseignant s’assurera l’appropriation et
+       pronominaux ;                    la fixation par :
+   7. Place de l’adjectif épithète ;          -     de nombreux exercices de
+   8. Degrés de signification                       réemploi de la notion dans
+       des adjectifs ;                              diverses situations de
+   9. Gérondif et adjectif verbal ;                 communication.
+   10. Concordance des temps ;                -     D’autres exercices de
+   11. Interrogation directe et                      communication ou à caractère
+       indirecte (discours directs et               traditionnel.
+       indirects) ;
+
+
+
+
+V. analyse grammaticale
+   1. Nature de neuf parties du
+    discours (article, nom, etc.) ;
+2. Fonctions des noms et des
+    adjectifs (base, sujet, attribut,
+    etc.) ;
+3. Constituants de la phrase et
+    groupes grammaticaux
+    (groupe nominal, groupe
+    verbal, groupe adjectival).
+4. VOCABULAIRE
+
+ a. Objectifs spécifiques                b. Contenus                            c. Recommandations                    d. Principes d’évaluation
+                                                                                  méthodologiques
+ A l’issue de l’enseignement du           1. Les mots nouveaux et les           1. Partir du texte et du centre        1. Poser des questions de
+ vocabulaire au degré inférieur,              expressions difficiles ou             d’intérêt pour tirer les mots à        compréhension sur les termes
+ l’élève devra être capable de:               intéressants contenus dans le         étudier. Ne pas exploiter un           et les expressions étudiés.
+                                              thème et les textes analysés en       mot pris isolément.                2. Former des phrases avec les
+ 1. désigner un objet, un être ou un          classe.                           2. Recourir aux techniques                 mots étudiés.
+    concept par le terme propre ;                                                   d’enrichissement des mots :
+                                          2. Le vocabulaire d’usage                 synonymes, homonymes,              3. Raconter une histoire en
+ 2. consulter convenablement le               courant.                              antonymes, paronymes, les              utilisant les mots et
+    dictionnaire pour s’enquérir de la                                              expressions intéressantes, le          expressions appris.
+    signification des mots ;              3. Le vocabulaire de sensations et        champ sémantique, la
+                                              de sentiments.                        dérivation.                        4. Découvrir, dans un texte, les
+ 3. comprendre et correctement les                                                                                         synonymes, les antonymes,
+    mots appris.                          4. Les mots actifs.                   3. Eviter les mots passifs, les            les homonymes, les
+                                                                                    expressions et les mots rares          paronymes des mots déjà
+                                                                                    et savants.                            appris..
+5. L’ORTHOGRAPHE
+ a. Objectifs spécifiques                 b. Contenus                             c. Recommandations                       d. Principes d’évaluation
+                                                                                     méthodologiques
+ A l’issue de l’enseignement de           Différents types de textes étudiés en   1. Méthode active et participative.      1. Dictée de contrôle (non
+ l’orthographe au degré inférieur,        classe et autres textes d’usage         2. Préparer minutieusement avec les        préparée mais en rapport avec
+ l’élève devra être capable de (d’):      courant serviront de matière à la          élèves, l’extrait du texte qui fera     les textes déjà vus).
+                                          dictée                                     l’objet de la dictée. (un
+ 1. écrire correctement les mots                                                     paragraphe).Attirer l’attention des   2. Exercices d’orthographe.
+     usuels ;                                                                        élèves sur les mots à
+                                                                                     l’orthographe d’usage difficile       3. Reproduction d’un texte.
+ 2.écouter, saisir et écrire un message                                           3. Procéder à la différenciation des     4. Analyse des mots.
+     oral ;                                                                          mots paronymes et homonymes.
+                                                                                  4. Encourager les élèves à utiliser
+ 3. saisir la ponctuation à l’oral et                                                couramment le dictionnaire.
+     pouvoir la restituer à l’écrit ;                                             5. Proposer aux élèves beaucoup de
+                                                                                     lecture pour se familiariser avec
+ 4. appliquer les règles d’accord                                                    la ponctuation.
+     syntaxique ;                                                                 6. lors d’une leçon de dictée en 1ère
+                                                                                     année, l’enseignant indiquera la
+ 5. écrire correctement les mots                                                     ponctuation ; mais en 2ème année,
+     grammaticaux ;                                                                   l’élève sera capable de ponctuer
+                                                                                      seul le texte.
+6. L’EXPRESSION ORALE
+
+
+ a. Objectifs spécifiques               b. Contenus                         c. Recommandations                      d. Principes d’évaluation
+                                                                              méthodologiques
+ A l’issue de l’enseignement de         1. Résumé oral des textes vus       1. Donner les consignes précises        Soumettre aux élèves les
+ l’expression orale au degré                                                   aux élèves sur l’exercice à faire.   mêmes
+ inférieur, l’élève devra être          2. Evaluation :                                                             types d’exercices que ceux du
+ capable de (d’):                         - Descriptions orales d’une       2. Donner l’occasion aux élèves de      contenu de la matière.
+                                            scène, d’un      objet, d’un       s’exprimer.
+ 1. réutiliser les matériaux                être, etc.s ;
+     linguistiques acquis lors de         - Petites narrations d’une        3. Ne pas interrompre l’élève qui
+     différentes leçons pour :              histoire, d’un fait vécu.         parle de peur de le décourager et
+     - converser couramment ;                                                 d’inhiber son élan.
+     - décrire un fait ;                3. Jeu de rôle, dramatisation.      4. Faire reprendre par l’élève
+     - narrer une histoire ;                                                  l’expression défectueuse jusqu’à
+                                        4. Autres activités de                la bonne expression.
+ 2. veiller à l’articulation correcte     communication orale et            5. Laisser surtout les élèves parler
+     des sons et à la prononciation       d’animation (jeux de téléphone,      librement, le rôle d professeur
+     correcte des mots pour une           de devinette, etc.)                  devenant celui de facilitateur.
+     bonne diction française.
+                                        5. Récital de poèmes.
+      7. L’EXPRESSION ECRITE
+
+
+a. Objectifs spécifiques                   b. Contenus                             c. Recommandations méthodologiques                    d. Principes d’évaluation
+A l’issue de l’enseignement de             1. La phraséologie                      1. exercices de phraséologie à partir d’un mot,       Cfr le contenu de la
+l’expression écrite au degré inférieur,    2. Le paragraphe                           d’une idée, dune expression.                       matière : (Exercices et
+l’élève doit être capable :                3. La composition                       2. Partir du brains-torming, des images ou des        activités se rapportant à la
+de réutiliser les matériaux                4. Les petites narrations et               photos pour rédiger :                              matière)
+linguistiques acquis lors de                  descriptions                                -   des petites descriptions en imitation de
+différentes leçons pour :                  5. La lettre, La note                              textes vus ou sur des sujets courants
+                                           6. L’invitation                                -   des petites narrations des événements
+    1) rédiger de phrases correctes,       7. Les exercices de transformation                 vécus
+        les réunir en paragraphes             des phrases (négatives,
+        pour aboutir à des                    affirmatives, interrogatives, active, 3. L’organisation d’une rédaction :
+        compositions ;                        passive.)                                   -   Communiquer le sujet aux élèves
+                                           8. L’expansion des phrases simples.            -   Rassembler les matériaux, procédures :
+    2) Reproduire à l’écrit ce qu’il a 9. La réduction des phrases étendues
+        dit à l’oral : petite              10. La Contraction ou amplification                     •   Quelques minutes de
+        description, narration, des             d’un paragraphe.                                       brainstorming (entre le
+        écrits à caractère usuel :         11. La reconstitution d’une phrase à                        professeur et les élèves, les
+        lettre, petite note, invitation,        partir des éléments présentés en                       élèves entre eux).
+        etc.                                    vrac                                               •   Les élèves écrivent au tableau
+                                           12. Imitation d’un texte                                    noir (utiliser les 2/3 du TN)
+                                                                                                       des phrases sur le sujet.
+                                           13. Expression d’une idée de                   -   Procéder à un tri de ces matériaux.
+différentes manières. (Exemple :
+un refus, un ordre, une            -   Ordonner les phrases pour repérer
+affirmation, etc.)                     ce qui va ensemble ; elles seront
+                                       encadrées, soulignées avec des
+                                       craies de couleur.
+
+
+                                   -   Déterminer l’ordre de succession
+                                       de groupes des phrases ainsi
+                                       constitués (ceci est une véritable
+                                       initiation à l’élaboration d’un
+                                       plan).
+                                   -   Sur le tiers du T.N resté vacant, on
+                                       procède à la véritable rédaction :
+                                       les groupes de phrases retenues et
+                                       classées sont transcrits et reliés
+                                       entre elles par des mots de liaison,
+                                       des pronoms, de la concordance en
+                                       veillant à la suppression de
+                                       redondance.
+
+
+
+
+     
+
+           Au terme du degré moyen de l'enseignement secondaire en ce qui concerne le cours de français, l’élève devra
+être capable de produire oralement et par écrit des messages et des textes sur les thèmes précis.
+
+
+     
+
+           
+
+          
+          
+          
+          
+
+
+
+
+                                                                     
+                                                                                      
+                                                    
+        I. Milieu proche de                                          
+           l’enfant                                              
+                                                                                            
+                                                                    
+                                                        -              
+                                            
+                                                                 
+                                            -          
+                                             
+                        
+                                                      
+                                                   
+                                                                
+                                                         
+                                       II. Activités humaines
+                                                      
+                      
+               
+                              
+                                           
+                                      
+
+                                    III. L’homme et la vie
+                                          
+                                          
+                                          
+                                     
+IV. L’homme et son
+moi
+     
+     
+    
+
+V. l’ailleurs
+     
+
+VI. Personnages
+     
+        
+
+
+VII. Valeurs et
+idéologies
+     
+     
+     
+     
+     
+        
+        
+
+
+     
+         
+
+
+  
+
+                                                                 
+                               
+             -                         
+                             -                                
+    A. SUR LE PLAN                                                              
+       COMMUNICATIONNEL                                                               
+                                                                                                                    
+                                              -                                              
+                                  •                   -            
+    -                                     -                 
+                                                                        -         
+                                                               
+    - réutiliser les phrases du langage                                                                                  
+                                                        • 
+          courant ou leurs variantes                                                 
+                                                                                  -          
+          telles trouvées dans le texte
+                                                                                      
+          étudié ;                                                      -         
+                                                                                        
+                                                             
+    - réétudier le vocabulaire, les                                                           
+                                                                                  -               
+          structures grammaticales et
+                                                                                                        
+          syntaxiques étudiées dans le                  •                                 
+          texte ;                                                      -          
+                                                                        
+                                                                           
+                      -                                 
+    -                                                    -                     
+                        -                                                   
+                                                                                          
+                                                                                     
+
+                                 -         - 
+      -   reconnaître le genre, le type                            
+          de textes et leurs                                    
+          caractéristiques                         -               
+                                                         
+                                                     
+                                                                                         
+B. SUR LE PLAN                               
+   FORMEL                                                    
+                                                 - 
+                                                                                         
+                                                     
+              -             
+         
+                                                     
+                                                                   
+                                                 - 
+                 - 
+                                       
+       
+                                                 
+                  
+                                                - 
+                                                - 
+
+                                                 - 
+                                                 - 
+                                                 - 
+                                                 - 
+                                             
+                                             
+                                             
+                                             
+
+
+                                                                         
+                                                                                          
+                          
+                                                         
+                           
+                                                                                      
+ 1.                                             
+                                                   
+                                
+                               
+                                       
+                                                                                  - dégager les ensembles syntaxiques et
+                                                                                                                                          fonctionnels ;
+ 2.                                  
+                                                            - 
+ 3.                                                                    
+                           
+                                                                                             
+ 4.                    -             -                      
+                      -                                               
+                       -               - 
+                                   
+ 5.                            - 
+                            - 
+                                        
+                     
+                                              
+ 6.                                              
+                              
+                                                                   
+                                                                                          
+                                                                                          
+ 
+     
+
+ 
+    
+    
+    
+    
+
+ 
+     
+ 
+     
+     
+ 
+     
+ 
+     
+     
+     
+ 
+     - 
+     - 
+       
+ 
+     
+     
+ 
+     
+     
+     
+     
+
+
+
+                                                                
+                                                                           
+                               
+                              
+                                                            -        
+                                                                
+                                                            -        
+                   -                        
+                                                                      
+                                                         
+                          -                          
+                                                                      
+                                  
+                                       -        
+                                                   
+                                                -        
+                         NB : L’enseignement du                         
+                         vocabulaire ne peut se réaliser                       
+                                                                                             
+                                                         que grâce aux nombreux
+                           exercices de phraséologie orale et
+            
+                                                                              écrite, et autres activités.
+                           
+                      
+            
+             
+                               
+  
+  
+  
+
+
+
+                                                                  
+                                                                                     
+                                          
+           -                             
+                                                   
+                                                                  
+                  -                                     
+                    -                                
+                          - 
+               
+                  - 
+                  
+                                  
+                      
+            
+             
+                                       
+             - 
+                           - 
+                    - 
+             
+     
+     
+6
+
+                                                                     
+                                                                                   
+                                 
+                                  
+                                         
+                                                                                                                          
+                                   
+                                   
+                                             
+                                                  
+                                
+                                                       
+                      
+                                    
+                                                 
+                              
+                            
+                    
+                                   
+                                                      
+                                      
+                                                              
+                                                       
+                                                      
+                                                    
+                                                              
+                                                                                      
+                                                                                     
+                                                                                     
+                                                                                     
+                                                                                     
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+7
+
+
+                                                                        
+                                                                                         
+                                         
+                               
+                            
+                                                                         
+                                                     
+                                                                    
+                                                               
+                                     
+                                                          
+                                     
+                                            
+                             
+                           
+                                          
+                                                                            
+                             
+                              
+                                                 
+                                                       
+                                                                               
+                                                                                         
+                                                           
+                                                         
+                                                          
+                                                          
+      
+
+
+     
+    
+    
+    
+     
+    
+    
+
+III. 
+                                                                
+A. OBJECTIFS INTERMEDIAIRES
+
+
+
+                A la fin du degré supérieur, l’élève devra être capable de (d’) :
+
+
+
+  1) écouter et comprendre tous les types de messages non spécialisés (discussions, débats, conversations, conférences,
+
+     etc.) ;
+
+  2) dire tous les genres de textes (conférences, débats, discussions, défendre son point de vue) ;
+
+  3) lire et comprendre tout type de textes non spécialisés ;
+
+  4) rédiger correctement toute composition ;
+
+  5) maîtriser les grands courants et les époques littéraires ainsi que les auteurs représentatifs.
+B. SOUS-BRANCHES
+1. Thèmes
+
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                                c) RECOMMANDATIONS                d) PRINCIPES
+                                                                       METHODOLOGIQUES                   D’EVALUATION
+A. l’issue de l’étude des thèmes I. Actualité                       1. Avant la leçon                 1. Questions fermées ou à
+au degré supérieur, l’élève           1. La mode                    - Recherche de l’information         choix multiple sur les
+devra être capable de (d’) :          2. Les grandes rencontres       par l’enseignant et les élèves.    éléments de connaissances
+1. observer et restituer              3. Les conflits                                                    acquises sur le thème.
+   l’essentiel de l’information       4. Les catastrophes
+   étudiée dans le centre                  naturelles, etc.         2. En classe                     2. Débats des exposés sur le
+   d’intérêt ou thème traité ;                                      - Exposé suivi de débat et          thème étudié.
+                                 II. L’homme et la nature              d’une discussion dirigée. Le
+2. réutiliser le vocabulaire          5. Les réactions affectives      travail se fait par sous-
+   appris à cette                     - la contemplation               groupes.
+   occasion ;                         - la solitude                 - Exploitation sous forme de
+                                      - la peur                       question-réponse ou sous une 3. Travail pratique, rédaction
+3. discuter ou prendre                - l’angoisse                    autre forme telle que le          d’une dissertation.
+   position vis-à-vis de cette        - l’écrasement                  brainstorming.
+   information.                       - la révolte, etc.                                             4. Exercices de réemploi du
+                                                                    3. A la fin de la séance             vocabulaire.
+                                 6. La recherche                    - Synthèse par la classe sous
+                                 - la passion de savoir               la direction du professeur par 5. Etude des thèmes plus
+                                 - la joie de connaître               le professeur.                    abstraits, plus spéculatifs,
+                                 - la joie de la découverte, etc.                                       plus intellectuels.
+                                                                    N.B. :- Ne pas dépasser deux
+                                 7. La conquête                             leçons par thème.
+                                 - la lutte contre la maladie            - Le professeur sera
+                                 - la misère
+                                 - la faim, etc                           attentif aux événements
+                                                                          vécus pour aborder un
+                                                                          thème
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                      c) RECOMMANDATIONS   d) PRINCIPES
+                                                             METHODOLOGIQUES      D’EVALUATION
+                        8. L’environnement
+                        - protection de la nature.
+                        - pollution
+                        - toxicologie, etc.
+
+                        III. L’homme et la société
+                        - autrui, amitié, amour ;
+                        - famille, conflits de
+                          générations, condition de la
+                          femme ;
+                        - enfant, éducation, paix ;
+                        - oppressions sociales, guerre,
+                          compréhension
+                          mutuelle des peuples ;
+                        - rencontre de différentes
+                          cultures, etc.
+
+                        IV. Activité humaine
+                        - Travail
+                        - Argent
+                        - Richesse
+                        - Pauvreté
+                        - Développement, etc.
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                  c) RECOMMANDATIONS   d) PRINCIPES
+                                                         METHODOLOGIQUES      D’EVALUATION
+
+                        V. Valeurs morales et
+                            culturelles
+                        - l’honnêteté
+                        - la compétence
+                        - l’équité
+                        - le savoir-vivre
+                        - la générosité
+                        - le bien et le mal
+                        - la conscience
+                        - la responsabilité
+                        - les déviations sexuelles
+                        - le chômage
+                        - le trafic d’enfants, etc.
+
+                        VI. Sentiments et émotions
+                        - peur
+                        - angoisse
+                        - l’homme et la religion
+                        - Dieu
+                        - Révolte
+                        - Tristesse, etc.
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                     c) RECOMMANDATIONS   d) PRINCIPES
+                                                            METHODOLOGIQUES      D’EVALUATION
+
+                        VII. Grands courants de la
+                             pensée
+                        - Marxisme
+                        - Communisme
+                        - Capitalisme
+                        - Socialisme
+                        - Intégrisme, etc.
+
+                        VIII. L’homme et sa destinée
+                        - les origines de l’homme
+                        - le sens de l’histoire
+                        - les conflits moraux
+                        - l’évasion
+                        - la foi
+                        - les sectes religieuses
+                        - l’engagement
+                        - le divertissement
+                        - le courage de vivre
+                        - les grandes constructions de
+                          l’esprit
+                        - la mort
+                        - l’au-delà, etc.
+2. ENSEIGNEMENT DE TEXTES
+
+
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                              c) RECOMMANDATIONS                   d) PRINCIPES
+                                                                      METHODOLOGIQUES                     D’EVALUATION
+A l’issue de l’enseignement de   1. Sur le plan thématique        1. Se référer toujours aux           1. Exercices de lecture
+textes au degré supérieur,       - Choisir des textes ayant trait     objectifs spécifiques.           2. Questions orales, ouvertes
+l’élève devra être capable de      aux thèmes retenus pour        2. Recours à la M.A.P                    ou fermées sur le contenu.
+(d’)                               exploitation.                      (Méthode active                  3. Exercices de réemploi des
+                                                                      participative).                     mots ou des structures
+A. Du point de vue de la         2. Sur le plan socioculturel     3. Lecture expressive par le            grammaticales du texte.
+    communication                - Trouver des textes en rapport      professeur                       4. Réemploi de certains
+1. Plan référentiel                avec les réalités du milieu de 4. Compréhension globale                énoncés ou de certaines
+- restituer fidèlement le          l’élève.                       5. Exploitation détaillée               phrases du type de texte.
+  contenu, l’information, les                                     6. Pour le texte dialogué            5. Exprimer son point de vue
+  connaissances acquises sur     3. Sur le plan du niveau de la   - compréhension globale                 sur les éléments de société
+  le texte ;                         langue                       - exploitation pragmatique et           ou de culture rencontrés
+                                 - Se référer à la richesse         linguistique.                         dans le texte.
+2. Plan pragmatique              linguistique et à l’intérêt      7. Pour le texte d’analyse           6. Synthèse des idées.
+- réemployer les phrases du      littéraire du texte accessible à - compréhension globale
+  langage courant ou leurs       un élève de 3eme niveau,         - étude et exploitation selon les    7. Retrouver la nature, le type,
+  variantes ;                    précisément (5eme et 6eme          différents points des objectifs       le genre, la composition du
+3. Plan linguistique             secondaires).                      spécifiques.                          texte.
+- maîtriser, et réutiliser les
+  éléments de la langue          4. Sur le plan du genre           8. Texte à commenter                8. Ecouter, saisir et rédiger le
+  étudiés : vocabulaire,         - Choisir des textes en prose     - compréhension globale                message.
+  structures grammaticales et      (texte narratif, descriptif,    - exploitation selon les
+  syntaxiques ;                     informatif) ;                    différents points des objectifs
+                                 - choisir des poèmes,               spécifiques.
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                                       c) RECOMMANDATIONS                 d) PRINCIPES
+                                                                              METHODOLOGIQUES                    D’EVALUATION
+ 4. Plan socioculturel                - choisir des textes                 8. Autres types de texte
+- porter un jugement                    dramatiques (théâtre),
+  critique, un avis personnel,        - choisir des textes dialogués.      - Selon leur intérêt littéraire.
+  prendre position ;                  - choisir des articles de presse
+                                        ou coupures des journaux,
+                                      - choisir des discours,
+5. Plan discursif
+                                      - "          " communiqués,
+- reconnaître le genre et le          - "          " une ordonnance,
+  type de texte et ses                - "          " un tract,
+  caractéristiques : texte            - "          " essai,
+  narratif, descriptif, informatif,   - "          " texte de la vie
+  poésie, théâtre, etc ;                        courante,
+                                      - organiser des débats,
+B. Au point de vue de la              - " une conférence,
+    formation générale                - proposer un reportage,
+- Formation intellectuelle : elle     - proposer une bande dessinée.
+  renvoie à la réflexion, à           5. Sur le plan temporel
+                                      - Trouver des auteurs de la
+  l’analyse, à l’imagination pour
+                                         littérature française
+  résumer ou synthétiser                 contemporaine et celle
+  l’information afin d’émettre           d’autres époques selon un
+  une opinion sur le plan moral,         choix judicieux.
+  civique et culturel (selon le       - Garder une juste proportion
+   type de texte).                      entre les auteurs et africains des
+                                        auteurs classiques français, ainsi
+                                        que ceux de la littérature
+                                        universelle.
+                                      N.B. : Tout texte, de quelque
+                                         nature qu’il soit, peut servir à
+                                         l’enseignement du français au
+                                         degré supérieur du secondaire.
+3. ENSEIGNEMENT DE LA GRAMMAIRE
+
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                               c) RECOMMANDATIONS                 d) PRINCIPES
+                                                                      METHODOLOGIQUES                     D’EVALUATION
+                                  1. Moyens d’expression de                                           I. Evaluer la compétence de
+ A l’issue de l’enseignement de     diverses notions et             1. Partir du langage (dialogue,      communication.
+la grammaire au degré                modalités :                       conversation en classe) et     - par des exercices de
+supérieur, l’élève doit être         - contenus des matières de        des textes vus pour faire de     communication (jeux de
+capable :                              premier et de deuxième          l’animation grammaticale.        rôle et autres) ;
+    1. de corriger toutes les         degrés, tout en insistant sur                                   - par des exercices de
+        fautes de grammaire           les diverses nuances et en 2. Dégager de la conversation          phraséologie orale et écrite ;
+        dans son langage.            les approfondissant.              un échantillon (un corpus)     - par des exercices
+                                                                       d’exemples.                      d’appariement ;
+   2. De s’exprimer                                                                                   - par des exercices à choix
+                                2. Les difficultés persistantes
+      correctement en utilisant                                    3. Observer les énoncés              multiple visant :
+                                  de la grammaire française
+      avec maîtrise tous les                                          retenus, y réfléchir. Les         1° le réemploi des moyens
+                                  par un enseignement
+      éléments grammaticaux                                           élèves peuvent dégager               d’expression étudiés ;
+                                  récapitulatif.
+      appris au degré inférieur                                       quelques règles, tracer
+      et moyen.                                                       un tableau et expliquer.         2° l’emploi de certains autres
+                                N.B. : Au degré supérieur, la
+                                                                                                            éléments de la langue
+                                        grammaire peut
+   3. D’expliquer                                                  4. Les activités d’appropriation         étudiés.
+                                       intervenir de façon
+      correctement un                                                 et de fixation :
+                                       occasionnelle et
+      problème de grammaire                                           - exercices de réemploi de la II. Evaluer la compétence
+                                       récapitulative sur des
+      qui se pose.                                                      structure (jeux, exercices      linguistique par des
+                                       difficultés persistantes.
+                                                                        de diverses natures).           exercices.
+                                                                                                    - de phraséologie, des
+                                                                                                      exercices.
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                        c) RECOMMANDATIONS   d) PRINCIPES
+                                                               METHODOLOGIQUES       D’EVALUATION
+                        3. Moyens d’expression :                                 des exercices :
+                        - de la caractérisation, de la                           - lacunaire ;
+                          qualité ;                                              - d’appariement ;
+                        - du doute, de la possibilité, de                        - à choix multiple ;
+                           l’éventualité ;                                       - d’autres exercices visant :
+                        - du souhait, du regret ;                                   1° l’emploi correct des mots
+                        - de l’ordre, de la défense ;                                  grammaticaux étudiés ;
+                        - de la mesure, du poids, de la
+                          quantité ;                                               2° l’analyse grammaticale
+                        - de l’appartenance, de la                                    ou logique, etc.
+                          possession, etc.
+                                                                                   3° la justification de l’usage
+                        4. L’analyse grammaticale ou                                  d’un élément grammatical
+                           logique.                                                   dans une phrase.
+4. ENSEIGEMENT DE VOCABULAIRE
+
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                              c) RECOMMANDATIONS               d) PRINCIPES
+                                                                      METHODOLOGIQUES                 D’EVALUATION
+                                  Termes ou expression difficiles 1. Prétexte de départ :
+A l’issue de l’enseignement de tirés des :                        - texte ou thème étudié          1. Questions ouvertes,
+vocabulaire au degré supérieur,      1. Textes ou thèmes          - thème d’actualité.                fermées, à choix multiple et
+l’élève doit être capable :             étudiés, ou ceux tirés                                        autres exercices.
+                                        d’une lecture             2. Dégager les mots cibles.
+    1. d’utiliser correctement le       personnelle.              (mots nouveaux, expressions      2. Phraséologie.
+        mot propre, précis, le       2. Vocabulaire de            difficiles, mot à sens ambigu)
+        mot raffiné et des              sensation de sentiment,
+        expressions pour                d’émotions.               3. Procéder à l’enrichissement
+        l’amélioration du style.     3. Vocabulaire                  (synonymie, différents
+    2. d’utiliser le vocabulaire        d’abstraction.               champs : lexical, sémantique,
+        de raisonnement                                              thématique, dérivation,
+        spéculatif, notamment                                        homonymie, etc ;)
+        les opérateurs logiques
+        qui permettent                                            4. Explication des mots,
+        d’introduire une                                              compréhension.
+        opposition, un doute,                                     5. Appropriation par
+        une affirmation, une                                          phraséologie.
+        contradiction ou un refus                                 6. Divers autres types
+        avec politesse et                                             d’exercices :
+        courtoisie.                                                   - à travers
+                                                                      - question à
+                                                                      choix multiple
+                                                                       - autres.
+
+
+
+                                                                                                             
+                                                                                                                                     
+                                                                   
+                                                                               
+                                                                                                                                
+
+                                                                                        
+       
+                                                                                       2. Exercices de réemploi des
+
+                                                              •                                    informations recueillies à partir des
+     
+                                                              •                         C.I. ou thèmes.
+
+                                                                        
+       
+                                                                            
+       
+                                                                                                                                                     
+                                                                        
+       
+                                                                                                                                                     
+                                                                     
+       
+                                                                                                       2. Le professeur choisira des centres
+                                                                                                                                                     
+                          
+                                                                                                           d’intérêt ou thèmes concrets proches      
+                                                                  du milieu de l’enfant : Il peut
+                                                                                                                                                     
+                                                            •                               également tenir compte des attentes
+                                                                                                           des élèves.                               
+                                                              • 
+                                                         
+                                                          
+                                                                                                       
+                                                 
+                                                                                                       3. La leçon est essentiellement orale, mais
+                                                                                                      la synthèse est notée au tableau.
+                         
+              
+                                 
+              •              
+                  
+                  
+                  
+              • 
+                  
+                  
+                  
+         
+                     
+
+
+     
+           
+              • 
+                  
+     
+              • 
+                  
+              
+                  
+                     
+                  
+                     
+                  
+       
+       
+
+        
+      
+             
+             
+     
+             
+             
+             
+      • 
+          
+          
+          
+     
+        
+
+
+              
+             
+  • 
+         
+  
+  
+ 
+             
+              
+             
+              
+  
+       
+  •      
+             
+             
+             
+             
+              
+   
+        
+      • 
+                  
+                  
+            
+         
+                  • 
+                    
+                  • 
+            
+
+              
+              
+              
+
+     
+    
+               
+                  
+               
+                  
+                   
+                   
+                   
+                   
+                   
+
+            
+            
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+
+      
+          
+
+    
+      
+          
+     
+        
+     
+        
+     
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+    
+
+
+    
+    
+    
+    
+    
+         
+    
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+      
+
+    
+    
+                 
+                 
+                 
+    
+                    
+                    
+                    
+                    
+
+    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                     
+                
+                
+                
+                
+                
+                
+
+
+     
+       
+     
+         
+                
+                
+                
+                
+                
+                
+                
+
+     
+         
+                
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+          
+          
+          
+          
+          
+          
+          
+          
+
+       
+       
+       
+       
+
+       
+       
+
+       
+
+       
+       
+       
+       
+       
+            
+       
+
+   
+ 
+ 
+     
+      
+       
+      
+       
+      
+       
+      
+          • 
+   
+   
+              
+              
+              
+              
+          • 
+            
+          • 
+          • 
+              
+              
+              
+              
+              
+                
+                
+                
+
+ 
+     −    
+            
+            
+     −    
+     
+         
+         
+         
+         
+         
+     
+     
+      
+      
+
+        
+          
+         
+             
+             
+         
+             
+             
+         
+         
+             
+         
+             
+             
+         
+             
+       
+             
+               
+             
+             
+               
+
+
+
+
+
+   
+
+   
+      
+   
+      
+      
+    
+      − 
+            
+      − 
+            
+            
+    
+      
+        −     
+        −     
+              
+        −     
+        −     
+        −     
+        −     
+        −     
+       −   
+       −   
+  
+       −   
+       −   
+       −   
+       −   
+       −   
+       −   
+       −   
+       −   
+       −   
+       
+  
+       −   
+       −   
+           
+
+
+     
+                
+                
+     
+                 
+                 
+   
+                 
+                 
+   
+               
+
+ 
+     −    
+ 
+     −    
+     −    
+ 
+      −   
+      −   
+      −   
+      −   
+      −   
+      −   
+      −   
+      −   
+      
+
+     − 
+
+     −    
+              
+
+      −         
+      −         
+      −         
+
+     −        
+     −        
+
+                
+
+     −        
+              
+     −        
+     −        
+     −        
+
+     
+     −        
+         
+    
+         −   
+         −   
+         −   
+         −   
+    
+    
+         −   
+    
+    
+    
+    
+
+
+6. ENSEIGNEMENT DE L’EXPRESSION ORALE
+
+
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                               c) RECOMMANDATIONS                d) PRINCIPES
+                                                                      METHODOLOGIQUES                   D’EVALUATION
+                                     1. Textes de lecture             1. Le professeur reste un
+ A l’issue de l’enseignement de         expressive. En plus du           facilitateur pendant          1. Lecture expressive
+l’expression orale au degré             contenu du 2e degré (à           l’exposé-débat ou
+supérieur, l’élève doit être            un niveau plus soutenu,          pendant la scène de           2. Diction (textes, poèmes
+capable :                               plus profond) provoquer          dramatisation.                   à réciter),
+    1. de débattre, de réfuter,         et entretenir des débats      2. Prétexte de départ :
+        d’argumenter de façon           et des discussions               - donner des directives       3. Débats,
+        aisée sur les thèmes            autour des thèmes                  précises sur :
+        étudiés et les                  étudiés et des                     . le sujet                  4. Exposé,
+        problèmes d’actualité ;         problèmes d’actualité.             . la manière de
+        sans oublier les objectifs      Déclamation (Récital)                répondre et               5. Exercices de contrôle.
+        du deuxième degré.              des poèmes.                        . la manière de
+                                        Diction :- articulation              présenter.
+   2. de s’exprimer avec                        - prononciation           - Donner le temps
+      éloquence.                                - intonation                d’intervention et les
+                                                - accent                    consignes précises
+                                        Discussion dirigée.                 aux uns et aux autres.
+                                                                          - Diriger le débat qui
+                                     2. Elocution                           peut s’en suivre.
+                                        - exposé, débat.                 - Faire dégager les
+                                        - improvisation orale              synthèses.
+                                          (réaction à chaud,
+                                         discussion spontanée
+                                         sur une idée).
+a) OBJECTIFS SPECIFIQUES b) CONTENUS                          c) RECOMMANDATIONS   d) PRINCIPES
+                                                                 METHODOLOGIQUES      D’EVALUATION
+                         - Expression de messages.
+                         - Emettre un point de vue sur
+                           un problème, une situation
+                           générale.
+
+                         - la prise de parole.
+
+                        3. Divers exercices
+                           d’expression orale :
+
+                        - Mot de circonstance :
+                           prononcer un discours, une
+                           allocution, etc.
+                        - faire un compte rendu ,
+                        - développer un sujet,
+                        - commenter un film,
+                        - une chanson,
+                        - mise en scène d’une œuvre
+                           théâtrale ou d’un large extrait.
+7. ENSEIGNEMENT DE L’EXPRESSION ECRITE
+
+                    a)             b) CONTENUS                      c) RECOMMANDATIONS                   d) PRINCIPES
+OBJECTIFS SPECIFIQUES                                                  METHODOLOGIQUES                       D’EVALUATION
+                                     1. Divers types de textes                                           I. Evaluer :
+ A l’issue de l’enseignement de         d’usage courant :           1. Le prétexte de départ est         - l’aisance de l’écriture,
+l’expression écrite au degré            - lettre, article de presse     fourni par :                     - la précision,
+supérieur, l’élève doit être              ou d’une revue            - Les textes ou thèmes étudiés - la concision à travers :
+capable :                                 scolaire ,                - Les problèmes d’actualité.          les exercices de rédaction
+    1. d’écrire correctement un         - texte de publicité,                                                sur:
+        texte courant, un               - commentaires,             2. Initiation et intériorisation des 1° divers textes d’usage
+        message. C’est-à-dire           - résumé, compte rendu,        Directives.                              courant (discours,
+        produire des textes             - mot de circonstance,                                                  poèmes, articles,
+        corrects de divers types          allocution, discours,     3. Rédaction de la                          allocutions, etc.)
+        et différents genres.             etc.                         dissertation et autres textes.  2° la dissertation.
+
+   2. de rédiger un texte            2. Dissertation                4. Correction individuelle suivie
+      correctement, avec                - sa préparation               de la correction collective.
+      concision, clarté,                - sa rédaction.
+      précision et dans un
+      ordre logique de pensée
+
+   N.B. : - Pour la section
+   littéraire, produire des
+   poèmes (versification), dont
+   l’initiation commence en 4e
+   des humanités.
+
+
+
+
+ I.         AU DEGRE INFERIEUR (1e et 2e années)
+
+            -   A la fin dudit degré, les élèves doivent être capables de situer dans le temps et dans l’espace les auteurs appris, leur époque,
+                quelques une de leurs œuvres, notamment le chef d’œuvre.
+            -   Le professeur s’arrangera pour aborder une certaine proportion d’auteurs congolais, africains, français, etc.
+ 
+ II.        AU DEGRE MOYEN (3e et 4e années)
+
+                    L’élève sera non seulement capable de situer dans le temps et dans l’espace tous les auteurs vus, mais aussi d’indiquer leur
+        courant littéraire ou la raison de leur notoriété.
+
+
+ III.       AU DEGRE SUPERIEUR (5e et 6e années)
+
+                    La grammaire est enseignée de façon récapitulative pour corriger les fautes et les difficultés grammaticales persistantes.
+
+        Par contre, à ce niveau, la littérature française doit être enseignée de façon systématique (époque ou siècle, courants littéraires, grands
+
+        groupes d’écrivains, influence des idées littéraires émises sur l’époque, etc).
+   IV.     LA CORRECTION PHONETIQUE
+
+
+                     Elle doit être à chaque niveau la préoccupation du professeur. Grâce aux séances de lecture il corrigera les fautes et autres
+incorrections phonétiques. Il sera toujours attentif aux fautes d’articulation, de prononciation.
+
+
+
+
+   V.      LA POESIE (en section littéraire)
+
+           -   La professeur initiera les élèves à la poésie par des morceaux choisis des poètes classiques littéraires dès la 3ème année, il abordera
+               la versification (genre des poèmes, des vers, des rimes, etc.)
+           -   Le professeur renforcera la littérature (congolaise, négro-africaine, française, mondiale, il prévoira un nombre important de textes
+               ayant trait à la littérature).
+
+
+   A. ENSEIGNELENT SECONDAORE NORMAL
+
+OPTIONS :
+
+   1. LITTERAIRE
+
+                     L’enseignement du français est le soubassement de cette option. Les matières seront donc abordées de façon plus approfondie.
+
+
+                 -      l’enseignement de la littérature françaises et de la poésie sera abordée un peu plus tôt, à partir de la 3ème année
+                 -      la correction phonétique sera également renforcée sous forme d’orthophonie
+                 -      a partir de la 4ème année, la professeur pourra initier les élèves à la production des morceaux poétiques (poésie classique, et
+                        au 3e degré les vers libres)
+2. SCEINTIFIQUE ET PEDAGOGIQUE
+
+             -      Le professeur veillera à proposer aux élèves des textes, des sujets de composition d’intérêt général, surtout sectoriel
+                    (thèmes et sujets pédagogiques et psychologiques, thèmes et sujets scientifiques)
+             -      Le professeur des expressions étrangères (latines, grecques, anglaises, etc.) rencontrées dans les textes vues en étudiés.
+
+
+B. ENSEIGNBEMENT TECHNIQUE COMMERCIALE
+
+-   COMMERCIALE ET ADMINISTRATIVE
+
+                 Le professeur renforcera chez ses élèves le style épistolaire pour déboucher sur la correspondance commerciale
+C. ENSEIGNEMENT TECHNIQUE (TOUS)
+
+1. Techniques industrielles :
+          Mécanique générale
+          Mécanique auto
+          Machine outils
+          Electricité
+          Electronique
+          Bâtiment et construction
+2. Techniques Agricoles :
+          Agriculture générale
+          Agro-Vétérinaire
+          Agro-Foresterie
+          Economie agricole
+               Mécanique agricole
+               Horticulture
+               Industrie alimentaire
+   3. Technique Sociales :
+               Sociale
+               Nutrition
+   4. Techniques féminines
+               Coupe et couture
+               Hôtellerie et restauration
+   5. Techniques artistiques
+               Beaux Arts : Décoration, métal battu, peinture, céramique, sculpture
+               Arts dramatiques
+               Danse, musique et chorégraphie
+
+
+   -   Alléger l’enseignement du français dans ces options de la littérature français systématique
+   -   L’essentiel ici est d’amener les élèves à acquérir les automatismes du langage usuel propre à toute situation communicationnelle (orale et
+       écrit)
+   -   Au niveau de la 5e et 6e, on ne verra pas la littérature française de façon systématique
+   -   Les sujets de composition doivent également être caractéristiques des options.
+
+
+NB : Le système docimologique (épreuves diverses, examens d’état, etc.) devra tenir compte des recommandation ci-haut énumérées, et surtout
+des adjectifs spécifiques à chaque option.
+

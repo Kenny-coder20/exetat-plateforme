@@ -1,0 +1,1211 @@
+              République Démocratique du Congo
+
+Ministère de l’Enseignement Primaire, Secondaire et Professionnel
+
+   Direction des Programmes Scolaires et Matériel Didactique
+
+
+
+
+     PROGRAMME D’INFORMATIQUE DE
+      L’ENSEIGNEMENT SECONDAIRE
+
+
+
+
+                          Année 2007
+                           TABLE DES MATIERES
+
+
+                                                 Page
+
+- Préface                                        2
+
+
+- Note introductive                              3
+
+
+- Finalités de l’enseignement national           5
+
+
+- But de l’enseignement secondaire               5
+
+
+- Objectif terminal d’intégration                5
+
+
+- Compétences de bases                           5
+
+
+- Nombre d'heures                                5
+
+
+- Contenus des programmes                        6
+
+
+  Première année secondaire                      6
+
+  Deuxième année secondaire                      9
+
+  Troisième année secondaire                    12
+
+  Quatrième année secondaire                    15
+
+  Cinquième année secondaire                    18
+
+  Sixième année secondaire                      22
+
+- Document en annexe :                          26
+
+ Grille horaire                                 27
+                                      PRÉFACE
+      L’enseignement fondamental est une étape importante dans la formation
+intégrale de l’enfant à la vie d’adulte par le développement de l’esprit d’initiative, de
+créativité, de responsabilité et par son adaptation à l’évolution technique et
+technologique.
+
+      Tandis que l’enseignement secondaire est la charnière entre l’enseignement
+fondamental et la vie pratique. Il a pour mission de développer chez l’élève l’esprit
+critique, la créativité et la curiosité intellectuelle, de le préparer à l’exercice d’un
+métier ou d’une profession, ou encore à la poursuite d’études supérieures ou
+universitaires.
+
+     L’un des axes prioritaires de l’éducation tel que décidé par les états généraux de
+l’éducation nationale repose sur la formation de l’enfant à l’acquisition des aptitudes
+informatiques.
+
+     Le monde actuel évolue au rythme de l’informatique et de l’Internet
+(autoroutes de l’information). Tous les aspects de notre société sont régis par une
+organisation et une administration, qui reposent sur les bases informatiques.
+
+       L’informatique considérée et utilisée jusque là comme outil et support pour
+certaines disciplines de l’enseignement national doit devenir réellement un objet
+d’étude en tant que discipline à part entière. Et cet enseignement ne peut se donner
+efficacement que sur base d’un programme d’étude solide et bien élaboré qui
+facilitera l’utilisation efficiente de l’ordinateur.
+
+     Nous tenons à féliciter les techniciens et les pédagogues qui ont œuvré
+consciencieusement pour la mise en œuvre de cet outil de travail, qui posera le jalon
+d’une formation basée sur l’analyse et l’organisation des éléments et des activités
+dans différents systèmes informatiques. Nous pensons spécialement à
+l’ONGD/ASBL Centre Pédagogique des Nouvelles Technologies de l’Information
+pour la Jeunesse (CPNTIJ) qui a bien voulu partager son expérience avec les écoles
+primaires et secondaires de notre pays.
+
+    Cette formation amènera l’élève à adopter un comportement responsable et à
+manifester des compétences dans la vie pratique en matière de l’informatique.
+
+     Que les écoles perçoivent l’utilité de l’outil informatique et qu’elles arrivent
+bien plus à percer les mystères de cette nouvelle matière qui fera de l’enfant
+congolais un homme responsable utile à lui-même et à la société.
+
+     L’utilisation rationnelle et optimale de ce programme exige non seulement une
+formation suivie des enseignants et des encadreurs pédagogiques mais aussi une
+exploitation judicieuse des manuels d’accompagnement.
+
+
+                              LE MINISTRE DE L’ENSEIGNEMENT PRIMAIRE,
+                                    SECONDAIRE ET PROFESSIONNEL
+
+                                   =/= Constant N’DOM NDA OMBEL =/=
+                                          3
+
+
+                           NOTE INTRODUCTIVE
+1. Historique
+
+   Comme partout ailleurs, la formation informatique a été dans ses débuts en
+République Démocratique du Congo, l’œuvre des constructeurs et des sociétés
+privées avant de devenir une préoccupation des pouvoirs publics.
+
+   En 1964, quelques étudiants congolais se trouvant en Belgique furent recrutés et
+formés en qualité des programmeurs pour le compte de l’IBM-Congo. Cette société a
+également formé les opérateurs pour les machines classiques : tabulatrices,
+calculatrices et trieuses.
+   Mais le service éducation n’a pu démarrer qu’en 1967 avec des candidats
+indépendants pour la formation des programmeurs, pupitreurs, opérateurs et
+perforateurs.
+
+   Ce centre ouvrait ses portes aux agents des sociétés de transport (ONATRA,
+SNCC…), aux agents de la banque et d’autres sociétés en vue de la formation d’un
+personnel qualifié. Plusieurs modules de formation avaient été organisés pour
+différents niveaux : programmeurs d’application, programmeurs systèmes,
+analystes-programmeurs, ingénieurs concepteurs et ingénieurs systèmes.
+
+   En 973, il est créé le centre de formation du Ministère des Finances pour faire face
+aux besoins en personnel informaticien qualifié destiné à son nouveau service
+informatique.
+
+   Toujours en 1973, le Bureau du Président de la République fait former pour besoin
+d’exploitation de la banque de données de l’Etat, un noyau d’agents nationaux
+chargés de la conception et de la programmation.
+
+   L’exemple a été suivi par plusieurs autres sociétés. Mais la formation en
+informatique limitée jadis à la programmation a évolué pour être enseigné à tous les
+niveaux de l’enseignement (de l’école maternelle à l’université).
+
+2. Formation informatique aux niveaux primaire et secondaire
+
+   Jusqu’à l’an 2003, il n’existait pas encore de formation informatique formelle dans
+les écoles publiques et privées.
+
+   Il faut louer l’initiative de certaines écoles qui ont pu insérer dans leurs
+programmes de cours, l’enseignement de l’informatique. Sans programme officiel,
+ces enseignements facultatifs sont restés au niveau publicitaire et n’ont pu contribuer
+efficacement à l’amélioration des apprentissages scolaires.
+
+   La finalisation de ce programme permettra aux écoles d’enseigner l’informatique
+comme une matière et de l’utiliser également comme un outil pour l’amélioration des
+apprentissages scolaires.
+                                            4
+
+   L’expérience menée par l’ONG/ASBL «Centre Pédagogique des Nouvelles
+Technologies de l’Information pour la Jeunesse» (CPNTIJ) dans certaines écoles
+telles que le C.S. Les Loupiots, le C.S. Les Mickey, l’Ecole Internationale Saint
+Patrick, l’Ecole Kwiny, le C.S. KIESE, l’Institut BAMOYO… a inspiré les membres de
+la commission pour la finalisation de ce travail.
+
+3. Importance de l’ordinateur à l’école
+   Deux perspectives sont envisageables dans la relation entre l’informatique et
+l’enseignement :
+
+1° la perspective pédagogique concerne les différentes possibilités d’utilisation de
+   l’ordinateur pour améliorer les apprentissages scolaires. A ce titre, l’ordinateur
+   sera un outil d’aide aux enseignants et aux apprenants ;
+
+2° la perspective culturelle concerne l’introduction de l’informatique comme matière
+   de l’enseignement. Dans ce cas, l’informatique qui est une science, cesse d’être un
+   outil pour devenir un objet d’étude.
+
+  Utilisée dans les différentes matières de l’enseignement selon les diverses
+modalités, l’informatique a l’avantage d’impliquer potentiellement tous les
+enseignants et les élèves.
+
+   L’exécution de ce projet de programme est d’une impérieuse nécessité à deux
+niveaux :
+
+a) les jeunes en formation sont de futurs utilisateurs de l’informatique, que ce soit
+   dans leur vie professionnelle, familiale ou au niveau de leurs loisirs.
+
+  Il est nécessaire qu’ils soient des utilisateurs conscients et critiques. Pour cela, ils
+  doivent connaître le fonctionnement de l’ordinateur et ses fonctions principales.
+  Ainsi la finalité poursuivie reste de donner à un nombre croissant de jeunes le
+  goût de l’informatique pour se lancer dans la formation en vue d’une utilisation
+  rationnelle de l’outil.
+b) l’informatique paraît comme un langage, une logique, une science dont
+  l’apprentissage serait formateur pour chacun quels que soient ses projets
+  professionnels.
+  Cette nouvelle manière de penser et d’agir par l’ordinateur est susceptible de
+  débloquer, de faciliter d’autres apprentissages scolaires notamment en
+  mathématiques, en langues, en disciplines d’éveil etc…
+ Ce programme peut être utilisé indistinctement par toutes les écoles disposant d’un
+ordinateur et pouvant y accéder facilement car le cours se veut essentiellement
+pratique.
+
+                          Le Directeur-Chef de Service des Programmes Scolaires
+                                                         et Matériel Didactique.
+
+                                    =/= Cosmas LOMENGO ON’KAMA=/=
+                                           5
+
+
+             FINALITÉS DE L’ENSEIGNEMENT NATIONAL
+
+   L’enseignement national a pour finalité la formation harmonieuse de l’homme
+congolais, citoyen responsable, utile à lui-même et à la société capable de
+promouvoir le développement du pays et la culture nationale (Loi-cadre n°86-005 du
+22 /09/1986 de l’Enseignement National).
+L’école doit donc former des citoyens producteurs, créatifs, cultivés, consciencieux,
+libres et responsables, ouverts aux valeurs sociales, culturelles et esthétiques,
+spirituelles et républicaines (Charte de l’Education, CNS, 1992)
+                BUT DE L’ENSEIGNEMENT SECONDAIRE
+    L’enseignement secondaire a pour but de faire acquérir à l’élève les
+connaissances générales et spécifiques afin de lui permettre d’appréhender les
+éléments du patrimoine culturel national et international.
+
+     Il a également pour mission de développer en lui l’esprit critique, la créativité et
+la curiosité intellectuelle, de le préparer à l’exercice soit d’un métier, soit d’une
+profession, soit à la poursuite d’études supérieures ou universitaires.
+                 OBJECTIF TERMINAL D’INTEGRATION
+     L’élève ayant suivi avec succès l’apprentissage de l’informatique au niveau
+secondaire sera capable de manipuler les différents programmes d’exploitation
+(Windows) et d’application (Navigateur Web Internet Explorer, le langage Basic, le
+traitement de texte Microsoft Word et le tableur Microsoft Excel).
+                         COMPETENCES DE BASES
+     1. Dans toute situation relative aux programmes informatiques, l’élève devra
+        être capable de manipuler les différentes fonctions d’exploitation de
+        l’ordinateur (arrêter et redémarrer l’ordinateur, afficher les paramètres du
+        bureau Windows, créer des raccourcis vers divers fichiers et dossiers,
+        identifier des principales icônes du bureau Windows et des éléments d’une
+        application, créer, ouvrir, modifier, sélectionner, copier, déplacer, consulter,
+        rechercher, supprimer des dossiers et des fichiers,…) à partir du logiciel de
+        base (Windows) ;
+
+     2. Sur base du langage Basic et des informations reçues, l’élève devra être
+        capable de rédiger des programmes d’application ;
+
+     3. A partir des programmes (logiciels) préexistants, l’élève devra être capable
+        d’appliquer les fonctions relatives au navigateur Web Internet Explorer, au
+        traitement de texte Microsoft Word et au tableur Microsoft Excel.
+
+
+                              NOMBRE D'HEURES
+
+  Le cours peut se donner pendant 30 heures à raison de 50 minutes de cours
+  théoriques et 50 minutes de cours pratique (voir document en annexe : grille
+  horaire).
+                                        6
+
+
+
+                   CONTENUS DES PROGRAMMES
+
+1. Première année secondaire
+
+   a) Objectifs de l’année
+
+    A la fin de la première année secondaire, l’apprenant sera capable de décrire,
+    manipuler le micro-ordinateur et de représenter l’information.
+
+   b) Description du programme
+
+               Objectif spécifique                              Matière
+
+    L’apprenant sera capable de :                 1. L’historique
+                                                     - Avant l’ordinateur
+    - restituer l'historique des ordinateurs;
+    - définir les caractéristiques du tout          - Premier ordinateur
+      premier ordinateur,
+    - identifier les différentes générations        - Evolution
+      des ordinateurs,
+
+    - restituer quelques avantages et 2. Les influences des ordinateurs
+      inconvénients      (dangers)    des - Sur les personnes
+      ordinateurs sur les personnes et les - Sur les entreprises
+      entreprises.
+
+    - citer et expliquer les domaines dans        3. Quelques domaines
+      lesquels l'informatique intervient.            d'application de l'informatique :
+                                                     - Ecole
+                                                     - Entreprise
+                                                     - Industrie
+                                                     - Hôpital
+                                                     - Armée
+                                                     - Commerce
+                                                     - Aviation,…
+
+
+                                                  4. Notions d’informatique :
+    - définir l'informatique, l'information, la      - définitions   (informatique,
+      donnée, la science, la technique, le             information, donnée, science,
+      traitement automatique, l'ordinateur,            technique,          traitement
+      le programme et le langage;                      automatique,       ordinateur,
+    - décrire les activités liées au traitement        programme, langage),
+      des données (entrée, traitement et             - activités de traitement de
+      sortie)..                                        données (entrée, traitement et
+                                                       sortie).
+                                   7
+
+
+
+- définir le système,                     5. Structure d’un système
+- citer les éléments matériels d’un informatique de Base :
+                                          - notion de système (définition et
+  système informatique de base,
+                                             description),
+- décrire les fonctions de chacun d’eux
+                                           - unités d'entrée ou
+  (unités d'entrée ou périphériques
+                                             périphériques d'entrée,
+  d'entrée, unité centrale de traitement,
+                                           - unité centrale de traitement,
+  unités de sortie ou périphériques de
+                                           - Unités de sortie ou
+  sortie et unités d'entrée/sortie ou
+                                             périphériques de sortie,
+  périphériques d'entrée/sortie).          - Unités d'entrée et sortie ou
+                                               périphériques d'entrée/sortie.
+distinguer les différents systèmes
+informatiques notamment entre les 6. Différents systèmes
+superordinateurs, les gros ordinateurs,   informatiques :
+les mini-ordinateurs et les micro- - les super ordinateurs,
+ordinateurs et les ordinateurs portables. - les gros ordinateurs,
+                                          - les mini-ordinateurs,
+                                          - les micro-ordinateurs,
+                                          - les ordinateurs portables.
+
+
+                                             7. Description d’un micro-
+décrire un micro-ordinateur       et   les
+                                                ordinateur :
+fonctions de ses organes.
+                                                - Boîtier central ou Unité
+                                                  système et ses composantes,
+                                                - Périphériques.
+
+                                             8. Manipulation d'un micro-
+                                                 ordinateur
+- mettre en marche un ordinateur,               - mise en marche et arrêt de
+- manipuler le clavier et la souris,              l’ordinateur,
+- appliquer les règles de la ponctuation        - manipulation du clavier et de
+- arrêter l'ordinateur.                           la souris,
+                                                - application des règles de la
+                                                  ponctuation.
+
+
+- définir les systèmes de numération 9. Systèmes de numération
+  décimal et binaire;                   décimal et binaire :
+- exécuter la conversion entre ces      - Définition,
+  systèmes.                             - Conversion.
+                                    8
+
+
+
+c) Directives méthodologiques
+
+ 1. L’enseignant de cette discipline doit être spécialiste en informatique et
+    doit posséder un bagage pédagogique qui lui permet de bien enseigner;
+ 2. Afin d'aborder avec succès l'historique des ordinateurs, le professeur
+    d'informatique devra se munir des images décrivant le boulier, la
+    pascaline, la machine analytique de Charles Babbage, la carte perforée, le
+    premier ordinateur électronique universel «ENIAC» avec ses tubes
+    électroniques, le transistor et le circuit intégré;
+ 3. Pour mieux faire la différenciation entre systèmes informatiques, le
+    professeur d'informatique devra se munir des matériels décrivant les
+    superordinateurs, les gros ordinateurs, les mini-ordinateurs, les micro-
+    ordinateurs et les ordinateurs portables et au besoin organiser des visites
+    guidées dans des centres informatiques afin de permettre aux élèves de
+    concilier la théorie à la pratique;
+ 4. Pour la matière ayant trait à la description d'un micro-ordinateur, le
+    professeur devra ouvrir le boîtier central et montrer aux apprenants les
+    organes qui le composent notamment la carte-mère avec le processeur et
+    ses mémoires, le bus, les interfaces de communication, le lecteur de
+    disquette, l'unité de disque dur, le lecteur de cd-rom et l'alimentation
+    électrique. Au besoin, Il devra aussi se munir des principales imprimantes
+    habituellement utilisées (matricielle, à jet d'encre et à laser).
+     Pour le support informatique disque compact, il devra donner la
+     différentiation entre :
+   - le disque compact utilisé seulement en lecture, et celui utilisé en lecture
+     /écriture,
+   - le disque compact audio, le disque compact d’installation des
+     programmes et le disque compact multimédia.
+     Des séances pratiques doivent s’en suivre.
+ 5. Pour mieux aborder la manipulation de l'ordinateur, le professeur devra
+    faire un rappel des matières se rapportant sur : les règles de la
+    ponctuation (emplacement de la ponctuation), sur le clavier et les
+    techniques d'utilisation de la souris et prévoir respectivement cinq (5) et
+    trois (3) travaux pratiques sur le clavier et la souris. Pour la saisie des
+    textes, il devra se référer au programme de traitement de texte tel que le
+    Microsoft Word;
+ 6. Le professeur d'informatique doit limiter la représentation physique de
+    l'information aux bases 10 et 2 et il devra se mettre en contact avec son
+    collègue de mathématique en ce qui concerne le chapitre sur les
+    différentes bases de numération ;
+ 7. Les professeurs de mathématiques, français et culture générale devront
+    être initiés à l’informatique afin de pouvoir exploiter dans le cadre de
+    leurs cours respectifs, les didacticiels ayant trait à ces disciplines.
+                                       9
+
+2. Deuxième année secondaire
+
+  a) Objectifs de l’année
+
+  A l’issue de ces enseignements, l’apprenant sera capable de maîtriser les
+  différentes fonctions du système d’exploitation Windows.
+
+  b) Description du programme
+
+              Objectif spécifique                           Matière
+  L’apprenant doit être capable de :
+                                              1. L’arithmétique du système de
+  effectuer   les     quatre opérations
+                                                 numération binaire (addition,
+  fondamentales sur le système de
+                                                 soustraction, multiplication et
+  numération binaire.
+                                                 division)
+                                              2. Les autres systèmes de
+  - définir les systèmes octal et hexadécimal
+                                                  numération classiques :
+  - exécuter la conversion et l'arithmétique
+                                                  - Octal,
+    entre ces systèmes;
+                                                   - Hexadécimal,
+
+  définir et opérer la conversion en DCB   3. Le système décimal codé
+  d'un nombre exprimé en système de           binaire «DCB»
+  numération décimal (base 10).               - définition
+                                              - conversion
+                                           4. Le système Binary Coded
+   définir et effectuer la codification       Decimal Interchange Code
+   (conversion) des lettres minuscules en     «BCDIC»
+   système BCDIC;                             - définition
+                                              - conversion
+                                           5. Le système Extended Binary
+  définir et effectuer la codification        Coded Decimal Interchange
+  (conversion) des caractères en système      Code «EBCDIC»
+  EBCDIC.                                     - définition
+                                              - conversion
+                                           6. Les codes American Standard
+                                             Code For Interchange
+   définir les codes ASCII, de donner leur
+                                              Information «ASCII»
+   signification et les utiliser
+                                              - définition
+                                              - conversion
+                                      10
+
+                                                 7. Le système d’exploitation :
+                                                    - Définition
+-     définir le système d’exploitation             - Quelques systèmes
+-     restituer    le    Ms-Dos     (définition,      d'exploitation :
+      historique et présentation de l’écran           * Ms-Dos (définition,
+      sous DOS) et le Windows;                          historique et présentation de
+-     distinguer le système d'exploitation              l’écran sous DOS)
+      Ms-Dos de système d'exploitation                 * Windows
+      Windows ;                                     - Différence entre le Ms-Dos et
+-     donner les avantages du système                  le Windows
+      d’exploitation Windows                        - avantages   du système
+-     citer les autres systèmes d’exploitation         d’exploitation Windows
+                                                    - les autres systèmes
+                                                    d’exploitation (Linux, Apple,…)
+
+                                                8. Le système d’exploitation
+                                                   Windows
+restituer le bureau Windows;
+                                                   - Principes de base
+mettre en exécution les différentes
+                                                   - Gestion des fichiers et des
+fonctions y relatives.
+                                                      dossiers
+                                                9. Réseau informatique
+    - définir un réseau informatique;
+                                                   - Définition
+    - citer les avantages et inconvénients
+                                                   - Avantages et Inconvénients
+     d’un réseau informatique ;
+                                                     d’un réseau informatique
+    - distinguer un réseau local d’un réseau
+                                                   - Différence entre un réseau
+     étendu.
+                                                     local et un réseau étendu
+
+
+    - définir le réseau Intranet;
+                                        10. Réseau Intranet
+    - restituer les avantages du réseau
+                                          - définition
+      Intranet;
+                                          - avantages
+    - citer les équipements du réseau
+                                          - équipements de l’Intranet
+      Intranet;
+                                          - accès à l’intranet
+    - accéder au réseau Intranet.
+
+
+    - définir les mots liés à l'Internet;        11. Réseau Internet ou Navigation
+    - restituer l'historique de l'Internet;          sur le Web
+    - citer et restituer les fonctions de - Définitions (Internet, Site,
+      l'Internet;                                    Autoroute de l'information,
+    - citer et restituer les équipements de          Web, Internaute, Adresse
+      connexion à l'Internet;                        Internet, Adresse e-mail,
+    - restituer     les   avantages       et les     Surfer, WWW,…)
+      inconvénients (influences dans la - Fonctions de l’Internet ;
+      société) de l'Internet                       - Equipements de l'Internet ;
+    - accéder à l'Internet;                        - Avantages et Inconvénients ;
+                                                   - Accès à Internet.
+                                      11
+
+
+appliquer les mesures de sécurité 12. Notions de sécurités et de
+disponibles, telles que les mots de passe et   Virus informatiques
+les sauvegardes, le rôle des antivirus et de - Physique
+la protection de la source d’alimentation, - logique
+ainsi que l’entretien préventif d’un - Maintenance préventive d’un
+ordinateur.                                    ordinateur.
+
+c) Directives méthodologiques
+
+
+1. L’enseignant de cette discipline doit être spécialiste en informatique et doit
+   posséder un bagage pédagogique qui lui permet de bien enseigner ;
+
+2. Pour aborder avec succès la matière qui se rapporte à l’arithmétique du système
+   de numération binaire ainsi que les autres systèmes de numération classiques, le
+   professeur d’informatique devra faire un rappel de la matière portant sur les
+   systèmes de numération décimal et binaire ;
+
+3. Le système DCB doit introduire le système BCDIC et le système BCDIC, le
+   système EBCDIC ;
+
+4. Pour la matière portant sur les codes ASCII, le professeur d’informatique devra
+   appuyer son enseignement par des travaux pratiques en expliquant la
+   combinaison entre la touche Alt et les codes ASCII ;
+
+5. Pour mieux introduire la matière portant sur le système d'exploitation, le
+   professeur d’informatique devra faire un rappel des matières se rapportant sur la
+   présentation du système informatique vue en première année et les autres
+   prérequis.
+
+   Il devra également distinguer le système d’exploitation de l’application et les
+   autres prérequis et veiller à ce que les ordinateurs soient dotés au besoin du
+   système d’exploitation Windows 95 à défaut de la version récente.
+
+   Pour le système d’exploitation Windows, il devra prévoir des applications
+   pratiques sur la personnalisation du bureau Windows et sur la gestion des
+   fichiers et des dossiers. Chaque élève devra être en mesure de mettre en pratique
+   ces deux notions ;
+6. Les matières portant sur les réseaux informatique, Intranet et Internet
+   nécessitent des travaux pratiques dans des centres informatiques dotés de ces
+   technologies. Le professeur d’informatique veillera à ce que chaque élève puisse
+   participer activement à cette activité ;
+7. Les professeurs des autres disciplines devront être initiés à l’informatique afin de
+   pouvoir exploiter dans le cadre de leurs cours respectifs, les didacticiels ayant
+   trait à ces disciplines.
+                                        12
+
+3. Troisième année secondaire
+
+   a) Objectif de l’année
+
+       L’apprenant sera capable d’appliquer le langage de l'ordinateur et
+       d’utiliser les instructions de base de la programmation en Basic.
+
+   b) Description du programme
+
+            Objectif spécifique                               Matière
+   L’apprenant doit être capable de :
+
+   -   définir un programme, un langage, 1. Notions préliminaires :
+       un algorithme et un ordinogramme      - programme
+   -   citer      les     symboles      de   - langage
+       l’ordinogramme.                       - algorithme
+                                             - ordinogramme
+                                                 2. Notions fondamentales du
+   -   restituer l'origine du mot Basic et la       langage Basic :
+       structure générale d'un programme            - origine
+       Basic;                                       - structure générale d'un
+   -   appliquer les notions des variables,           programme Basic
+       des constantes, des expressions et des       - données (variable, constante,
+       opérateurs Basic.                              expression et opérateur Basic)
+
+   - reconnaître les touches fondamentales       3. Manipulation de l'ordinateur :
+     du clavier ;                                   - touches fondamentales du
+   - donner les fonctions et les commandes             clavier
+     Basic ;                                        - commandes Basic (List, Run,
+   - manipuler les commandes basic                    Load, Save, New, System,…)
+
+                                                 4. Instructions d’affectation,
+   - définir une instruction Basic ;
+                                                   d’affichage et de branchement
+   - appliquer les instructions d’affectation,
+                                                   inconditionnel :
+     d’affichage et de branchement
+                                                    - définition
+     inconditionnel ;
+                                                    - let
+   - corriger si possible les erreurs de
+                                                    - print, print tab,…
+      syntaxe et de logique d’une séquence
+                                                    - goto.
+      contenant les instructions let, print,
+      print tab et goto ;
+   - tracer l’ordinogramme.
+                                     13
+
+
+ - examiner l'exactitude d'une séquence
+    contenant l'instruction INPUT;
+ - tracer l'ordinogramme;                    5.Instruction     d’entrée      des
+ - élaborer le programme de résolution          données : INPUT
+    d'un problème faisant appel à
+    l'instruction     INPUT       et autres
+    prérequis ;
+ - corriger si possible les erreurs de
+   syntaxe et de logique d’une séquence
+   contenant l’instruction INPUT.
+                                            6. Les instructions de structure
+- donner les règles d'utilisation d'un          alternative ou test d’entier et
+    test ou structure alternative "if…then,     d’aléatoire :
+    or et and ;                               -  If…then,
+- exécuter correctement une séquence - Or
+    contenant les mots "if…then, or, and, - And
+    int, rnd" ;                               - Int
+- élaborer l'ordinogramme et le - Rnd
+    programme permettant de résoudre
+    un problème faisant appel aux
+    prérequis et aux notions de test, de
+    partie entière et de tirage aléatoire ;
+ - corriger si possible les erreurs de
+   syntaxe et de logique d’une séquence
+   contenant les instructions If…then,
+  or, and, int, rnd.
+
+c) Directives méthodologiques
+
+1. L’enseignant de cette discipline doit être spécialiste en informatique et doit
+   posséder un bagage pédagogique qui lui permet de bien enseigner ;
+
+2. Pour mieux aborder ce programme, le professeur d’informatique devra veiller à ce
+   que les ordinateurs soient dotés du BASIC standard tel que Gw-Basic ;
+
+3. Les notions préliminaires devront être précédées d'un rappel des matières se
+   rapportant sur le système informatique et les autres prérequis;
+
+4. Outre les prérequis abordant les notions fondamentales du langage Basic, pour
+   rendre en expressions Basic, le professeur se limitera aux expressions
+   mathématiques simples (binômes, équations simples…).
+   Pour ce faire, il devra se concerter avec son collègue des mathématiques pour
+   harmonisation ;
+
+5. La matière portant sur la manipulation de l'ordinateur devra être précédée d'un
+   rappel de la description d'un micro-ordinateur, de l'utilisation du clavier, de la
+   mise en marche et l’arrêt d’un ordinateur, du bureau Windows et des autres
+   prérequis. Le professeur d’informatique devra montrer aux apprenants comment
+                                      14
+
+   accéder au Basic à partir du bureau Windows ;
+
+6. Pour certaines applications, il devra se concerter avec ses collègues pour les
+   notions qui cadrent avec leurs branches respectives en vue de l’harmonisation
+   (exemple utilisation d'une formule quelconque, d'un procédé quelconque…);
+
+7. Pour aborder avec succès la matière intitulée "Instructions d’affectation,
+   d’affichage et de branchement inconditionnel", le professeur d’informatique devra
+   faire un rappel des notions des variables, des constantes, des expressions Basic, la
+   manipulation de l'ordinateur et les autres prérequis ;
+
+8. Outre les prérequis, le professeur devra se concerter avec son collègue de
+   mathématique pour les notions ayant trait aux entiers et aux décimales ;
+
+9. Les professeurs des autres disciplines devront être initiés à l’informatique afin de
+   pouvoir exploiter dans le cadre de leurs cours respectifs, les didacticiels ayant
+   trait à ces disciplines.
+                                         15
+
+
+4. Quatrième année secondaire
+
+a) Objectif de l’année
+
+L'apprenant sera capable de maîtriser le langage de l’ordinateur et les
+instructions de base de la programmation en Basic : créer des sous-programmes,
+saisir et de stocker les données et traiter les chaînes de caractère.
+
+b) Description du programme
+
+            Objectif spécifique                           Matière
+    L'apprenant doit être capable de :    1. Fonctions mathématiques
+                                            - Fonctions arithmétiques
+    résoudre en Basic les        fonctions - Fonctions trigonométriques
+    mathématiques.
+   - donner les différentes structures
+      répétitives     (FOR…NEXT,         tant 2. Instructions de Structure
+      que…et jusqu'à ce que…);                   répétitive ou boucle :
+   - élaborer un programme en Basic              - FOR
+     standard comprenant les cas où la           - TO
+     boucle FOR…NEXT est applicable;             - STEP
+   - exécuter correctement une séquence          - NEXT
+      contenant      FOR, TO, NEXT et
+      STEP ;
+   - tracer l’ordinogramme
+   - corriger si possible les erreurs de
+      syntaxe et de logique d’une
+      séquence contenant les instructions
+      for, to, step, next.
+
+
+
+   - élaborer des sous programmes          3. Instructions de sous-programmes :
+      faisant appel à la syntaxe et à la      - GOSUB
+      logique des instructions GOSUB,         - RETURN
+      RETURN, ON… GOTO…, ON…                  - ON…
+      GOSUB,                                  - GOTO…
+   - tracer l’ordinogramme ;                  - ON…GOSUB
+   - corriger si possible les erreurs de
+      syntaxe et de logique d’une
+      séquence contenant les instructions
+     gosub, return, on...goto, on...gosub.
+                                   16
+
+
+- appliquer l'instruction permettant la   4. Instruction de Saisie directe au
+  gestion du clavier (INKEY$ ou GET)         clavier : INKE$ ou GET
+   selon les matériels ;
+- corriger si possible les erreurs de
+  syntaxe et de logique d’une
+  séquence contenant les instructions
+  inkey$ ou get.
+
+   - exécuter        correctement      une 5. Instructions de stockage des
+      séquence contenant les instructions     données et de lecture de données :
+      read, data et restore ;                 - READ
+ -      définir     la marche à suivre - DATA
+      (ordinogramme, algorithme) et le - RESTORE
+      programme         permettant       de
+      résoudre un problème faisant
+      appel aux prérequis et aux notions
+      de cette matière ;
+- corriger si possible les erreurs de
+     syntaxe et de logique d’une
+    séquence contenant les
+    instructions read, data et restore.
+- différencier la variable de la variable 6. Instruction des variables indicées :
+   indicée, et l'intérêt de cette dernière;  Tables - Tableaux (DIM)
+- exécuter         correctement      d'une
+   séquence contenant l'instruction
+   DIM et les variables indicées;
+- rédiger l'algorithme et le programme
+   permettant la solution d'exercices
+   faisant appel aux prérequis ;
+- corriger si possible les erreurs de
+  syntaxe et de logique d’une
+  séquence contenant l’instruction
+  DIM.
+                                         17
+
+
+   -   exécuter correctement une séquence 7. Instructions de traitement des
+       contenant     les    instructions  de  chaînes de caractères :
+       traitement des chaînes de caractères : - LEN
+       LEN, LEFT, RIGHT, MID;                 - LEFT
+   -   rédiger l'algorithme et le programme - RIGHT
+       permettant de résoudre les problèmes - MID
+       faisant appel à la manipulation des
+       chaînes de caractères;
+   -   appliquer les instructions étudiées à
+       cette matière dans le traitement de
+       texte ;
+   -   corriger si possible les erreurs de
+       syntaxe et de logique d’une séquence
+       contenant les instructions len, left,
+       right et mid.
+
+
+c) Directives méthodologiques
+
+   1. L’enseignant de cette discipline doit être spécialiste en informatique et doit posséder
+      un bagage pédagogique qui lui permet de bien enseigner ;
+
+   2. Pour la matière portant sur les fonctions mathématiques, l’usage d’une formule ou
+      d’un procédé mathématique quelconque, le professeur d’informatique devra se
+      concerter avec son collègue des mathématiques pour harmonisation. Le rappel des
+      matières portant sur la mise en marche et l’arrêt d’un ordinateur et l'accès au basic
+      à partir du bureau Windows est indispensable;
+
+   3. La matière intitulée "Instructions de structure répétitive ou boucle" doit être
+      précédée des notions de rappel des variables, des constantes, des expressions Basic,
+      d'affichage de données, d'introduction de données, de structure alternative ou test
+      et des autres prérequis. Des concertations pour l’harmonisation des notions avec les
+      autres professeurs devront être encouragées ;
+
+   4. Pour aborder les sous-programmes, les notions des variables, des constantes, des
+      expressions Basic, d'affichage de données, d'introduction de données, de structure
+      alternative, de structure répétitive, de structure d'un fichier et les autres prérequis
+      sont nécessaires. Pour l’application de certaines notions, les concertations avec les
+      autres professeurs de différentes disciplines devront être encouragées ;
+
+   5. Pour l’instruction de saisie directe au clavier, le professeur d’informatique devra
+      veiller au type des matériels à utiliser car certains d’entre eux n’acceptent pas cette
+      instruction;
+
+   6. Les professeurs des autres disciplines devront être initiés à l’informatique afin de
+     pouvoir exploiter dans le cadre de leurs cours respectifs, les didacticiels ayant trait à
+     ces disciplines.
+                                           18
+
+
+5. Cinquième année secondaire
+
+   a) Objectif de l’année
+
+   L'apprenant sera capable d'appliquer les nouvelles techniques de traitement de
+   texte sur l’ordinateur.
+
+   b) Description du programme
+
+               Objectif spécifique                            Matière
+      L'apprenant doit être capable de :        1. L’historique et la description
+                                                   du traitement de texte
+      - restituer l’historique du traitement de
+        texte ;
+      - décrire les activités de bureau et le
+         traitement de texte
+      - identifier les systèmes actuels de       2. Les Systèmes actuels et
+        traitement;                                domaines d’application de
+      - énumérer les domaines d’application        traitement de texte actuels
+        du traitement de texte.
+                                                 3. Le traitement de texte Microsoft
+      - définir le traitement de texte Microsoft
+                                                     Word
+         Word ;
+                                                    - Définition
+      - démarrer le programme Microsoft
+                                                    - Démarrage et fermeture
+      Word ;
+                                                    - Présentation de l'écran de
+      - décrire les éléments constitutifs de
+                                                      l'application Microsoft Word
+         l'écran de l'application,
+      créer les documents en appliquant le      4. La Création des documents :
+      modèle par défaut ou la saisie au            - modèle par défaut (saisie au
+      kilomètre et le modèle spécifique              kilomètre) ;
+                                                   - modèle spécifique.
+      - enregistrer un document dans le format
+        Word et dans un autre format           5. L’ Enregistrement d’un
+      - fermer un document ;                       document, la fermeture et
+      - ouvrir un ou plusieurs documents          ouverture d’un ou de plusieurs
+        simultanément                             documents simultanément.
+                                  19
+
+
+- appliquer les attributs : Gras, Italique et 6. La Mise en forme du document
+  Soulignement et les fonctionnalités         - Attributs : Gras, Italique,
+  Couper, Copier et Coller ;                      soulignement des textes
+- reproduire la mise en forme ;               - Fonctionnalités couper, copier
+- appliquer           les         techniques      et coller…
+    d’alignement de texte, d’insertion des    -   Reproduire la mise en forme
+    symboles, d’ajout d’une page à la - Alignement, ajouter une page
+    hauteur du point d’insertion ;                à la hauteur du point
+- modifier un document reçu du site               d'insertion
+    web ;                                     - Insertion des symboles dans
+- insérer des bordures, l’en-tête, le pied        un document
+    de page, numéros de page et la note - Modification d'un document
+    de bas de page ;                              reçu du site web
+                                              -   Bordure (ajout et
+- etc.
+                                                  modification)
+                                              - Numéros de page
+                                              - En-tête et pied de page
+                                              - Note de bas de page
+
+
+                                             7. Les Paragraphes
+appliquer les techniques de présentation
+                                              - interligne
+des paragraphes dans un document.
+                                              - espacement entre paragraphes
+                                              - alinéa
+                                              - retrait
+                                              - puces et numéros (création
+                                                d'une liste)
+                                             - lettrine.
+                                             8. Les      Différents     modes
+appliquer       les     différents    modes     d’affichage :
+d’affichage d’un document afin de - mode normal
+simplifier ou d’accélérer sa modification - mode web
+                                             - mode page
+                                             - mode plan
+                                             - aperçu avant impression
+                                             - etc.
+- appliquer les techniques de réglage afin 9. Le             Réglage       de
+  de réduire ou d’agrandir le texte ;           l’agrandissement ou de la
+- appliquer les commandes permettant            réduction de la page, l’
+  d’afficher et de masquer les barres           affichage et le masquage des
+  d’outils                                      barres d’outils
+- appliquer         les   commandes     du 10. Le Compagnon Office, les
+    Compagnon Office                            fonctions d’assistance et la
+- appliquer les fonctions d’assistance          recherche et le remplacement
+    telles qu’Annuler et Refaire, les outils    d’un mot ou d’un texte dans
+    d’aide à la rédaction                       un document
+- appliquer les fonctions de recherche
+    et de remplacement d’un mot ou d’un
+    texte dans un document
+                                             20
+
+                                                    11. Les tabulations :
+        appliquer dans un document les
+                                                    - gauche
+        tabulations de gauche, de droite,
+                                                    - droite
+        centrées, décimales,…
+                                                    - centrer
+                                                    - décimale
+                                                    - etc.
+        appliquer les techniques de :               12. Les tableaux :
+        - insertion et de modification d’un - création
+            tableau ;                               - modification
+        - saisie et modification dans un - saisie
+            tableau.
+        appliquer les techniques de présentation 13. Les colonnes
+        du texte en colonnes
+        appliquer les commandes de saut de 14. Le saut de page et de section
+        page et de section.
+        Utiliser les boutons de la barre d’outils 15. Les boutons de la barre
+        Dessin                                          d’outils Dessin
+        appliquer les fonctions permettant 16. Les clips et les images
+        d’incorporer les clips et les images dans
+        un document.
+        appliquer les fonctions de publipostage 17. Le publipostage
+                                                    18. La     mise    en   page et
+        - définir les marges                            l’impression :
+        - appliquer le format du papier - marges
+            (portrait et paysage) et la disposition - format       du     papier et
+            du texte (haut, centrer, bas,…) ;           disposition
+        - sélectionner une imprimante ;             - sélection d’une imprimante
+        - imprimer la page en cours, des pages - impression d’une page, des
+            spécifiques et un document ;                pages spécifiques et d’un
+        - etc.                                          document
+                                                    - etc.
+
+
+      c) Directives méthodologiques
+
+1. L’enseignant de cette discipline doit être spécialiste en informatique et doit posséder un
+   bagage pédagogique qui lui permet de bien enseigner ;
+
+2. Le professeur d’informatique devra se rassurer de l'installation dans les ordinateurs du
+   programme de traitement de texte Microsoft "Word ;
+
+3. Les matières portant sur l’historique, la description du traitement de texte, les systèmes
+   actuels et les domaines d’ applications du traitement de texte doivent être précédées des
+   notions de traitement des chaînes de caractères vues en quatrième année et des autres
+   prérequis;
+                                              21
+
+
+4. Afin de mieux commencer la matière intitulée "Le traitement de texte Microsoft Word",
+   "Définition et Présentation de l'écran de l'application", un rappel des notions se
+   rapportant sur le système informatique (logiciels d'application), la mise en marche et
+   l’arrêt de l’ordinateur, le bureau Windows et les autres prérequis est nécessaire ;
+
+5. Pour la création des documents, le professeur devra un rappel des notions des règles
+   générales de saisie et de l’emplacement de la ponctuation;
+
+6. Pour les exercices pratiques ayant trait à la disposition des documents (systèmes français,
+   belge, américain,…), le professeur d’informatique devra se concerter avec son collègue de
+   correspondance commerciale en vue de l’harmonisation ;
+
+7. Les professeurs des autres disciplines devront être initiés à l’informatique afin de pouvoir
+   exploiter dans le cadre de leurs cours respectifs, les didacticiels ayant trait à ces
+   disciplines.
+                                     22
+
+6. Sixième année secondaire
+
+a) Objectif de l’année
+
+L'apprenant sera capable d’appliquer les nouvelles techniques de tableur sur
+l’ordinateur.
+
+b) Description du programme
+
+                 Objectif spécifique                             Matière
+   L’apprenant sera capable de :                1. L’historique et la description
+   - restituer l’historique du tableur ;           du tableur
+   - décrire le tableur.
+   - identifier les systèmes actuels du tableur 2. Les systèmes actuels et
+   - énumérer les domaines d’application du        domaines d’application du
+     tableur moderne.                              tableur
+                                                3. Le tableur Microsoft Excel
+    - définir le tableur Microsoft Excel ;         - définition
+    - démarrer le tableur Microsoft Excel ;        - démarrage
+    - décrire la fenêtre du tableur Microsoft      - présentation de l'écran de
+      Excel ;                                        l'application
+    - enregistrer un classeur ;                    - enregistrement d’un classeur
+    - fermer un classeur ;                         - fermeture d’un classeur
+    - ouvrir un ou plusieurs classeurs.            - ouverture d’un ou de plusieurs
+                                                     classeurs.
+
+   appliquer les paramètres d’un affichage 4. La personnalisation de
+   personnalisé (afficher et masquer les      l'affichage :
+   barres d’outils.                           - affichage des barres d’outils
+                                              - masquage des barres d’outils
+    saisir des données dans une feuille de 5. L’utilisation d'une feuille de
+    calcul, les modifier et les supprimer.    calcul :
+                                              - Saisie
+                                              - Modification au sein des
+                                                cellules
+                                              - Suppression des données
+                                    23
+
+
+-    modifier la largeur des colonnes et la 6. La Mise en forme d'une feuille de
+     hauteur des lignes;                       calcul :
+-    aligner les données dans des cellules;    - modification de la largeur des
+-    centrer le titre sur plusieurs colonnes;    colonnes et hauteur des lignes
+-    appliquer les attributs tels que Gras, - alignement des données
+     Italique, Soulignement, l'encadrement, - centrage des titres
+     les motifs, les couleurs, le format - attributs : police, encadrement,
+     automatique,…                               motifs, couleurs…
+-    insérer et supprimer des lignes et des    - insertion et suppression d'une
+     colonnes,                                   cellule, des lignes et des
+-    manipuler les feuilles de calculs ;         colonnes
+-    appliquer les fonctionnalités couper,     - manipulation des feuilles de
+     copier et coller et les commandes           calcul
+                                               - fonctionnalités couper, copier
+     Annuler et Rétablir ;
+                                                 coller
+-    trier les données en ordre croissant et
+                                               - commandes Annuler et Rétablir
+     décroissant
+                                              - tri des données
+-    etc.
+                                              - etc.
+                                                7. La Saisie des formules et les
+    élaborer les formules dans une cellule et
+                                                   messages d’erreur :
+    identifier les messages d'erreur standard
+                                                   - opérateurs arithmétiques
+    associés aux formules.
+                                                   - opérateurs de comparaisons
+                                                   - opérateurs de texte
+                                                   - opérateurs de référence
+
+ identifier une cellule ou une plage de 8. Le référencement de cellules
+ cellules contenues dans une feuille de dans une formule de calcul :
+ calcul et distinguer les types de - référence relative
+ référencement de cellules (relatif, - référence absolue
+ absolu, mixte,…)                             - référence mixte
+                                              - etc.
+                                            9. Les fonctions :
+ définir une fonction       et utiliser les
+                                              - définition
+ différentes     fonctions    élémentaires
+                                               - arithmétiques
+ (arithmétiques, trigonométriques et
+                                               - trigonométriques
+ statistiques) et logiques fournies par MS
+                                               - statistiques
+ Excel.
+                                               - logiques
+                                            10. Les formats de données :
+- appliquer les différents formats des - numérique
+                                               - texte
+   données ;
+                                               - date
+- appliquer la commande de rotation
+                                               - heure
+   des données ;
+                                               - monétaire
+- appliquer les commandes d’affichage
+                                               - rotation des données
+   vertical et d’alignement des données
+                                               - affichage vertical des données
+   d’une cellule.                                d’une cellule
+                                               - alignement des données
+                                    24
+
+
+-   définir une base de données ;            11. La base de données :
+-   créer une base de données ;                - définition
+-   utiliser une base de données.              - création
+                                               - utilisation
+                                             12. L’importation des données et
+- exécuter les commandes d’importation
+                                                 l’insertion d’images
+   des données (texte, tableau,…) ;
+                                               - fichiers texte
+- insérer des images ou objets dans une
+                                               - tableau
+   feuille de calcul.
+                                               - image (objet)
+- définir un graphique ;                     12. Les graphiques :
+- citer les types de graphique ;               - définition
+- appliquer les commandes d’insertion - types
+   d’un graphique dans un feuille de - ajout des titres aux graphiques
+   calcul ;                                    - modification des graphiques
+- ajouter des titres aux graphiques ;          - déplacement et
+- modifier les graphiques ;                      redimensionnement des
+- déplacer       et   redimensionner     les     graphiques
+   graphiques ;                                - insertion d’un graphique dans
+- utiliser et interpréter les graphiques         un document Word
+   dans une feuille ;
+- insérer un graphique dans un
+   document Word.
+                                             14. La tendance (projection
+définir et utiliser une tendance (prévision
+                                                 linéaire) :
+des valeurs futures et réalisation d’une
+                                               - définition
+analyse de régression)
+                                               - utilisation
+- définir les marges, les pages et le 15. La mise en page et l’impression :
+   format du papier ;                         - marges
+- exécuter l’aperçu avant l’impression ;      - pagination
+- insérer l’en-tête et le pied de page dans - format du papier
+   une feuille de calcul ;                    - aperçu avant l’impression
+- appliquer           les       commandes - en-tête et pied de page
+   d’impression d’une feuille de calcul.      - impression
+                                       25
+
+
+
+c) Directives méthodologiques
+
+ 1. L’enseignant de cette discipline doit être spécialiste en informatique et doit
+    posséder un bagage pédagogique qui lui permet de bien enseigner ;
+
+ 2. Le professeur d’informatique devra se rassurer de l'installation dans les
+    ordinateurs du programme Microsoft Excel ;
+
+ 3. Pour le démarrage du programme Microsoft Excel, le professeur d’informatique
+    devra faire un rappel des notions de mise en marche et de l’arrêt de l’ordinateur
+    et du bureau Windows ;
+
+ 4. Pour la matière portant sur la base de données, le professeur devra faire un rappel
+    des notions de fichier, de base de données et de banque de données vues en
+    deuxième année secondaire ;
+
+ 5. Pour l’élaboration des formules, le professeur d’informatique devra se concerter
+    avec son collègue des branches concernées par celles-ci en vue de l’harmonisation ;
+
+ 6. Pour aborder les fonctions logiques SI, AND et OR, un rappel des notions sur la
+    structure alternative ou test et les autres prérequis s'impose ;
+
+ 7. Les matières intitulées "Utilisation d'une feuille de calcul" et "Mise en forme
+    d'une feuille de calcul" devront être précédées des prérequis et suivies d'au moins
+    quatre (4) applications pratiques. Tandis que celle relative aux "Fonctions", le
+    professeur d’informatique devra faire un rappel des notions sur les fonctions
+    mathématiques et se concerter avec son collègue des mathématiques. Deux
+    applications pratiques doivent s'en suivre ;
+
+ 8. Pour les fonctions arithmétiques et trigonométriques, le professeur
+    d’informatique devra se concerter avec son collègue des mathématiques en vue
+    de l’harmonisation ;
+
+ 9. Pour la matière portant sur l’importation de graphique dans un document
+    Microsoft Word, le professeur d’informatique devra faire un rappel des notions
+    d’incorporation des clips et des images ;
+
+ 10. Les professeurs des autres disciplines devront être initiés à l’informatique afin de
+     pouvoir exploiter dans le cadre de leurs cours respectifs, les didacticiels ayant
+     trait à ces disciplines.
+        26
+
+
+
+
+Document en annexe
+                                      27
+
+
+
+
+                                GRILLE HORAIRE
+
+
+
+                                     NOMBRE
+            OPTIONS                                  OBSERVATION
+                                     D'HEURES
+
+Secondaire Générale                        1
+                                                 A puiser dans le Travail
+                                                 Manuel
+Pédagogie & Education Physique             1
+
+
+Commerciale et Administrative              2
+
+                                                 A     puiser   dans    la
+Secrétariat et Informatique                2
+                                                 Dactylographie
+
+Commerciale et Informatique                2
+
+                                                 A puiser dans l'Education
+Autres options                             1
+                                                 Physique
+

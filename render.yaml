@@ -23,6 +23,8 @@ services:
         sync: false
       - key: ATELIER_UTILISATEUR
         value: atelier
+      - key: CLE_SECRETE
+        generateValue: true
       - key: MODELE_IA
         value: claude-sonnet-5-5
       - key: EXETAT_DEMO

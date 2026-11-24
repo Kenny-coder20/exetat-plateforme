@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connexion — Atelier des enseignants</title>
+<link rel="icon" href="/eleve/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--nuit:#1B2A4A;--ivoire:#F7F4EC;--blanc:#fff;--encre:#1E2433;--encre-2:#5E6677;--filet:#DDD6C6;--or:#B8922E;--rouge:#B23A3A;--rouge-pale:#F6E3E3}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100dvh;display:grid;place-items:center;font:15px/1.5 "Public Sans",system-ui,sans-serif;color:var(--encre);background:var(--ivoire)}
+  .carte{width:min(420px,92vw);background:var(--blanc);border:1px solid var(--filet);border-radius:18px;padding:30px 28px 26px}
+  .embleme{width:44px;height:44px;border:1.5px solid var(--nuit);border-radius:50%;display:grid;place-items:center;font:600 14px "Source Serif 4",Georgia,serif;color:var(--or);margin-bottom:14px}
+  h1{font:600 24px "Source Serif 4",Georgia,serif;color:var(--nuit);margin:0 0 4px}
+  p{margin:0 0 18px;color:var(--encre-2);font-size:14px}
+  label{display:block;font-size:12.5px;color:var(--encre-2);margin:12px 0 4px}
+  input{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--filet);border-radius:10px;background:var(--ivoire)}
+  button{width:100%;margin-top:18px;padding:13px;border-radius:12px;border:0;background:var(--nuit);color:#fff;font:600 15px "Public Sans",system-ui,sans-serif;cursor:pointer}
+  .err{display:none;margin-top:12px;padding:10px 12px;border-radius:9px;background:var(--rouge-pale);color:var(--rouge);font-size:13.5px}
+  .err.on{display:block}
+  .pied{margin-top:18px;font-size:12.5px;color:var(--encre-2);text-align:center}
+  .pied a{color:var(--nuit)}
+</style>
+</head>
+<body>
+<form class="carte" id="f">
+  <div class="embleme" aria-hidden="true">EX</div>
+  <h1>Atelier des enseignants</h1>
+  <p>Connectez-vous avec les identifiants remis par l'administrateur.</p>
+  <label for="id">Identifiant</label><input id="id" autocomplete="username" required autofocus>
+  <label for="mdp">Mot de passe</label><input id="mdp" type="password" autocomplete="current-password" required>
+  <button type="submit">Se connecter</button>
+  <div class="err" id="err"></div>
+  <div class="pied"><a href="/eleve/">Espace élève</a> · <a href="/">Accueil</a></div>
+</form>
+<script>
+document.getElementById('f').onsubmit = async e => {
+  e.preventDefault(); const err = document.getElementById('err'); err.classList.remove('on');
+  const r = await fetch('/api/connexion', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ identifiant: document.getElementById('id').value, mot_de_passe: document.getElementById('mdp').value }) });
+  if (r.ok) location.href = '/validateur/'; else { let d = 'Connexion impossible.'; try { d = (await r.json()).detail || d; } catch { } err.textContent = d; err.classList.add('on'); }
+};
+</script>
+</body>
+</html>

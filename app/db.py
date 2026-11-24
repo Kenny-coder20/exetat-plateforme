@@ -167,6 +167,8 @@ def preparer(demo_si_vide: bool = True) -> None:
 
     init_db()
     seed()
+    from .auth import amorcer
+    amorcer()
     if demo_si_vide:
         with connect() as con:
             n = one(con, "SELECT COUNT(*) n FROM items")["n"]

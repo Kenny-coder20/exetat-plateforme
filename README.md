@@ -73,6 +73,14 @@ mécaniques détectées (nombre de mots, 5 propositions, réponse dans 1..5, ré
 
 Sans clé API : bouton « Copier le prompt », collez-le dans votre assistant IA, puis « Importer un JSON ».
 
+### Comptes des enseignants
+Chaque enseignant se connecte avec **ses propres identifiants** (`/validateur/connexion.html`). Au premier démarrage,
+un compte administrateur `atelier` est créé avec `ATELIER_MOT_DE_PASSE`. L'administrateur crée ensuite les comptes
+dans l'onglet **Comptes** (identifiant, nom, mot de passe initial, rôle : validateur / rédacteur / admin ; chacun peut
+changer son mot de passe). Les sessions sont des jetons signés (`CLE_SECRETE`, générée par Render) : connexions
+parallèles illimitées, aucune déconnexion au redémarrage. Si deux enseignants statuent sur la même question, le second
+est prévenu et doit la recharger. Le nom du validateur est pris automatiquement sur le compte connecté.
+
 ### 2. Valider (atelier) — pensé pour des enseignants
 L'enseignant choisit son option et le jour, puis relit les questions une par une, **telles que l'élève les verra** :
 bonne réponse en vert, correction en dessous. Il peut corriger directement dans le texte (cliquer, modifier),
@@ -123,6 +131,11 @@ Voir `DEPLOIEMENT.md` : dépôt GitHub + Blueprint Render (`render.yaml`) avec b
 | Histoire | Programme national d'histoire, 6e année — edu-nc.gouv.cd | 2005 |
 | Géographie | Programme national de géographie, 6e année — edu-nc.gouv.cd | 2005 |
 | Philosophie | **Reconstitué** (programme officiel introuvable en ligne) — à confirmer par un inspecteur | — |
+| Français | Programme national de français au secondaire, degré supérieur (fichier `docs/programmes/`) | 2009 |
+| Pédagogie, Psychologie, Didactiques | Programme national de psychopédagogie, 6e année (`docs/programmes/`) | 2009 |
+| Informatique (secrétariat) | Curriculum national des humanités techniques commerciales (`docs/programmes/`) | 2016 |
+| Machines et applications électriques | Programme national d'électricité, 6e année (`docs/programmes/`) | — |
+| Anglais | **Reconstitué** — programme officiel non accessible en ligne | — |
 
 Le jour 1 (M.01, culture générale : Civisme 2, Géographie 6, Histoire 6, Philosophie 6) est actif. Le jour 4 (langues) reste à venir.
 

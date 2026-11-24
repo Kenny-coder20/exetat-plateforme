@@ -129,3 +129,15 @@ CREATE TABLE IF NOT EXISTS resultats (
   synchronise_le TEXT NOT NULL DEFAULT to_char(now(),'YYYY-MM-DD"T"HH24:MI:SS')
 );
 
+
+-- Comptes des enseignants (atelier)
+CREATE TABLE IF NOT EXISTS utilisateurs (
+  identifiant TEXT PRIMARY KEY,
+  nom TEXT NOT NULL,
+  mdp_hash TEXT NOT NULL,
+  role TEXT NOT NULL DEFAULT 'validateur',   -- admin | redacteur | validateur
+  disciplines TEXT,                          -- facultatif : "Physique ; Chimie"
+  actif INTEGER NOT NULL DEFAULT 1,
+  cree_le TEXT,
+  derniere_connexion TEXT
+);

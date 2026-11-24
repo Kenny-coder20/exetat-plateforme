@@ -14,7 +14,7 @@ from .db import connect
 
 from .e32 import EPREUVES as E32_EPREUVES, EPREUVES_ACTIVES, FAMILLES, OPTIONS as E32_OPTIONS, SESSION
 
-O21 = "officiel 2021"; O07 = "officiel 2007"; O05 = "officiel 2005"; REC = "reconstitue"
+O21 = "officiel 2021"; O07 = "officiel 2007"; O05 = "officiel 2005"; O09 = "officiel 2009"; O16 = "officiel 2016"; OEL = "officiel (électricité)"; REC = "reconstitue"
 
 # (discipline, sous_discipline, chapitre, poids, source)
 PROGRAMME = [
@@ -103,6 +103,48 @@ PROGRAMME = [
     ("Philosophie", None, "Philosophie sociale et politique : société, État, droit, justice, démocratie", 1, REC),
     ("Philosophie", None, "Philosophie africaine : Tempels, Kagame, Hountondji, Towa ; authenticité et développement", 1, REC),
     ("Philosophie", None, "Histoire de la philosophie : Antiquité, Moyen Âge, Temps modernes, époque contemporaine", 1.5, REC),
+    # ---- Français (Programme national de français au secondaire, degré supérieur 5e–6e, 2009 — fichier local)
+    ("Français", None, "Thèmes du degré supérieur : actualité, l'homme et la nature, l'homme et la société, activité humaine, valeurs morales, sentiments et émotions, l'homme et sa destinée", 1.5, O09),
+    ("Français", None, "Étude de textes : compréhension, auteurs congolais, africains et français, courants et époques littéraires", 2, O09),
+    ("Français", None, "Grammaire récapitulative : moyens d'expression, accords, modalités, phraséologie", 2, O09),
+    ("Français", None, "Vocabulaire : mot propre, vocabulaire d'émotions et d'abstraction, synonymie, champs lexicaux", 1.5, O09),
+    ("Français", None, "Orthographe et conjugaison", 1, O09),
+    ("Français", None, "Expression orale : exposé-débat, conversation, lecture expressive", 1, O09),
+    ("Français", None, "Expression écrite : lettre, article de presse, dissertation, genres de textes", 2, O09),
+    # ---- Anglais (programme officiel non disponible en ligne — reconstitué, à confirmer)
+    ("Anglais", None, "Reading comprehension: texts on everyday life, school, society, science", 2.5, REC),
+    ("Anglais", None, "Grammar: tenses, modals, passive voice, reported speech, conditionals, relative clauses", 2.5, REC),
+    ("Anglais", None, "Vocabulary: word formation, synonyms and antonyms, collocations, idioms", 2, REC),
+    ("Anglais", None, "Functional English: letters, dialogues, descriptions, summaries", 2, REC),
+    # ---- Pédagogie (Programme national de psychopédagogie, 6e année, 2009 — fichier local)
+    ("Pédagogie", None, "Pédagogie : histoire de l'enseignement, dissertation pédagogique", 1, O09),
+    ("Pédagogie", None, "Éducation : limites, anomalies, formes traditionnelles et nouvelles", 1, O09),
+    ("Pédagogie", None, "L'enseignant : emploi du temps, calendrier scolaire, horaire des cours", 0.5, O09),
+    ("Pédagogie", None, "Législation scolaire : sources, textes de référence, loi-cadre 86/005, finalités et structures de l'enseignement", 1.5, O09),
+    ("Pédagogie", None, "Déontologie de l'enseignant : notion, exigences, conseils pratiques", 1, O09),
+    ("Pédagogie", None, "Organisation scolaire : hiérarchie, documents administratifs et pédagogiques, tâches du chef d'établissement", 1, O09),
+    ("Psychologie générale", None, "Psychologie générale : rappel des matières de 5e (sensation, perception, mémoire, intelligence, affectivité, personnalité)", 1, O09),
+    ("Psychologie de l'enfant", None, "Psychologie du développement : importance, caractères, lois, auteurs (Wallon, Piaget)", 1, O09),
+    ("Psychologie de l'enfant", None, "Stades du développement : période prénatale, première et deuxième enfance, âge scolaire", 1.5, O09),
+    ("Psychologie de l'enfant", None, "Adolescence : pré-adolescence, puberté, crise d'originalité, orientation professionnelle", 1, O09),
+    ("Psychologie de l'enfant", None, "Développement du langage et du jeu", 0.5, O09),
+    ("Psychologie de l'enfant et de l'adolescent", None, "Psychologie du développement de l'enfant et de l'adolescent (programme 2009, 6e année)", 1, O09),
+    ("Didactique générale", None, "Modes d'enseignement traditionnels et modernes : travail individualisé (plan Dalton, Winnetka), travail en équipe, méthode des projets de Kilpatrick, travail collectif", 2, O09),
+    ("Didactique générale", None, "Récapitulation de la didactique générale et stage", 1, O09),
+    ("Didactique des disciplines", None, "Marche d'une leçon : éducation civique, environnement, étude du milieu, histoire, géographie, sciences", 1.5, O09),
+    ("Didactique des disciplines", None, "Marche d'une leçon : dessin (d'après nature, d'imagination, d'ornementation, de mémoire), chant, éducation physique, travaux manuels", 1, O09),
+    # ---- Informatique (Curriculum national des humanités techniques commerciales, secrétariat-administration, 6e, 2016 — fichier local)
+    ("Informatique", None, "Tableur : graphiques, base de données Excel, fonctions statistiques (minimum, maximum, moyenne, somme, écart type)", 1.5, O16),
+    ("Informatique", None, "Publication assistée : Publisher, cartes de visite, affiches, zones de texte, WordArt", 1, O16),
+    ("Informatique", None, "Traitement de texte avancé et correspondance administrative", 1, O16),
+    ("Informatique", None, "Messagerie, Internet et sécurité des données du bureau", 0.5, O16),
+    # ---- Électricité (Programme national d'électricité, 6e année — fichier local, en-têtes de chapitres)
+    ("Machines électriques", None, "Génératrices à courant continu : principe, enroulement induit, fonctionnement, couple, rendement, couplage", 1.5, OEL),
+    ("Machines électriques", None, "Transformateurs : parfait, réel, rendement, couplage, triphasés", 1.5, OEL),
+    ("Machines électriques", None, "Redresseurs et champs tournants ; moteurs synchrones et asynchrones", 1.5, OEL),
+    ("Applications électriques", None, "Éclairage, production, transport et distribution de l'énergie électrique, protection des réseaux", 1.5, OEL),
+    ("Applications électriques", None, "Traction électrique, soudure électrique, fours électriques", 1, OEL),
+    ("Applications électriques", None, "Installations : avant-projet de force motrice, schémas, sous-stations, tableaux de comptage", 1, OEL),
 ]
 
 def seed(replace_programme: bool = False) -> None:
@@ -129,7 +171,7 @@ def seed(replace_programme: bool = False) -> None:
             for jour, code in enumerate(eps, 1):
                 con.execute("INSERT INTO option_epreuves(option_code, jour, epreuve_code) VALUES(?,?,?)", (opt, jour, code))
         n = con.execute("SELECT COUNT(*) AS n FROM programme").fetchone()["n"]
-        n_off = con.execute("SELECT COUNT(*) AS n FROM programme WHERE source LIKE 'officiel%' AND discipline='Civisme'").fetchone()["n"]
+        n_off = con.execute("SELECT COUNT(*) AS n FROM programme WHERE source LIKE 'officiel%' AND discipline='Français'").fetchone()["n"]
         if n == 0 or replace_programme or n_off == 0:
             con.execute("DELETE FROM programme")
             con.executemany(

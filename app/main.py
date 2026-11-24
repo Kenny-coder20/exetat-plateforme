@@ -11,7 +11,7 @@ from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from . import assemblage, export, generation, situations, taches
+from . import assemblage, auth, export, generation, situations, taches
 from .db import connect, one, preparer, rows
 import os
 import secrets
@@ -24,35 +24,155 @@ STATIC = ROOT / "static"
 app = FastAPI(title="Plateforme items EXETAT", version="0.2")
 
 # ------------------------------------------------------------------ protection de l'atelier
-# Définissez ATELIER_MOT_DE_PASSE (et éventuellement ATELIER_UTILISATEUR) pour protéger l'atelier
-# et les opérations d'écriture : indispensable dès que la plateforme est accessible sur Internet.
-ATELIER_UTILISATEUR = os.environ.get("ATELIER_UTILISATEUR", "atelier")
-ATELIER_MOT_DE_PASSE = os.environ.get("ATELIER_MOT_DE_PASSE", "")
-PREFIXES_PROTEGES = ("/validateur", "/api/generer", "/api/importer", "/api/situations/generer", "/api/export/", "/api/taches", "/docs", "/openapi.json")
-import base64
-from starlette.responses import Response
+# Chaque enseignant se connecte avec ses identifiants (cookie de session signé). Les écritures et les pages de
+# l'atelier exigent une session ; l'espace élève et l'API de lecture restent libres.
+PREFIXES_PROTEGES = ("/validateur", "/api/generer", "/api/importer", "/api/situations/generer", "/api/export/", "/api/taches",
+                     "/api/comptes", "/docs", "/openapi.json")
+PAGES_LIBRES = ("/validateur/connexion.html",)
+from starlette.responses import RedirectResponse as _Redir, Response
+
+
+def utilisateur_courant(request: Request) -> dict | None:
+    ident = auth.lire_jeton(request.cookies.get("session"))
+    if not ident:
+        return None
+    with connect() as con:
+        u = auth.compte(con, ident)
+    return u if u and u["actif"] else None
 
 
 @app.middleware("http")
 async def _proteger_atelier(request: Request, call_next):
-    if ATELIER_MOT_DE_PASSE:
-        chemin = request.url.path
-        protege = chemin.startswith(PREFIXES_PROTEGES) or chemin.endswith("/valider") or (
-            chemin.startswith("/api/items") and request.method != "GET") or (
-            chemin.startswith("/api/situations") and request.method != "GET" and not chemin.endswith("/generer"))
-        if protege:
-            ok = False
-            auth = request.headers.get("authorization", "")
-            if auth.lower().startswith("basic "):
-                try:
-                    u, _, p = base64.b64decode(auth[6:]).decode("utf-8").partition(":")
-                    ok = secrets.compare_digest(u, ATELIER_UTILISATEUR) and secrets.compare_digest(p, ATELIER_MOT_DE_PASSE)
-                except Exception:  # noqa: BLE001
-                    ok = False
-            if not ok:
-                return Response("Accès réservé à l'atelier.", status_code=401,
-                                headers={"WWW-Authenticate": 'Basic realm="Atelier EXETAT"'})
+    chemin = request.url.path
+    protege = (chemin.startswith(PREFIXES_PROTEGES) and chemin not in PAGES_LIBRES) or chemin.endswith("/valider") or (
+        chemin.startswith("/api/items") and request.method != "GET") or (
+        chemin.startswith("/api/situations") and request.method != "GET" and not chemin.endswith("/generer"))
+    if protege:
+        u = utilisateur_courant(request)
+        if not u:
+            if chemin.startswith("/validateur"):
+                return _Redir("/validateur/connexion.html", status_code=302)
+            return Response('{"detail":"Connexion requise."}', status_code=401, media_type="application/json")
+        request.state.utilisateur = u
     return await call_next(request)
+
+
+class Connexion(BaseModel):
+    identifiant: str
+    mot_de_passe: str
+
+
+@app.post("/api/connexion")
+def api_connexion(c: Connexion):
+    with connect() as con:
+        u = auth.authentifier(con, c.identifiant, c.mot_de_passe)
+    if not u:
+        raise HTTPException(401, "Identifiant ou mot de passe incorrect.")
+    from fastapi.responses import JSONResponse
+    rep = JSONResponse(u)
+    rep.set_cookie("session", auth.emettre_jeton(u["identifiant"]), httponly=True, samesite="lax", max_age=auth.DUREE_SESSION,
+                   secure=os.environ.get("RENDER") is not None)
+    return rep
+
+
+@app.post("/api/deconnexion")
+def api_deconnexion():
+    from fastapi.responses import JSONResponse
+    rep = JSONResponse({"ok": True})
+    rep.delete_cookie("session")
+    return rep
+
+
+@app.get("/api/moi")
+def api_moi(request: Request):
+    u = utilisateur_courant(request)
+    if not u:
+        raise HTTPException(401, "Connexion requise.")
+    return u
+
+
+class CompteNouveau(BaseModel):
+    identifiant: str
+    nom: str
+    mot_de_passe: str
+    role: str = "validateur"
+    disciplines: Optional[str] = None
+
+
+class CompteMaj(BaseModel):
+    nom: Optional[str] = None
+    role: Optional[str] = None
+    disciplines: Optional[str] = None
+    actif: Optional[bool] = None
+    mot_de_passe: Optional[str] = None
+
+
+def _exiger_admin(request: Request):
+    u = getattr(request.state, "utilisateur", None)
+    if not u or u["role"] != "admin":
+        raise HTTPException(403, "Réservé à l'administrateur.")
+    return u
+
+
+@app.get("/api/comptes")
+def api_comptes(request: Request):
+    _exiger_admin(request)
+    with connect() as con:
+        return auth.lister_comptes(con)
+
+
+@app.post("/api/comptes")
+def api_creer_compte(c: CompteNouveau, request: Request):
+    _exiger_admin(request)
+    try:
+        with connect() as con:
+            return auth.creer_compte(con, c.identifiant, c.nom, c.mot_de_passe, c.role, c.disciplines)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+
+
+@app.post("/api/comptes/{ident}")
+def api_maj_compte(ident: str, c: CompteMaj, request: Request):
+    admin = _exiger_admin(request)
+    with connect() as con:
+        if not auth.compte(con, ident):
+            raise HTTPException(404)
+        if c.nom is not None:
+            con.execute("UPDATE utilisateurs SET nom=? WHERE identifiant=?", (c.nom, ident))
+        if c.role is not None:
+            if c.role not in auth.ROLES:
+                raise HTTPException(400, "rôle invalide")
+            con.execute("UPDATE utilisateurs SET role=? WHERE identifiant=?", (c.role, ident))
+        if c.disciplines is not None:
+            con.execute("UPDATE utilisateurs SET disciplines=? WHERE identifiant=?", (c.disciplines, ident))
+        if c.actif is not None:
+            if ident == admin["identifiant"] and not c.actif:
+                raise HTTPException(400, "Vous ne pouvez pas désactiver votre propre compte.")
+            con.execute("UPDATE utilisateurs SET actif=? WHERE identifiant=?", (1 if c.actif else 0, ident))
+        if c.mot_de_passe:
+            if len(c.mot_de_passe) < 6:
+                raise HTTPException(400, "mot de passe trop court")
+            con.execute("UPDATE utilisateurs SET mdp_hash=? WHERE identifiant=?", (auth.hacher(c.mot_de_passe), ident))
+        return auth.compte(con, ident)
+
+
+class MonMdp(BaseModel):
+    ancien: str
+    nouveau: str
+
+
+@app.post("/api/moi/mot-de-passe")
+def api_mon_mdp(c: MonMdp, request: Request):
+    u = utilisateur_courant(request)
+    if not u:
+        raise HTTPException(401)
+    with connect() as con:
+        if not auth.authentifier(con, u["identifiant"], c.ancien):
+            raise HTTPException(400, "Ancien mot de passe incorrect.")
+        if len(c.nouveau) < 6:
+            raise HTTPException(400, "Nouveau mot de passe trop court (6 caractères minimum).")
+        con.execute("UPDATE utilisateurs SET mdp_hash=? WHERE identifiant=?", (auth.hacher(c.nouveau), u["identifiant"]))
+    return {"ok": True}
 
 
 @app.on_event("startup")
@@ -183,7 +303,10 @@ class ValidationSituation(BaseModel):
 
 
 @app.post("/api/situations/{sid}/valider")
-def api_valider_situation(sid: str, v: ValidationSituation):
+def api_valider_situation(sid: str, v: ValidationSituation, request: Request):
+    u = getattr(request.state, "utilisateur", None)
+    if u:
+        v.validateur = u["nom"]
     champs = {k: getattr(v, k) for k in ("titre", "texte", "document_texte", "document_latex", "synthese", "chapitres", "duree_min")
               if getattr(v, k) is not None}
     try:
@@ -212,6 +335,7 @@ def api_export_situation(sid: str, pdf: bool = False):
 class Validation(BaseModel):
     statut: str                      # valide | rejete | en_attente
     validateur: str = ""
+    attendu_statut: Optional[str] = None   # statut vu par le validateur ; refus si un collègue a statué entre-temps
     observations: Optional[str] = None
     motif_rejet: Optional[str] = None
     # champs corrigibles
@@ -226,15 +350,22 @@ class Validation(BaseModel):
 
 
 @app.post("/api/items/{iid}/valider")
-def valider(iid: str, v: Validation):
+def valider(iid: str, v: Validation, request: Request):
     if v.statut not in ("valide", "rejete", "en_attente"):
         raise HTTPException(400, "statut invalide")
+    u = getattr(request.state, "utilisateur", None)
+    if u:
+        v.validateur = u["nom"]
     champs = {k: getattr(v, k) for k in ("titre", "tige", "p1", "p2", "p3", "p4", "p5", "reponse",
                                          "correction_detaillee", "erreurs_distracteurs", "chapitre", "difficulte")
               if getattr(v, k) is not None}
     with connect() as con:
-        if not one(con, "SELECT id FROM items WHERE id=?", (iid,)):
+        actuel = one(con, "SELECT statut_validation, validateur FROM items WHERE id=?", (iid,))
+        if not actuel:
             raise HTTPException(404)
+        if v.attendu_statut and actuel["statut_validation"] != v.attendu_statut and actuel["statut_validation"] != "en_attente":
+            raise HTTPException(409, f"Cette question vient d'être traitée par {actuel['validateur'] or 'un collègue'} "
+                                     f"({actuel['statut_validation']}). Rechargez-la avant de statuer.")
         corrige = False
         for k, val in champs.items():
             cur = one(con, f"SELECT {k} v FROM items WHERE id=?", (iid,))["v"]

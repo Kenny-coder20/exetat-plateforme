@@ -21,7 +21,10 @@
   .bandeau h1{font-size:17px;flex:1}
   .bandeau h1 small{display:block;font:400 11.5px var(--sans);opacity:.7}
   .bandeau .nom{display:flex;align-items:center;gap:8px;font-size:13px;opacity:.9}
-  .bandeau input{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:6px 10px;width:150px}
+  .lien-b{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:5px 10px;font-size:12.5px;cursor:pointer}
+  table.comptes{width:100%;border-collapse:collapse;font-size:13.5px}
+  table.comptes td,table.comptes th{padding:7px 8px;border-bottom:1px solid var(--filet);text-align:left;vertical-align:middle}
+  .form-ligne{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;align-items:end;margin:8px 0}
   .bandeau a{color:#fff;opacity:.8;font-size:13px;text-decoration:none}
   /* contexte : option / jour */
   .contexte{background:var(--blanc);border-bottom:1px solid var(--filet)}
@@ -80,6 +83,7 @@
   .motifs label{display:block;font-size:14px;margin:4px 0}
   .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--nuit);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:30}
   .toast.on{opacity:1}
+  .lien{background:none;border:0;color:var(--nuit);text-decoration:underline;cursor:pointer;padding:0;font-size:13px}
   .vide{padding:30px;text-align:center;color:var(--encre-2)}
   .vide h2{font-size:20px;color:var(--nuit);margin-bottom:6px}
   /* produire */
@@ -94,7 +98,7 @@
 <header class="bandeau"><div class="wrap">
   <div class="embleme" aria-hidden="true">EX</div>
   <h1>Atelier des enseignants<small>Relecture et validation des questions — Examen d'État</small></h1>
-  <div class="nom"><span>Votre nom</span><input id="validateur" placeholder="Prénom Nom"></div>
+  <div class="nom"><span id="qui"></span><input id="validateur" type="hidden"><button class="lien-b" id="mdp-btn" title="Changer mon mot de passe">Mot de passe</button><button class="lien-b" id="deco">Se déconnecter</button></div>
   <a href="/eleve/" target="_blank">Espace élève ↗</a>
 </div></header>
 
@@ -102,7 +106,7 @@
   <div><label class="ch">Option (nomenclature E.32)</label><select id="opt"></select></div>
   <div><label class="ch">Jour de l'examen</label><select id="jour"></select></div>
   <div><label class="ch">Matière</label><select id="disc"><option value="">Toutes les matières</option></select></div>
-  <div class="onglets"><button class="on" data-vue="relire">Relire</button><button data-vue="produire">Produire</button><button data-vue="banque">Banque</button></div>
+  <div class="onglets"><button class="on" data-vue="relire">Relire</button><button data-vue="produire" id="ong-produire">Produire</button><button data-vue="banque">Banque</button><button data-vue="comptes" id="ong-comptes" hidden>Comptes</button></div>
 </div></div>
 
 <main>
@@ -156,6 +160,22 @@
     <div id="vue-banque" hidden>
       <div class="carte"><h2>État de la banque par épreuve</h2><div id="banque"></div></div>
     </div>
+
+    <div id="vue-comptes" hidden>
+      <div class="carte">
+        <h2>Comptes des enseignants</h2>
+        <p class="muted">Chaque enseignant se connecte avec son identifiant. Rôles : <b>validateur</b> relit et valide ; <b>rédacteur</b> produit aussi des questions ; <b>admin</b> gère les comptes.</p>
+        <div class="form-ligne">
+          <div><label class="ch">Identifiant</label><input class="txt" id="c-id" placeholder="ex. mkalala"></div>
+          <div><label class="ch">Nom complet</label><input class="txt" id="c-nom" placeholder="Prénom Nom"></div>
+          <div><label class="ch">Mot de passe initial</label><input class="txt" id="c-mdp" placeholder="6 caractères min."></div>
+          <div><label class="ch">Rôle</label><select id="c-role"><option value="validateur">Validateur</option><option value="redacteur">Rédacteur</option><option value="admin">Administrateur</option></select></div>
+          <div><label class="ch">Matières (facultatif)</label><input class="txt" id="c-disc" placeholder="Physique ; Chimie"></div>
+          <div><button class="btn" id="c-creer">Créer le compte</button></div>
+        </div>
+        <table class="comptes" id="t-comptes"></table>
+      </div>
+    </div>
   </section>
 </main>
 <div id="toast" class="toast"></div>
@@ -169,13 +189,19 @@ const POINTS = ["La réponse marquée est la bonne (j'ai vérifié)", "Une seule
 const MOTIFS = ["Réponse marquée fausse", "Plusieurs réponses possibles", "Hors programme ou niveau inadapté", "Énoncé confus ou trop long", "Données ou faits inexacts", "Contexte artificiel ou irréaliste", "Doublon d'une autre question", "Autre (préciser ci-dessous)"];
 
 let CFG, courant = null, statutFile = 'en_attente', vue = 'relire';
-$('#validateur').value = localStorage.getItem('validateur') || '';
-$('#validateur').oninput = e => localStorage.setItem('validateur', e.target.value);
+$('#deco').onclick = async () => { await fetch('/api/deconnexion', { method: 'POST' }); location.href = '/validateur/connexion.html'; };
+$('#mdp-btn').onclick = async () => { const a = prompt('Ancien mot de passe :'); if (!a) return; const n = prompt('Nouveau mot de passe (6 caractères minimum) :'); if (!n) return; try { await api('/api/moi/mot-de-passe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ancien: a, nouveau: n }) }); toast('Mot de passe changé.'); } catch (e) { toast(e.message); } };
 
 // ------------------------------------------------------------ contexte : option → jour → épreuve
 const epCourante = () => { const oe = CFG.option_epreuves.find(x => x.option_code === $('#opt').value && x.jour === +$('#jour').value); return oe && CFG.epreuves.find(e => e.code === oe.epreuve_code); };
 const quotasDe = code => CFG.quotas.filter(q => q.epreuve_code === code);
+let MOI = null;
 async function init() {
+  try { MOI = await api('/api/moi'); } catch { location.href = '/validateur/connexion.html'; return; }
+  $('#qui').textContent = MOI.nom + ' · ' + ({ admin: 'administrateur', redacteur: 'rédacteur', validateur: 'validateur' })[MOI.role];
+  $('#validateur').value = MOI.nom;
+  if (MOI.role === 'admin') $('#ong-comptes').hidden = false;
+  if (MOI.role === 'validateur') $('#ong-produire').hidden = true;
   CFG = await api('/api/config');
   const fam = {}; for (const o of CFG.options) (fam[o.famille] = fam[o.famille] || []).push(o);
   $('#opt').innerHTML = Object.entries(fam).map(([f, os]) => `<optgroup label="${esc(f)}">${os.map(o => `<option value="${o.code}">${o.code} — ${esc(o.nom)}</option>`).join('')}</optgroup>`).join('');
@@ -203,7 +229,7 @@ function majEpreuve() {
 }
 function majChapitres() { const d = $('#g-disc').value; const chs = CFG.programme.filter(p => p.discipline === d); $('#g-chap').innerHTML = '<option value="">Au choix de l\'assistant, selon le programme</option>' + chs.map(c => `<option>${esc(c.chapitre)}</option>`).join(''); }
 $('#opt').onchange = () => { majJours(); majEpreuve(); }; $('#jour').onchange = majEpreuve; $('#disc').onchange = () => chargerFile(); $('#g-disc').onchange = majChapitres;
-document.querySelectorAll('.onglets [data-vue]').forEach(b => b.onclick = () => { vue = b.dataset.vue; document.querySelectorAll('.onglets [data-vue]').forEach(x => x.classList.toggle('on', x === b)); for (const v of ['relire', 'produire', 'banque']) $('#vue-' + v).hidden = v !== vue; if (vue === 'banque') chargerBanque(); });
+document.querySelectorAll('.onglets [data-vue]').forEach(b => b.onclick = () => { vue = b.dataset.vue; document.querySelectorAll('.onglets [data-vue]').forEach(x => x.classList.toggle('on', x === b)); for (const v of ['relire', 'produire', 'banque', 'comptes']) $('#vue-' + v).hidden = v !== vue; if (vue === 'banque') chargerBanque(); if (vue === 'comptes') chargerComptes(); });
 document.querySelectorAll('[data-statut]').forEach(b => b.onclick = () => { statutFile = b.dataset.statut; document.querySelectorAll('[data-statut]').forEach(x => x.classList.toggle('on', x === b)); chargerFile(); });
 $('#g-quoi').onchange = () => { const q = $('#g-quoi').value; $('#g-mat').hidden = q === 'epreuve'; $('#g-chap-b').hidden = q === 'epreuve'; $('#g-n-b').hidden = q === 'epreuve'; };
 
@@ -272,9 +298,9 @@ async function statuer(statut) {
   const motif = statut === 'rejete' ? (document.querySelector('input[name=motif]:checked') || {}).value : null;
   if (statut === 'rejete' && !motif) { toast('Choisissez un motif de rejet.'); return; }
   const statutEnvoye = statut === 'en_attente' ? courant.statut_validation : statut;
-  const body = { statut: statutEnvoye, validateur: $('#validateur').value.trim(), observations: statut === 'rejete' ? ($('#e-obs').value || null) : null, motif_rejet: motif, ...lireFiche() };
+  const body = { statut: statutEnvoye, attendu_statut: courant.statut_validation, validateur: $('#validateur').value.trim(), observations: statut === 'rejete' ? ($('#e-obs').value || null) : null, motif_rejet: motif, ...lireFiche() };
   try { await api('/api/items/' + courant.id + '/valider', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); toast(statut === 'valide' ? 'Question validée' : statut === 'rejete' ? 'Question rejetée' : 'Corrections enregistrées'); const id = courant.id; if (statut !== 'en_attente') { courant = null; } await chargerFile(); chargerAvancement(); if (statut === 'en_attente') ouvrir(id); }
-  catch (e) { toast('Erreur : ' + e.message); }
+  catch (e) { toast(e.message); if (/vient d'être traitée/.test(e.message)) { const id = courant.id; courant = null; await chargerFile(); } }
 }
 function suivante() { const lis = [...$('#file').querySelectorAll('li[data-id]')]; const k = lis.findIndex(l => l.dataset.id === (courant || {}).id); const n = lis[(k + 1) % lis.length]; if (n) ouvrir(n.dataset.id); }
 document.addEventListener('keydown', e => { if (!courant || e.target.isContentEditable || /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return; if (e.key === 'v' || e.key === 'V') statuer('valide'); if (e.key === 'r' || e.key === 'R') $('#b-ko').click(); if (e.key === 'e' || e.key === 'E') statuer('en_attente'); if (e.key === 'ArrowRight') suivante(); });
@@ -322,6 +348,18 @@ async function ouvrirSituation(sid) {
   const st = async statut => { if (!$('#validateur').value.trim()) { toast('Indiquez votre nom.'); return; } const body = { statut, validateur: $('#validateur').value.trim(), observations: statut === 'rejete' ? $('#s-obs').value : null, motif_rejet: statut === 'rejete' ? ($('#s-obs').value || 'non précisé') : null, texte: $('#s-texte').textContent.trim(), document_texte: $('#s-doc').textContent.trim(), synthese: $('#s-synth').textContent.trim() }; try { await api('/api/situations/' + s.id + '/valider', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); toast('Exercice ' + (statut === 'valide' ? 'validé' : statut === 'rejete' ? 'rejeté' : 'enregistré')); chargerSituations(); chargerFile(); chargerAvancement(); if (statut === 'en_attente') ouvrirSituation(s.id); else { courant = null; $('#fiche').innerHTML = '<div class="vide"><h2>Suivant ?</h2></div>'; } } catch (e) { toast(e.message); } };
   $('#s-ok').onclick = () => st('valide'); $('#s-save').onclick = () => st('en_attente'); $('#s-ko').onclick = () => $('#motifs').classList.add('on'); $('#s-ko2').onclick = () => st('rejete');
 }
+
+// ------------------------------------------------------------ comptes (admin)
+async function chargerComptes() {
+  const cs = await api('/api/comptes');
+  const R = { admin: 'Administrateur', redacteur: 'Rédacteur', validateur: 'Validateur' };
+  $('#t-comptes').innerHTML = `<tr><th>Nom</th><th>Identifiant</th><th>Rôle</th><th>Matières</th><th>Dernière connexion</th><th></th></tr>` + cs.map(c => `<tr style="${c.actif ? '' : 'opacity:.5'}"><td>${esc(c.nom)}</td><td>${esc(c.identifiant)}</td><td><select data-role="${c.identifiant}">${Object.entries(R).map(([k, v]) => `<option value="${k}" ${c.role === k ? 'selected' : ''}>${v}</option>`).join('')}</select></td><td>${esc(c.disciplines || '')}</td><td class="muted">${c.derniere_connexion ? c.derniere_connexion.replace('T', ' ').slice(0, 16) : 'jamais'}</td><td style="white-space:nowrap"><button class="lien" data-mdp="${c.identifiant}">Nouveau mot de passe</button> · <button class="lien" data-actif="${c.identifiant}" data-val="${c.actif ? 0 : 1}">${c.actif ? 'Désactiver' : 'Réactiver'}</button></td></tr>`).join('');
+  $('#t-comptes').querySelectorAll('[data-role]').forEach(s => s.onchange = () => majCompte(s.dataset.role, { role: s.value }));
+  $('#t-comptes').querySelectorAll('[data-mdp]').forEach(b => b.onclick = () => { const n = prompt('Nouveau mot de passe pour ' + b.dataset.mdp + ' (6 caractères min.) :'); if (n) majCompte(b.dataset.mdp, { mot_de_passe: n }); });
+  $('#t-comptes').querySelectorAll('[data-actif]').forEach(b => b.onclick = () => majCompte(b.dataset.actif, { actif: b.dataset.val === '1' }));
+}
+async function majCompte(id, body) { try { await api('/api/comptes/' + id, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); toast('Compte mis à jour'); chargerComptes(); } catch (e) { toast(e.message); } }
+$('#c-creer').onclick = async () => { try { await api('/api/comptes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ identifiant: $('#c-id').value, nom: $('#c-nom').value, mot_de_passe: $('#c-mdp').value, role: $('#c-role').value, disciplines: $('#c-disc').value || null }) }); toast('Compte créé'); $('#c-id').value = $('#c-nom').value = $('#c-mdp').value = ''; chargerComptes(); } catch (e) { toast(e.message); } };
 
 // ------------------------------------------------------------ banque
 async function chargerBanque() {

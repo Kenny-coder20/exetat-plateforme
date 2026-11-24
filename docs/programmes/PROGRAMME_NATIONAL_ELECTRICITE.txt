@@ -1,0 +1,1968 @@
+ REPUBLIQUE DEMOCRATIQUE DU CONGO
+ MINISTERE DE L’ENSEIGNEMENT PRIMAIRE,
+     SECONDAIRE ET PROFESSIONNEL
+
+
+
+
+  SECRETARIAT GENERAL
+
+DIRECTION DES PROGRAMMES SCOLAIRES
+       ET MATERIEL DIDACTIQUE
+
+
+
+
+                 * *
+                  *
+
+
+
+
+        ELECTRICITE
+
+          (CYCLE LONG)
+
+
+
+
+       Enseignement Secondaire
+
+      SECTIONS TECHNIQUES
+         INDUSTRIELLES
+        EDIDEPS 2007
+
+
+
+
+    ENSEIGNEMENT SECONDAIRE
+
+              -oOOo-
+
+
+
+
+SECTIONS TECHNIQUES INDUSTRIELLES
+
+
+
+
+           ELECTRICITE
+
+            (cycle long)
+                                                 - 01 -
+
+
+
+                                   INDICATIONS GNERALES
+
+
+
+LES HUMANITES TECHNIQUES INDUSTRIELLES
+L’enseignement technique industriel sera limité à quatre sections : Mécanique, Electricité,
+Construction et Chimie Industrielle. Chacune de ces sections correspond à un cycle long de quatre
+ans près le cycle d’orientation et donne accès soit aux études supérieures ou universitaires, soit à
+l’emploi (bureaux d’études, bureaux d’entreprises, chantiers, industries, bureaux de préparation du
+travail, ateliers, laboratoires, etc…)
+
+Pour répondre aux exigences de l’emploi, les élèves qui ne poursuivront pas des études supérieures
+feront une période d’entraînement et de spécialisation dans des centres qui constitueront un pont
+entre l’enseignement et l’industrie, sous l’égide d’une Institution appropriée.
+
+COURS GENERAUX
+Les Humanités techniques industrielles assurant la formation générale requise pour l’accès à
+l’enseignement supérieur, les disciplines non spécialisées sont identiques à celles des autres
+sections de l’enseignement secondaire. Sauf avis contraire, les programmes des cours généraux
+sont ceux des humanités scientifiques. Il appartient toutefois au professeur de limiter ses cours aux
+points essentiels lorsqu’il dispos d’un horaire réduit et de tenir compte, dans certaines disciples,
+comme la chimie ou la mathématique, par exemple, des besoins spécifiques de la section. Dès la
+troisième année, le cours de mathématique devra inclure en particulier les premiers éléments de
+trigonométrie.
+
+COURS TECHNIQUES ET COURS SPECIAUX.
+Les cours techniques donnent aux élèves la formation de base qui leur ouvre la porte de différentes
+spécialisations et leur assure la compétence particulière exigée par les divers secteurs de l’industrie
+et les services publics ou privés. Le programme de physique, propre aux sections techniques
+industrielles, est joint à celui des cours techniques.
+
+
+
+
+                                                 -2-
+GRILLE HORAIRE DES QUATRE ANNEES DE COURS GENRAUX
+
+
+                                 3è année        4è année          5è année        6è année
+
+
+
+Religion ou
+Morale                              1+                 1+            1+                1+
+
+
+Histoire                            1                  1              1                 1
+
+Géographie                          1                  1              1                 1
+
+Français                            6                  5              4                 3
+
+Anglais                             4                  2              2                 2
+
+Sociologie                           1                 1              -                    -
+
+Education Physique                  1                  1              -                    -
+
+Mathématique                         6                 6              7                 8
+
+Chimie                              1                  1              1                -
+
+
+
++ Les écoles qui le désirent sont autorisées à ajouter une heure de religion ou de morale.
+
+
+
+
+                                                 -3-
+                                    SECTION ELECTRICITE
+
+                                       TROISIEME ANNEE
+
+                                        COURS SPECIAUX
+
+Physique                                                                1 heure
+Mécanique                                                               2 heures
+Electricité                                                             2 heures
+Technologie                                                              3 heures
+Dessin                                                                  4 heures
+Laboratoire (travaux pratiques)                                          6 heures
+I. OBJECTIFS
+Les tâches qui peuvent être confiées au technicien par les industriels du groupe « Electricité » soit
+à la fin des Humanités Techniques, soit le plus souvent après quelques années de spécialisation,
+peuvent être ainsi définies :
+
+a) Au bureau d’études, le technicien exerce le métier de dessinateur constructeur de machines ou
+   d’outillage.
+
+b) Au bureau de préparation du travail, il se voit confier tous les travaux divers dont les plus
+   importants sont : détermination des opérations de fabrication, commande des matières,
+   prévision des outillages, planning des fabrications, fabrication des opérations.
+
+c) A l’atelier, il est chargé : de l’amélioration des procédés de fabrication en collaboration, d’une
+   part, avec les ingénieurs d’étude ou d’exécution, d’autre part, avec certains ouvriers qualifiés ;
+   du contrôle quantitatif de la production ; de la distribution rationnelle du travail ; de la conduite
+   d’une section d’atelier après un certain nombre d’années de pratique.
+
+
+
+
+                                                  -4-
+d) Au laboratoire industriel, il assure l’exécution d’opérations déterminées de contrôle ou de
+   recherche.
+
+e) Au bureau de normalisation, il dépouille des enquêtes et exécute des tableaux standards.
+
+f) Il conduit un atelier de réparations t d’entretiens.
+
+g) Il conduit les services d’approvisionnement ou de distribution.
+
+La liste des matières inscrites aux programmes a été établie sur ces considérations.
+
+
+II. OBSERVATIONS METHODOLOGIQUES
+
+a) Cours de mécanique
+   Les cours de mécanique est pratiquement le même pour les sections mécanique et électrique. Il
+   a pour but de donner les connaissances théoriques suffisantes en vue            des applications
+   ultérieures. Dans la section électricité, on insistera particulièrement sur la cinématique et la
+   dynamique.
+
+   Mécanique appliquée
+   Ce cours doit permette aux élèves une bonne compréhension des machines motrices : turbines,
+   moteurs à essence et diesel. Le professeur d’électricité industrielle doit pouvoir s’appuyer sur
+   ces données lors de l’étude des groupes électrogènes et des centrales électriques.
+
+   On ne négligera pas l’étude du frottement et de la lubrification.
+
+b) Cours d’électricité
+   Le cours d’électricité comporte deux parties distinctes :
+
+
+
+
+                                                    -5-
+1°) La partie théoriques : CC : 3ème année et 4ème années.
+                           CA : 5ème année.
+
+2°) Electricité industrielle : éclairage et machines CC en 5ème année.
+
+                             Machines à CA, production et transport du courant en 6ème année,
+                             ainsi que quelques autres applications.
+
+On veillera particulièrement à ne pas séparer artificiellement la théorie de ses applications.
+
+Le technicien électricien doit être à même de comprendre les réalisations courantes dans le
+domaine électrotechnique. Il est bien entendu que dans ce domaine les réalisations sont souvent à
+ce point complexes qu’il n’est pas possible de donner au cours d’un seul cycle d’études une
+formation suffisante.
+
+Aussi est-il prévu, aussi bien pour les électriciens que pour les mécaniciens, une période
+complémentaire de spécialisation devant faire suite au cycle normal d’études.
+
+Le cours d’électricité et d’électrotechnique doit pourtant poser des bases solides et aussi complètes
+que possible pour permettre cette spécialisation ultérieure.
+
+c) Cours d’électronique
+   Une section spéciale d’électronique n’ayant pas été retenue pour le moment, le cours
+   d’électronique vise à donner les éléments indispensables pour une spécialisation ultérieure.
+
+d) Technologie
+   Le technicien électricien doit posséder quelques notions élémentaires du travail mécanique.
+   Ces notions devront être acquises en 3ème année.
+
+   On veillera particulièrement à ce que le cours de technologie électrique ne se borne pas à une
+   simple étude des prescriptions.
+                                                   -6-
+
+
+
+
+   L’étude approfondie des appareils BT et HT est indispensable :
+   Etude technologique de l’appareil.
+   Etude du montage et des raccordements.
+   Etude des réglages et mises au point, et…
+
+   Dans cet ordre d’idées, le chapitre sur les relais revêt une importance spéciale.
+
+e) Travaux pratiques
+   La formation pratique du technicien électricien requiert une attention particulière, car elle
+   constitue un aspect non négligeable, pour ne pas dire primordial, de la formation générale.
+
+   Cette formation se situe entre celle de l’ouvrier qualifié et celle de l’ingénieur et doit allier la
+   pratique et la théorie.
+
+   Il est impossible de tout apprendre dans le laps de temps très court réservé à la pratique. Or, le
+   programme est vaste et ne peut envisager une spécialisation totale : le technicien peut être
+   destiné en effet à des emplois très différents, par exemple à un bureau, une centrale, un
+   laboratoire, etc… Il faut donc lui procurer une formation générale de base destiné à préparer
+   son avenir. Par conséquent, l’élève n’effectuera probablement qu’une seule fois à l’école et
+   peut-être même dans sa vie la plupart des travaux.
+
+   Dans la poursuite de cette formation, l’école utilise naturellement des moyens didactiques
+   essentiellement progressifs.
+
+   D’autre part, le technicien doit avoir exécuté lui-même certains travaux afin d’en apprécier les
+   particularités et difficultés. Il pourra ainsi, lorsqu’il commandera, le faire en connaissance de
+   cause, apprécier, sentir les conditions nécessaires à sa réalisation, ce qui garantira la qualité du
+   travail.
+                                                  -7-
+
+
+
+
+   Pour assurer une formation pratique efficace, il serait très souhaitable que les travaux, le cours
+   de technologie et les prescriptions électriques, constituent un tout ordonné, et de préférence
+   donné par un seul professeur dans la même année d’études. Il y a en effet une différence entre
+   le travail proprement dit et la description et le fonctionnement du matériel.
+
+   Les cours de dessin, d’électricité et de mesures trouveront leur application dans les séances de
+   travaux pratiques.
+
+   Enfin, l’élève aura déjà été préparé aux travaux élémentaires de mécanique.
+
+   Pour pallier le peu de temps réservé aux travaux pratiques, le programme de la période de
+   spécialisation et d’adaptation à l’industrie prévu en fin de cycle devra accorder un temps
+   largement suffisant aux exécutions.
+
+f) Mesures et essais.
+   Une attention toute spéciale sera accordée aux laboratoires des mesures électriques et d’essais
+   des machines.
+
+   Compte tenu du matériel disponible (qui devra être largement suffisant vu l’importance du
+   cours pour les futurs techniciens), on organisera les séances de laboratoires, de telle manière
+   que chaque groupe ait l’occasion d’effectuer plusieurs fois les mesures et essais principaux.
+
+   On veillera à ce que le nombre d’élèves pour chaque séance ne dépasse pas celui qu’un
+   professeur peut normalement diriger.
+
+   Il appartient à la Direction scolaire d’élaborer son horaire en conséquence.
+
+   EXEMPLE
+   En 5ème année, on dispose de 8 heures.
+
+   Diviser la classe en quatre groupes A, B, C,
+
+                       (A.B. Atelier      (4h.)
+   LUNDI               ( C. Mesures       (2h.) permuter après 2 heures
+                       ( D. Electroniques (2h.)
+
+
+
+
+                                                        -8-
+                        (C.D. Atelier           (4h.)
+   JEUDI                ( A. Mesures            (2h.) permuter après 2 heures
+                        ( B. Electronique       (2h.)
+
+   On pourrait aussi alterner les séances de laboratoire tous les quinze jours.
+
+   (1er SEMAINE)
+                      (A.B. Atelier              (4h.)
+   LUNDI              ( C. Mesures               (4h.)
+                      ( D. Electronique           (4h.)
+
+                       (C.D Atelier              (4h.)
+   JEUDI               ( A. Mesures              (4h.)
+                        ( B. Electronique        (4h.)
+
+   (2ème SEMAINE)
+                      (A.B. Atelier               (4h.)
+   LUNDI              ( D. Mesures               (4h.)
+                      ( C. Electronique           (4h.)
+
+                       (C.D Atelier              (4h.)
+   JEUDI               ( B. Mesures              (4h.)
+                       ( A. Electronique          (4h.)
+
+   Il peut se faire qu’il n’y ait pas de laboratoire d’électronique pendant le premier semestre. Il
+   serait, dans ce cas, remplacé par du laboratoire de mesures.
+
+g) Dessin
+   Le dessin étant le « langage » des techniciens, ce cours revêt une importance particulière.
+
+   Le dessin fait en quelque sorte la synthèse des notions théoriques reçues aux différents cours.
+
+   Il permet à l’élève de préciser certaines notions et de s’assurer de sa compréhension exacte.
+
+   La formation dans ce domaine doit permettre :
+   1) La lecture facile des plans t schémas d’installations ;
+
+
+
+
+                                                -9-
+     2) La réalisation d’ensembles, de câblages, de schémas, etc…
+     3) La connaissance des symboles et notations habituellement utilisés.
+     ème
+En 3     année, on s’attachera aux éléments du dessin technique en général. Ce travail sera
+complété en 4ème. On passera ensuite progressivement aux schémas d’installations électriques,
+sans toutefois négliger le dessin mécanique.
+
+En 5ème année, et en application des notions étudiées, les élèves auront à faire le relevé de quelques
+installations existantes.
+
+La 6ème année sera, en grande partie, consacrée à l’élaboration d’un projet. Celui-ci doit être choisi
+de manière à provoquer une « recherche » et devra impliquer quelques –unes au moins des
+connaissances acquises dans les différentes branches techniques.
+
+
+III. PROGRAMME DE TROISIEME ANNEE.
+
+PHYSIQUE (1 h/s)
+
+Généralités et fluides.
+Révision des notions sur les dimensions et unités – Pression : définition, mesure, unités, principe –
+Principe de Pascal : liquides et gaz ; application : presse hydraulique, élévateur d’autre – Principe
+d’Archimède : expérience, énoncé, formule, démonstrations mathématiques.                Applications.
+Exemple du baroscope – Equilibre des liquides : vases communicants à un t plusieurs liquides :
+Pression sur le fond, pression sur les parois. Les barrages – Corps flottants : expériences, formule,
+équilibre latéral. Applications – Densimétrie : méthodes élémentaires, pycnomètre, balance de
+Mohr ; aéromètres : Nicholson, Fahrenheit, acidimètre, etc… - Tension superficielle et capillarité –
+Diffusion et osmose – Pression atmosphérique : notion, existence, mesure, influence de l’altitude.
+Prévision du temps. Divers types de baromètres – Hydrodynamique : Loi de Bernoulli, Ventury-
+Pompes à gaz – Notions de vacuométrie – Aérodynamique : Loi de Ventury – Traînée – Pertance –
+Vol de l’avion – Phénomènes transsoniques.
+
+
+
+
+                                                - 10 -
+MECANIQUE (2 h/s)
+But du cours : donner un aperçu général de la mécanique.
+Méthode expérimentale.
+
+A. Etude sommaire des principaux mécanismes.
+   1°) Courroie.
+   2°) Roues de friction.
+   3°) Engrenages cylindriques droits.
+   4°) Réducteur de vitesse et boîtes de vitesse.
+   5°) Harnais d’engrenage.
+   6°) Pignon et crémaillère.
+   7°) Bielle à manivelle.
+   8°) Excentrique à collier.
+   9°) Balancier à coulisse.
+   10°) Cames.
+
+B. Statique
+   1°) Forces : notion, éléments, mesure.
+       Théorème de Varignon.
+       Action et réaction, applications.
+       Déformations et contraintes.
+       Composition de forces : recherche du centre de gravité.
+   2°) Forces et mouvements.
+   3°) Forces et poids.
+   4°) Forces centripète et centrifuge.
+   5°) Couples : définition. Effet dynamique, moment d’inertie.
+
+C. Cinématique
+   1°) Généralités sur le mouvement.
+   2°) Mouvement linéaire uniforme.
+   3°) Mouvement circulaire uniforme
+       Vitesse angulaire – Vitesse circonférentielle.
+   4°) Mouvement uniformément accéléré.
+
+   NOTE : Il serait utile de faire cette étude avant d’aborder le B.2.
+
+
+
+
+                                                  - 11 -
+D. Dynamique
+   1°) Travail : définition
+       Travail d’une force
+       Travail d’un couple
+   2°) Puissance : définition
+                  - formule
+                  - mouvement circulaire.
+   3°) Energie cinétique
+       Energie potentielle.
+   4°) Machines simples : leviers – balances – poulies – palans.
+
+E. Notions sur les unités et les changements d’unités.
+
+   Equations aux dimensions dans les systèmes c – g – s et m – k – s
+   Longueur, surface, volume, vitesse, accélération, force, couple, travail, puissance.
+
+ELECTRICITE (2 h/s)
+
+Electrostatique :
+Notions de charge – lois de coulomb.
+
+Courant continu :
+   1°) Courant électrique – effets – circuit – sens.
+   2°) Quantité d’électricité – intensité – tension – résistances.
+   3°) Loi d’ohm – expériences et applications – (résistance morte).
+   4°) Loi de Pouillet – résistivité et applications.
+   5°) Association de résistances – série – parallèle – exercices.
+   6°) Magnétisme – notions sur les aimants – Loi de Coulomb – champ et flux magnétiques.
+   7°) Electromagnétisme.
+
+
+
+
+                                                - 12 -
+
+
+
+     a) Champ magnétique des courants
+         Expérience avec conducteur rectiligne – spire et bobine.
+         Applications aux appareils de mesure.
+         Principe du moteur à courant continu.
+
+     b) Induction électromagnétique
+        Expériences sur la loi de Lenz.
+        Principe des dynamos.
+
+8°) Effets chimiques du courant
+
+     a) Electrolyse – principe – lois qualitatives – applications (métallurgie).
+
+     b) Piles – principes – grandeurs caractéristiques – types fém. tension – débit –
+        association de piles.
+
+     c) Accumulateurs – étude expérimentale.
+
+9°) Effets calorifiques du courant.
+    Loi de Joule – notions de puissance – résistance électrique – exercices.
+
+TCHNOLOGIE (3 h/s)
+
+1. Introduction
+   Aperçu des différents procédés d’usinage.
+   Choix du procédé d’usinage : nature des surfaces.
+   Facteurs influant sur le choix du procédé.
+
+2. Ajustage
+   Etude de la lime : classification, formes et remarques.
+   Etude de l’étau : sortes, entretien, emploi et remarques.
+   Les burins : taille, fabrication et trempe.
+   Instruments de mesure et de contrôle : Vernier, comparateur et pied de profondeur.
+   Le traçage en l’air : plans de référence et remarques.
+   Machines à percer : Chignole – portative électrique- sensitive – multibroches radiales.
+
+
+
+
+                                                - 13 -
+   Le perçage : caractéristiques, formules et vitesse.
+   Alésage à main : caractéristiques, types et pratiques.
+   Détermination du diamètre de perçage : système WW et SI.
+   Taraudage : les tarauds, fabrication – caractéristiques – système WW et SI, taraudage
+                mécanique.
+   Filotage : système – type – travaux pratiques.
+   Combrage : développement sur fibres – outils et formules.
+   Rivetage : outils – pratique et accessoires.
+   Etamage et soudure à l’étain – composition et pratique.
+
+
+3. Quelques opérations spéciales
+
+   Rabotage : courses, outils, porte-outils, machines à raboter, étaux-limeurs, dispositifs intérieurs,
+   commandes d’avance, travail de l’outil.
+   Pratique du rabotage, réglage de l’outil, travaux de finissage.
+   Raboteuse, organes, commande et vitesse.
+   Meulage : but, étude de l’outil, caractéristiques, vitesse de rotation, débit, fini.
+   Matriçage : réalisation, mode d’action, forces, poinçonnage, découpage.
+   Fixation des pièces : ablocage et principes, serrage sur table, équerre, plateau magnétique,
+                         mandrin à mors – entre pointes.
+
+   4. Tournage (les différentes opérations seulement de la section mécanique)
+
+       1°) Description.
+       2°) Cinématique du tour : moteur, broche, tringle, vis, mère- trainard et chariots.
+       3°) Outils de tour : angle de coupe, affûtage.
+       4°) Vitesse de coupe : étude élémentaire, diagrammes, calcul des temps.
+
+
+
+
+                                                    - 14 -
+        5°) Montage des pièces sur le tour (insister en particulier sur les montages spéciaux :
+            plateaux : équerres)
+        6°) Cylindrage.                                   7°) Surfaçage.
+        8°) Tronçonnage.                                  9°) Perçage et alésage.
+        10°) Moletage.                                   11°) Tournage conique.
+        12°) Filetage – filets triangulaire – filets carrés ou trapézoïdaux – vis à plusieurs entrées –
+             procédés spéciaux de filetage (sur butée, indicateur de filetage, procédés de
+             dégrossissage rapide).
+
+        Tournage : But – caractéristiques – outils – réglages
+                   (section) vitesse de coupe – avance automatique – sortes
+                   (Electri-) de tours – montage des pièces accessoires –
+                   (cité)     pincement des outils – propriétés des outils.
+
+                               Aciers à coupe rapide – « stellite » - les carbures métalliques.
+
+DESSIN (4 h/s)
+
+-Technique de l’emploi des instruments de dessin (dessin au crayon).
+- Les écritures – la disposition.
+- Représentation intuitive des solides. Apprendre à « voir » une pièce. Croquis à main levée –
+ respect des proportions. Recherche des axes de symétrie.
+- Principe de cotation : côtes fonctionnelles et d’assemblage – côtes secondaires.
+- Remise au net (crayon)
+- Représentations conventionnelles : filetages, six pans, roues dentées, ressorts – usage des
+ normes.
+- Exercices d’après pièces modèles simples et d’après vues en perspective ou en projection
+ isométrique.
+- Dessin d’atelier de pièces simples.
+
+
+
+
+                                                     - 15 -
+ATELIER (6 h/s)
+ 1°) Conserver un plan.
+ 2°) Conserver deux plans parallèles.
+ 3°) Réalisation d’un angle de 90°.
+ 4°) Ajustage des six faces d’un parallélipède rectangle, parallèles deux à deux.
+ 5°) Traçage en l’air en vue d’un exercice de bédanage et de burinage.
+ 6°) Burinage et bédanage : plat, parallèle, d’équerre et à mesure.
+ 7°) Sciage : droit, parallèle, oblique, à mesure.
+ 8°) Suivant un schéma déterminé : traçage combiné des arcs de cercle pour la préparation du
+     forage.
+ 9°) Perçage : de part en part – borgne – oblique.
+10°) Limage d’un parallélipipède rectangle à dimensions données.
+11°) Exercices de rivetage.
+12°) Exercices de chanfreinage à 45°.
+13°) Exercice de taraudage.
+14°) Exercices de filetage.
+15°) Exercices de pliage et de débosselage.
+16°) Exercices de forgeage.
+17°) Exercices de soudage et d’étamage (étain).
+18°) Exercices de montage et de démontage.
+19°) Ajustage d’un ensemble (2 pièces)
+20°) Ajustage d’un ensemble (avec les exercices combinés).
+21°) Ajustage précis – examen de fin d’année.
+22°) Exercices simples de tournage –
+23°) Traçage sur tôle.
+     Exercices de démontage, remontage, remise en état ou remplacement de pièces
+     mécaniques (flasques, roulements, coussinets, etc…).
+
+
+
+
+                                                 - 16 -
+                                    SECTION ELECTRICITE
+                                     QUATRIEME ANNEE
+                                       COURS SPECIAUX
+
+
+
+
+Physique                                                      2 heures
+Mécanique                                                     2 heures
+Electricité                                                  4 heures
+Technologie                                                   2 heures
+Dessin                                                        4 heures
+Laboratoire                                                   2 heures
+Travaux pratiques                                            5 heures
+
+
+I. OBJECTIFS
+   Les objectifs et méthodes définis par les programmes de troisième année restent valables en
+   quatrième année. Mais il n’est pas superflu de rappeler ici l’importance d’une formation
+   générale qui devra, d’une part, favoriser l’assimilation des données techniques et permettre,
+   d’autre part, l’accès aux études supérieures. Cette formation doit donner aux futurs
+   techniciens toutes ls qualifications qu’exigent des postes de responsabilité aussi bien dans le
+   domaine des rapports sociaux et humains que dans celui de la compétence technique
+   proprement dite.
+
+   Le programme des cours généraux est, comme en troisième année, celui des Humanités
+   scientifiques, compte tenu des adaptations imposées par un horaire réduit ou par la pré-
+   formation nécessaire aux cours techniques et pratiques.
+
+II. OBSERVATIONS METHODOLOGIQUES
+    Voir les observations méthodologiques de la Troisième année.
+
+III. PROGRAMME DE QUTRIEME ANNEE
+
+    PHYSIQUE (2 h/s)
+
+   Chaleur et thermodynamique
+
+
+
+
+                                                - 17 -
+Lois de Boyle Mariotte : expérience, énoncé, formule, applications, les manomètres, les aérostats,
+loi de Dalton.
+
+Thermométrie : Définition de température, phénomènes de dilatation, différents types de
+thermomètres, graduation d’un thermomètre, échelles thermométriques.
+
+Dilatation : Les solides, dilatation linéaire, superficielle et cubique ; les liquides, dilatation
+apparente et absolue ; détermination du coefficient de dilatation du mercure, les gaz, lois de Gay-
+Lussac, loi générale des gaz parfaits ; détermination de la constants R.
+
+Colorimétrie : Notion de chaleur, calorie, valeur en eau, chaleur spécifique ; détermination de
+valeurs en eau et de chaleurs spécifiques.
+
+Vaporisation et liquéfaction : Température d’ébullition et de liquéfaction, chaleur de vaporisation,
+chaleur de liquéfaction, influence de la pression, obtention des basses températures.
+
+Fusion et solidification : Température de fusion et de solidification, chaleurs de fusion et de
+solidification, maximum de densité de l’eau, phénomène de surfusion, influence de la pression.
+
+Etude des vapeurs : Vapeurs sèches et vapeurs saturants, évaporation et ébullition, tension de
+vapeur, hygrométrie.
+
+Thermodynamique : Principe, état initial et final, transformations isotherme et adiabatique ; cycle
+de Carnot, variation d’entropie.
+
+Applications : vapeur saturée, surchauffée ; détente de la vapeur, écoulement des vapeurs : th. De
+Bernouilli – Venturi.
+
+Chauffage : combustion, combustibles, contrôle de la combustion.
+                                               - 18 -
+
+
+
+
+MECANIQUE (2 h/s)
+
+Cinématique :
+- Le mouvement : généralités et définition – Mouvement rectiligne uniforme : lois
+   mathématiques, représentations graphiques et application – Mouvement rectiligne
+   uniformément accéléré : vitesse moyenne, étude expérimentale, lois mathématiques,
+   représentation graphique.
+
+-   Mouvement rectiligne uniformément retardé : lois mathématiques, représentations graphiques :
+
+-   Lois de la chute des corps : étude expérimentale, relations mathématiques ;
+
+-   Mouvement circulaire uniforme : lois mathématiques, représentations graphiques ;
+
+-   Mouvement rectiligne périodique (à loi des espaces sinusoïdale) : descriptions ; relations
+    mathématiques, représentation graphique ;
+
+-   Mouvement quelconque d’un point : lois, représentations graphiques ;
+
+-   Hodographe d’un mouvement uniformément varié : définition, étude sommaire ;
+
+-   Hodographe d’un mouvement           quelconque :    composante    normale,    tangentielle   (de
+    l’accélération), application ;
+
+-   Composition de deux mouvements rectilignes uniformes ;
+
+-   Composition de deux mouvements quelconques - Mouvement hélicoïdal ;
+
+-   Cinématique des solides : translation, rotation, mouvement hélicoïdal.
+
+Statique :
+- Les forces : notion, éléments, représentation vectorielle, équilibre de deux forces, action et
+    réaction, mesure des forces et décomposition.
+
+
+
+
+                                               - 19 -
+-   Composition des forces : deux forces concourantes, plusieurs forces concourantes, deux forces
+    parallèles de même sens, deux forces parallèles de sens contraire, plusieurs forces parallèles.
+    Centre des forces parallèles.
+
+-   Couples : moment d’un couple, représentation vectorielle, moment d’une force par rapport à un
+    point, théorème de Varignon, moment d’une force par rapport à un axe ou un plan, composition
+    des couples.
+
+-   Réduction des forces appliquées à un solide.
+
+ELECTRICITE (4 h/s)
+
+Généralités
+- L’électricité et la matière : Principe expérimental, molécule, atome, structure de l’atome.
+
+-   Electrostatique : Phénomènes fondamentaux – Influence électrostatique – machine
+                      électrostatique.
+
+-   Energie – Travail mécanique, puissance mécanique, formes et conservation de l’énergie.
+
+Courant continu
+- Courant électrique, propriétés générales
+
+-   Quantité d’électricité – Intensité d’un courant – Mesure.
+
+-   Actions calorifiques du courant : Différence de potentiel – Tension – Mesure – Energie et
+    puissance, mesure – Lois de Joule – Résistance électrique – Conséquences de l’effet Joule.
+
+-   Lois d’Ohm pour une résistance morte – Applications mesure de résistance.
+
+-   Résistance d’un fil conducteur – Lois de Pouillet, résistivité, facteurs – Lois de Mathiessen.
+
+-   Association de résistances – Série, applications, Parallèle, applications.        Série-parallèle,
+    applications.
+
+
+
+
+                                                - 20 -
+-   Actions chimiques du courant :
+
+    a) Electrolyse : Principe – Lois qualitatives et quantitatives – Formule de Faraday –
+                     Applications industrielles.
+
+    b) Piles : Principe – Grandeurs caractéristiques – Sortes de piles – F.é.m. – Tension –
+              Débit- Association de piles, en série, parallèle, mixte.
+
+    c) Accumulateurs : Principe - F.é.m.- Accumulateurs au plomb – Accumulateurs alcalins –
+                       Batteries d’accumulateurs – Rendement (pertes, en quantité, en énergie)
+
+
+Généralisation de la loi d’Ohm.
+
+Circuit fermé avec un générateur et une résistance pure.
+
+-   Circuit fermé avec un générateur et, en série, un récepteur électrolytique, une résistance pure.
+-   Circuit fermé avec plusieurs générateurs, récepteurs avec F.c.é.m. et des résistances pures (le tout
+    en série).
+-   Lois de Kirchhoff – Règle des noeuds – Règle des mailles.
+-   Mesure de résistance au pont de Wheatstone.
+
+
+Magnétisme
+
+-   Les aimants : Existence – Aimants naturels et artificiels – Formes d’aimants – Propriétés
+                  magnétiques.
+
+-   Lois de Coulomb : Formule de Coulomb – Masse magnétique – Moment magnétique –
+                      Intensité d’aimantation.
+
+-   Cham magnétique : Définition – Intensité du champ – Lignes de force – Champ magnétique
+                      uniforme – Flux magnétique – Champ magnétique terrestre.
+
+
+
+
+                                                  - 21 -
+Electromagnétisme
+
+-   Champ magnétique des courants : Expérience d’Oersted – Courant rectiligne – Courant
+    circulaire – Solénoïde – Enroulement torique.
+
+-   Aimantation par influence : Temporaire – Permanente – Perméabilité magnétique et
+                                coefficient.
+
+-   Induction magnétique : Vecteur d’induction – Unités – Lignes d’induction.
+
+Flux d’induction magnétique : Définition – Mesure – Loi de conservation.
+
+Courbes d’aimantation du fer : Mesure de perméabilité des corps magnétiques.
+
+Hystérésis (cycles et pertes)
+
+Circuit magnétique : Résistance – Force magnétomotrice – Coefficient d’Hopkinson.
+
+Electro - aimants : Description – Formes – Force portante.
+
+
+Actions électromagnétiques
+
+-   Chant magnétique uniforme sur un courant rectiligne :
+    Expérience – Direction et sens de la force électromagnétique – Formule de Laplace -
+    Conducteurs parallèles.
+
+- Travail des forces électromagnétiques : sur un élément de courant, sur un circuit fermé – Loi
+  du flux maximum. Principe du moteur électrique.
+
+Phénomènes d’induction : Existence des courants induits F.e.m. induite dans un élément
+conducteur par déplacement relatif – F.e.m. induite dans un circuit quelconque. Formule du flux
+coupé. Self-induction. Courants de Foucault.
+
+Condensateurs statiques : Révision des notions d’électrostatique – Principe – Circuits avec
+condensateurs – Types de condensateurs – Association de condensateurs en série, en parallèle –
+Usages.
+                                                - 22 -
+
+
+
+
+TECHNOLOGIE (2 h/s)
+
+La lampe de soudeur – Pratique du soudage à l’étain.
+
+
+Soudure oxyacétylénique : manomètres, sécurité, travaux pratiques, oxygène, acétylène.
+
+Soudure électrique : Principe, mode opératoire, pratiques, électrodes – Accessoires.
+
+Brasage : But, composition, pratique.
+
+Technologie de l’outillage de l’électricien
+
+Matériaux utilisés en électricité : Conducteurs métalliques – Conducteurs liquides – Isolants
+                                    solides, Liquides et gazeux.
+
+Utilité de l’établissement des normes techniques.
+
+Normes belges et équivalences étrangères d’application au Congo.
+
+Description et prescriptions : Fils et câbles nus sur la base des normes applicables au Congo – Fils
+et câbles isolés au caoutchouc (même remarque) – Fils et câbles isolés aux matières termo-
+plastiques (idem).
+
+
+Description – Construction – Prescriptions et Schémas de principe du petit appareillage B.T.
+
+- Boîte de dérivation – Bouton de sonnerie, interrupteurs, commutateurs – Douilles (sockets),
+  prises de courant, fiches – Coupe-circuits et fusibles – Sonnerie – Lampes à incandescence –
+  Lampes baladeuses – Appareils ménagers, fer à repasser, à couder, bouilloire, réchauds, chauffe-
+  eau, radiateurs, fours, cuisinières – Piles et accumulateurs.
+
+
+
+
+                                                - 23 -
+DESSIN (4 h/s)
+
+Rappel des notions générales du dessin technique et principes pour l’exécution correcte croquis.
+
+Croquis et mise au net, au crayon, puis à l’encre sur papier dessin, de pièces d’équipement
+d’appareillage électrique.
+
+L’élève consultera la documentation des catalogues mise à sa disposition afin de constater
+comment les fabricants représentent cet appareillage sous forme simplifiée tout en cotant
+l’essentiel.
+
+A côté de chaque appareil figurera sa représentation conventionnelle. On commencera avec des
+pièces simples, familières à l’atelier d’électricité.
+
+En corrélation avec les cours techniques, reproduction des schémas de montages simples : lumière,
+sonnerie et téléphonie. En fin d’année, l’élève sera familiarisé avec les appareils électriques
+d’usage courant ; il sera capable de les représenter sous les formes conventionnelles et pratiques.
+
+Détails.
+Représentation des symboles graphiques pour les schémas électriques : Nature des courants –
+Mode de connexion – Organes électriques – Canalisations électriques – Appareils de
+transformation et de production d’énergie électrique – Appareillages – Interrupteurs.
+
+Schémas d’installation d’éclairage : simple allumage, double allumage, va et vient, cage d’escalier,
+minuterie, chambre d’hôtel, lampe avec interrupteur bipolaire.
+
+Epissures
+
+Sonneries : Dessin d’une sonnerie – 1 sonnerie et 1 bouton – 2 sonneries et 1 bouton – Plusieurs
+sonneries actionnées par 1 bouton et 1 commutateur – Sonnerie avec tableau indicateur.
+
+Dessin d’un interrupteur, d’une boîte de dérivation, d’une prise de courant, d’une douille (socket).
+Dessin de charpentes simples (logettes, etc…)
+
+
+
+
+                                                  - 24 -
+MESURES ELECTRIQUES (2 h/s)
+
+Expériences à faire en groupe sous la direction du professeur. Les leçons consacrées à ces
+expériences et mesures sont organisées en tenant compte de la progression du cours d’électricité
+théorique.
+
+Ces séances seront de préférence conduites par le professeur de cours théorique.
+
+Expériences d’électrostatique : Charge, champ électrique, tube de Braun – Action calorifique du
+courant : fusible, échauffement – Vérification de la loi d’Ohm pour divers circuits – Calcul –
+Vérification expérimentale – Vérification de la loi de Pouillet, de la loi de Mathiessen – Chute de
+tension le long d’un conducteur – Circuit diviseur de tension – Electrolyse – Réalisation
+expérimentale d’une pile – Association de générateurs – Mesure de résistance interne – F.c.e.m. –
+Loi des nœuds et des mailles : expérience, calculs – Expérience du passage du courant dans le gaz
+– Expérience sur le magnétisme – Expérience sur l’électro-magnétisme - Phénomène d’induction
+électro-magnétique – Expérience sur les condensateurs.
+
+Les notions théoriques sur les mesures seront données au début du second trimestre. Les mesures
+faites par les élèves commencent après l’exposé de ces notions.
+
+Vérification de la loi d’Ohm – Variation de I en fonction de V – Variation de I en fonction de R –
+Variation de V en fonction de I – Vérification de la loi de Joule – Mesure de la chaleur dégagée –
+Mesure d’un travail mécanique effectué – Vérification qualitative de la loi de Faraday – Variation
+de la résistance avec la température – Vérification des lois de Kirchoff – Circuit série – Circuit
+parallèle – Circuit mixte – Mesure d’une résitivité spécifique – Mesure d’une résistance interne.
+
+
+ATELIER ( 5 h/s)
+
+Soudage : sur fer à souder (étain), au chalumeau (acétylène et oxygène), à l’arc (électrodes).
+
+
+
+
+                                                - 25 -
+Construction
+
+Formation de base : Emploi de l’outillage de l’électricien – Travail au fer à souder.
+
+Préparation des matériaux : Connexions volantes : monopolaires, bipolaires, tripolaires et
+tétrapolaires – Cordons, allonges, lampe témoin, baladeuse – Résistances fixes et additionnelles,
+shunt – Fer à souder – Façonnage – Redressement, pliage – Terminaison (dénudage, étamage,
+œillets) de fil nu et résistant, souple et isolé.
+
+Construction proprement dite : Bobinage de résistances (réchaud, fer à souder, fer à repasser) –
+Ampèremètre thermique – Disjoncteur thermique simple.
+
+
+Installations
+Préparation : Etablissement du schéma du circuit – Traçage et perçage sur mur et sur bois – Emploi
+du fil à plomb , du niveau, du cordeau – Tamponnage et chevilles divers.
+
+Placement :
+1 appareil + 1 commande           = simple allumage
+1 appareil + 2 commandes          = va et vient
+1 appareil + 3 commandes          = cage d’escalier
+1 appareil + plusieurs commandes = alarme
+2 appareils + 2 commandes         = Chambre d’hôtel
+2 appareils + plusieurs commandes = sonnerie et tableau ; réchauds, cuisinières, etc…
+
+Appareils de fixation   : attache fil, rosace.
+Appareils de commande : interrupteur, commutateur, inverseur.
+Appareils d’utilisation : douilles, sonnerie.
+Appareils de liaison    : boîte de dérivation
+Appareils de connexion : prise de courant.
+
+Raccordements : Conducteurs et appareils – Jonctions et dérivations.
+
+Essai
+Appareils et matériel : utilisation normale et limitée.
+Installation : mise sous tension d’installations lumineuses et sonores.
+                                                     - 26 -
+
+
+
+
+Mise au point : calibrage de fil fusible, section des conducteurs.
+
+Calculs : intensités, densité de courant, fusible.
+
+Exploitation
+Dépannage d’une lampe, d’un fusible.
+Réparation : contacteur, inverseur, commutateur, interrupteur ; fer à souder, fer à repasser, réchaud,
+résistances fixes et variables.
+
+Surveillance
+Batteries stationnaires ou non, alcalines ou acides.
+
+- Entretien, état des plaques, niveau et densité de l’électrolyte.
+
+Vérifications : (anomalies possibles) – Température à la normale – Porte de courant – Calibre
+inexact des fusibles – Présence de court-circuit accidentel ou intermittent – Points chauds ou non-
+isolés.
+
+
+
+
+                                                     - 27 -
+                              SECTION ELECTRIQUE
+                                CINQUIEME ANNEE
+                                  COURS SPECIAUX
+
+Physique                                                  1 heure
+Mécanique                                                 2 heures
+Electricité                                                2 heures
+Electricité industrielle (mach. Electriques)               3 heures
+Electronique                                               2 heures
+Technologie                                                2 heures
+Dessin                                                     3 heures
+Labo. (mesures électriques)                                2 heures
+Laboratoire électronique                                   2 heures
+Atelier                                                    4 heures
+
+
+I. OBJECTIFS.
+
+Rappelons que la formation générale continue à préparer l’élève pour l’accès aux études
+supérieures. Dans le cas contraire, cette même formation permettra au technicien industriel de
+l’électricité de faire son apprentissage à des postes de commande dans l’industrie.
+
+Le programme des humanités techniques de 5ème année, comme les précédents, esquisse la matière
+à développer, laisse au Professeur une certaine initiative en ce qui concerne l’organisation et la
+préparation des cours.
+
+Sans vouloir revenir sur les objectifs déjà établis, on notera que, conformément à la règle de toute
+éducation, il faut, du même coup, informer les jeunes esprits et les formes selon des méthodes qui
+requièrent l’association du gestion et du savoir.
+
+Distribuer les connaissances expérimentales et développer une habitude de réflexion propre au
+technique, voilà les deux facteurs qui contribuent à donner aux élèves la véritable maturité d’esprit
+nécessaire aux techniciens.
+                                               - 28 -
+
+
+
+
+Les professeurs des cours généraux continueront à suivre de très près les programmes de la section
+scientifique de l’Enseignement Secondaire. On devra cependant insister sur tout ce qui peut tenir
+lieu d’une préformation dans le domaine technique, notamment en mathématique et en chimie dont
+l’organisation du cours est prévue dans le fascicule ADM4, page 5.
+
+II. OBSERVATIONS METHODOLOGIQUES
+
+Voir les observations méthodologiques de la Troisième année. Dès la 5ème année le cours
+d’électronique se propose de poser les bases pour une spécialisation ultérieure dans ce domaine.
+
+III. PROGRAMME DE CINQUIME ANNEE
+
+PHYSIQUE (1 h/s)
+
+Optique et phénomènes périodiques
+L’étude graphique et mathématique des phénomènes sera plus approfondie.
+
+Sources de lumières – nature de la lumière.
+
+Rayons et faisceaux lumineux. Trajectoires – accidents vitesses – image.
+
+Miroirs plans : lois de la réflexion – nature de l’image – Les miroirs angulaires – Etude du sextant
+– étude du comparateur d’angles – Défauts des miroirs.
+
+Réfraction de la lumière : Etude expérimentale du passage : air – eau – verre. Détermination de
+l’indice de réfraction – Réflexion totale et angle limite.
+
+Surfaces de séparation planes : Faces planes – détermination de la déviation – Prisme –
+détermination de la déviation. – Recherche de l’angle minimum de déviation. Remarque sur la
+décomposition de la lumière.
+
+Les milieux à faces courbes : Les lentilles – Lois – Construction des images et étude mathématique
+de celles-ci - Défauts des lentilles et corrections.
+
+Etude des quelques appareils optiques : La loupe, le microscope, le télescope. – La lunette, les
+jumelles, le télémètre. – Le périscope.
+
+Notions de photométrie et des unités employées.
+                                                 - 29 -
+
+
+
+Phénomènes périodiques :
+
+Généralités, période, fréquence, amplitude, vitesse, longueur d’onde.
+
+Mécanique : vibrations transversales et longitudinales, cordes vibrantes, ondes stationnaires, barres
+vibrantes ;
+
+Composition d’ondes parallèles : même fréquence, fréquences différentes, battement –
+Composition d’ondes : figures de Lissajous ;
+
+Notions d’acoustique : intensité, hauteur, timbre, vitesse du son ; instrument de musique, la
+gamme, mesure d’une longueur d’onde ;
+
+Les phénomènes d’interférences en mécanique, en acoustique, en optique. – Expérience, études
+graphiques et mathématiques ;
+
+La polarisation des ondes (premières notions).
+
+
+MECANIQUE (2 h/s)
+
+Dynamique : Principe d’inertie, loi fondamentale de la dynamique, moment d’inertie, travail
+mécanique, travail d’un couple, puissance mécanique, puissance d’une force en mouvement de
+translation, puissance d’un couple, système d’unités C.G.S. – M.K.S., énergie cinétique d’un point
+matériel, énergie cinétique d’un corps en mouvement de translation, énergie cinétique d’un corps
+en mouvement de rotation, énergie cinétique d’un corps en mouvement hélicoïdal, P.D² d’un
+volant, théorème de la variation de l’énergie cinétique, conservation et transformation de l’énergie,
+théorème des travaux virtuels, force centrifuge, applications de la force centrifuge, équilibrage des
+corps tournants.
+
+ELECTRICITE ( 2 h/s).
+
+Courant alternatif
+
+Propriétés générales : Définitions, période, fréquence ; effets du courant alternatif.
+                                                 - 30 -
+
+
+
+
+Courants alternatifs sinusoïdaux : Définition, représentation mathématique, déphasage de 2
+courants de même fréquence, représentation vectorielle de tensions ou de courants, règle de
+Fresnel.
+
+Valeurs efficaces : Intensité – Tension.
+
+Circuits parcourus par un courant alternatif : Résistance pure, inductance pure, capacité pure,
+impédance, résistance inductive, résistance inductive et condensateur en série, résonance et
+condition, résistance inductive et condensateur en parallèle, circuit bouchon et résonance.
+
+Puissance : Tension active et tension réactive, courant watté et déwatté, puissance active – réactive
+– apparente, unités de puissance, énergie active – énergie réactive, facteur de puissance (définition,
+influence, amélioration).
+
+Courants polyphasés : Tensions triphasées, système diphasé, système hexaphasé, courants
+triphasés : montage étoile, montage triangle, comparaison entre les 2 montages – Mesure de la
+puissance absorbée par un récepteur triphasé : (distribution 4 fils, distribution 3 fils, méthode des 3
+wattmètres).
+
+
+ELECTRICITE INDUSTRIELLE (3 h/s)
+
+Technique de l’éclairage
+Généralité : Rayonnement visible – sensibilité de l’œil, grandeurs et unités photométriques, lois
+générales de l’éclairement, cellules photo-électriques, mesure des grandeurs photométriques,
+notions sur la vision.
+
+Sources de lumière : Lampes à arcs, lampes à incandescence, lampes à décharge ; types de lampes
+à décharge : (à vapeur de sodium, à vapeur de mercure à moyenne pression, à vapeur de mercure à
+haute pression, lampes à lumière mixte, lampes au néon, lampes fluorescentes à cathodes chaudes,
+lampes fluorescentes à cathodes froides, lampes à rayons ultra-violets, lampes à rayons infra-
+rouges).
+                                                - 31 -
+
+
+
+
+Appareils d’éclairage : Principe, types.
+
+Projets d’éclairage : Eléments sur le calcul des installations, quelques exemples simples.
+
+Electro-aimants : Calcul d’un électro-aimant, applications des électro-aimants : électros de levage,
+sonnerie à trembleur et annonciateur téléphonique, relais, plateaux et mandrins magnétiques,
+disjoncteurs à minima de tension, disjoncteurs à minima d’intensité, frein électromagnétique.
+
+Petits générateurs : Tension de contact, effets Peltier, transformation de chaleur en électricité :
+Thermo-couple et application ; transformation de l’énergie lumineuse en énergie électrique :
+cellules photo-voltaïques ; transformation de l’énergie mécanique en électricité et vice-versa :
+quartz piézoélectrique et application.
+
+Machines à courant continu
+Dynamos à courant continu : Dynamo-Shun : Principe, caractéristiques à vide – en charge, usages.
+
+Dynamo-séris : Principe, caractéristiques à vide – en charge, usages,
+
+Couplage en parallèle – Rendement : Expression – méthode directe, méthode des pertes séparées.
+
+Moteurs à courant continu
+Généralités : Couple-moteur, vitesse de rotation, sens – réglage, F.C.é.m. – valeur, courant absorbé
+par l’induit, rhéostat de démarrage, équations générales de fonctionnement.
+
+Caractéristiques : Définition, frein de Prony – dynamo-frein.
+
+Moteur shunt et moteur série : Principe – vitesse –couple – caractéristiques – emploi.
+Moteur comprend : Principe, compoundage additionnel, compoundage différentiel.
+
+
+
+
+                                                - 32 -
+Rendement : Principe, pertes, mesure.
+
+Note : Quelques séances sont consacrées à des expériences faites sous la direction du professeur
+pour illustrer le cours d’électricité générale :
+
+Généralités sur le courant alternatif – Les impédances.
+Résistance : valeur efficace du courant, déphasage. Self : valeur efficace et déphasage du courant.
+Condensateur : valeur efficace et déphasage du courant. Les circuits résonnants et antirésonnants –
+Puissance active, réactive, apparente - Courants polyphasés – Essais de cellule et d’éléments
+photo-électriques.
+
+On ne servira utilement pour la préparation de ces expériences du manuel Phywé.
+
+
+ELECTRONIQUE (2 h/s)
+
+Emission électronique : Différents types d’émission électronique, travail de sortie, émission
+thermoïonique, comparaison des deux systèmes de chauffage, Cathode en tungstène pur, cathode
+en tungstène thorié, cathodes à oxydes, comparaison des divers types de cathodes, utilisation des
+divers types de cathodes.
+
+Tubes à deux éléments : Fonctionnement d’une diode, diodes à gaz, caractéristiques d’une diode à
+vide, différents types de diodes.
+
+Propriétés des différents types de triodes : Généralités sur les triodes, rôle de la grille, réparation du
+potentiel dans une triode, polarisation de la grille, potentiel de contrôle de la grille, courbes
+caractéristiques des triodes, caractéristiques statique et dynamique, coefficient en facteur
+d’amplification, pente en transconductance d’une triode, résistance interne, droite de charge.
+
+Application des triodes : Montage des tubes triodes en amplificateurs, principe de l’amplification,
+la triode utilisée comme amplificatrice, amplificateurs de classe A, amplificateur de classe B
+(Montage en push-pull), amplificateur de classe AB, amplificateur de classe C (notions).
+
+
+
+
+                                                  - 33 -
+ Triode fonctionnant comme oscillatrice, oscillations amorties, oscillations entretenues, oscillateur
+à grille accordée (Oscillateur Tickler), oscillateur Hartley, triode utilisée comme modulatrice,
+modulation de grill, modulation de plaque, modulation d’amplitude, modulation de fréquence.
+
+Détection : Principe, détection par courbure de grille, détection plaque, détection modulation de
+fréquence : (discriminateur, détecteur de rapport).
+
+
+TECHNOLOGIE ( 2 h/s)
+
+Description et prescriptions : Tubs et accessoires, manchons et souliers de câbles armés isolés, fils
+et câbles isolés pour lignes aériennes, isolateurs et supports isolants.
+
+Description – Prescription – Construction – Matériel et Installation à base et moyenne tension. :
+Interrupteurs automatiques, disjoncteurs, rhéostats, potentiomètre, appareils d’éclairage
+luminescents, raccordement au réseau, répartition des circuits, montage des conducteurs à
+l’extérieur des bâtiments, prescriptions spéciales aux installations B.T. à C.A., danger de contact,
+d’échauffement, tension admise, isolement, prise de terre, entretien et sécurité.
+
+Etude détaillée des relais :
+Utilité ; commande à distance, mesure, protection, commande de circuits multiples à fort appel
+d’intensité, à haute tension et à temporisation.
+
+Relais pour commande à distance : à commande directe, à fréquence superposées, thermique,
+mécanique, par induction.
+
+Mesure – contrôle et alarme : de tension, d’intensité, de température.
+
+Protection : ampérométrique, voltmétrique, mécanique ou thermique pour commande mécanique,
+électrique, pneumatique de mise hors service des appareils sous circuit, protection mécanique et
+automaticité de machines mécaniques.
+
+Commande circuits multiples à forte intensité, à haute tension et à temporisation : circuits
+multiples de verrouillage, circuits multiples de téléphone et de signalisation – Commande indirecte
+de circuits à forte intensité (commande de relais de voiture automobile, contacteurs), commande
+indirecte de disjoncteurs et sectionneurs à haute tension ;
+
+
+
+
+                                                - 34 -
+Temporisation : Prévoir des exemples de nécessité de ces relais dans ceux des types précédents et
+expliquer quelques systèmes de temporisation.
+
+
+DESSIN ( 3 h/s)
+
+Exécution des schémas progressifs en rapport avec les cours théoriques : réseau, basse tension,
+haute tension, postes de transfo, etc.
+
+Représentation de parties de moteurs électriques en partant du moteur complet ; étude des éléments
+d’un transfo, d’un appareil de manœuvre ou de coupure. Etablissements de schémas de montage
+de es appareils suivant des données situant l’appareil et le lieu e commande.
+
+L’élève se familiarisera avec la lecture de plans d’habitation, d’après documentation existant à la
+salle dessin.
+
+Relevé de quelques installations existantes à l’école ; représentation conventionnelle suivant
+normes du cours de techno. Electrique. Eventuellement signaler les anomalies trouvées, donner
+une solution pour y remédier (fusibles, sécurité, et…)
+
+Suivant le plan d’un bâtiment, établir le réseau lumière et force motrices, établir le bordereau des
+fournitures et devis approximatif.
+
+Détails
+Dessins : interrupteur et commutateurs à levier, interrupteur à maximum de courant, disjoncteur à
+minimum de tension, relais, coupe-circuits, boîte de jonction et de dérivation pour câbles armés,
+boîte terminale pour dito, tableaux à base tension.
+
+Schémas : d’installations électriques d’intérieur (tableau, éclairage, appareils ménagers, cuisinières,
+chauffe-eau, etc…), lampes fluorescentes.
+                                                  - 35 -
+
+
+
+
+Symboles utilisés dans les graphiques de Force motrices, (machines motrices et réceptrices),
+appareils de commande et de réglage avec et sans télécommande.
+
+Schémas et dessin des appareils de mesures – Plan de montage de divers appareils électriques.
+
+
+MESURES ELECTRIQUES (2 h/s).
+
+Mesures : Définition, méthodes directes : (comparaison, opposition), indirectes par calcul, étalons
+scientifiques et pratiques : (sortes V, A, F ; définition unités, conditions d’utilisation) ; précision et
+erreurs.
+
+Les appareils de mesures électriques en CC et CA :
+Principe : magnétisme, électromagnétisme, induction électrostatique, effet thermique, lame
+vibrante, redresseur.
+
+Sortes : Galvanomètre, logomètre, anthermique, Wm électrodynamique. – Dérivés : Vm, Am,
+m, Cos        m, fm, - Accessoires : Radd, Shunt, Transfo U, I – Description, fonctionnement,
+emploi, étalonnage, vérification, symboles de ces appareils.
+
+Mesures électriques :
+- E en CC : méthode d’opposition – V et U : au Vm et KVm en T.H.T. – I : à Am et mAm en
+courant faible – R : méthode du Vm et Am, méthode des déviations comparées, méthode du pont
+de Wheastone, méthode du pont de Thomson,        m à pile, m à magnéto – Z en CC et CA : par
+Vm et Am - W en CC : méthode de Vm et Am, méthode du Wm – W en CA : méthode du Wm
+(en CA triphasé avec ou sans neutre : méthode des 2 Wm si déséquilibré) – VAR en CA triphasé
+au Wm si équilibré, cos : phasemètre, f : méthode du Fm Am Vm en CA.
+
+C : méthode par comparaison en CC, méthode oscillation relaxation, méthode pont de Sauty,
+méthode de Joubert, méthode de circuit oscillant.
+
+Comptage : Définition, méthodes, le compteur étalon.
+
+Les compteurs : Principes, moteur et champ tournant ;
+
+
+
+
+                                                  - 36 -
+Sortes : quantité et énergie, description, fonctionnement, emploi étalonnage, vérification,
+symboles.
+
+Les comptage : en CC compteur O’K, en CA compteur A C T, monophasé, triphasé équilibré ou
+non, d’énergie réactive.
+
+Les appareils électriques de mesure de grandeurs diverses : Principe général de la mesure :
+transformation d’énergie. Sortes : mesure de niveau avec Am, mesure de vitesse avec Vm, mesure
+thermoélectrique au couple thermique, mesure éclairement à la cellule photo-électrique.
+
+Notions théoriques sur les mesures magnétiques et mesure d’un champ magnétique.
+
+
+LABORATOIRE D’ELECTRICITE (2 h/s).
+
+Mesures en corrélation avec le cours d’électronique.
+
+
+ATELIER ( 4 h/s)
+
+Construction : Travail à la lampe et au trempé, préparation des matériaux, façonnage des isolants à
+froid, cintrage des tubes, frettage.
+
+Construction proprement dite ; bobinage de solénoïde, disjoncteur électromécanique, électro-
+aimant, contacteur + bobine (tension et intensité).
+
+Installations (circuits combinés) moteur courant continu monophasé, moteur triphasé et
+interrupteur triphasé, moteur triphasé et inverseur, moteur à deux vitesses, démarrage étoile,
+triangle – La commande à distance : télécommande par relais magnétiques – La commande
+différée ; temporisation : relais thermiques et mécaniques (minuterie) la commande automatique :
+Automatisme – Thermostat, monostat, indicateur de niveau, contacteur automatique, rupteur
+automatique.
+
+Travaux préparatoires : établissement du schéma, travail en tranche, encastrés : en conditions
+difficiles ;
+
+Placement des appareils, scellement au plâtre, soufre, ciment de ferrures, supports et isolateurs ;
+blocs moteurs, alignement ou parallélisme arbres e groupe.
+
+
+
+
+                                               - 37 -
+Montage de conducteurs : provisoires : pour doubler une ligne en vérification ; lignes et
+canalisations aériennes, intérieures (encastrées, protégées) ; tableau, armoires, coffrets ; pose des
+lignes souterraines : prise de terre ; raccordements conducteurs et appareils : jonctions et
+dérivations encastrées.
+
+Essais : appareils et matériel, réception : (fils et câbles, machines : échauffement, surcharge),
+caractéristiques techniques, utilisation des catalogues.
+
+Installation : (utilisations mécaniques et magnétiques) mise sous tension, mise au point : relais
+thermiques et magnétiques, mesures, isolements et terre, U.R.I.
+
+Exploitation : Dépannage : remplacements de balais, contacts, bobines d’excitation de conjoncteurs
+et de relais thermiques.
+
+Réparation : Démontage de conjoncteurs, disjoncteurs, chauffe-eau, cuisinière – Plan de montage
+petits moteurs (ventilateur, électro pompes) - L’entretien et la réparation de l’installation
+électrique sont confiés à cette classe (sauf la partie H.T.).
+
+Surveillance : Entretien : collecteurs, bagues, balais, roulements, graissage, nivellement ;
+vérification : déréglage des relais magnétiques et thermiques – Mise à la terre coupée.
+
+
+
+
+                                                - 38 -
+                           SECTION ELECTRICITE
+
+                                  SIXIEME ANNEE
+
+                                  COURS SPECIAUX
+
+Métallurgie                                                            1 heure
+Electricité industrielle                                                6 heures
+Electronique                                                            2 heures
+Mécanique appliquée                                                     2 heures
+Technologie                                                             1 heure
+Dessin                                                                  3 heures
+Laboratoire (essai de machines)                                          2 heures
+Laboratoire électronique                                                 2 heures
+Atelier                                                                  5 heures
+
+
+I. OBJECTIFS
+
+L’ensemble des connaissances acquises dans la section électricité, s’il ne mène pas directement aux
+études supérieures, sans complété pendant une période d’entraînement adéquat devant favoriser
+l’adaptation du technicien soit au bureau d’études, au bureau de préparation du travail, à l’atelier
+de fabrication ou d’entretien ou encore aux laboratoires industriels, etc.. .
+
+Au cours des années précédentes, l’enseignement de l’électricité, a été, comme les sciences
+expérimentales, un enseignement formateur qui développe le sens de l’observation, cultive
+l’habitude de l’expérimentation réglée et du raisonnement rigoureux ; le programme de la sixième
+année, c’est-à-dire de l’année finale, doit-être le couronnement d’une telle formation.
+
+Ce principe est d’autant plus rentable dans les conditions actuelles du Congo, où le marché de
+l’emploi n’est ni assuré ni prévisible, qu’il ouvre la porte à toutes les éventualités.
+
+
+
+
+                                               - 39 -
+Il est certain qu’un nouveau problème d’orientation se posera à la fin des études. Mais il sera plus
+facile à ce niveau de déterminer avec justesse et exactitude quels sont les élèves qui devront
+poursuivre leurs études supérieures ou adopter l’une des spécialités de l’électricité.
+
+Dans les deux cas, le diplôme délivré à la fin des études techniques sera égal en valeur, en dignité
+et en prestige à celui de l’Enseignement général avec l’avantage de répondre aux besoins sur le
+double plan national et social.
+
+Les cours généraux ont été réduits en faveur de la partie technique. Néanmoins, les professeurs
+s’efforceront de voir même en résumé, les programmes complets de la section scientifique de
+l’enseignement secondaire afin de maintenir l’intégrité de la formation générale des élèves. Ces
+derniers pourront toujours approfondir les connaissances acquises par des lectures personnelles à la
+faveur des données de base bien comprises.
+
+II. OBSERVATIONS METHODOLOGIQUES
+
+Voir les observations méthodologiques de la troisième année. Le cours d’électronique continue à
+donner les notions de base pour une spécialisation éventuelle dans ce domaine.
+
+
+III.   PROGRAMME DE SICIEME ANNEE
+
+METALLURGIE (1 h/s)
+
+I. Méthodes spéciales d’élaboration des métaux :
+   Métaux non-ferreux et alliages.
+
+   (Pour chacun des paragraphes ci-dessous : principe – appareille, opérations, marche et
+   fonctionnement).
+
+  1. Fabrication du cuivre, étain, zinc, plomb, aluminium, magnésium (nickel, cobalt)
+     - Aluminothermie (électrolyse) – La réduction du cuivre et du plomb au four à cuve.
+     - La réduction du zinc au four à mouffle. – La réduction de l’étain au four à réverbère.
+     - La métallurgie du magnésium.
+
+  2. Le frittage : Notions générales – Fabrication des matières métalliques – Espèces de
+     métaux frittés et propriétés – Définition des métaux durs, carbures et stellites –
+     Fabrication des métaux durs par frittage – Propriétés des métaux durs.
+
+
+
+
+                                                 - 40 -
+   3. Les céramiques métalliques (notions) : Généralités – Fabrication – Propriétés –
+      Applications industrielles, outils de coupe.
+
+   4. Technique de zone fondue.
+
+
+II. Etude théorique des alliages et métaux
+
+   1.   Les états de la matière et la notion de phase :
+   -    Gazeux : phase unique et miscibilité en toutes proportions.
+   -    Liquides : totalement et partiellement miscibles, non miscibles.
+   -    Solides : Amorphe ; solutions solides – Cristallisés :
+        Notions de cristallographie géométrique, forme des cristaux, ici des angles, cristaux
+        parfaits, mono et polymorphisme – Arrangement atomique – Défauts de l’état solide :
+        fibres, dendrites, frontières cristallines, dislocations.
+
+   2. Les changements d’état :
+   - Influence d’un solvant : Dissolution et cristallisation – Vitesse de croissance des
+      cristaux (nature du solvant ; facteur temps ; température, influence chimique) –
+      Anomalies : dislocations.
+
+   -    Influence de la chaleur : Fusion et solidification franche d’un corps pur – Vitesse de
+        refroidissement (facteur temps et influence chimique) – Anomalies ; surfusion,
+        ségrégation).
+
+   -    Influence des facteurs chimiques : Corresion – Vitesse de corrosion : milieu naturel ou
+        atmosphérique, milieu artificiel ou chimique – Théorie électrochimique : pile et oxydation
+        – Protection passive et active.
+
+   3. Les états en équilibre ou systèmes :
+      A. Homogène
+      B. Hétérogènes : 2 phases identiques ou différentes.
+                         3 phases identiques ou différentes.
+
+
+
+
+                                                    - 41 -
+            Le nombre de phases, les constituants (nombre et natures) les conditions d’équilibre ou
+            fonction d’état, température, pression, concentration.
+
+       4. Les variations d’équilibre :
+          Les diagrammes : pression ou température en fonction de la composition – Influence des
+          facteurs – Degré de liberté ou variance – Règle de Gibbs : systèmes in, mono, ou trivariant.
+
+       5 Etude générale des corps purs :
+       - Courbe de refroidissement du fer (Température en fonction du temps) – Courbe de dilation
+         (allongement en fonction de la température).
+
+       -    Formes allotropiques : l’eau, le soufre et l’étain - Interprétation atomique.
+
+       6. Etude des alliages binaires :
+       - Courbe de refroidissement – Diagramme de fusibilité.
+          Solidus, liquides – Cas d’un eutectique ; mélange défini (Etain, plomb) – Formation
+          d’un composé défini (magnésium, zinc).
+
+       -    Série continue de solutions solides (Cu, Ni) - Diagramme fer-carbone.
+
+       7. Note sur les alliages ternaires plurimétalliques. Complexité.
+
+       8. Corps purs et impuretés microdosées. Cas des semi-conducteurs.
+
+
+III.       Traitements durcissants
+
+           1. Traitements thermiques :
+           - Recuit : d’adoucissement, de normalisation, de détente et de diffusion.
+
+           - Trempe : étude du mécanisme, influence de la vitesse de refroidissement, courbes en S
+             et différents états du métal, influence de la température de trempe.
+
+           - Revenu : étude du mécanisme et facteurs.
+
+           2. Traitements thermochimiques :
+              Cémentation – principe et technique – Nitruration – cranuration
+
+
+
+
+                                                     - 42 -
+   3. Traitements des aciers alliés :
+   - Généralités.
+   - Traitement isotherme des aciers – Traitements thermiques classiques : action des éléments
+      alliés sur les traitements thermiques ; aciers perlitiques, martensitiques, austénitiques,
+      lédéburitiques ; durcissement par revenu : mécanisme, migration des atomes, précipitation,
+      coalescence, facteurs du revenu, applications.
+
+
+ELECTRICITE ( 6 h/s)
+
+A. Machines électriques
+
+I. Alternateurs
+   1. Généralités : Principe – circuit magnétique – refroidissement – vitesse d’entraînement.
+
+   2. Enroulement induit : Brins actifs – Un enroulement induit (flux – f.e.m. – couplage) – Trois
+      enroulements induits (couplage – vitesse – tension et puissance).
+
+   3. f .e.m. : Expression – réglage.
+
+   4. Fonctionnement : à vide, en charge, chute de tension, à tension constante, réaction
+      magnétique de l’induit, diagramme de fonctionnement, application du diagramme.
+
+   5. Couple résistant : Puissance.
+
+   6. Rendement : Pertes – Expression du rendement.
+
+   7. Couplage en parallèle : nécessité, conditions, pratique, répartition de la charge, stabilité de
+      marche.
+
+
+II. Transformateurs statiques
+
+    1. Principe et notion : But – Rapport de transformation – Courant magnétisant.
+
+
+
+
+                                               - 43 -
+   2. Transformateur parfait :
+       Relation entre les tensions efficaces – Relation entre les intensités efficaces – Auto-
+      régulation – Relation – entre les puissances – Diagramme de fonctionnement en charge –
+      Circuit équivalent – Influence de la réductance.
+
+   3. Transformateur réel :
+      Influence des chutes chimiques et inductives – Diagramme de Kapp – Détermination
+      simplifiée de la chute de tension – Circuit équivalent.
+
+   4. Rendement :
+      Définition – Pertes par effet – Joule - Pertes dans le fer – Mesures des pertes – Calcul du
+      rendement – conditions de rendement maximum – Echauffement.
+
+   5. Couplage en parallèle :
+      Nécessité – Conditions de couplage – Conditions de partage des puissances.
+
+   6. Sortes de transformateurs :
+      Constructions à prise médiane – auto-transformateur -        à secondaires multiples – à
+      régulation continue de tension – de mesure.
+
+   7. Transformateurs triphasés :
+      Transformateurs simples – transformateurs triphasés ; couplages.
+
+
+III. Convertisseurs statiques
+     1. Redresseurs secs : Résistance polarisée – Oxymétal – Sélénium.
+
+    2. Redresseurs à vapeur de mercure : A ampoule de verre – Bianodique pour charge d’accus –
+       A enveloppe métallique – Avantages.
+
+
+
+
+                                                 - 44 -
+IV. Moteurs à courant alternatif.
+
+     1. Champs tournants : Stroboscopie – Existence – Principe des moteurs polyphasés –
+        Théorie du champ tournant.
+
+     2. Moteurs synchrones :
+        - Propriétés : Organisation du moteur triphasé, couple moteur, démarrage, vitesse de
+          rotation, emploi.
+
+        - Etude théorique : Circuit équivalent, Diagramme de fonctionnement, expression du
+          couple, diagramme de Blondel, application de ce diagramme.
+
+     3. Moteurs asynchrones.
+        a) Moteur triphasé : - Organisation : Stator, production du champ tournant ; rotor, à
+           bagues, à cage d’écureuil ; principe de fonctionnement ; glissement ; courant du
+           démarrage.
+
+         - Théorie du fonctionnement : Champs tournants du stator et du rotor ; bilan des
+           puissances ; rendement en fonction du glissement ; couple moteurs ; caractéristi-
+           que mécanique ; circuit équivalent, diagramme du courant.
+
+         - Démarrage : Moteur à simple cage ; Démarrage étoile – Triangle ; démarrage par
+           auto-transformateur ; démarrage par résistances statiques ; Moteur à double cage ;
+           démarrage par résistances rotoriques ; réglage de la vitesse.
+
+         - Rendement : Définition ; méthode directe ; par frein ; méthode par pertes séparées ;
+           expression du rendement.
+
+         b) Moteur monophasé : Existence ; organisation, démarrage ; caractéristique mécanique.
+
+         c) Moteur à collecteur :
+         - Moteur universel : Possibilité de fonctionnement, organisation ; caractéristiques et
+            emploi ; diagramme de fonctionnement.
+
+         - Moteur triphasé à collecteur : Principe ; réglage de la vitesse.
+
+
+
+
+                                                  - 45 -
+V. Convertisseurs rotatifs
+-   Groupes moteurs – générateurs
+Commutatrices : construction, rapport des tensions, fonctionnement en charge, réglage de la
+tension continue, démarrage, commutatrice inversée, marche en parallèle.
+
+B. Applications électriques
+
+1. Application de l’éclairage : Eclairage des voies publiques ;
+
+2. Production de l’énergie électrique :
+   Généralités ; centrales thermiques à vapeur ; centrales thermiques à moteur à combustion
+   interne ; centrales hydro-électriques ; centrales diesel.
+
+    NOTE : Les turbines et moteurs étant étudiés par ailleurs, on n’en parlera ici que pour
+           mémoire, et en tant que parties d’un complexe.
+
+3. Transport et distribution de l’énergie électrique :
+   Distribution en courant contigu (pour mémoire). Distribution en courant alternatif ; poste
+   de transformation ; réseau de distribution.
+
+4. Protection des réseaux : Protection contre les sur intensités, protection contre les
+   surtensions.
+
+5. Traction électrique : Installation d’une usine génératrice de traction ; sous-station de
+   traction ; chemins de fer électrique.
+
+6. Soudure électrique : A l’arc électrique, étude de l’arc, électrodes, transformateurs rotatifs,
+   transformateurs statiques ; soudure par résistance.
+
+7. Fours électriques : à résistance ; à arc ; à base fréquence ; à haute fréquence.
+
+
+ELECTRONIQUE (2 h/s).
+1. Tubes à quatre éléments : Inconvénients des triodes – Lampes tétrodes ou lampes à grille-
+   écran - L’oscillateur dynatron – Tétrodes à pente variable.
+
+
+
+
+                                               - 46 -
+ II. Tubes à cinq éléments : Tubs à flux dirigé – Amplificateur Push Pull
+
+ III. Principe des récepteurs hétérodynes :
+      Etude du schéma – Différentes manières de changer la fréquence
+
+ IV. Tube à rayon cathodique : Circuit de balayage – Oscillateur à relaxation – Oscilloscope à
+     balayage déclenché – œil cathodique ou trèfle cathodique indicateur d’accord.
+
+  V. Multiplicateur d’électrons : Eléments d’un récepteur de télévision.
+
+ VI. Tubes spéciaux : Tubes à rayon x – Le Magnétron.
+
+VII. Redresseurs : Redresseur mécanique – Redresseur à vibrateur – Redresseur électrolytique –
+     Redresseur à oxyde de cuivre – Redresseur au Sélénium – Tubes et circuits redresseurs –
+     Redresseur à cuve.
+
+VIII. Circuits électroniques : Applications sur l’ensemble du cours.
+
+
+MECANIQU APPLIQUEE (2 h/s)
+
+ 1. Résistance au glissement : Résistance au glissement et coefficient de frottement – Frottement
+     sec et applications – Energie perdue par le frottement, disque sur coussinet, tourillons sur
+     coussinets, pivot sur grain – Effets du frottement, stabilité, entraînement par adhérence,
+     freins, mesure de la puissance effective par freins de Prony.
+
+ II. Résistance au roulement : Mécanisme – Couple – Condition de roulement – Travail absorbé
+     – Application aux roues porteuses des véhicules.
+
+ III. Notions de choc : Corps durs et élastiques – Corps mous.
+
+ IV. Etude sommaire des turbines hydrauliques : Aménagement d’une chute – Roues
+     hydrauliques – Hauteur brute, hauteur nette et puissance – Turbine Pelton, turbine Francis,
+     turbine hélice, (description, fonctionnement, conditions d’emploi).
+
+
+
+
+                                             - 47 -
+  V. Etude sommaire des moteurs à explosion et combustion interne.
+
+  A. Cycle à 4 temps : Analyse – Carburateurs – Allumage – Diagramme.
+  B. Cycle à 2 temps : Analyse – Diagrammes – Consommation.
+  C. Diesel 4 temps
+  D. Diesel 2 temps
+
+
+TECHNOLOGIE (1 h/s)
+
+  1. Bobinage : notions.
+
+  2. Description – Prescription – Construction – Matériel et Installation à base et moyenne
+     tension (2è partie)
+
+      Tubes et accessoires – Interrupteurs, interrupteurs automatiques ; commutateur – Coupe
+      circuit à fusibles – Appareils d’éclairage – Appareils de chauffage – Appareil mobiles et
+      portatifs – Lampes baladeuses – Jouets électriques, soudures, appareils médicaux –
+      Raccordement au réseau – Répartition des circuits – Montage des conducteurs à l’extérieur
+      des bâtiments :
+              Conducteurs nus, lignes de contact ; conducteurs isolés ; lignes souterraines.
+
+      Montage de conducteurs à l’intérieur des bâtiments :
+            Prescriptions générales ; conducteurs nus ; conducteurs isolés sous-tubes,
+            Entre plafond et plancher, fils parallèles sur isolateurs, cordons souples et de
+            suspension, sous plomb, en câbles armés ;
+
+              jonctions ; croissements et parallélisme.
+
+      Prescriptions spéciales aux installations B.T. à C.A. dont la tension entre un conducteur de
+      phase et la terre excède 150 W.
+
+      Définitions, danger de contact, danger d’échauffement. - Tension admise, isolement des
+      installations. Matériel et appareils : générateurs, moteurs ; rhéostats ; transformateurs.
+                                                       - 48 -
+
+
+
+       Installations spéciales :
+       Salles de spectacles ; chaudières et réservoirs métalliques ; locaux humides ; locaux avec
+       vapeurs corrosives ; locaux avec matières inflammables ; locaux avec explosifs ;
+       installations extérieures.
+       Dispositifs de protection, inscriptions.
+       Entretien des installations.
+
+3. Installations de locaux du service électrique
+   (y compris les appareils et installations à H.T.)
+
+   Définition – Dispositions générales : Danger de contact, danger d’isolement, isolement des
+   installations.
+
+   Générateurs, moteurs – Transformateurs – Condensateurs, compensateurs et appareils
+   similaires – Appareillage : Postes, tableaux de distribution, prises de courant, i interrupteurs,
+   coupe circuits à fusibles, compteurs.
+
+   Accumulateurs – Batteries industrielles – Matériel pour la pose des canalisations –
+   Raccordement – Montage des conducteurs à l’extérieur des bâtiments – Installations spéciales –
+   Dispositifs de protection.
+
+
+DESSIN (3 h/s)
+
+1. Etablissement, suivant données, d’un petit avant-projet d’installation de force motrice (ex. :
+   commande d’un ascenseur, d’un pont roulant d’atelier).
+
+   Des revues techniques sont à la disposition des élèves ; elles renseignent sur des installations
+   similaires. Les solutions adoptées seront justifiées sur cahier de notes et le dessin fait au
+   crayon.
+
+2. Mise sous forme définitive de l’avant-projet sur papier calque – Rédaction des notes (si
+   possible dactylographiées) – Etude de la façon de présenter, de rendre le travail imposé.
+
+
+
+
+                                                       - 49 -
+  Détails
+
+  1. Schéma d’installation d force motrice (divers types de moteurs avec appareils d’enclenchement
+     et de protection).
+
+  2. Dessin Transformateur moyenne et haute tension
+            Disjoncteur à huile et à air comprimé
+            Sectionneurs
+            Parafoudres
+            Isolateurs moyens et haute tension.
+
+  3. Schéma de sous-station de transformation (HT, Moyenne et B.T.)
+  4. Schéma de tableau de comptage
+  5. Schéma de raccordement industriel
+  6. Plan de montage des installations de traitement thermique et de chambre froide.
+
+
+  ESSAI DE MACHINES (2 h/s)
+
+  I. Machines génératrices à C.C. (Dynamos)
+     Excitation indépendante, shunt, série, compound.
+
+  - Caractéristiques à vide
+    F.E.M. en fonction de I d’excitation ou de la vitesse.
+
+      - Caractéristiques en charge.
+        Tension en fonction du courant débité – Courbe de réglage, rendement.
+
+II.     Machines réceptrices à C.C.
+        Moteur shunt, série, compound.
+
+  -     Caractéristiques à vide
+        Vitesse en fonction du courant absorbé
+
+  -     Caractéristiques en charge.
+        Mécanique : ou couple en fonction de vitesse.
+
+  Electromécaniqe : couple en fonction du courant.
+  Couple au démarrage. Rendement.
+
+
+
+
+                                                   - 50 -
+III.   Machines à champs continus.
+       Alternateurs, moteur synchrone, commutatrice.
+
+  -    Caractéristiques à vide
+       E.P.U. en fonction du courant excitation
+
+  -    Caractéristiques en charge
+       Tension en fonction de l’intensité
+       Courbes de Mordey
+       Rendement.
+
+IV. Machines à champ alternatif
+    Transformateur, moteur asynchrone à cage, à bagues.
+
+  -    Caractéristiques à vide
+       Rapport de transformation – Vitesse en fonction de la puissance – Tension secondaire en
+       fonction de l’intensité primaire.
+
+  -    Caractéristiques en charge
+       Courant absorbé en fonction de la puissance ou tension secondaire en fonction du courant
+       secondaire – Couple en fonction de P mesuré ou calculé – Rendement en fonction de la
+       puissance – Diagramme de Kapp.
+
+  V. Redresseurs secs et à gaz.
+
+LABORATOIRE ELECTRONIQUE (2 h/s)
+Mesures en corrélation avec le cours d’électronique.
+
+
+ATELIER ( 5 h/s).
+
+1. Construction
+   Préparation des matériaux : travail des isolants à chaud – Façonnage des barres omnibus –
+   Câbles nus aériens – Assemblage de compteurs – Bobinage des machines électriques
+   Tropicalisation.
+
+2. Installation. (Tous circuits, tous courants)
+- Placement des appareils : Poste, stations, sous-stations, cabine de transformation et distribution.
+
+
+
+
+                                                  - 51 -
+   -   Montage des conducteurs tirage des lignes, (flèche)
+   -   Canalisations souterraines : boîtes terminales, de jonction, de dérivation (y compris coulage
+       d’isolants et compound).
+   -   Le réglage automatique : la régulation (par ex. : stabilisation de tension des dynamos et
+       alternateurs).
+
+   Régulateurs : mécaniques, magnétiques, électriques.
+
+3. Essais :
+   - tenir compte des prescriptions et règlements électriques)
+
+   -   installation (automatiques et groupes électrogènes)
+
+   Interconnexions, réseaux.
+   Mise au point : système régulateur de tension des dynamos
+   Couplage automatique des alternateurs – Mesure de pertes et défauts dans le lignes (coupées,
+   normales ou en court-circuit).
+   Calculs de circuits, puissances et répartitions.
+
+4. Exploitation
+
+   a) Dépannage de toutes pièces mécaniques ou électriques existant en stock.
+
+   b) Réparation : En fin d’études, le technicien doit savoir :
+   - Localiser le ou les défauts d’un circuit en se servant de la documentation technique ou sans
+      celle-ci.
+
+   -   Déterminer la gravité d’un défaut et proposer une solution de secours, effectuer la
+       réparation ou recourir au service spécialisé.
+
+   Exemples : Réfrigérateur, conditionnement d’air, appareil de mesures, systèmes régulateurs,
+   installations thermiques.
+
+
+5. Surveillance.
+
+   Entretien des installations de force motrice de l’école. Vidange d’huile transfo et disjoncteurs.
+   Vérification. Projet et exécution de modernisation. Mise à jour des plans et fiches techniques
+   des installations et machines.
+
+
+
+                          -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
