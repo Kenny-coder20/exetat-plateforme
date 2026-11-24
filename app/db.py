@@ -45,7 +45,8 @@ class _PgConn:
 
     @staticmethod
     def _sql(sql: str) -> str:
-        return sql.replace("?", "%s")
+        # un % littéral (LIKE 'abc%') doit être doublé pour psycopg ; les « ? » deviennent %s
+        return sql.replace("%", "%%").replace("?", "%s")
 
     def execute(self, sql: str, params=()):
         sql2 = self._sql(sql)
