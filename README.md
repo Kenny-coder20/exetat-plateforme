@@ -107,7 +107,19 @@ Produit `exports/*.json`, `*.tex` (A4, 12 pt, marges 2,2 cm, encadrés consignes
 
 Voir `DEPLOIEMENT.md` : dépôt GitHub + Blueprint Render (`render.yaml`) avec base PostgreSQL, mot de passe sur l'atelier.
 
-## Programme officiel
+## Programmes officiels chargés
+
+| Discipline | Source | Année |
+| --- | --- | --- |
+| Mathématiques, SVT, SPTTIC (Chimie, Physique, TIC) | Programmes éducatifs 4e HS (6e Sc), DIPROMAD/MEPST — edu-nc.gouv.cd/national-programmes | 2021 |
+| Civisme (Éducation civique et morale) | Programme national ECM secondaire, 6e année — edu-nc.gouv.cd | 2007 |
+| Histoire | Programme national d'histoire, 6e année — edu-nc.gouv.cd | 2005 |
+| Géographie | Programme national de géographie, 6e année — edu-nc.gouv.cd | 2005 |
+| Philosophie | **Reconstitué** (programme officiel introuvable en ligne) — à confirmer par un inspecteur | — |
+
+Le jour 1 (M.01, culture générale : Civisme 2, Géographie 6, Histoire 6, Philosophie 6) est actif. Le jour 4 (langues) reste à venir.
+
+## Programme officiel (remplacement par CSV)
 
 Le programme chargé par `init` est **indicatif** (chapitres du cahier des charges et du programme usuel).
 Pour le remplacer par le programme officiel, préparez un CSV :
