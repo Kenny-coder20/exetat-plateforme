@@ -6,18 +6,22 @@ import random
 from .db import connect, rows
 from .generation import repartition_difficulte
 
-CHAMPS_ELEVE = ("id", "discipline", "sous_discipline", "chapitre", "difficulte", "titre", "tige",
+CHAMPS_ELEVE = ("id", "epreuve_code", "discipline", "sous_discipline", "chapitre", "difficulte", "titre", "tige",
                 "p1", "p2", "p3", "p4", "p5", "reponse", "correction_detaillee", "erreurs_distracteurs",
                 "support", "support_latex", "competence", "savoir_essentiel")
 
 
 def tirer(con, *, discipline: str, sous_discipline: str | None, n: int, chapitre: str | None = None,
-          difficulte: str | None = None, graine: int | None = None, exclure: set[str] | None = None) -> list[dict]:
-    """Tire n items validés en respectant la répartition de difficulté et la diversité des chapitres."""
+          difficulte: str | None = None, graine: int | None = None, exclure: set[str] | None = None,
+          epreuve_code: str | None = None) -> list[dict]:
+    """Tire n items validés de la banque de l'épreuve, en respectant difficulté et diversité des chapitres."""
     rnd = random.Random(graine)
     exclure = exclure or set()
     sql = "SELECT * FROM items WHERE statut_validation='valide' AND situation_id IS NULL AND discipline=?"
     params: list = [discipline]
+    if epreuve_code:
+        sql += " AND epreuve_code=?"
+        params.append(epreuve_code)
     if sous_discipline:
         sql += " AND sous_discipline=?"
         params.append(sous_discipline)
@@ -53,47 +57,51 @@ def tirer(con, *, discipline: str, sous_discipline: str | None, n: int, chapitre
     return choisis
 
 
-def assembler_epreuve(jour: int, option_code: str = "1.02", graine: int | None = None) -> dict:
+def _epreuve(con, code: str) -> dict:
+    ep = con.execute("SELECT * FROM epreuves WHERE code=?", (code,)).fetchone()
+    if not ep:
+        raise ValueError(f"épreuve {code} inconnue")
+    return dict(ep)
+
+
+def assembler_epreuve(code: str, graine: int | None = None) -> dict:
     with connect() as con:
-        ep = con.execute("SELECT * FROM epreuves WHERE option_code=? AND jour=?", (option_code, jour)).fetchone()
-        if not ep:
-            raise ValueError("épreuve inconnue")
-        quotas = rows(con, "SELECT * FROM quotas WHERE epreuve_id=? ORDER BY ordre", (ep["id"],))
+        ep = _epreuve(con, code)
+        quotas = rows(con, "SELECT * FROM quotas WHERE epreuve_code=? ORDER BY ordre", (code,))
         items, manques = [], []
         for q in quotas:
             pris = tirer(con, discipline=q["discipline"], sous_discipline=q["sous_discipline"],
-                         n=q["nb_items"], graine=graine)
+                         n=q["nb_items"], graine=graine, epreuve_code=code)
             if len(pris) < q["nb_items"]:
                 manques.append({"discipline": q["discipline"], "sous_discipline": q["sous_discipline"],
                                 "manque": q["nb_items"] - len(pris)})
             items += pris
         for k, it in enumerate(items, 1):
             it["numero"] = k
-        return {"epreuve": dict(ep), "quotas": quotas, "items": [projeter(i) for i in items], "manques": manques}
+        return {"epreuve": ep, "quotas": quotas, "items": [projeter(i) for i in items], "manques": manques}
 
 
-def assembler_discipline(jour: int, discipline: str, option_code: str = "1.02", graine: int | None = None) -> dict:
+def assembler_discipline(code: str, discipline: str, graine: int | None = None) -> dict:
     with connect() as con:
-        ep = con.execute("SELECT * FROM epreuves WHERE option_code=? AND jour=?", (option_code, jour)).fetchone()
-        quotas = rows(con, "SELECT * FROM quotas WHERE epreuve_id=? AND discipline=? ORDER BY ordre",
-                      (ep["id"], discipline))
+        ep = _epreuve(con, code)
+        quotas = rows(con, "SELECT * FROM quotas WHERE epreuve_code=? AND discipline=? ORDER BY ordre", (code, discipline))
         items, manques = [], []
         for q in quotas:
             pris = tirer(con, discipline=q["discipline"], sous_discipline=q["sous_discipline"],
-                         n=q["nb_items"], graine=graine)
+                         n=q["nb_items"], graine=graine, epreuve_code=code)
             if len(pris) < q["nb_items"]:
                 manques.append({"sous_discipline": q["sous_discipline"], "manque": q["nb_items"] - len(pris)})
             items += pris
         for k, it in enumerate(items, 1):
             it["numero"] = k
-        return {"epreuve": dict(ep), "discipline": discipline, "items": [projeter(i) for i in items], "manques": manques}
+        return {"epreuve": ep, "discipline": discipline, "items": [projeter(i) for i in items], "manques": manques}
 
 
 def assembler_chapitre(discipline: str, chapitre: str, n: int, difficulte: str | None = None,
-                       graine: int | None = None) -> dict:
+                       graine: int | None = None, epreuve_code: str | None = None) -> dict:
     with connect() as con:
         items = tirer(con, discipline=discipline, sous_discipline=None, n=n, chapitre=chapitre,
-                      difficulte=difficulte, graine=graine)
+                      difficulte=difficulte, graine=graine, epreuve_code=epreuve_code)
         for k, it in enumerate(items, 1):
             it["numero"] = k
         return {"discipline": discipline, "chapitre": chapitre, "items": [projeter(i) for i in items],
@@ -109,13 +117,13 @@ def projeter(it: dict) -> dict:
 def banque_validee() -> dict:
     """Export complet de la banque validée + configuration : c'est le fichier embarqué par l'app élève."""
     with connect() as con:
-        options = rows(con, "SELECT * FROM options")
-        epreuves = rows(con, "SELECT * FROM epreuves WHERE actif=1 ORDER BY option_code, jour")
-        quotas = rows(con, "SELECT q.*, e.option_code, e.jour FROM quotas q JOIN epreuves e ON e.id=q.epreuve_id "
-                           "WHERE e.actif=1 ORDER BY e.jour, q.ordre")
+        options = rows(con, "SELECT * FROM options ORDER BY code")
+        epreuves = rows(con, "SELECT * FROM epreuves ORDER BY code")
+        quotas = rows(con, "SELECT * FROM quotas ORDER BY epreuve_code, ordre")
+        option_epreuves = rows(con, "SELECT * FROM option_epreuves ORDER BY option_code, jour")
         programme = rows(con, "SELECT discipline, sous_discipline, chapitre, poids, source FROM programme ORDER BY id")
         items = [projeter(i) for i in rows(con, "SELECT * FROM items WHERE statut_validation='valide' AND situation_id IS NULL")]
     from .situations import situations_validees
     sits = situations_validees()
-    return {"options": options, "epreuves": epreuves, "quotas": quotas, "programme": programme,
-            "items": items, "nb_items": len(items), "situations": sits, "nb_situations": len(sits)}
+    return {"options": options, "epreuves": epreuves, "quotas": quotas, "option_epreuves": option_epreuves,
+            "programme": programme, "items": items, "nb_items": len(items), "situations": sits, "nb_situations": len(sits)}

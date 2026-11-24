@@ -67,7 +67,7 @@ def repartir_chapitres(con, discipline: str, sous_discipline: str | None, n: int
 
 def composer_commande(con, *, discipline: str, sous_discipline: str | None, n: int,
                       chapitre: str | None = None, difficulte: str | None = None,
-                      serie: str | None = None, jour: int | None = None) -> str:
+                      serie: str | None = None, jour: int | None = None, epreuve_code: str | None = None) -> str:
     if chapitre:
         chapitres = [chapitre] * n
     else:
@@ -83,9 +83,9 @@ def composer_commande(con, *, discipline: str, sous_discipline: str | None, n: i
     plan = "\n".join(f"- Item {i+1} : chapitre « {c} », difficulté {d}" for i, (c, d) in enumerate(zip(chapitres, diffs)))
     sd = f" (sous-discipline : {sous_discipline})" if sous_discipline else ""
     s = f", série {serie}" if serie else ""
-    j = f", jour {jour}" if jour else ""
+    j = f", épreuve {epreuve_code}" if epreuve_code else ""
     return (
-        f"COMMANDE : génère {n} items de {discipline}{sd}{j}{s}, option 1.02 Sciences, selon le plan suivant.\n"
+        f"COMMANDE : génère {n} items de {discipline}{sd}{j}{s} (Examen d'État, E.32), selon le plan suivant.\n"
         f"{plan}\n"
         "Respecte le plan item par item (chapitre et difficulté). Varie les familles de contexte et la position "
         "de la bonne réponse. Réponds uniquement par le JSON demandé."
@@ -192,7 +192,7 @@ def verifier_serie(items: list[dict]) -> list[str]:
 
 # ---------------------------------------------------------------- insertion
 
-def inserer_items(con, items: list[dict], *, option_code="1.02", jour=None, epreuve_code=None,
+def inserer_items(con, items: list[dict], *, option_code=None, jour=None, epreuve_code=None,
                   serie=None, numero_depart=1, modele=MODELE) -> list[str]:
     ids = []
     for k, it in enumerate(items):
@@ -226,7 +226,7 @@ def generer(*, discipline: str, sous_discipline: str | None = None, n: int = 5, 
     """Génère n items d'une discipline et les enregistre en attente de validation."""
     with connect() as con:
         commande = composer_commande(con, discipline=discipline, sous_discipline=sous_discipline, n=n,
-                                     chapitre=chapitre, difficulte=difficulte, serie=serie, jour=jour)
+                                     chapitre=chapitre, difficulte=difficulte, serie=serie, epreuve_code=epreuve_code)
         lot = con.execute("INSERT INTO lots_generation(commande, modele, nb_demandes) VALUES(?,?,?)",
                           (commande, MODELE, n)).lastrowid
         try:
@@ -246,20 +246,25 @@ def generer(*, discipline: str, sous_discipline: str | None = None, n: int = 5, 
         return {"lot": lot, "ids": ids, "usage": usage, "anomalies_serie": verifier_serie(items)}
 
 
-def generer_epreuve(jour: int, serie: str | None = None, option_code: str = "1.02") -> list[dict]:
-    """Génère une épreuve complète du jour, quota par quota (un appel API par quota)."""
+def epreuve_et_quotas(con, epreuve_code: str):
+    ep = con.execute("SELECT * FROM epreuves WHERE code=?", (epreuve_code,)).fetchone()
+    if not ep:
+        raise GenerationError(f"Épreuve {epreuve_code} inconnue dans le E.32 chargé.")
+    quotas = rows(con, "SELECT * FROM quotas WHERE epreuve_code=? ORDER BY ordre", (epreuve_code,))
+    return dict(ep), quotas
+
+
+def generer_epreuve(epreuve_code: str, serie: str | None = None) -> list[dict]:
+    """Génère une épreuve complète (code M.xx), quota par quota (un appel API par quota)."""
     with connect() as con:
-        ep = con.execute("SELECT * FROM epreuves WHERE option_code=? AND jour=?", (option_code, jour)).fetchone()
-        if not ep:
-            raise GenerationError(f"Pas d'épreuve pour l'option {option_code}, jour {jour}")
+        ep, quotas = epreuve_et_quotas(con, epreuve_code)
         if not ep["actif"]:
-            raise GenerationError(f"L'épreuve {ep['code']} (jour {jour}) est hors périmètre pour l'instant.")
-        quotas = rows(con, "SELECT * FROM quotas WHERE epreuve_id=? ORDER BY ordre", (ep["id"],))
+            raise GenerationError(f"L'épreuve {epreuve_code} n'est pas encore ouverte dans la plateforme.")
     resultats = []
     numero = 1
     for q in quotas:
         r = generer(discipline=q["discipline"], sous_discipline=q["sous_discipline"], n=q["nb_items"],
-                    jour=jour, serie=serie, epreuve_code=ep["code"], numero_depart=numero)
+                    serie=serie, epreuve_code=epreuve_code, numero_depart=numero)
         numero += q["nb_items"]
         resultats.append({"quota": q, **r})
     return resultats

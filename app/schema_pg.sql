@@ -3,29 +3,35 @@
 CREATE TABLE IF NOT EXISTS options (
   code TEXT PRIMARY KEY,          -- 1.02
   nom  TEXT NOT NULL,             -- Sciences
+  famille TEXT,                   -- Humanités littéraires et scientifiques
   session INTEGER NOT NULL        -- 2026 (année du E.32)
 );
 
+-- Une épreuve (M.xx) est partagée par toutes les options qui la portent : la banque est organisée par épreuve.
 CREATE TABLE IF NOT EXISTS epreuves (
-  id SERIAL PRIMARY KEY,
-  option_code TEXT NOT NULL REFERENCES options(code),
-  jour INTEGER NOT NULL,          -- 1..4
-  code TEXT NOT NULL,             -- M.46
-  libelle TEXT NOT NULL,          -- Mathématiques et SVT
+  code TEXT PRIMARY KEY,          -- M.46
+  libelle TEXT NOT NULL,
   nb_items INTEGER NOT NULL,
-  nb_series INTEGER NOT NULL,
+  nb_series INTEGER NOT NULL,     -- 0 = série unique
   duree_h REAL NOT NULL,
-  actif INTEGER NOT NULL DEFAULT 1,   -- 0 = hors périmètre (phase 2)
-  UNIQUE(option_code, jour)
+  actif INTEGER NOT NULL DEFAULT 0    -- 1 = banque ouverte dans la plateforme
 );
 
 CREATE TABLE IF NOT EXISTS quotas (
   id SERIAL PRIMARY KEY,
-  epreuve_id INTEGER NOT NULL REFERENCES epreuves(id),
-  ordre INTEGER NOT NULL,         -- ordre dans l'épreuve
-  discipline TEXT NOT NULL,       -- Mathématiques, SVT, Chimie, Physique, TIC
-  sous_discipline TEXT,           -- Biologie, Écologie, Géologie & Évolution
+  epreuve_code TEXT NOT NULL REFERENCES epreuves(code),
+  ordre INTEGER NOT NULL,
+  discipline TEXT NOT NULL,
+  sous_discipline TEXT,
   nb_items INTEGER NOT NULL
+);
+
+-- Calendrier de chaque option : jour → épreuve
+CREATE TABLE IF NOT EXISTS option_epreuves (
+  option_code TEXT NOT NULL REFERENCES options(code),
+  jour INTEGER NOT NULL,
+  epreuve_code TEXT NOT NULL REFERENCES epreuves(code),
+  PRIMARY KEY (option_code, jour)
 );
 
 CREATE TABLE IF NOT EXISTS programme (
@@ -34,13 +40,15 @@ CREATE TABLE IF NOT EXISTS programme (
   sous_discipline TEXT,
   chapitre TEXT NOT NULL,
   poids REAL NOT NULL DEFAULT 1,  -- part indicative dans l'épreuve
-  source TEXT                     -- 'indicatif' tant que le programme officiel n'est pas chargé
+  source TEXT,                    -- 'officiel 2021', 'reconstitue'…
+  epreuve_code TEXT               -- NULL = tous les épreuves de la discipline
 );
 
 -- Situations étendues (exercice de synthèse) : une situation longue + 4 à 6 questions liées
 CREATE TABLE IF NOT EXISTS situations (
   id TEXT PRIMARY KEY,
   option_code TEXT REFERENCES options(code),
+  epreuve_code TEXT,
   discipline TEXT NOT NULL,
   sous_discipline TEXT,
   chapitres TEXT,                  -- "Électricité ; Énergie"
@@ -113,7 +121,7 @@ CREATE TABLE IF NOT EXISTS resultats (
   id SERIAL PRIMARY KEY,
   eleve TEXT,                     -- identifiant local de l'appareil
   mode TEXT NOT NULL,             -- epreuve | discipline | chapitre
-  option_code TEXT, jour INTEGER, discipline TEXT, chapitre TEXT,
+  option_code TEXT, jour INTEGER, epreuve_code TEXT, discipline TEXT, chapitre TEXT,
   nb_items INTEGER NOT NULL,
   score INTEGER NOT NULL,
   details TEXT,                   -- JSON : [{item_id, reponse_donnee, juste}]

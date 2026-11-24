@@ -51,7 +51,7 @@ class _PgConn:
     def execute(self, sql: str, params=()):
         sql2 = self._sql(sql)
         lastrowid = None
-        if re.match(r"\s*INSERT\s+INTO\s+(lots_generation|resultats|epreuves|quotas|programme)\b", sql, re.I) \
+        if re.match(r"\s*INSERT\s+INTO\s+(lots_generation|resultats|quotas|programme)\b", sql, re.I) \
                 and "RETURNING" not in sql.upper():
             sql2 += " RETURNING id"
             cur = self._con.execute(sql2, params)
@@ -98,6 +98,7 @@ def connect():
 
 
 def init_db() -> None:
+    _migrer_avant()
     with connect() as con:
         con.executescript((SCHEMA_PG if PG else SCHEMA_SQLITE).read_text(encoding="utf-8"))
     migrer()
@@ -119,13 +120,40 @@ def colonnes(con, table: str) -> set[str]:
     return {r["name"] for r in con.execute(f"PRAGMA table_info({table})").fetchall()}
 
 
+EPREUVE_PAR_DISCIPLINE_V1 = {  # pour rattacher les items de la V1 (option Sciences) à leur épreuve
+    "Mathématiques": "M.46", "SVT": "M.46", "Chimie": "M.07", "Physique": "M.07", "TIC": "M.07",
+    "Civisme": "M.01", "Géographie": "M.01", "Histoire": "M.01", "Philosophie": "M.01",
+}
+
+
+def _migrer_avant() -> None:
+    """V2 → V3 : les épreuves deviennent partagées et identifiées par leur code ; les anciennes tables de
+    configuration (recréées à partir du E.32 à chaque démarrage) sont supprimées avant la création du schéma."""
+    with connect() as con:
+        if "jour" in colonnes(con, "epreuves"):
+            con.execute("DROP TABLE IF EXISTS quotas")
+            con.execute("DROP TABLE IF EXISTS epreuves")
+
+
 def migrer() -> None:
-    """Ajoute les colonnes apparues après la V1 sur une base existante."""
+    """Fait évoluer une base existante vers le schéma courant sans perdre les items."""
     with connect() as con:
         cols = colonnes(con, "items")
         if "situation_id" not in cols:
             con.execute("ALTER TABLE items ADD COLUMN situation_id TEXT REFERENCES situations(id)")
             con.execute("ALTER TABLE items ADD COLUMN ordre_situation INTEGER")
+        if "famille" not in colonnes(con, "options"):
+            con.execute("ALTER TABLE options ADD COLUMN famille TEXT")
+        if "epreuve_code" not in colonnes(con, "programme"):
+            con.execute("ALTER TABLE programme ADD COLUMN epreuve_code TEXT")
+        if "epreuve_code" not in colonnes(con, "situations"):
+            con.execute("ALTER TABLE situations ADD COLUMN epreuve_code TEXT")
+        if "epreuve_code" not in colonnes(con, "resultats"):
+            con.execute("ALTER TABLE resultats ADD COLUMN epreuve_code TEXT")
+    with connect() as con:
+        for disc, code in EPREUVE_PAR_DISCIPLINE_V1.items():
+            con.execute("UPDATE items SET epreuve_code=? WHERE epreuve_code IS NULL AND discipline=?", (code, disc))
+            con.execute("UPDATE situations SET epreuve_code=? WHERE epreuve_code IS NULL AND discipline=?", (code, disc))
 
 
 def maintenant() -> str:

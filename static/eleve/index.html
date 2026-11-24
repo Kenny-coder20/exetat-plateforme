@@ -141,7 +141,7 @@
 <body>
 <header class="bandeau"><div class="wrap">
   <div class="embleme" aria-hidden="true">EX</div>
-  <div class="nom">Examen d'État<small>Préparation · Section Sciences</small></div>
+  <div class="nom">Examen d'État<small id="sous-titre">Préparation</small></div>
   <button id="installer" class="btn-inst">Installer</button>
   <span id="etat" class="etat">…</span>
 </div></header>
@@ -152,7 +152,10 @@
     <h1 id="salutation">Bonjour. Que révisons-nous aujourd'hui ?</h1>
     <p>Des questions au format de l'épreuve, relues par des enseignants, avec une correction qui explique chaque étape.</p>
   </section>
-  <div class="etat-banque">
+  <div class="etat-banque" style="border-bottom:0;padding-bottom:4px">
+    <span style="flex:1"><label class="champ" style="margin:0 0 4px">Mon option (E.32)</label><select id="opt-accueil"></select></span>
+  </div>
+  <div class="etat-banque" style="margin-top:0">
     <span id="banque-info">Chargement de la banque…</span>
     <button class="lien" id="maj">Mettre à jour</button>
   </div>
@@ -188,7 +191,7 @@
   <div class="feuille" role="dialog" aria-modal="true" aria-labelledby="f-titre">
     <h2 id="f-titre"></h2><p class="aide" id="f-aide"></p>
     <div id="f-epreuve" hidden>
-      <label class="champ">Option</label><select id="opt"></select>
+      <input type="hidden" id="opt">
       <label class="champ">Jour de l'examen</label><select id="jour"></select>
       <div class="quota-apercu" id="desc-jour"></div>
     </div>
@@ -277,22 +280,36 @@ async function chargerBanque(force) {
     BANQUE = await r.json(); BANQUE.telechargee_le = new Date().toISOString(); DB.set('banque', BANQUE); afficherBanque(); if (force) toast('Banque mise à jour');
   } catch { if (!BANQUE) $('#banque-info').textContent = 'Aucune question sur cet appareil et pas de réseau. Connecte-toi une première fois.'; else toast('Pas de réseau : la banque locale reste utilisée.'); }
 }
+// --- option courante et ses épreuves
+const optionCourante = () => $('#opt-accueil').value || DB.get('option', '1.02');
+const epreuvesOption = () => (BANQUE.option_epreuves || []).filter(x => x.option_code === optionCourante()).map(x => ({ jour: x.jour, ...BANQUE.epreuves.find(e => e.code === x.epreuve_code) }));
+const epDuJour = j => epreuvesOption().find(e => e.jour === j);
+const quotasEp = code => BANQUE.quotas.filter(q => q.epreuve_code === code);
+const codesOption = () => epreuvesOption().map(e => e.code);
 function afficherBanque() {
   const d = new Date(BANQUE.telechargee_le);
-  $('#banque-info').innerHTML = `<b>${BANQUE.nb_items}</b> questions et <b>${BANQUE.nb_situations || 0}</b> exercice(s) de synthèse sur cet appareil · ${d.toLocaleDateString('fr')}`;
-  $('#opt').innerHTML = BANQUE.options.map(o => `<option value="${o.code}">${o.code} — ${o.nom}</option>`).join('');
-  const optJ = BANQUE.epreuves.map(e => `<option value="${e.jour}">Jour ${e.jour} — ${e.libelle}</option>`).join('');
-  $('#jour').innerHTML = optJ; $('#jour2').innerHTML = optJ; majJour(); majDisc();
-  const discs = [...new Set(BANQUE.quotas.map(q => q.discipline))]; $('#disc3').innerHTML = discs.map(d => `<option>${d}</option>`).join(''); majChap();
-  const sd = [...new Set((BANQUE.situations || []).map(s => s.discipline))]; $('#disc4').innerHTML = sd.length ? sd.map(d => `<option>${d}</option>`).join('') : '<option value="">Aucun exercice disponible</option>'; majSit();
+  const fam = {}; for (const o of BANQUE.options) (fam[o.famille] = fam[o.famille] || []).push(o);
+  $('#opt-accueil').innerHTML = Object.entries(fam).map(([f, os]) => `<optgroup label="${esc(f)}">${os.map(o => `<option value="${o.code}">${o.code} — ${esc(o.nom)}</option>`).join('')}</optgroup>`).join('');
+  $('#opt-accueil').value = DB.get('option', '1.02'); if (!$('#opt-accueil').value) $('#opt-accueil').value = '1.02';
+  const o = BANQUE.options.find(x => x.code === optionCourante()); $('#sous-titre').textContent = 'Préparation · ' + (o ? o.code + ' ' + o.nom : '');
+  const codes = codesOption(); const nbOpt = BANQUE.items.filter(i => codes.includes(i.epreuve_code)).length;
+  $('#banque-info').innerHTML = `<b>${nbOpt}</b> questions pour cette option (${BANQUE.nb_items} au total) · ${BANQUE.nb_situations || 0} exercice(s) de synthèse · ${d.toLocaleDateString('fr')}`;
+  $('#opt').value = optionCourante();
+  const optJ = epreuvesOption().map(e => `<option value="${e.jour}" ${e.actif ? '' : 'disabled'}>Jour ${e.jour} — ${e.code} · ${esc(e.libelle)}${e.actif ? '' : ' (bientôt)'}</option>`).join('');
+  $('#jour').innerHTML = optJ; $('#jour2').innerHTML = optJ;
+  const premier = epreuvesOption().find(e => e.actif); if (premier) { $('#jour').value = premier.jour; $('#jour2').value = premier.jour; }
+  majJour(); majDisc();
+  const discs = [...new Set(codes.flatMap(c => quotasEp(c).map(q => q.discipline)))]; $('#disc3').innerHTML = discs.map(d => `<option>${d}</option>`).join(''); majChap();
+  const sd = [...new Set((BANQUE.situations || []).filter(s => !s.epreuve_code || codes.includes(s.epreuve_code)).map(s => s.discipline))]; $('#disc4').innerHTML = sd.length ? sd.map(d => `<option>${d}</option>`).join('') : '<option value="">Aucun exercice disponible</option>'; majSit();
   afficherHistorique(); majSyncInfo();
 }
-const majJour = () => { const j = +$('#jour').value, e = BANQUE.epreuves.find(x => x.jour === j); const qs = BANQUE.quotas.filter(q => q.jour === j); $('#desc-jour').textContent = `${e.nb_items} questions · ${e.duree_h} h — ` + qs.map(q => `${q.discipline}${q.sous_discipline ? ' (' + q.sous_discipline + ')' : ''} ${q.nb_items}`).join(', '); };
-const majDisc = () => { const j = +$('#jour2').value; $('#disc').innerHTML = [...new Set(BANQUE.quotas.filter(q => q.jour === j).map(q => q.discipline))].map(d => `<option>${d}</option>`).join(''); };
-const majChap = () => { const d = $('#disc3').value; const chs = [...new Set(BANQUE.items.filter(i => i.discipline === d).map(i => i.chapitre))]; $('#chap').innerHTML = chs.length ? chs.map(c => `<option>${c}</option>`).join('') : '<option value="">(aucune question validée)</option>'; };
+$('#opt-accueil').onchange = () => { DB.set('option', $('#opt-accueil').value); afficherBanque(); };
+const majJour = () => { const e = epDuJour(+$('#jour').value); if (!e) { $('#desc-jour').textContent = ''; return; } const qs = quotasEp(e.code); $('#desc-jour').textContent = `${e.nb_items} questions · ${e.duree_h} h — ` + qs.map(q => `${q.discipline}${q.sous_discipline ? ' (' + q.sous_discipline + ')' : ''} ${q.nb_items}`).join(', '); };
+const majDisc = () => { const e = epDuJour(+$('#jour2').value); $('#disc').innerHTML = e ? [...new Set(quotasEp(e.code).map(q => q.discipline))].map(d => `<option>${d}</option>`).join('') : ''; };
+const majChap = () => { const d = $('#disc3').value, codes = codesOption(); const chs = [...new Set(BANQUE.items.filter(i => i.discipline === d && codes.includes(i.epreuve_code)).map(i => i.chapitre))]; $('#chap').innerHTML = chs.length ? chs.map(c => `<option>${c}</option>`).join('') : '<option value="">(aucune question validée)</option>'; };
 let sitChoisie = null;
 function majSit() {
-  const d = $('#disc4').value; const sits = (BANQUE.situations || []).filter(s => s.discipline === d); sitChoisie = sits[0] || null;
+  const d = $('#disc4').value, codes = codesOption(); const sits = (BANQUE.situations || []).filter(s => s.discipline === d && (!s.epreuve_code || codes.includes(s.epreuve_code))); sitChoisie = sits[0] || null;
   $('#liste-sit').innerHTML = sits.map((s, k) => `<li><button data-k="${k}" style="${k === 0 ? 'border-color:var(--nuit);box-shadow:inset 0 0 0 1px var(--nuit)' : ''}"><h4>${esc(s.titre)}</h4><small>${esc(s.chapitres || '')} · ${s.questions.length} questions · ${s.duree_min || 25} min</small></button></li>`).join('') || '<li class="vide">Rien pour cette matière.</li>';
   $('#liste-sit').querySelectorAll('button').forEach(b => b.onclick = () => { sitChoisie = sits[+b.dataset.k]; $('#liste-sit').querySelectorAll('button').forEach(x => x.style.cssText = ''); b.style.cssText = 'border-color:var(--nuit);box-shadow:inset 0 0 0 1px var(--nuit)'; });
 }
@@ -308,25 +325,25 @@ $('#voile').onclick = e => { if (e.target === $('#voile')) $('#voile').classList
 // ------------------------------------------------------------------ assemblage local (même logique que le serveur)
 const rep = n => { const f = Math.round(n * .25), d = Math.round(n * .25); return { facile: f, moyen: n - f - d, difficile: d } };
 const melanger = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]] } return a };
-function tirer({ discipline, sous_discipline, n, chapitre, difficulte }) {
-  let pool = BANQUE.items.filter(i => i.discipline === discipline && (!sous_discipline || i.sous_discipline === sous_discipline) && (!chapitre || i.chapitre === chapitre));
+function tirer({ discipline, sous_discipline, n, chapitre, difficulte, code, codes }) {
+  let pool = BANQUE.items.filter(i => i.discipline === discipline && (!sous_discipline || i.sous_discipline === sous_discipline) && (!chapitre || i.chapitre === chapitre) && (code ? i.epreuve_code === code : true) && (codes ? codes.includes(i.epreuve_code) : true));
   melanger(pool); const vus = {}; const prendre = (c, k) => { c.sort((a, b) => (vus[a.chapitre] || 0) - (vus[b.chapitre] || 0)); const p = c.slice(0, k); p.forEach(r => vus[r.chapitre] = (vus[r.chapitre] || 0) + 1); return p };
   const cibles = difficulte ? { [difficulte]: n } : rep(n); let choisis = [];
   for (const [d, k] of Object.entries(cibles)) { const p = prendre(pool.filter(i => i.difficulte === d), k); choisis.push(...p); pool = pool.filter(i => !p.includes(i)); }
   if (choisis.length < n) choisis.push(...prendre(pool, n - choisis.length));
   return choisis;
 }
-function assemblerEpreuve(jour, disciplineSeule) {
-  const qs = BANQUE.quotas.filter(q => q.jour === jour && (!disciplineSeule || q.discipline === disciplineSeule)); let items = [], manques = [];
-  for (const q of qs) { const p = tirer({ discipline: q.discipline, sous_discipline: q.sous_discipline, n: q.nb_items }); if (p.length < q.nb_items) manques.push(`${q.discipline}${q.sous_discipline ? ' / ' + q.sous_discipline : ''} : ${q.nb_items - p.length} manquante(s)`); items.push(...p); }
+function assemblerEpreuve(code, disciplineSeule) {
+  const qs = quotasEp(code).filter(q => !disciplineSeule || q.discipline === disciplineSeule); let items = [], manques = [];
+  for (const q of qs) { const p = tirer({ discipline: q.discipline, sous_discipline: q.sous_discipline, n: q.nb_items, code }); if (p.length < q.nb_items) manques.push(`${q.discipline}${q.sous_discipline ? ' / ' + q.sous_discipline : ''} : ${q.nb_items - p.length} manquante(s)`); items.push(...p); }
   return { items, manques };
 }
 $('#f-go').onclick = () => {
   let s;
-  if (modeChoisi === 'epreuve') { const j = +$('#jour').value, e = BANQUE.epreuves.find(x => x.jour === j); s = { mode: 'epreuve', jour: j, titre: `Jour ${j} — ${e.code}`, duree_min: e.duree_h * 60, ...assemblerEpreuve(j) }; }
-  else if (modeChoisi === 'discipline') { const j = +$('#jour2').value, d = $('#disc').value; s = { mode: 'discipline', jour: j, discipline: d, titre: `Jour ${j} — ${d}`, duree_min: 0, ...assemblerEpreuve(j, d) }; }
-  else if (modeChoisi === 'chapitre') { const d = $('#disc3').value, c = $('#chap').value, n = +$('#n3').value; const items = tirer({ discipline: d, n, chapitre: c, difficulte: $('#diff3').value || null }); s = { mode: 'chapitre', discipline: d, chapitre: c, titre: c, duree_min: 0, items, manques: items.length < n ? [`${n - items.length} question(s) manquante(s)`] : [] }; }
-  else { if (!sitChoisie) return; s = { mode: 'situation', discipline: sitChoisie.discipline, chapitre: sitChoisie.chapitres, titre: sitChoisie.titre, duree_min: sitChoisie.duree_min || 25, items: sitChoisie.questions, manques: [], situation: sitChoisie }; }
+  if (modeChoisi === 'epreuve') { const j = +$('#jour').value, e = epDuJour(j); if (!e) return; s = { mode: 'epreuve', jour: j, epreuve_code: e.code, titre: `Jour ${j} — ${e.code} ${e.libelle}`, duree_min: e.duree_h * 60, ...assemblerEpreuve(e.code) }; }
+  else if (modeChoisi === 'discipline') { const j = +$('#jour2').value, e = epDuJour(j), d = $('#disc').value; if (!e) return; s = { mode: 'discipline', jour: j, epreuve_code: e.code, discipline: d, titre: `${e.code} — ${d}`, duree_min: 0, ...assemblerEpreuve(e.code, d) }; }
+  else if (modeChoisi === 'chapitre') { const d = $('#disc3').value, c = $('#chap').value, n = +$('#n3').value; const items = tirer({ discipline: d, n, chapitre: c, difficulte: $('#diff3').value || null, codes: codesOption() }); s = { mode: 'chapitre', discipline: d, chapitre: c, titre: c, duree_min: 0, items, manques: items.length < n ? [`${n - items.length} question(s) manquante(s)`] : [] }; }
+  else { if (!sitChoisie) return; s = { mode: 'situation', epreuve_code: sitChoisie.epreuve_code, discipline: sitChoisie.discipline, chapitre: sitChoisie.chapitres, titre: sitChoisie.titre, duree_min: sitChoisie.duree_min || 25, items: sitChoisie.questions, manques: [], situation: sitChoisie }; }
   if (!s.items.length) { toast('Aucune question validée pour cette sélection.'); return; }
   $('#voile').classList.remove('on'); demarrer(s);
 };
@@ -378,7 +395,7 @@ $('#rendre').onclick = terminer;
 function terminer() {
   clearInterval(timer); const s = S; let score = 0; const details = [];
   s.items.forEach((it, k) => { const r = s.reponses[k] ?? null; const ok = r === it.reponse; if (ok) score++; details.push({ item_id: it.id, reponse_donnee: r, juste: ok }); });
-  const res = { eleve: ELEVE, mode: s.mode, option_code: $('#opt').value || '1.02', jour: s.jour ?? null, discipline: s.discipline ?? null, chapitre: s.chapitre ?? null, nb_items: s.items.length, score, details, date_passation: new Date().toISOString(), titre: s.titre, duree_s: Math.round((Date.now() - s.debut) / 1000) };
+  const res = { eleve: ELEVE, mode: s.mode, option_code: optionCourante(), jour: s.jour ?? null, epreuve_code: s.epreuve_code ?? null, discipline: s.discipline ?? null, chapitre: s.chapitre ?? null, nb_items: s.items.length, score, details, date_passation: new Date().toISOString(), titre: s.titre, duree_s: Math.round((Date.now() - s.debut) / 1000) };
   const hist = DB.get('historique', []); hist.unshift(res); DB.set('historique', hist.slice(0, 50));
   const att = DB.get('a_synchroniser', []); att.push(res); DB.set('a_synchroniser', att);
   const pct = Math.round(100 * score / s.items.length);

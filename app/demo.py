@@ -4,7 +4,7 @@ Ils permettent de tester l'assemblage, l'export et l'app élève avant la premi�
 Le jour 3 (Chimie 6, Physique 6, TIC 3) est complet ; le jour 2 est volontairement partiel pour montrer
 le message « banque insuffisante ».
 """
-from .db import connect, maintenant
+from .db import EPREUVE_PAR_DISCIPLINE_V1, connect, maintenant
 from .generation import compter_mots
 
 # (discipline, sous_discipline, chapitre, difficulte, titre, tige, [p1..p5], reponse, correction, erreurs)
@@ -160,11 +160,11 @@ def charger_demo() -> int:
         con.execute("DELETE FROM items WHERE version='demo'")
         for k, (d, sd, ch, diff, titre, tige, props, rep, corr, err) in enumerate(ITEMS, 1):
             con.execute(
-                """INSERT INTO items(id, option_code, discipline, sous_discipline, chapitre, savoir_essentiel, competence,
+                """INSERT INTO items(id, option_code, epreuve_code, discipline, sous_discipline, chapitre, savoir_essentiel, competence,
                    difficulte, famille_contexte, titre, tige, p1,p2,p3,p4,p5, reponse, correction_detaillee,
                    erreurs_distracteurs, nb_mots_tige, version, statut_validation, validateur, date_validation)
-                   VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'demo','valide','demo',?)""",
-                (f"DEMO-{k:03d}", "1.02", d, sd, ch, ch, "calculer", diff, "quotidien", titre, tige, *props, rep,
+                   VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'demo','valide','demo',?)""",
+                (f"DEMO-{k:03d}", "1.02", EPREUVE_PAR_DISCIPLINE_V1.get(d), d, sd, ch, ch, "calculer", diff, "quotidien", titre, tige, *props, rep,
                  corr, err, compter_mots(tige), maintenant()),
             )
         return len(ITEMS)
@@ -247,7 +247,7 @@ def charger_situation_demo() -> str:
                   "propositions": props, "reponse": r, "correction_detaillee": corr, "erreurs_distracteurs": err}
                  for k, (d, ch, t, tige, props, r, corr, err) in enumerate(SITUATION_DEMO["items"], 1)]
         sid = inserer_situation(con, {"situation": SITUATION_DEMO["situation"], "items": items},
-                                discipline="Physique", sous_discipline=None, modele="demo")
+                                discipline="Physique", sous_discipline=None, modele="demo", epreuve_code="M.07")
         con.execute("UPDATE situations SET version='demo', statut_validation='valide', validateur='demo', "
                     "date_validation=?, observations=NULL WHERE id=?", (maintenant(), sid))
         con.execute("UPDATE items SET version='demo', statut_validation='valide', validateur='demo', "

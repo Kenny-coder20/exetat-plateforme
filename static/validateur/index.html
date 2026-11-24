@@ -3,246 +3,331 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Atelier validateur — EXETAT</title>
+<title>Atelier des enseignants — Examen d'État</title>
+<link rel="icon" href="/eleve/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#1E2433;--muted:#5E6677;--line:#DDD6C6;--bg:#F7F4EC;--ok:#2E7D5B;--ko:#B23A3A;--acc:#1B2A4A;--card:#fff}
+  :root{--nuit:#1B2A4A;--ivoire:#F7F4EC;--ivoire-2:#EFEADD;--blanc:#fff;--encre:#1E2433;--encre-2:#5E6677;--filet:#DDD6C6;--or:#B8922E;--or-pale:#F6EBCF;--vert:#2E7D5B;--vert-pale:#E4F1EA;--rouge:#B23A3A;--rouge-pale:#F6E3E3;--serif:"Source Serif 4",Georgia,serif;--sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
   *{box-sizing:border-box}
-  body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
-  header{background:var(--card);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-  header h1{font-family:Georgia,'Source Serif 4',serif;font-size:18px;margin:0 auto 0 0;color:var(--acc)}
-  header a{color:var(--acc);text-decoration:none}
-  main{display:grid;grid-template-columns:340px 1fr;gap:16px;padding:16px;max-width:1400px;margin:auto}
-  @media(max-width:900px){main{grid-template-columns:1fr}}
-  .panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
-  .panel h2{font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 10px}
-  select,input,textarea,button{font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:7px;background:#fff;width:100%}
-  textarea{min-height:70px;resize:vertical}
-  button{cursor:pointer;background:var(--acc);color:#fff;border-color:var(--acc);width:auto}
-  button.secondary{background:#fff;color:var(--ink);border-color:var(--line)}
-  button.ok{background:var(--ok);border-color:var(--ok)} button.ko{background:var(--ko);border-color:var(--ko)}
-  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0}
-  .row>*{flex:1} .row>button{flex:0 0 auto}
-  .liste{max-height:60vh;overflow:auto;border-top:1px solid var(--line);margin-top:8px}
-  .liste div{padding:8px 6px;border-bottom:1px solid var(--line);cursor:pointer;font-size:14px}
-  .liste div:hover,.liste div.actif{background:#eef3fb}
-  .tag{display:inline-block;font-size:11.5px;padding:1px 7px;border-radius:10px;background:#eee;color:var(--muted);margin-right:4px}
-  .tag.anom{background:#fde8e6;color:var(--ko)}
-  label{font-size:12.5px;color:var(--muted);display:block;margin-top:8px}
-  .props{display:grid;grid-template-columns:28px 1fr;gap:6px 8px;align-items:center}
-  .props input[type=radio]{width:auto;justify-self:center}
-  .check{columns:2;font-size:13.5px} .check label{display:block;margin:2px 0;color:var(--ink)}
-  @media(max-width:700px){.check{columns:1}}
-  .muted{color:var(--muted);font-size:13px}
-  pre{white-space:pre-wrap;font-size:12.5px;background:#f3f3f5;padding:10px;border-radius:7px;max-height:220px;overflow:auto}
-  .stats td,.stats th{padding:3px 8px;text-align:left;font-size:13px;border-bottom:1px solid var(--line)}
-  .toast{position:fixed;bottom:16px;right:16px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;opacity:0;transition:.3s}
+  body{margin:0;font:15px/1.5 var(--sans);color:var(--encre);background:var(--ivoire)}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;letter-spacing:-.01em}
+  button,select,input,textarea{font:inherit}
+  a{color:var(--nuit)}
+  /* bandeau */
+  .bandeau{background:var(--nuit);color:#fff}
+  .bandeau .wrap{display:flex;align-items:center;gap:14px;min-height:56px;padding:0 20px;max-width:1240px;margin:auto}
+  .embleme{width:34px;height:34px;border:1.5px solid rgba(255,255,255,.55);border-radius:50%;display:grid;place-items:center;font:600 12px var(--serif);color:var(--or)}
+  .bandeau h1{font-size:17px;flex:1}
+  .bandeau h1 small{display:block;font:400 11.5px var(--sans);opacity:.7}
+  .bandeau .nom{display:flex;align-items:center;gap:8px;font-size:13px;opacity:.9}
+  .bandeau input{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:6px 10px;width:150px}
+  .bandeau a{color:#fff;opacity:.8;font-size:13px;text-decoration:none}
+  /* contexte : option / jour */
+  .contexte{background:var(--blanc);border-bottom:1px solid var(--filet)}
+  .contexte .wrap{max-width:1240px;margin:auto;padding:12px 20px;display:grid;grid-template-columns:minmax(260px,1.3fr) minmax(200px,1fr) minmax(200px,1fr) auto;gap:12px;align-items:end}
+  label.ch{display:block;font-size:12px;color:var(--encre-2);margin-bottom:4px}
+  select,input.txt,textarea{width:100%;padding:9px 10px;border:1px solid var(--filet);border-radius:9px;background:var(--ivoire)}
+  textarea{min-height:64px;resize:vertical;background:#fff}
+  .onglets{display:flex;gap:6px}
+  .onglets button{padding:9px 14px;border:1px solid var(--filet);background:#fff;border-radius:9px;cursor:pointer;color:var(--encre)}
+  .onglets button.on{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+  /* corps */
+  main{max-width:1240px;margin:0 auto;padding:16px 20px;display:grid;grid-template-columns:320px 1fr;gap:18px}
+  @media(max-width:960px){main{grid-template-columns:1fr}.contexte .wrap{grid-template-columns:1fr 1fr}}
+  .carte{background:#fff;border:1px solid var(--filet);border-radius:14px;padding:16px}
+  .carte h2{font-size:16px;color:var(--nuit);margin-bottom:8px}
+  .muted{color:var(--encre-2);font-size:13px}
+  .pastille{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:10px;background:var(--ivoire-2);color:var(--encre-2);margin-right:4px}
+  .pastille.att{background:var(--or-pale);color:var(--or)} .pastille.ok{background:var(--vert-pale);color:var(--vert)} .pastille.ko{background:var(--rouge-pale);color:var(--rouge)}
+  /* file */
+  .file{list-style:none;margin:8px 0 0;padding:0;max-height:62vh;overflow:auto}
+  .file li{padding:10px 8px;border-top:1px solid var(--filet);cursor:pointer;font-size:14px;display:grid;grid-template-columns:1fr auto;gap:6px}
+  .file li:hover,.file li.actif{background:var(--ivoire)}
+  .file li .t{font-family:var(--serif)}
+  .avancement{display:grid;gap:6px;margin-top:10px;font-size:13px}
+  .avancement div{display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center}
+  .barre{height:8px;border-radius:4px;background:var(--ivoire-2);overflow:hidden;position:relative}
+  .barre i{position:absolute;inset:0 auto 0 0;background:var(--vert);border-radius:4px}
+  .barre em{position:absolute;inset:0 auto 0 0;background:var(--or);border-radius:4px;opacity:.9}
+  /* fiche question */
+  .q-ent{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .q-titre{font-family:var(--serif);font-style:italic;color:var(--encre-2);margin:4px 0 6px}
+  .q-tige{font-size:17px;line-height:1.6}
+  .props{list-style:none;margin:14px 0;padding:0}
+  .props li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:11px 12px;border:1px solid var(--filet);border-radius:11px;background:#fff;margin:6px 0}
+  .props li.bonne{border-color:var(--vert);background:var(--vert-pale)}
+  .props .num{width:30px;height:30px;border-radius:50%;border:1px solid var(--filet);display:grid;place-items:center;font-family:var(--serif);font-weight:600;background:var(--ivoire);cursor:pointer}
+  .props li.bonne .num{background:var(--vert);color:#fff;border-color:var(--vert)}
+  .props .txt{padding-top:4px}
+  .props [contenteditable]:focus,.q-tige[contenteditable]:focus,.corr-txt[contenteditable]:focus{outline:2px solid var(--or);outline-offset:3px;border-radius:4px;background:#fffdf5}
+  .corr{margin-top:8px;padding:12px 14px;background:var(--ivoire);border-left:3px solid var(--or);font-size:14.5px;line-height:1.55}
+  .corr b{font-family:var(--serif)}
+  .alerte{margin:10px 0;padding:10px 12px;border-radius:9px;background:var(--or-pale);color:#6b5411;font-size:13.5px}
+  .aide-edit{font-size:12.5px;color:var(--encre-2);margin:6px 0 0}
+  /* points de contrôle */
+  .controle{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px 14px;margin:8px 0}
+  .controle label{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;cursor:pointer}
+  .controle input{margin-top:3px}
+  /* actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+  .btn{padding:12px 18px;border-radius:11px;border:1px solid var(--nuit);background:var(--nuit);color:#fff;font-weight:600;cursor:pointer}
+  .btn.ok{background:var(--vert);border-color:var(--vert)} .btn.ko{background:#fff;color:var(--rouge);border-color:var(--rouge)} .btn.sec{background:#fff;color:var(--nuit)}
+  .btn[disabled]{opacity:.5;cursor:default}
+  .raccourci{font-size:11.5px;opacity:.7;margin-left:6px}
+  .motifs{display:none;margin-top:10px;padding:12px;border:1px solid var(--rouge);border-radius:11px;background:var(--rouge-pale)}
+  .motifs.on{display:block}
+  .motifs label{display:block;font-size:14px;margin:4px 0}
+  .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--nuit);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:30}
   .toast.on{opacity:1}
+  .vide{padding:30px;text-align:center;color:var(--encre-2)}
+  .vide h2{font-size:20px;color:var(--nuit);margin-bottom:6px}
+  /* produire */
+  .grille2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:700px){.grille2{grid-template-columns:1fr}}
+  .journal{font-size:13px;margin-top:10px;padding:10px;background:var(--ivoire);border-radius:9px;max-height:200px;overflow:auto}
+  details summary{cursor:pointer;color:var(--encre-2);font-size:13px}
+  [hidden]{display:none !important}
 </style>
 </head>
 <body>
-<header>
-  <h1>Examen d'État — Atelier des enseignants</h1>
-  <span class="muted">Validateur :</span><input id="validateur" style="width:160px" placeholder="votre nom" />
-  <a href="/eleve/" target="_blank">App élève ↗</a>
-</header>
+<header class="bandeau"><div class="wrap">
+  <div class="embleme" aria-hidden="true">EX</div>
+  <h1>Atelier des enseignants<small>Relecture et validation des questions — Examen d'État</small></h1>
+  <div class="nom"><span>Votre nom</span><input id="validateur" placeholder="Prénom Nom"></div>
+  <a href="/eleve/" target="_blank">Espace élève ↗</a>
+</div></header>
+
+<div class="contexte"><div class="wrap">
+  <div><label class="ch">Option (nomenclature E.32)</label><select id="opt"></select></div>
+  <div><label class="ch">Jour de l'examen</label><select id="jour"></select></div>
+  <div><label class="ch">Matière</label><select id="disc"><option value="">Toutes les matières</option></select></div>
+  <div class="onglets"><button class="on" data-vue="relire">Relire</button><button data-vue="produire">Produire</button><button data-vue="banque">Banque</button></div>
+</div></div>
+
 <main>
+  <!-- colonne gauche : file -->
   <aside>
-    <section class="panel">
-      <h2>File d'attente</h2>
-      <div class="row">
-        <select id="f-type"><option value="items">Items isolés</option><option value="situations">Situations étendues</option></select>
-        <select id="f-statut"><option value="en_attente">En attente</option><option value="valide">Validés</option><option value="rejete">Rejetés</option><option value="">Tous</option></select>
-      </div>
-      <div class="row"><select id="f-disc"><option value="">Toutes disciplines</option></select></div>
-      <div id="liste" class="liste"></div>
+    <section class="carte">
+      <h2>À relire</h2>
+      <div class="muted" id="ep-info"></div>
+      <div class="onglets" style="margin-top:8px"><button class="on" data-statut="en_attente">En attente</button><button data-statut="valide">Validées</button><button data-statut="rejete">Rejetées</button></div>
+      <ul class="file" id="file"></ul>
     </section>
-    <section class="panel" style="margin-top:14px">
-      <h2>Générer (assistant IA)</h2>
-      <div class="row"><select id="g-jour"><option value="">— épreuve complète : jour —</option></select></div>
-      <div class="muted" style="text-align:center">ou</div>
-      <div class="row"><select id="g-disc"></select><select id="g-sous"><option value="">sous-discipline</option></select></div>
-      <div class="row"><select id="g-chap"><option value="">chapitre (au prorata)</option></select></div>
-      <div class="row"><input id="g-n" type="number" value="5" min="1" max="30" /><select id="g-diff"><option value="">difficulté 25/50/25</option><option>facile</option><option>moyen</option><option>difficile</option></select></div>
-      <div class="row"><button id="g-go">Générer des items</button><button id="g-sit" class="secondary">Générer une situation étendue</button></div>
-      <div class="row"><button id="g-prompt" class="secondary">Copier le prompt (sans API)</button></div>
-      <div id="g-msg" class="muted"></div>
-      <details style="margin-top:8px"><summary class="muted">Importer un JSON produit avec l'assistant IA</summary>
-        <textarea id="imp-json" placeholder='{"items":[...]}'></textarea><div class="row"><button id="imp-go" class="secondary">Importer</button></div></details>
+    <section class="carte" style="margin-top:14px">
+      <h2>Avancement de l'épreuve</h2>
+      <div class="muted">Validées (vert) et en attente (or), par rapport à quatre séries complètes.</div>
+      <div class="avancement" id="avancement"></div>
     </section>
-    <section class="panel" style="margin-top:14px"><h2>Banque</h2><div id="stats"></div>
-      <div class="row"><a class="muted" href="/api/export/latex?jour=3&serie=A" target="_blank">Export LaTeX jour 3</a><a class="muted" href="/api/export/latex?jour=2&serie=A" target="_blank">jour 2</a></div></section>
   </aside>
 
-  <section class="panel" id="fiche">
-    <h2>Item</h2>
-    <p class="muted">Choisissez un item dans la file. Les champs sont modifiables : une correction avant validation marque l'item « corrigée ».</p>
+  <!-- colonne droite : vues -->
+  <section>
+    <div id="vue-relire">
+      <div class="carte" id="fiche"><div class="vide"><h2>Choisissez une question dans la liste</h2>Vous la verrez exactement comme l'élève, avec la bonne réponse en vert et la correction. Vous pourrez la valider, la corriger directement dans le texte, ou la rejeter.</div></div>
+    </div>
+
+    <div id="vue-produire" hidden>
+      <div class="carte">
+        <h2>Produire des questions</h2>
+        <p class="muted">L'assistant IA rédige des questions d'après le programme officiel ; elles arrivent ensuite dans la file « À relire ». Rien n'atteint les élèves sans validation.</p>
+        <div class="grille2">
+          <div>
+            <label class="ch">Quoi produire</label>
+            <select id="g-quoi"><option value="epreuve">Une épreuve complète (toutes les matières, quotas du E.32)</option><option value="matiere">Des questions d'une matière</option><option value="situation">Un exercice de synthèse (situation + 4 à 6 questions)</option></select>
+          </div>
+          <div id="g-mat" hidden><label class="ch">Matière</label><select id="g-disc"></select></div>
+          <div id="g-chap-b" hidden><label class="ch">Chapitre (facultatif)</label><select id="g-chap"><option value="">Au choix de l'assistant, selon le programme</option></select></div>
+          <div id="g-n-b" hidden><label class="ch">Nombre</label><select id="g-n"><option>5</option><option>6</option><option>8</option><option>10</option><option>15</option></select></div>
+        </div>
+        <div class="actions"><button class="btn" id="g-go">Lancer la production</button><span class="muted" id="g-ep"></span></div>
+        <div class="journal" id="g-journal" hidden></div>
+        <details style="margin-top:14px"><summary>Sans assistant automatique : copier la consigne, puis importer le résultat</summary>
+          <div class="actions"><button class="btn sec" id="g-prompt">Copier la consigne</button></div>
+          <textarea id="imp-json" placeholder="Collez ici le résultat (format {&quot;items&quot;:[...]})"></textarea>
+          <div class="actions"><button class="btn sec" id="imp-go">Importer</button></div></details>
+      </div>
+      <div class="carte" style="margin-top:14px">
+        <h2>Exercices de synthèse</h2>
+        <ul class="file" id="file-sit"></ul>
+      </div>
+    </div>
+
+    <div id="vue-banque" hidden>
+      <div class="carte"><h2>État de la banque par épreuve</h2><div id="banque"></div></div>
+    </div>
   </section>
 </main>
 <div id="toast" class="toast"></div>
 
 <script>
 const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const api = async (url, opt) => { const r = await fetch(url, opt); if (!r.ok) { let d = r.statusText; try { d = (await r.json()).detail || d; } catch { } throw new Error(d); } return r.json(); };
 const toast = m => { const t = $('#toast'); t.textContent = m; t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 2600); };
-let CONFIG, courant = null;
+const POINTS = ["La réponse marquée est la bonne (j'ai vérifié)", "Une seule réponse possible, les autres sont fausses", "La question est claire, sans ambiguïté", "C'est au programme et au niveau de la classe", "Les chiffres, unités et noms sont exacts", "La correction est compréhensible par un élève seul"];
+const MOTIFS = ["Réponse marquée fausse", "Plusieurs réponses possibles", "Hors programme ou niveau inadapté", "Énoncé confus ou trop long", "Données ou faits inexacts", "Contexte artificiel ou irréaliste", "Doublon d'une autre question", "Autre (préciser ci-dessous)"];
+
+let CFG, courant = null, statutFile = 'en_attente', vue = 'relire';
 $('#validateur').value = localStorage.getItem('validateur') || '';
 $('#validateur').oninput = e => localStorage.setItem('validateur', e.target.value);
 
-const CHECKLIST = [
-  "Le savoir essentiel visé est unique", "Le contexte appartient à une famille de situations du programme",
-  "Lecture rapide, formulation sans ambiguïté (tige 35–75 mots)", "La question a une utilité explicite",
-  "Distracteurs homogènes, plausibles, pédagogiquement utiles", "Réponse correcte indiscutable (recalcul fait)",
-  "Difficulté cohérente avec l'EXETAT", "Contexte crédible pour l'élève", "Chiffres, unités, notations corrects",
-  "Harmonisé avec la série", "Correction compréhensible par un élève seul"];
-
+// ------------------------------------------------------------ contexte : option → jour → épreuve
+const epCourante = () => { const oe = CFG.option_epreuves.find(x => x.option_code === $('#opt').value && x.jour === +$('#jour').value); return oe && CFG.epreuves.find(e => e.code === oe.epreuve_code); };
+const quotasDe = code => CFG.quotas.filter(q => q.epreuve_code === code);
 async function init() {
-  CONFIG = await api('/api/config');
-  const joursActifs = new Set(CONFIG.epreuves.filter(e => e.actif).map(e => e.jour));
-  CONFIG.quotas = CONFIG.quotas.filter(q => joursActifs.has(q.jour));
-  const discs = [...new Set(CONFIG.quotas.map(q => q.discipline))];
-  for (const d of discs) { $('#f-disc').add(new Option(d)); $('#g-disc').add(new Option(d)); }
-  for (const e of CONFIG.epreuves.filter(e => e.actif)) $('#g-jour').add(new Option(`Jour ${e.jour} — ${e.code} (${e.nb_items} items)`, e.jour));
-  $('#g-disc').onchange = majSous; majSous();
-  await chargerListe(); await chargerStats();
+  CFG = await api('/api/config');
+  const fam = {}; for (const o of CFG.options) (fam[o.famille] = fam[o.famille] || []).push(o);
+  $('#opt').innerHTML = Object.entries(fam).map(([f, os]) => `<optgroup label="${esc(f)}">${os.map(o => `<option value="${o.code}">${o.code} — ${esc(o.nom)}</option>`).join('')}</optgroup>`).join('');
+  $('#opt').value = localStorage.getItem('opt') || '1.02';
+  majJours(); $('#jour').value = localStorage.getItem('jour') || '1'; if (!epCourante()) $('#jour').value = '1';
+  majEpreuve();
 }
-function majSous() {
-  const d = $('#g-disc').value;
-  const sous = [...new Set(CONFIG.quotas.filter(q => q.discipline === d && q.sous_discipline).map(q => q.sous_discipline))];
-  $('#g-sous').innerHTML = '<option value="">sous-discipline</option>' + sous.map(s => `<option>${s}</option>`).join('');
-  const chaps = CONFIG.programme.filter(p => p.discipline === d);
-  $('#g-chap').innerHTML = '<option value="">chapitre (au prorata)</option>' + chaps.map(c => `<option>${c.chapitre}</option>`).join('');
+function majJours() {
+  const oes = CFG.option_epreuves.filter(x => x.option_code === $('#opt').value);
+  $('#jour').innerHTML = oes.map(x => { const e = CFG.epreuves.find(e => e.code === x.epreuve_code); return `<option value="${x.jour}">Jour ${x.jour} — ${e.code} · ${esc(e.libelle)}${e.actif ? '' : ' (bientôt)'}</option>`; }).join('');
 }
-async function chargerListe() {
-  const p = new URLSearchParams(); if ($('#f-statut').value) p.set('statut', $('#f-statut').value); if ($('#f-disc').value) p.set('discipline', $('#f-disc').value);
-  if ($('#f-type').value === 'situations') {
-    const sits = await api('/api/situations?' + p);
-    $('#liste').innerHTML = sits.map(s => `<div data-sid="${s.id}" class="${courant && courant.id === s.id ? 'actif' : ''}">
-      <span class="tag">${s.discipline}</span><span class="tag">${s.nb_validees}/${s.nb_questions} q. validées</span>
-      ${(s.observations || '').startsWith('ANOMALIES') ? '<span class="tag anom">anomalies</span>' : ''}<br>${s.titre}</div>`).join('') || '<div class="muted">Aucune situation.</div>';
-    $('#liste').querySelectorAll('div[data-sid]').forEach(el => el.onclick = () => ouvrirSituation(el.dataset.sid));
-    return;
-  }
-  const items = await api('/api/items?' + p);
-  $('#liste').innerHTML = items.map(i => `<div data-id="${i.id}" class="${courant && courant.id === i.id ? 'actif' : ''}">
-    <span class="tag">${i.discipline}${i.sous_discipline ? ' · ' + i.sous_discipline : ''}</span><span class="tag">${i.difficulte}</span>
-    ${(i.observations || '').startsWith('ANOMALIES') ? '<span class="tag anom">anomalies</span>' : ''}<br>${i.titre}</div>`).join('') || '<div class="muted">Aucun item.</div>';
-  $('#liste').querySelectorAll('div[data-id]').forEach(el => el.onclick = () => ouvrir(el.dataset.id));
+function majEpreuve() {
+  const ep = epCourante(); if (!ep) return;
+  localStorage.setItem('opt', $('#opt').value); localStorage.setItem('jour', $('#jour').value);
+  const qs = quotasDe(ep.code);
+  const partage = CFG.option_epreuves.filter(x => x.epreuve_code === ep.code).map(x => x.option_code);
+  $('#ep-info').innerHTML = `<b>${ep.code}</b> · ${qs.map(q => `${esc(q.discipline)}${q.sous_discipline ? ' (' + esc(q.sous_discipline) + ')' : ''} ${q.nb_items}`).join(' · ')} · ${ep.nb_items} questions, ${ep.duree_h} h` + (partage.length > 1 ? `<br><span class="pastille">Épreuve commune à ${partage.length} options : ${partage.join(', ')}</span>` : '') + (ep.actif ? '' : '<br><span class="pastille ko">Banque pas encore ouverte pour cette épreuve</span>');
+  const discs = [...new Set(qs.map(q => q.discipline))];
+  $('#disc').innerHTML = '<option value="">Toutes les matières</option>' + discs.map(d => `<option>${esc(d)}</option>`).join('');
+  $('#g-disc').innerHTML = discs.map(d => `<option>${esc(d)}</option>`).join(''); majChapitres();
+  $('#g-ep').textContent = `Épreuve ${ep.code}` + (ep.actif ? '' : ' — banque non ouverte');
+  $('#g-go').disabled = !ep.actif;
+  courant = null; $('#fiche').innerHTML = '<div class="vide"><h2>Choisissez une question dans la liste</h2>Vous la verrez exactement comme l\'élève, avec la bonne réponse en vert et la correction.</div>';
+  chargerFile(); chargerAvancement(); chargerSituations();
 }
-$('#f-statut').onchange = chargerListe; $('#f-disc').onchange = chargerListe; $('#f-type').onchange = chargerListe;
+function majChapitres() { const d = $('#g-disc').value; const chs = CFG.programme.filter(p => p.discipline === d); $('#g-chap').innerHTML = '<option value="">Au choix de l\'assistant, selon le programme</option>' + chs.map(c => `<option>${esc(c.chapitre)}</option>`).join(''); }
+$('#opt').onchange = () => { majJours(); majEpreuve(); }; $('#jour').onchange = majEpreuve; $('#disc').onchange = () => chargerFile(); $('#g-disc').onchange = majChapitres;
+document.querySelectorAll('.onglets [data-vue]').forEach(b => b.onclick = () => { vue = b.dataset.vue; document.querySelectorAll('.onglets [data-vue]').forEach(x => x.classList.toggle('on', x === b)); for (const v of ['relire', 'produire', 'banque']) $('#vue-' + v).hidden = v !== vue; if (vue === 'banque') chargerBanque(); });
+document.querySelectorAll('[data-statut]').forEach(b => b.onclick = () => { statutFile = b.dataset.statut; document.querySelectorAll('[data-statut]').forEach(x => x.classList.toggle('on', x === b)); chargerFile(); });
+$('#g-quoi').onchange = () => { const q = $('#g-quoi').value; $('#g-mat').hidden = q === 'epreuve'; $('#g-chap-b').hidden = q === 'epreuve'; $('#g-n-b').hidden = q === 'epreuve'; };
 
+// ------------------------------------------------------------ file
+async function chargerFile() {
+  const ep = epCourante(); if (!ep) return;
+  const p = new URLSearchParams({ epreuve: ep.code, statut: statutFile }); if ($('#disc').value) p.set('discipline', $('#disc').value);
+  const items = await api('/api/items?' + p);
+  $('#file').innerHTML = items.map(i => `<li data-id="${i.id}" class="${courant && courant.id === i.id ? 'actif' : ''}"><span><span class="pastille">${esc(i.discipline)}</span><span class="pastille">${i.difficulte}</span>${i.situation_id ? '<span class="pastille">synthèse</span>' : ''}<br><span class="t">${esc(i.titre)}</span></span><span>${(i.observations || '').startsWith('ANOMALIES') ? '<span class="pastille att">à vérifier</span>' : ''}</span></li>`).join('') || `<li class="muted" style="cursor:default">Rien ${statutFile === 'en_attente' ? 'à relire' : 'ici'} pour cette sélection.</li>`;
+  $('#file').querySelectorAll('li[data-id]').forEach(el => el.onclick = () => ouvrir(el.dataset.id));
+  if (!courant && statutFile === 'en_attente' && items.length) ouvrir(items[0].id);
+}
+async function chargerAvancement() {
+  const ep = epCourante(); if (!ep) return;
+  const st = await api('/api/stats'); const qs = quotasDe(ep.code);
+  $('#avancement').innerHTML = qs.map(q => {
+    const l = st.par_epreuve.filter(r => r.epreuve_code === ep.code && r.discipline === q.discipline && (r.sous_discipline || '') === (q.sous_discipline || ''));
+    const v = l.filter(r => r.statut === 'valide').reduce((s, r) => s + r.n, 0), a = l.filter(r => r.statut === 'en_attente').reduce((s, r) => s + r.n, 0), c = q.nb_items * 4;
+    return `<div><span>${esc(q.discipline)}${q.sous_discipline ? ' · ' + esc(q.sous_discipline) : ''}<div class="barre"><em style="width:${Math.min(100, (v + a) / c * 100)}%"></em><i style="width:${Math.min(100, v / c * 100)}%"></i></div></span><span class="muted">${v} / ${c}</span></div>`;
+  }).join('');
+}
+
+// ------------------------------------------------------------ fiche : la question comme l'élève la voit
 async function ouvrir(id) {
-  courant = await api('/api/items/' + id);
-  const i = courant;
-  const chaps = CONFIG.programme.filter(p => p.discipline === i.discipline && (!i.sous_discipline || p.sous_discipline === i.sous_discipline));
+  courant = await api('/api/items/' + id); const i = courant;
+  const anomalies = (i.observations || '').startsWith('ANOMALIES') ? i.observations.replace('ANOMALIES AUTO : ', '') : '';
   $('#fiche').innerHTML = `
-    <h2>Item ${i.id} <span class="tag">${i.statut_validation}</span><span class="tag">${i.version}</span>${i.modele ? `<span class="tag">${i.modele}</span>` : ''}${i.situation_id ? `<span class="tag">question ${i.ordre_situation} de la situation</span>` : ''}</h2>
-    ${i.situation ? `<details open style="background:#f3f6fb;border-radius:8px;padding:10px 12px;margin-bottom:8px"><summary><b>${esc(i.situation.titre)}</b> <span class="muted">(situation — <a href="#" id="lien-sit">ouvrir la fiche</a>)</span></summary><p style="font-size:14px">${esc(i.situation.texte)}</p><p class="muted" style="font-size:13px">${esc(i.situation.document_texte || '')}</p></details>` : ''}
-    <div class="row"><div><label>Discipline</label><input value="${i.discipline}${i.sous_discipline ? ' / ' + i.sous_discipline : ''}" disabled></div>
-      <div><label>Chapitre</label><select id="e-chap">${chaps.map(c => `<option ${c.chapitre === i.chapitre ? 'selected' : ''}>${c.chapitre}</option>`).join('')}<option ${!chaps.some(c => c.chapitre === i.chapitre) ? 'selected' : ''}>${i.chapitre || ''}</option></select></div>
-      <div><label>Difficulté</label><select id="e-diff">${['facile', 'moyen', 'difficile'].map(d => `<option ${d === i.difficulte ? 'selected' : ''}>${d}</option>`).join('')}</select></div></div>
-    <label>Titre (thème bref dans un cadre situé)</label><input id="e-titre" value="${esc(i.titre)}">
-    <label>Tige — <span id="nbmots">${i.nb_mots_tige || ''}</span> mots (35–75)</label><textarea id="e-tige">${esc(i.tige)}</textarea>
-    ${i.support_latex ? `<label>Support LaTeX</label><pre>${esc(i.support_latex)}</pre>` : ''}
-    <label>Propositions (cochez la bonne réponse)</label>
-    <div class="props">${[1, 2, 3, 4, 5].map(k => `<input type="radio" name="rep" value="${k}" ${i.reponse === k ? 'checked' : ''}><input id="e-p${k}" value="${esc(i['p' + k])}">`).join('')}</div>
-    <label>Correction détaillée</label><textarea id="e-corr">${esc(i.correction_detaillee)}</textarea>
-    <label>Erreurs visées par les distracteurs</label><input id="e-err" value="${esc(i.erreurs_distracteurs || '')}">
-    <label>Savoir essentiel · compétence · contexte</label><div class="muted">${esc(i.savoir_essentiel)} · ${i.competence || ''} · ${i.famille_contexte || ''}</div>
-    ${i.observations ? `<label>Observations (agent / anomalies automatiques)</label><pre>${esc(i.observations)}</pre>` : ''}
-    <label>Checklist de la charte</label><div class="check">${CHECKLIST.map((c, k) => `<label><input type="checkbox" class="ck" style="width:auto"> ${c}</label>`).join('')}</div>
-    <label>Observations du validateur / motif de rejet</label><textarea id="e-obs">${esc(i.validateur && i.observations && !i.observations.startsWith('ANOMALIES') ? i.observations : '')}</textarea>
-    <div class="row" style="margin-top:12px"><button class="ok" id="b-ok">Valider</button><button class="ko" id="b-ko">Rejeter</button><button class="secondary" id="b-save">Enregistrer sans statuer</button></div>`;
-  if (i.situation) $('#lien-sit').onclick = e => { e.preventDefault(); ouvrirSituation(i.situation_id); };
-  $('#e-tige').oninput = e => $('#nbmots').textContent = e.target.value.trim().split(/\s+/).filter(Boolean).length;
-  $('#b-ok').onclick = () => statuer('valide'); $('#b-ko').onclick = () => statuer('rejete'); $('#b-save').onclick = () => statuer('en_attente');
-  chargerListe();
+    <div class="q-ent"><div><span class="pastille">${esc(i.discipline)}${i.sous_discipline ? ' · ' + esc(i.sous_discipline) : ''}</span><span class="pastille">${i.difficulte}</span><span class="pastille">${esc(i.chapitre || '')}</span></div>
+      <span class="pastille ${i.statut_validation === 'valide' ? 'ok' : i.statut_validation === 'rejete' ? 'ko' : 'att'}">${i.statut_validation === 'en_attente' ? 'en attente' : i.statut_validation === 'valide' ? 'validée' : 'rejetée'}</span></div>
+    ${i.situation ? `<div class="corr" style="border-color:var(--nuit)"><b>Situation : ${esc(i.situation.titre)}.</b> ${esc(i.situation.texte)}<br><span class="muted">${esc(i.situation.document_texte || '')}</span></div>` : ''}
+    ${anomalies ? `<div class="alerte">Points signalés automatiquement : ${esc(anomalies)}</div>` : ''}
+    <div class="q-titre" id="e-titre" contenteditable="true" spellcheck="true">${esc(i.titre)}</div>
+    <div class="q-tige" id="e-tige" contenteditable="true" spellcheck="true">${esc(i.tige)}</div>
+    ${i.support_latex ? `<p class="aide-edit">Cette question s'accompagne d'un tableau ou d'une figure, visible dans la version imprimée.</p>` : ''}
+    <ul class="props" id="props">${[1, 2, 3, 4, 5].map(k => `<li class="${i.reponse === k ? 'bonne' : ''}" data-k="${k}"><span class="num" title="Marquer comme bonne réponse">${k}</span><span class="txt" contenteditable="true" id="e-p${k}">${esc(i['p' + k])}</span></li>`).join('')}</ul>
+    <p class="aide-edit">Pour corriger : cliquez dans un texte et modifiez-le. Pour changer la bonne réponse : cliquez sur son numéro.</p>
+    <div class="corr"><b>Correction.</b> <span id="e-corr" class="corr-txt" contenteditable="true">${esc(i.correction_detaillee)}</span>${i.erreurs_distracteurs ? `<br><span class="muted">Erreurs visées par les autres propositions : <span id="e-err" contenteditable="true">${esc(i.erreurs_distracteurs)}</span></span>` : '<span id="e-err" hidden></span>'}</div>
+    <h3 style="font-size:15px;margin:16px 0 4px">Avant de valider, je confirme :</h3>
+    <div class="controle">${POINTS.map((p, k) => `<label><input type="checkbox" class="pt"> ${p}</label>`).join('')}</div>
+    <div class="actions">
+      <button class="btn ok" id="b-ok">Valider <span class="raccourci">V</span></button>
+      <button class="btn sec" id="b-save">Enregistrer mes corrections <span class="raccourci">E</span></button>
+      <button class="btn ko" id="b-ko">Rejeter <span class="raccourci">R</span></button>
+      <button class="btn sec" id="b-suiv" title="Passer à la suivante sans statuer">Suivante <span class="raccourci">→</span></button>
+    </div>
+    <div class="motifs" id="motifs"><b>Pourquoi rejeter cette question ?</b>${MOTIFS.map(m => `<label><input type="radio" name="motif" value="${esc(m)}"> ${m}</label>`).join('')}<textarea id="e-obs" placeholder="Précision pour le rédacteur (facultatif)"></textarea><div class="actions"><button class="btn ko" id="b-ko2">Confirmer le rejet</button><button class="btn sec" id="b-annul">Annuler</button></div></div>`;
+  $('#props').querySelectorAll('.num').forEach(n => n.onclick = () => { $('#props').querySelectorAll('li').forEach(li => li.classList.toggle('bonne', li === n.parentElement)); });
+  $('#b-ok').onclick = () => statuer('valide'); $('#b-save').onclick = () => statuer('en_attente'); $('#b-suiv').onclick = suivante;
+  $('#b-ko').onclick = () => { $('#motifs').classList.add('on'); $('#motifs').scrollIntoView({ behavior: 'smooth', block: 'nearest' }); };
+  $('#b-annul').onclick = () => $('#motifs').classList.remove('on');
+  $('#b-ko2').onclick = () => statuer('rejete');
+  $('#file').querySelectorAll('li').forEach(li => li.classList.toggle('actif', li.dataset.id === id));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function lireFiche() {
+  const bonne = +($('#props').querySelector('li.bonne') || { dataset: { k: courant.reponse } }).dataset.k;
+  const b = { titre: $('#e-titre').textContent.trim(), tige: $('#e-tige').textContent.trim(), correction_detaillee: $('#e-corr').textContent.trim(), reponse: bonne };
+  for (const k of [1, 2, 3, 4, 5]) b['p' + k] = $('#e-p' + k).textContent.trim();
+  if ($('#e-err') && !$('#e-err').hidden) b.erreurs_distracteurs = $('#e-err').textContent.trim();
+  return b;
+}
+async function statuer(statut) {
+  if (!courant) return;
+  if (!$('#validateur').value.trim()) { toast('Indiquez votre nom en haut à droite.'); $('#validateur').focus(); return; }
+  if (statut === 'valide') { const nk = [...document.querySelectorAll('.pt')].filter(c => !c.checked).length; if (nk && !confirm(`${nk} point(s) ne sont pas cochés. Valider quand même ?`)) return; }
+  const motif = statut === 'rejete' ? (document.querySelector('input[name=motif]:checked') || {}).value : null;
+  if (statut === 'rejete' && !motif) { toast('Choisissez un motif de rejet.'); return; }
+  const statutEnvoye = statut === 'en_attente' ? courant.statut_validation : statut;
+  const body = { statut: statutEnvoye, validateur: $('#validateur').value.trim(), observations: statut === 'rejete' ? ($('#e-obs').value || null) : null, motif_rejet: motif, ...lireFiche() };
+  try { await api('/api/items/' + courant.id + '/valider', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); toast(statut === 'valide' ? 'Question validée' : statut === 'rejete' ? 'Question rejetée' : 'Corrections enregistrées'); const id = courant.id; if (statut !== 'en_attente') { courant = null; } await chargerFile(); chargerAvancement(); if (statut === 'en_attente') ouvrir(id); }
+  catch (e) { toast('Erreur : ' + e.message); }
+}
+function suivante() { const lis = [...$('#file').querySelectorAll('li[data-id]')]; const k = lis.findIndex(l => l.dataset.id === (courant || {}).id); const n = lis[(k + 1) % lis.length]; if (n) ouvrir(n.dataset.id); }
+document.addEventListener('keydown', e => { if (!courant || e.target.isContentEditable || /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return; if (e.key === 'v' || e.key === 'V') statuer('valide'); if (e.key === 'r' || e.key === 'R') $('#b-ko').click(); if (e.key === 'e' || e.key === 'E') statuer('en_attente'); if (e.key === 'ArrowRight') suivante(); });
+
+// ------------------------------------------------------------ produire
+$('#g-go').onclick = async () => {
+  const ep = epCourante(); const quoi = $('#g-quoi').value;
+  let url = '/api/generer', body = { epreuve_code: ep.code };
+  if (quoi === 'matiere') body = { ...body, discipline: $('#g-disc').value, chapitre: $('#g-chap').value || null, n: +$('#g-n').value };
+  if (quoi === 'situation') { url = '/api/situations/generer'; body = { ...body, discipline: $('#g-disc').value, chapitre: $('#g-chap').value || null, n: Math.min(6, Math.max(4, +$('#g-n').value)) }; }
+  try { const r = await api(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); suivre(r.tache); } catch (e) { toast('Erreur : ' + e.message); }
+};
+async function suivre(tid) {
+  $('#g-go').disabled = true; $('#g-journal').hidden = false; const debut = Date.now();
+  const tick = async () => {
+    let t; try { t = await api('/api/taches/' + tid); } catch (e) { $('#g-journal').textContent = 'Suivi interrompu : ' + e.message; $('#g-go').disabled = false; return; }
+    const sec = Math.round((Date.now() - debut) / 1000);
+    $('#g-journal').innerHTML = `<b>${esc(t.libelle)}</b> — ${t.statut === 'en_cours' ? 'en cours (' + sec + ' s)… vous pouvez continuer à relire pendant ce temps.' : t.statut === 'termine' ? 'terminé.' : 'échec : ' + esc(t.erreur)}<br>` + t.etapes.map(e => '• ' + esc(e.texte)).join('<br>');
+    if (t.statut === 'en_cours') setTimeout(tick, 4000); else { $('#g-go').disabled = false; chargerFile(); chargerAvancement(); chargerSituations(); }
+  };
+  tick();
+}
+$('#g-prompt').onclick = async () => { const ep = epCourante(); const p = new URLSearchParams({ discipline: $('#g-disc').value, n: $('#g-n').value, epreuve: ep.code }); if ($('#g-chap').value) p.set('chapitre', $('#g-chap').value); const r = await api('/api/prompt?' + p); await navigator.clipboard.writeText('INSTRUCTIONS :\n' + r.systeme + '\n\n' + r.commande); toast('Consigne copiée.'); };
+$('#imp-go').onclick = async () => { try { const j = JSON.parse($('#imp-json').value); const r = await api('/api/importer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items: j.items || j, discipline: $('#g-disc').value, epreuve_code: epCourante().code }) }); toast(r.nb + ' questions importées'); $('#imp-json').value = ''; chargerFile(); chargerAvancement(); } catch (e) { toast('Import impossible : ' + e.message); } };
+async function chargerSituations() {
+  const ep = epCourante(); if (!ep) return;
+  const sits = await api('/api/situations?epreuve=' + encodeURIComponent(ep.code));
+  $('#file-sit').innerHTML = sits.map(s => `<li data-sid="${s.id}"><span><span class="pastille">${esc(s.discipline)}</span><span class="pastille ${s.statut_validation === 'valide' ? 'ok' : 'att'}">${s.nb_validees}/${s.nb_questions} questions validées</span><br><span class="t">${esc(s.titre)}</span></span></li>`).join('') || '<li class="muted" style="cursor:default">Aucun exercice de synthèse pour cette épreuve.</li>';
+  $('#file-sit').querySelectorAll('li[data-sid]').forEach(el => el.onclick = () => ouvrirSituation(el.dataset.sid));
 }
 async function ouvrirSituation(sid) {
   const s = await api('/api/situations/' + sid); courant = s;
+  document.querySelector('[data-vue=relire]').click();
   $('#fiche').innerHTML = `
-    <h2>Situation ${s.id} <span class="tag">${s.statut_validation}</span><span class="tag">${s.version}</span><span class="tag">${s.discipline}</span></h2>
-    <label>Titre</label><input id="s-titre" value="${esc(s.titre)}">
-    <label>Situation — <span id="s-nbmots">${s.nb_mots || ''}</span> mots (150–300)</label><textarea id="s-texte" style="min-height:160px">${esc(s.texte)}</textarea>
-    <label>Documents (texte lisible)</label><textarea id="s-doc">${esc(s.document_texte || '')}</textarea>
-    <label>Documents (LaTeX)</label><textarea id="s-doclatex" style="font-family:monospace;font-size:12.5px">${esc(s.document_latex || '')}</textarea>
-    <div class="row"><div><label>Chapitres</label><input id="s-chap" value="${esc(s.chapitres || '')}"></div><div><label>Durée (min)</label><input id="s-duree" type="number" value="${s.duree_min || 25}"></div></div>
-    <label>Synthèse finale</label><textarea id="s-synth">${esc(s.synthese || '')}</textarea>
-    ${s.observations ? `<label>Observations</label><pre>${esc(s.observations)}</pre>` : ''}
-    <label>Questions (${s.questions.length}) — à valider une par une</label>
-    <div class="liste" style="max-height:none">${s.questions.map(q => `<div data-id="${q.id}"><span class="tag">Q${q.ordre_situation}</span><span class="tag">${q.difficulte}</span><span class="tag ${q.statut_validation === 'valide' ? '' : 'anom'}">${q.statut_validation}</span> ${esc(q.titre)}</div>`).join('')}</div>
-    <label>Observations du validateur / motif de rejet</label><textarea id="s-obs"></textarea>
-    <div class="row" style="margin-top:12px"><button class="ok" id="s-ok">Valider la situation</button><button class="ko" id="s-ko">Rejeter</button><button class="secondary" id="s-save">Enregistrer sans statuer</button>
-      <a class="muted" href="/api/export/situation/${s.id}?pdf=true" target="_blank">Export LaTeX/PDF</a></div>`;
-  $('#s-texte').oninput = e => $('#s-nbmots').textContent = e.target.value.trim().split(/\s+/).filter(Boolean).length;
-  $('#fiche').querySelectorAll('div[data-id]').forEach(el => el.onclick = () => ouvrir(el.dataset.id));
-  const statuerS = async statut => {
-    const body = { statut, validateur: $('#validateur').value || 'anonyme', observations: $('#s-obs').value || null, motif_rejet: statut === 'rejete' ? ($('#s-obs').value || 'non précisé') : null,
-      titre: $('#s-titre').value, texte: $('#s-texte').value, document_texte: $('#s-doc').value, document_latex: $('#s-doclatex').value, synthese: $('#s-synth').value, chapitres: $('#s-chap').value, duree_min: +$('#s-duree').value };
-    try { await api('/api/situations/' + s.id + '/valider', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); toast('Situation ' + statut); await chargerListe(); await chargerStats(); if (statut !== 'en_attente') { courant = null; $('#fiche').innerHTML = '<h2>Item</h2><p class="muted">Suivant ?</p>'; } }
-    catch (e) { toast('Erreur : ' + e.message); }
-  };
-  $('#s-ok').onclick = () => statuerS('valide'); $('#s-ko').onclick = () => statuerS('rejete'); $('#s-save').onclick = () => statuerS('en_attente');
-  chargerListe();
-}
-const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
-
-async function statuer(statut) {
-  if (statut === 'valide') {
-    const nk = [...document.querySelectorAll('.ck')].filter(c => !c.checked).length;
-    if (nk && !confirm(`${nk} point(s) de la checklist non cochés. Valider quand même ?`)) return;
-  }
-  const body = {
-    statut, validateur: $('#validateur').value || 'anonyme', observations: $('#e-obs').value || null,
-    motif_rejet: statut === 'rejete' ? ($('#e-obs').value || 'non précisé') : null,
-    titre: $('#e-titre').value, tige: $('#e-tige').value, correction_detaillee: $('#e-corr').value, erreurs_distracteurs: $('#e-err').value,
-    chapitre: $('#e-chap').value, difficulte: $('#e-diff').value, reponse: +(document.querySelector('input[name=rep]:checked') || {}).value || courant.reponse,
-  };
-  for (const k of [1, 2, 3, 4, 5]) body['p' + k] = $('#e-p' + k).value;
-  try { await api('/api/items/' + courant.id + '/valider', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); toast('Item ' + statut); courant = null; $('#fiche').innerHTML = '<h2>Item</h2><p class="muted">Item suivant ?</p>'; await chargerListe(); await chargerStats(); }
-  catch (e) { toast('Erreur : ' + e.message); }
+    <div class="q-ent"><div><span class="pastille">${esc(s.discipline)}</span><span class="pastille">exercice de synthèse</span></div><span class="pastille ${s.statut_validation === 'valide' ? 'ok' : 'att'}">${s.statut_validation === 'valide' ? 'validé' : 'en attente'}</span></div>
+    <h2 style="margin:6px 0">${esc(s.titre)}</h2>
+    <div class="q-tige" id="s-texte" contenteditable="true">${esc(s.texte)}</div>
+    <div class="corr"><b>Documents.</b> <span id="s-doc" contenteditable="true">${esc(s.document_texte || '')}</span></div>
+    <div class="corr"><b>Synthèse (réponse au problème).</b> <span id="s-synth" contenteditable="true">${esc(s.synthese || '')}</span></div>
+    <h3 style="font-size:15px;margin:14px 0 4px">Les ${s.questions.length} questions — à relire une par une</h3>
+    <ul class="file" style="max-height:none">${s.questions.map(q => `<li data-id="${q.id}"><span><span class="pastille">Q${q.ordre_situation}</span><span class="pastille">${q.difficulte}</span><span class="pastille ${q.statut_validation === 'valide' ? 'ok' : 'att'}">${q.statut_validation === 'valide' ? 'validée' : q.statut_validation === 'rejete' ? 'rejetée' : 'en attente'}</span><br><span class="t">${esc(q.titre)}</span></span></li>`).join('')}</ul>
+    <div class="actions"><button class="btn ok" id="s-ok">Valider l'exercice complet</button><button class="btn sec" id="s-save">Enregistrer mes corrections</button><button class="btn ko" id="s-ko">Rejeter l'exercice</button></div>
+    <div class="motifs" id="motifs"><b>Pourquoi rejeter ?</b><textarea id="s-obs" placeholder="Motif"></textarea><div class="actions"><button class="btn ko" id="s-ko2">Confirmer</button></div></div>`;
+  $('#fiche').querySelectorAll('li[data-id]').forEach(el => el.onclick = () => ouvrir(el.dataset.id));
+  const st = async statut => { if (!$('#validateur').value.trim()) { toast('Indiquez votre nom.'); return; } const body = { statut, validateur: $('#validateur').value.trim(), observations: statut === 'rejete' ? $('#s-obs').value : null, motif_rejet: statut === 'rejete' ? ($('#s-obs').value || 'non précisé') : null, texte: $('#s-texte').textContent.trim(), document_texte: $('#s-doc').textContent.trim(), synthese: $('#s-synth').textContent.trim() }; try { await api('/api/situations/' + s.id + '/valider', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); toast('Exercice ' + (statut === 'valide' ? 'validé' : statut === 'rejete' ? 'rejeté' : 'enregistré')); chargerSituations(); chargerFile(); chargerAvancement(); if (statut === 'en_attente') ouvrirSituation(s.id); else { courant = null; $('#fiche').innerHTML = '<div class="vide"><h2>Suivant ?</h2></div>'; } } catch (e) { toast(e.message); } };
+  $('#s-ok').onclick = () => st('valide'); $('#s-save').onclick = () => st('en_attente'); $('#s-ko').onclick = () => $('#motifs').classList.add('on'); $('#s-ko2').onclick = () => st('rejete');
 }
 
-$('#g-go').onclick = async () => {
-  const jour = $('#g-jour').value; const body = jour ? { jour: +jour } : { discipline: $('#g-disc').value, sous_discipline: $('#g-sous').value || null, chapitre: $('#g-chap').value || null, difficulte: $('#g-diff').value || null, n: +$('#g-n').value };
-  try { const r = await api('/api/generer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); suivreTache(r.tache); }
-  catch (e) { $('#g-msg').textContent = 'Erreur : ' + e.message; }
-};
-async function suivreTache(tid) {
-  $('#g-go').disabled = true; $('#g-sit').disabled = true;
-  const debut = Date.now();
-  const tick = async () => {
-    let t; try { t = await api('/api/taches/' + tid); } catch (e) { $('#g-msg').textContent = 'Suivi interrompu : ' + e.message; return fin(); }
-    const sec = Math.round((Date.now() - debut) / 1000);
-    const etapes = t.etapes.map(e => '• ' + e.texte).join('<br>');
-    if (t.statut === 'en_cours') { $('#g-msg').innerHTML = `<b>${t.libelle}</b> — en cours (${sec} s). Vous pouvez continuer à valider pendant ce temps.<br>${etapes}`; setTimeout(tick, 4000); }
-    else if (t.statut === 'termine') { $('#g-msg').innerHTML = `<b>${t.libelle}</b> — terminé en ${sec} s.<br>${etapes}`; await chargerListe(); await chargerStats(); fin(); }
-    else { $('#g-msg').innerHTML = `<b>${t.libelle}</b> — échec : ${t.erreur}<br>${etapes}`; fin(); }
-  };
-  const fin = () => { $('#g-go').disabled = false; $('#g-sit').disabled = false; };
-  tick();
-}
-$('#g-sit').onclick = async () => {
-  const body = { discipline: $('#g-disc').value, sous_discipline: $('#g-sous').value || null, chapitre: $('#g-chap').value || null, n: Math.min(6, Math.max(4, +$('#g-n').value || 5)) };
-  try { const r = await api('/api/situations/generer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); $('#f-type').value = 'situations'; suivreTache(r.tache); }
-  catch (e) { $('#g-msg').textContent = 'Erreur : ' + e.message; }
-};
-$('#g-prompt').onclick = async () => {
-  const p = new URLSearchParams({ discipline: $('#g-disc').value, n: $('#g-n').value }); if ($('#g-sous').value) p.set('sous_discipline', $('#g-sous').value); if ($('#g-chap').value) p.set('chapitre', $('#g-chap').value); if ($('#g-diff').value) p.set('difficulte', $('#g-diff').value);
-  const r = await api('/api/prompt?' + p);
-  await navigator.clipboard.writeText('INSTRUCTIONS SYSTÈME :\n' + r.systeme + '\n\n' + r.commande);
-  toast('Prompt copié : collez-le dans votre assistant IA, puis importez le JSON reçu.');
-};
-$('#imp-go').onclick = async () => {
-  try { const j = JSON.parse($('#imp-json').value); const r = await api('/api/importer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items: j.items || j, discipline: $('#g-disc').value }) }); toast(r.nb + ' items importés'); $('#imp-json').value = ''; chargerListe(); chargerStats(); }
-  catch (e) { toast('JSON invalide : ' + e.message); }
-};
-async function chargerStats() {
-  const s = await api('/api/stats');
-  const tot = Object.fromEntries(s.par_statut.map(r => [r.statut, r.n]));
-  const lignes = {}; for (const r of s.par_discipline) { const k = r.discipline + (r.sous_discipline ? ' / ' + r.sous_discipline : ''); lignes[k] = lignes[k] || {}; lignes[k][r.statut] = r.n; }
-  const ts = Object.fromEntries((s.situations || []).map(r => [r.statut, r.n]));
-  $('#stats').innerHTML = `<div class="muted">Items : en attente ${tot.en_attente || 0} · validés ${tot.valide || 0} · rejetés ${tot.rejete || 0}<br>Situations : en attente ${ts.en_attente || 0} · validées ${ts.valide || 0}</div>
-    <table class="stats"><tr><th>Discipline</th><th>att.</th><th>val.</th><th>rej.</th></tr>${Object.entries(lignes).map(([k, v]) => `<tr><td>${k}</td><td>${v.en_attente || 0}</td><td>${v.valide || 0}</td><td>${v.rejete || 0}</td></tr>`).join('')}</table>`;
+// ------------------------------------------------------------ banque
+async function chargerBanque() {
+  const st = await api('/api/stats');
+  const parEp = {}; for (const r of st.par_epreuve) { const k = r.epreuve_code || '—'; parEp[k] = parEp[k] || {}; const d = r.discipline + (r.sous_discipline ? ' · ' + r.sous_discipline : ''); parEp[k][d] = parEp[k][d] || {}; parEp[k][d][r.statut] = r.n; }
+  $('#banque').innerHTML = Object.entries(parEp).map(([code, ds]) => { const ep = CFG.epreuves.find(e => e.code === code) || { libelle: '' }; const opts = CFG.option_epreuves.filter(x => x.epreuve_code === code).map(x => x.option_code); return `<h3 style="font-size:15px;margin:14px 0 6px">${code} — ${esc(ep.libelle)} <span class="muted">(options ${opts.join(', ') || '—'})</span></h3><table style="width:100%;font-size:13.5px;border-collapse:collapse">${Object.entries(ds).map(([d, v]) => `<tr><td style="padding:3px 6px;border-bottom:1px solid var(--filet)">${esc(d)}</td><td style="padding:3px 6px;border-bottom:1px solid var(--filet);color:var(--vert)">${v.valide || 0} validées</td><td style="padding:3px 6px;border-bottom:1px solid var(--filet);color:var(--or)">${v.en_attente || 0} en attente</td><td style="padding:3px 6px;border-bottom:1px solid var(--filet);color:var(--rouge)">${v.rejete || 0} rejetées</td></tr>`).join('')}</table>`; }).join('') || '<p class="muted">La banque est vide.</p>';
 }
 init().catch(e => toast(e.message));
 </script>

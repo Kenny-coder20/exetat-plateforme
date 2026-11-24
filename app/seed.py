@@ -12,34 +12,7 @@ Un CSV officiel peut toujours remplacer la liste : `python -m app.cli programme 
 """
 from .db import connect
 
-OPTIONS = [("1.02", "Sciences", 2026)]
-
-# (jour, code, libellé, nb_items, nb_series, durée h, actif)
-EPREUVES = {
-    "1.02": [
-        (1, "M.01", "Culture générale — Civisme, Géographie, Histoire, Philosophie", 20, 4, 2, 1),
-        (2, "M.46", "Mathématiques et SVT", 30, 4, 5, 1),
-        (3, "M.07", "SPTIC — Chimie, Physique, TIC", 15, 4, 4, 1),
-        (4, "M.36", "Langues", 20, 4, 4, 0),
-    ]
-}
-
-# (option, jour, ordre, discipline, sous_discipline, nb_items)
-QUOTAS = [
-    ("1.02", 1, 1, "Civisme", None, 2),
-    ("1.02", 1, 2, "Géographie", None, 6),
-    ("1.02", 1, 3, "Histoire", None, 6),
-    ("1.02", 1, 4, "Philosophie", None, 6),
-    ("1.02", 2, 1, "Mathématiques", None, 15),
-    ("1.02", 2, 2, "SVT", "Biologie", 7),
-    ("1.02", 2, 3, "SVT", "Écologie", 5),
-    ("1.02", 2, 4, "SVT", "Géologie & Évolution", 3),
-    ("1.02", 3, 1, "Chimie", None, 6),
-    ("1.02", 3, 2, "Physique", None, 6),
-    ("1.02", 3, 3, "TIC", None, 3),
-    ("1.02", 4, 1, "Anglais", None, 9),
-    ("1.02", 4, 2, "Français", None, 11),
-]
+from .e32 import EPREUVES as E32_EPREUVES, EPREUVES_ACTIVES, FAMILLES, OPTIONS as E32_OPTIONS, SESSION
 
 O21 = "officiel 2021"; O07 = "officiel 2007"; O05 = "officiel 2005"; REC = "reconstitue"
 
@@ -134,28 +107,27 @@ PROGRAMME = [
 
 def seed(replace_programme: bool = False) -> None:
     with connect() as con:
-        for code, nom, session in OPTIONS:
+        for code, (nom, _eps) in E32_OPTIONS.items():
             con.execute(
-                "INSERT INTO options(code, nom, session) VALUES(?,?,?) "
-                "ON CONFLICT(code) DO UPDATE SET nom=excluded.nom, session=excluded.session",
-                (code, nom, session),
+                "INSERT INTO options(code, nom, famille, session) VALUES(?,?,?,?) "
+                "ON CONFLICT(code) DO UPDATE SET nom=excluded.nom, famille=excluded.famille, session=excluded.session",
+                (code, nom, FAMILLES[code.split(".")[0]], SESSION),
             )
-        for opt, eps in EPREUVES.items():
-            for jour, code, lib, nb, ns, h, actif in eps:
-                con.execute(
-                    "INSERT INTO epreuves(option_code, jour, code, libelle, nb_items, nb_series, duree_h, actif) "
-                    "VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(option_code, jour) DO UPDATE SET code=excluded.code, "
-                    "libelle=excluded.libelle, nb_items=excluded.nb_items, nb_series=excluded.nb_series, "
-                    "duree_h=excluded.duree_h, actif=excluded.actif",
-                    (opt, jour, code, lib, nb, ns, h, actif),
-                )
+        con.execute("DELETE FROM option_epreuves")
         con.execute("DELETE FROM quotas")
-        for opt, jour, ordre, disc, sous, nb in QUOTAS:
-            ep = con.execute("SELECT id FROM epreuves WHERE option_code=? AND jour=?", (opt, jour)).fetchone()
+        for code, (lib, nb, ns, h, quotas) in E32_EPREUVES.items():
             con.execute(
-                "INSERT INTO quotas(epreuve_id, ordre, discipline, sous_discipline, nb_items) VALUES(?,?,?,?,?)",
-                (ep["id"], ordre, disc, sous, nb),
+                "INSERT INTO epreuves(code, libelle, nb_items, nb_series, duree_h, actif) VALUES(?,?,?,?,?,?) "
+                "ON CONFLICT(code) DO UPDATE SET libelle=excluded.libelle, nb_items=excluded.nb_items, "
+                "nb_series=excluded.nb_series, duree_h=excluded.duree_h, actif=excluded.actif",
+                (code, lib, nb, ns, h, 1 if code in EPREUVES_ACTIVES else 0),
             )
+            for k, (disc, sous, n) in enumerate(quotas, 1):
+                con.execute("INSERT INTO quotas(epreuve_code, ordre, discipline, sous_discipline, nb_items) VALUES(?,?,?,?,?)",
+                            (code, k, disc, sous, n))
+        for opt, (nom, eps) in E32_OPTIONS.items():
+            for jour, code in enumerate(eps, 1):
+                con.execute("INSERT INTO option_epreuves(option_code, jour, epreuve_code) VALUES(?,?,?)", (opt, jour, code))
         n = con.execute("SELECT COUNT(*) AS n FROM programme").fetchone()["n"]
         n_off = con.execute("SELECT COUNT(*) AS n FROM programme WHERE source LIKE 'officiel%' AND discipline='Civisme'").fetchone()["n"]
         if n == 0 or replace_programme or n_off == 0:

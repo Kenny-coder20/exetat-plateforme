@@ -1,8 +1,13 @@
 # Plateforme de génération d'items EXETAT — version 1
 
-Atelier de production (génération IA + validation humaine + export) et application élève hors ligne,
-pour l'option **1.02 Sciences**, 4e des humanités, selon la *Charte de rédaction des items IA*, le
-*Cahier des charges* et le programme **E.32 session 2026**.
+Atelier de production (génération IA + validation par des enseignants + export) et application élève hors ligne,
+selon la *Charte de rédaction des items IA*, le *Cahier des charges* et le programme **E.32 session 2026**.
+
+**Organisation par épreuve.** Le E.32 (48 options, 9 familles) est chargé intégralement (`app/e32.py`). Une épreuve
+(code M.xx) est partagée par toutes les options qui la portent : la banque de **M.01** (culture générale) sert aux
+options 1.01, 1.02, 1.03, 1.04, 5.01 et 5.02. Dans l'atelier comme dans l'application élève, on choisit d'abord
+l'**option**, puis le **jour**, ce qui désigne l'épreuve et sa banque. Épreuves ouvertes : M.01, M.46, M.07
+(`EPREUVES_ACTIVES` dans `app/e32.py`).
 
 ```
 exetat-platform/
@@ -59,20 +64,22 @@ commande ──► génération IA ──► items « en_attente » ──► va
 ### 1. Générer (atelier, réseau requis)
 Depuis l'interface validateur (bloc « Générer ») ou en ligne de commande :
 ```
-python -m app.cli generer --jour 3 --serie A            # épreuve complète M.07 : Chimie 6, Physique 6, TIC 3
-python -m app.cli generer --jour 2 --serie A            # M.46 : Math 15, SVT 15 (Bio 7, Éco 5, Géol 3)
-python -m app.cli generer --discipline Physique -n 6 --chapitre "Optique géométrique"
-python -m app.cli generer --discipline SVT --sous-discipline Écologie -n 5 --difficulte difficile
+python -m app.cli generer --epreuve M.01                 # culture générale : Civisme 2, Géo 6, Histoire 6, Philo 6
+python -m app.cli generer --epreuve M.07 --serie A       # SPTIC : Chimie 6, Physique 6, TIC 3
+python -m app.cli generer --epreuve M.46 --discipline Mathématiques -n 6 --chapitre "Probabilités (MM6.14)"
 ```
 Chaque quota du E.32 donne lieu à un appel API ; les items arrivent **en attente**, avec les anomalies
 mécaniques détectées (nombre de mots, 5 propositions, réponse dans 1..5, répartition des réponses…).
 
 Sans clé API : bouton « Copier le prompt », collez-le dans votre assistant IA, puis « Importer un JSON ».
 
-### 2. Valider (atelier)
-File d'attente → item → relecture et correction éventuelle des champs → checklist de la charte →
-**Valider** / **Rejeter** (motif). Toute correction avant validation passe l'item en version « corrigée ».
-Seuls les items **validés** atteignent les élèves.
+### 2. Valider (atelier) — pensé pour des enseignants
+L'enseignant choisit son option et le jour, puis relit les questions une par une, **telles que l'élève les verra** :
+bonne réponse en vert, correction en dessous. Il peut corriger directement dans le texte (cliquer, modifier),
+changer la bonne réponse (cliquer sur son numéro), puis **Valider** (touche V), **Enregistrer ses corrections** (E)
+ou **Rejeter** avec un motif (R). Six points de contrôle à cocher avant de valider. Aucun outil technique n'est
+requis ; les figures ou tableaux éventuels sont réservés à la version imprimée.
+Seules les questions **validées** atteignent les élèves.
 
 ### 3. Servir (élève, hors ligne)
 L'application `/eleve/` télécharge une fois la banque validée (`/api/banque.json`) et l'enregistre sur
@@ -87,18 +94,18 @@ Distribution sans réseau : `python -m app.cli banque` produit `exports/banque.j
 ### Situations étendues (exercice de synthèse)
 Second format : une situation longue (150–300 mots) avec un document (tableau, fiche, schéma), suivie de 4 à 6
 questions de difficulté croissante qui en découlent, chacune répondable indépendamment, et une synthèse finale.
-- Générer : bouton « Générer une situation étendue » dans l'atelier (discipline, chapitre, nombre de questions) ou
-  `python -m app.cli generer --situation --discipline Physique --chapitre "Électricité : loi d'Ohm, puissance, énergie" -n 5`.
+- Générer : onglet « Produire » de l'atelier, « Un exercice de synthèse », ou
+  `python -m app.cli generer --situation --epreuve M.07 --discipline Physique -n 5`.
 - Valider : file « Situations étendues » ; chaque question se valide comme un item, puis la situation elle-même.
 - Élève : onglet « Synthèse », situation épinglée en haut, corrigé puis synthèse.
-- Export : `/api/export/situation/<id>?pdf=true` (lien dans la fiche de la situation).
+- Export imprimable : `/api/export/situation/<id>?pdf=true` (réservé aux coordinateurs).
 Les questions de situation ne sont jamais tirées dans les épreuves du jour.
 
 ### 4. Exporter (papier)
 ```
-python -m app.cli assembler --jour 3 --serie A --pdf
-python -m app.cli assembler --jour 2 --discipline Mathématiques --serie B --pdf
-python -m app.cli assembler --discipline Chimie --chapitre "Acides, bases et pH" -n 10
+python -m app.cli assembler --epreuve M.07 --serie A --pdf
+python -m app.cli assembler --epreuve M.46 --discipline Mathématiques --serie B --pdf
+python -m app.cli assembler --epreuve M.07 --discipline Chimie --chapitre "Électrochimie : potentiel redox, pile (MSPC6.7)" -n 10
 ```
 Produit `exports/*.json`, `*.tex` (A4, 12 pt, marges 2,2 cm, encadrés consignes/compétences, propositions
 1 à 5, feuille de réponses, corrigé en fin) et `*.pdf` si LaTeX est installé.
@@ -132,8 +139,8 @@ puis `python -m app.cli programme programme.csv`. Le poids règle la part de cha
 
 ## Changer d'année (nouveau E.32)
 
-Modifier `EPREUVES` et `QUOTAS` dans `app/seed.py` (ou ajouter une option), puis `python -m app.cli init`.
-Les gabarits, l'assemblage et l'application élève suivent automatiquement.
+Mettre à jour `app/e32.py` (épreuves, quotas, calendrier des options, `EPREUVES_ACTIVES`), puis redémarrer :
+les tables de configuration sont reconstruites au démarrage, les items existants sont conservés.
 
 ## Configuration (.env)
 

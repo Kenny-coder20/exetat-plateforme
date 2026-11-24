@@ -63,7 +63,7 @@ def verifier_situation(s: dict) -> list[str]:
 
 
 def inserer_situation(con, data: dict, *, discipline: str, sous_discipline: str | None, modele=MODELE,
-                      option_code="1.02") -> str:
+                      option_code=None, epreuve_code: str | None = None) -> str:
     s = data.get("situation") or {}
     items = data.get("items") or []
     anomalies = verifier_situation(s)
@@ -76,16 +76,16 @@ def inserer_situation(con, data: dict, *, discipline: str, sous_discipline: str 
     obs = ("ANOMALIES AUTO : " + " ; ".join(anomalies)) if anomalies else None
     sid = f"SIT-{uuid.uuid4().hex[:8]}"
     con.execute(
-        """INSERT INTO situations(id, option_code, discipline, sous_discipline, chapitres, titre, texte, document_texte,
-           document_latex, synthese, duree_min, nb_mots, modele, observations) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-        (sid, option_code, discipline, sous_discipline, s.get("chapitres"), s.get("titre", "Situation"), s.get("texte", ""),
+        """INSERT INTO situations(id, option_code, epreuve_code, discipline, sous_discipline, chapitres, titre, texte, document_texte,
+           document_latex, synthese, duree_min, nb_mots, modele, observations) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+        (sid, option_code, epreuve_code, discipline, sous_discipline, s.get("chapitres"), s.get("titre", "Situation"), s.get("texte", ""),
          s.get("document_texte"), s.get("document_latex"), s.get("synthese"), int(s.get("duree_min") or 25),
          s.get("nb_mots"), modele, obs))
     for k, it in enumerate(items, 1):
         it.setdefault("discipline", discipline)
         it.setdefault("famille_contexte", "situation étendue")
         it["tige"] = it.get("tige", "")
-    ids = inserer_items(con, items, option_code=option_code, modele=modele)
+    ids = inserer_items(con, items, option_code=option_code, epreuve_code=epreuve_code, modele=modele)
     for k, iid in enumerate(ids, 1):
         con.execute("UPDATE items SET situation_id=?, ordre_situation=? WHERE id=?", (sid, k, iid))
         # pour une question de situation, la tige peut être courte : on neutralise l'anomalie « trop courte »
@@ -98,7 +98,7 @@ def inserer_situation(con, data: dict, *, discipline: str, sous_discipline: str 
 
 
 def generer_situation(*, discipline: str, sous_discipline: str | None = None, chapitre: str | None = None,
-                      n: int = 5) -> dict:
+                      n: int = 5, epreuve_code: str | None = None) -> dict:
     with connect() as con:
         commande = composer_commande_situation(con, discipline, sous_discipline, chapitre, n)
         lot = con.execute("INSERT INTO lots_generation(commande, modele, nb_demandes) VALUES(?,?,?)",
@@ -108,7 +108,7 @@ def generer_situation(*, discipline: str, sous_discipline: str | None = None, ch
         except Exception as e:  # noqa: BLE001
             con.execute("UPDATE lots_generation SET erreur=? WHERE id=?", (str(e), lot))
             raise
-        sid = inserer_situation(con, data, discipline=discipline, sous_discipline=sous_discipline)
+        sid = inserer_situation(con, data, discipline=discipline, sous_discipline=sous_discipline, epreuve_code=epreuve_code)
         con.execute("UPDATE lots_generation SET nb_recus=?, cout_tokens_in=?, cout_tokens_out=? WHERE id=?",
                     (len(data.get("items", [])), usage["in"], usage["out"], lot))
         return {"lot": lot, "situation_id": sid, "nb_questions": len(data.get("items", [])), "usage": usage}
@@ -124,7 +124,7 @@ def lire_situation(con, sid: str) -> dict | None:
     return s
 
 
-def lister_situations(con, statut: str | None = None, discipline: str | None = None) -> list[dict]:
+def lister_situations(con, statut: str | None = None, discipline: str | None = None, epreuve_code: str | None = None) -> list[dict]:
     sql = ("SELECT s.*, (SELECT COUNT(*) FROM items i WHERE i.situation_id=s.id) nb_questions, "
            "(SELECT COUNT(*) FROM items i WHERE i.situation_id=s.id AND i.statut_validation='valide') nb_validees "
            "FROM situations s WHERE 1=1")
@@ -133,6 +133,8 @@ def lister_situations(con, statut: str | None = None, discipline: str | None = N
         sql += " AND s.statut_validation=?"; p.append(statut)
     if discipline:
         sql += " AND s.discipline=?"; p.append(discipline)
+    if epreuve_code:
+        sql += " AND s.epreuve_code=?"; p.append(epreuve_code)
     return rows(con, sql + " ORDER BY s.cree_le DESC", p)
 
 
@@ -158,7 +160,7 @@ def statuer_situation(con, sid: str, statut: str, validateur: str, observations:
 # ---------------------------------------------------------------- élève
 
 def projeter_situation(s: dict) -> dict:
-    return {k: s.get(k) for k in ("id", "discipline", "sous_discipline", "chapitres", "titre", "texte", "document_texte",
+    return {k: s.get(k) for k in ("id", "epreuve_code", "discipline", "sous_discipline", "chapitres", "titre", "texte", "document_texte",
                                   "document_latex", "synthese", "duree_min")} | {
         "questions": [projeter(q) | {"numero": q.get("ordre_situation")} for q in s.get("questions", [])]}
 

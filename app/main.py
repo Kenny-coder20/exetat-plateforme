@@ -71,9 +71,10 @@ def accueil():
 def config():
     with connect() as con:
         return {
-            "options": rows(con, "SELECT * FROM options"),
-            "epreuves": rows(con, "SELECT * FROM epreuves ORDER BY option_code, jour"),
-            "quotas": rows(con, "SELECT q.*, e.option_code, e.jour FROM quotas q JOIN epreuves e ON e.id=q.epreuve_id ORDER BY e.jour, q.ordre"),
+            "options": rows(con, "SELECT * FROM options ORDER BY code"),
+            "epreuves": rows(con, "SELECT * FROM epreuves ORDER BY code"),
+            "quotas": rows(con, "SELECT * FROM quotas ORDER BY epreuve_code, ordre"),
+            "option_epreuves": rows(con, "SELECT * FROM option_epreuves ORDER BY option_code, jour"),
             "programme": rows(con, "SELECT * FROM programme ORDER BY discipline, sous_discipline, id"),
         }
 
@@ -83,6 +84,7 @@ def stats():
     with connect() as con:
         return {
             "par_statut": rows(con, "SELECT statut_validation statut, COUNT(*) n FROM items WHERE situation_id IS NULL GROUP BY 1"),
+            "par_epreuve": rows(con, "SELECT epreuve_code, discipline, COALESCE(sous_discipline,'') sous_discipline, statut_validation statut, COUNT(*) n FROM items WHERE situation_id IS NULL GROUP BY 1,2,3,4 ORDER BY 1,2,3,4"),
             "par_discipline": rows(con, "SELECT discipline, COALESCE(sous_discipline,'') sous_discipline, statut_validation statut, COUNT(*) n FROM items WHERE situation_id IS NULL GROUP BY 1,2,3 ORDER BY 1,2,3"),
             "situations": rows(con, "SELECT statut_validation statut, COUNT(*) n FROM situations GROUP BY 1"),
             "par_chapitre_valide": rows(con, "SELECT discipline, chapitre, difficulte, COUNT(*) n FROM items WHERE statut_validation='valide' GROUP BY 1,2,3 ORDER BY 1,2,3"),
@@ -95,8 +97,10 @@ def stats():
 
 @app.get("/api/items")
 def lister_items(statut: Optional[str] = None, discipline: Optional[str] = None, limite: int = 200,
-                 situation: Optional[str] = None):
+                 situation: Optional[str] = None, epreuve: Optional[str] = None):
     sql, p = "SELECT * FROM items WHERE 1=1", []
+    if epreuve:
+        sql += " AND epreuve_code=?"; p.append(epreuve)
     if situation:
         sql += " AND situation_id=?"; p.append(situation)
     else:
@@ -124,6 +128,7 @@ def lire_item(iid: str):
 # ------------------------------------------------------------------ situations étendues
 
 class CommandeSituation(BaseModel):
+    epreuve_code: Optional[str] = None
     discipline: str
     sous_discipline: Optional[str] = None
     chapitre: Optional[str] = None
@@ -136,7 +141,7 @@ def api_generer_situation(c: CommandeSituation):
         if not os.environ.get("ANTHROPIC_API_KEY"):
             raise generation.GenerationError("ANTHROPIC_API_KEY manquante dans la configuration du serveur.")
         return {"tache": taches.lancer_situation(discipline=c.discipline, sous_discipline=c.sous_discipline,
-                                                 chapitre=c.chapitre, n=max(3, min(7, c.n)))}
+                                                 chapitre=c.chapitre, n=max(3, min(7, c.n)), epreuve_code=c.epreuve_code)}
     except generation.GenerationError as e:
         raise HTTPException(400, str(e))
     except Exception as e:  # noqa: BLE001
@@ -144,9 +149,9 @@ def api_generer_situation(c: CommandeSituation):
 
 
 @app.get("/api/situations")
-def api_lister_situations(statut: Optional[str] = None, discipline: Optional[str] = None):
+def api_lister_situations(statut: Optional[str] = None, discipline: Optional[str] = None, epreuve: Optional[str] = None):
     with connect() as con:
-        return situations.lister_situations(con, statut, discipline)
+        return situations.lister_situations(con, statut, discipline, epreuve)
 
 
 @app.get("/api/situations/validees")
@@ -247,6 +252,7 @@ def valider(iid: str, v: Validation):
 
 
 class Commande(BaseModel):
+    epreuve_code: Optional[str] = None
     jour: Optional[int] = None
     serie: Optional[str] = None
     discipline: Optional[str] = None
@@ -262,12 +268,13 @@ def api_generer(c: Commande):
     try:
         if not os.environ.get("ANTHROPIC_API_KEY"):
             raise generation.GenerationError("ANTHROPIC_API_KEY manquante dans la configuration du serveur.")
-        if c.jour and not c.discipline:
-            return {"tache": taches.lancer_epreuve(c.jour, c.serie)}
+        if c.epreuve_code and not c.discipline:
+            return {"tache": taches.lancer_epreuve(c.epreuve_code, c.serie)}
         if not c.discipline:
-            raise HTTPException(400, "discipline ou jour requis")
+            raise HTTPException(400, "discipline ou épreuve requise")
         return {"tache": taches.lancer_items(discipline=c.discipline, sous_discipline=c.sous_discipline, n=c.n,
-                                             chapitre=c.chapitre, difficulte=c.difficulte, jour=c.jour, serie=c.serie)}
+                                             chapitre=c.chapitre, difficulte=c.difficulte, serie=c.serie,
+                                             epreuve_code=c.epreuve_code)}
     except generation.GenerationError as e:
         raise HTTPException(400, str(e))
     except Exception as e:  # noqa: BLE001
@@ -289,17 +296,18 @@ def api_tache(tid: str):
 
 @app.get("/api/prompt")
 def prompt_pour_copier(discipline: str, sous_discipline: Optional[str] = None, n: int = 5,
-                       chapitre: Optional[str] = None, difficulte: Optional[str] = None):
+                       chapitre: Optional[str] = None, difficulte: Optional[str] = None, epreuve: Optional[str] = None):
     """Commande prête à coller dans un assistant IA si l'API n'est pas configurée."""
     with connect() as con:
         cmd = generation.composer_commande(con, discipline=discipline, sous_discipline=sous_discipline, n=n,
-                                           chapitre=chapitre, difficulte=difficulte)
+                                           chapitre=chapitre, difficulte=difficulte, epreuve_code=epreuve)
     return {"systeme": generation.PROMPT_SYSTEME, "commande": cmd}
 
 
 class Import(BaseModel):
     items: list[dict]
     discipline: Optional[str] = None
+    epreuve_code: Optional[str] = None
 
 
 @app.post("/api/importer")
@@ -308,26 +316,26 @@ def importer(imp: Import):
     with connect() as con:
         for it in imp.items:
             it.setdefault("discipline", imp.discipline or "")
-        ids = generation.inserer_items(con, imp.items, modele="import manuel")
+        ids = generation.inserer_items(con, imp.items, modele="import manuel", epreuve_code=imp.epreuve_code)
     return {"nb": len(ids)}
 
 
 # ------------------------------------------------------------------ assemblage (élève)
 
 @app.get("/api/epreuve")
-def api_epreuve(jour: int, option: str = "1.02", graine: Optional[int] = None):
-    return assemblage.assembler_epreuve(jour, option, graine)
+def api_epreuve(code: str, graine: Optional[int] = None):
+    return assemblage.assembler_epreuve(code, graine)
 
 
 @app.get("/api/discipline")
-def api_discipline(jour: int, discipline: str, option: str = "1.02", graine: Optional[int] = None):
-    return assemblage.assembler_discipline(jour, discipline, option, graine)
+def api_discipline(code: str, discipline: str, graine: Optional[int] = None):
+    return assemblage.assembler_discipline(code, discipline, graine)
 
 
 @app.get("/api/chapitre")
 def api_chapitre(discipline: str, chapitre: str, n: int = 10, difficulte: Optional[str] = None,
-                 graine: Optional[int] = None):
-    return assemblage.assembler_chapitre(discipline, chapitre, n, difficulte, graine)
+                 graine: Optional[int] = None, code: Optional[str] = None):
+    return assemblage.assembler_chapitre(discipline, chapitre, n, difficulte, graine, code)
 
 
 @app.get("/api/banque.json")
@@ -337,13 +345,13 @@ def api_banque():
 
 
 @app.get("/api/export/latex")
-def api_export_latex(jour: int, serie: str = "A", discipline: Optional[str] = None, pdf: bool = False):
+def api_export_latex(code: str, serie: str = "A", discipline: Optional[str] = None, pdf: bool = False):
     if discipline:
-        s = assemblage.assembler_discipline(jour, discipline)
-        nom, titre = f"J{jour}_{export.nom_fichier(discipline)}_serie{serie}", discipline
+        s = assemblage.assembler_discipline(code, discipline)
+        nom, titre = f"{code.replace('.', '')}_{export.nom_fichier(discipline)}_serie{serie}", discipline
     else:
-        s = assemblage.assembler_epreuve(jour)
-        nom, titre = f"J{jour}_{s['epreuve']['code'].replace('.', '')}_serie{serie}", s["epreuve"]["libelle"]
+        s = assemblage.assembler_epreuve(code)
+        nom, titre = f"{code.replace('.', '')}_serie{serie}", s["epreuve"]["libelle"]
     p = export.exporter_latex(s, nom, titre_epreuve=titre, code_epreuve=s["epreuve"]["code"], serie_lettre=serie,
                               duree=f"{s['epreuve']['duree_h']:g} h")
     if pdf:
@@ -356,8 +364,9 @@ def api_export_latex(jour: int, serie: str = "A", discipline: Optional[str] = No
 class Resultat(BaseModel):
     eleve: Optional[str] = None
     mode: str
-    option_code: Optional[str] = "1.02"
+    option_code: Optional[str] = None
     jour: Optional[int] = None
+    epreuve_code: Optional[str] = None
     discipline: Optional[str] = None
     chapitre: Optional[str] = None
     nb_items: int
@@ -371,9 +380,9 @@ def synchroniser_resultats(res: list[Resultat]):
     with connect() as con:
         for r in res:
             con.execute(
-                "INSERT INTO resultats(eleve, mode, option_code, jour, discipline, chapitre, nb_items, score, details, date_passation) "
-                "VALUES(?,?,?,?,?,?,?,?,?,?)",
-                (r.eleve, r.mode, r.option_code, r.jour, r.discipline, r.chapitre, r.nb_items, r.score,
+                "INSERT INTO resultats(eleve, mode, option_code, jour, epreuve_code, discipline, chapitre, nb_items, score, details, date_passation) "
+                "VALUES(?,?,?,?,?,?,?,?,?,?,?)",
+                (r.eleve, r.mode, r.option_code, r.jour, r.epreuve_code, r.discipline, r.chapitre, r.nb_items, r.score,
                  json.dumps(r.details, ensure_ascii=False), r.date_passation))
     return {"recus": len(res)}
 

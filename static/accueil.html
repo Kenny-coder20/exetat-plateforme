@@ -127,7 +127,8 @@
     </div>
 
     <aside class="fiche" aria-label="Programme E.32, option Sciences">
-      <header><h2>Programme E.32 — option 1.02 Sciences</h2><span id="session">session 2026</span></header>
+      <header><h2 id="fiche-titre">Programme E.32</h2><span id="session">session 2026</span></header>
+      <select id="opt-fiche" style="width:100%;margin-bottom:12px;padding:8px 10px;border:1px solid var(--trait);border-radius:9px;background:var(--papier);font:inherit"></select>
       <div class="jours" id="jours"></div>
       <footer><span><i style="background:var(--bleu-clair)"></i>Disponible dans la plateforme</span><span><i style="background:var(--papier-2)"></i>Bientôt</span></footer>
     </aside>
@@ -164,33 +165,38 @@
 (async () => {
   const [cfg, st] = await Promise.all([fetch('/api/config').then(r => r.json()), fetch('/api/stats').then(r => r.json())]);
   const tot = Object.fromEntries(st.par_statut.map(r => [r.statut, r.n]));
-  document.getElementById('n-valides').textContent = tot.valide || 0;
   document.getElementById('n-attente').textContent = tot.en_attente || 0;
   if (cfg.options[0]) document.getElementById('session').textContent = 'session ' + cfg.options[0].session;
 
-  // Fiche E.32
-  const jours = cfg.epreuves.filter(e => e.option_code === '1.02').sort((a, b) => a.jour - b.jour);
-  document.getElementById('jours').innerHTML = jours.map(e => {
-    const qs = cfg.quotas.filter(q => q.epreuve_id === e.id);
-    const lignes = {};
-    for (const q of qs) lignes[q.discipline] = (lignes[q.discipline] || 0) + q.nb_items;
-    return `<div class="jour ${e.actif ? 'actif' : ''}">
-      <div class="num">Jour ${e.jour}</div><div class="code">${e.code}</div>
-      <ul>${Object.entries(lignes).map(([d, n]) => `<li><span>${d}</span><b>${n}</b></li>`).join('')}</ul>
-      <div class="pied">${e.nb_items} questions<br>${e.duree_h} h</div></div>`;
-  }).join('');
-
-  // Barres par discipline
-  const actifs = new Set(jours.filter(e => e.actif).map(e => e.jour));
-  const discs = [...new Set(cfg.quotas.filter(q => actifs.has(q.jour)).map(q => q.discipline))];
-  const cible = Object.fromEntries(discs.map(d => [d, cfg.quotas.filter(q => q.discipline === d && actifs.has(q.jour)).reduce((s, q) => s + q.nb_items, 0) * 4])); // 4 séries
-  const agg = {};
-  for (const r of st.par_discipline) { agg[r.discipline] = agg[r.discipline] || { valide: 0, en_attente: 0 }; if (r.statut in agg[r.discipline]) agg[r.discipline][r.statut] += r.n; }
-  document.getElementById('barres').innerHTML = discs.map(d => {
-    const v = agg[d]?.valide || 0, a = agg[d]?.en_attente || 0, c = cible[d] || 1;
-    const pc = x => Math.min(100, x / c * 100);
-    return `<div class="barre"><span class="nom">${d}</span><span class="fond"><em style="width:${pc(v + a)}%"></em><i style="width:${pc(v)}%"></i></span><span class="n">${v}<small>/${c}</small></span></div>`;
-  }).join('') + `<div class="legende">La barre pleine = de quoi composer quatre séries complètes de la matière.</div>`;
+  // Sélecteur d'option (nomenclature E.32)
+  const sel = document.getElementById('opt-fiche');
+  const fam = {}; for (const o of cfg.options) (fam[o.famille] = fam[o.famille] || []).push(o);
+  sel.innerHTML = Object.entries(fam).map(([f, os]) => `<optgroup label="${f}">${os.map(o => `<option value="${o.code}">${o.code} — ${o.nom}</option>`).join('')}</optgroup>`).join('');
+  sel.value = localStorage.getItem('option') ? JSON.parse(localStorage.getItem('option')) : '1.02';
+  const dessiner = () => {
+    const opt = sel.value; try { localStorage.setItem('option', JSON.stringify(opt)); } catch { }
+    const o = cfg.options.find(x => x.code === opt);
+    document.getElementById('fiche-titre').textContent = `Programme E.32 — option ${o.code} ${o.nom}`;
+    const jours = cfg.option_epreuves.filter(x => x.option_code === opt).sort((a, b) => a.jour - b.jour).map(x => ({ jour: x.jour, ...cfg.epreuves.find(e => e.code === x.epreuve_code) }));
+    document.getElementById('jours').innerHTML = jours.map(e => {
+      const qs = cfg.quotas.filter(q => q.epreuve_code === e.code);
+      const lignes = {}; for (const q of qs) lignes[q.discipline] = (lignes[q.discipline] || 0) + q.nb_items;
+      return `<div class="jour ${e.actif ? 'actif' : ''}"><div class="num">Jour ${e.jour}</div><div class="code">${e.code}</div>
+        <ul>${Object.entries(lignes).slice(0, 5).map(([d, n]) => `<li><span>${d}</span><b>${n}</b></li>`).join('')}${Object.keys(lignes).length > 5 ? `<li><span>…</span></li>` : ''}</ul>
+        <div class="pied">${e.nb_items} questions<br>${e.duree_h} h</div></div>`;
+    }).join('');
+    // Barres : par matière des épreuves ouvertes de cette option
+    const actifs = jours.filter(e => e.actif).map(e => e.code);
+    const lignes = [];
+    for (const code of actifs) for (const q of cfg.quotas.filter(q => q.epreuve_code === code)) {
+      const l = st.par_epreuve.filter(r => r.epreuve_code === code && r.discipline === q.discipline && (r.sous_discipline || '') === (q.sous_discipline || ''));
+      lignes.push({ nom: q.discipline + (q.sous_discipline ? ' · ' + q.sous_discipline : ''), v: l.filter(r => r.statut === 'valide').reduce((s, r) => s + r.n, 0), a: l.filter(r => r.statut === 'en_attente').reduce((s, r) => s + r.n, 0), c: q.nb_items * 4 });
+    }
+    document.getElementById('barres').innerHTML = (lignes.map(l => { const pc = x => Math.min(100, x / l.c * 100); return `<div class="barre"><span class="nom">${l.nom}</span><span class="fond"><em style="width:${pc(l.v + l.a)}%"></em><i style="width:${pc(l.v)}%"></i></span><span class="n">${l.v}<small>/${l.c}</small></span></div>`; }).join('') || '<div class="vide">Aucune épreuve de cette option n\'est encore ouverte.</div>') + `<div class="legende">La barre pleine = de quoi composer quatre séries complètes de la matière.</div>`;
+    const nbOpt = actifs.length ? st.par_epreuve.filter(r => actifs.includes(r.epreuve_code) && r.statut === 'valide').reduce((s, r) => s + r.n, 0) : 0;
+    document.getElementById('n-valides').textContent = nbOpt;
+  };
+  sel.onchange = dessiner; dessiner();
 })().catch(() => { document.getElementById('barres').innerHTML = '<div class="vide">Impossible de lire l\'état de la banque. Le serveur est-il démarré ?</div>'; });
 </script>
 </body>

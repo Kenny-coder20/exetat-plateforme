@@ -58,14 +58,13 @@ def _etape(tid: str, texte: str):
 
 # ------------------------------------------------------------------ travaux
 
-def _travail_epreuve(tid: str, jour: int, serie: str | None):
-    from .db import connect, rows
+def _travail_epreuve(tid: str, code: str, serie: str | None):
+    from .db import connect
 
     with connect() as con:
-        ep = con.execute("SELECT * FROM epreuves WHERE option_code='1.02' AND jour=?", (jour,)).fetchone()
-        if not ep or not ep["actif"]:
-            raise generation.GenerationError(f"Épreuve du jour {jour} indisponible.")
-        quotas = rows(con, "SELECT * FROM quotas WHERE epreuve_id=? ORDER BY ordre", (ep["id"],))
+        ep, quotas = generation.epreuve_et_quotas(con, code)
+        if not ep["actif"]:
+            raise generation.GenerationError(f"L'épreuve {code} n'est pas encore ouverte dans la plateforme.")
     _etape(tid, f"{len(quotas)} appels lancés en parallèle pour {ep['code']}")
     numero, departs = 1, []
     for q in quotas:
@@ -76,7 +75,7 @@ def _travail_epreuve(tid: str, jour: int, serie: str | None):
         nom = q["discipline"] + (f" / {q['sous_discipline']}" if q["sous_discipline"] else "")
         try:
             r = generation.generer(discipline=q["discipline"], sous_discipline=q["sous_discipline"], n=q["nb_items"],
-                                   jour=jour, serie=serie, epreuve_code=ep["code"], numero_depart=dep)
+                                   serie=serie, epreuve_code=code, numero_depart=dep)
             _etape(tid, f"{nom} : {len(r['ids'])}/{q['nb_items']} items reçus")
             return {"quota": nom, "nb": len(r["ids"]), "usage": r["usage"], "anomalies": r["anomalies_serie"]}
         except Exception as e:  # noqa: BLE001
@@ -104,12 +103,12 @@ def _travail_situation(tid: str, **kw):
     return r
 
 
-def lancer_epreuve(jour: int, serie: str | None = None) -> str:
-    return _lancer(f"Épreuve du jour {jour}" + (f", série {serie}" if serie else ""), _travail_epreuve, jour, serie)
+def lancer_epreuve(code: str, serie: str | None = None) -> str:
+    return _lancer(f"Épreuve {code}" + (f", série {serie}" if serie else ""), _travail_epreuve, code, serie)
 
 
 def lancer_items(**kw) -> str:
-    return _lancer(f"{kw.get('n')} items — {kw.get('discipline')}", _travail_items, **kw)
+    return _lancer(f"{kw.get('n')} items — {kw.get('discipline')} ({kw.get('epreuve_code') or 'banque générale'})", _travail_items, **kw)
 
 
 def lancer_situation(**kw) -> str:
