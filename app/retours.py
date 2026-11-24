@@ -153,7 +153,7 @@ def tableau(con, jours: int = 90) -> dict:
 
     par_discipline = taux("discipline")
     par_epreuve = taux("epreuve_code")
-    par_chapitre = [c for c in taux("discipline || ' — ' || COALESCE(chapitre,'?')") if c["relus"] >= 3]
+    par_chapitre = [c for c in taux("discipline || ' — ' || COALESCE(chapitre,'sans chapitre')") if c["relus"] >= 3]
     par_chapitre.sort(key=lambda c: -(c["rejetes"] + 0.5 * c["valides_corriges"]) / c["relus"])
     par_motif = rows(con, """SELECT COALESCE(motif,'Sans motif') cle, COUNT(DISTINCT item_id) n FROM corrections
                              WHERE decision='rejete' AND date>=? GROUP BY motif ORDER BY n DESC""", (depuis,))
