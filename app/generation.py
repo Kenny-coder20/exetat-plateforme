@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 
 from .contextes import CONSIGNE_VARIETE, decrire, plan_contextes
 from .db import connect, rows
+from .retours import consignes_pour
 
 ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / ".env")
@@ -89,11 +90,13 @@ def composer_commande(con, *, discipline: str, sous_discipline: str | None, n: i
     sd = f" (sous-discipline : {sous_discipline})" if sous_discipline else ""
     s = f", série {serie}" if serie else ""
     j = f", épreuve {epreuve_code}" if epreuve_code else ""
+    retours_txt = consignes_pour(con, discipline, sous_discipline, epreuve_code)
     return (
         f"COMMANDE : génère {n} items de {discipline}{sd}{j}{s} (Examen d'État, E.32), selon le plan suivant.\n"
         f"{plan}\n\n"
         f"{CONSIGNE_VARIETE}\n"
-        "Respecte le plan item par item (chapitre, difficulté, contexte imposé). Varie la position "
+        + (retours_txt + "\n" if retours_txt else "")
+        + "Respecte le plan item par item (chapitre, difficulté, contexte imposé). Varie la position "
         "de la bonne réponse. Réponds uniquement par le JSON demandé."
     )
 

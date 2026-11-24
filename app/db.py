@@ -51,7 +51,7 @@ class _PgConn:
     def execute(self, sql: str, params=()):
         sql2 = self._sql(sql)
         lastrowid = None
-        if re.match(r"\s*INSERT\s+INTO\s+(lots_generation|resultats|quotas|programme)\b", sql, re.I) \
+        if re.match(r"\s*INSERT\s+INTO\s+(lots_generation|resultats|quotas|programme|corrections)\b", sql, re.I) \
                 and "RETURNING" not in sql.upper():
             sql2 += " RETURNING id"
             cur = self._con.execute(sql2, params)

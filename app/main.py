@@ -11,7 +11,7 @@ from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from . import assemblage, auth, export, generation, situations, taches
+from . import retours, assemblage, auth, export, generation, situations, taches
 from .db import connect, one, preparer, rows
 import os
 import secrets
@@ -27,7 +27,7 @@ app = FastAPI(title="Plateforme items EXETAT", version="0.2")
 # Chaque enseignant se connecte avec ses identifiants (cookie de session signé). Les écritures et les pages de
 # l'atelier exigent une session ; l'espace élève et l'API de lecture restent libres.
 PREFIXES_PROTEGES = ("/validateur", "/api/generer", "/api/importer", "/api/situations/generer", "/api/export/", "/api/taches",
-                     "/api/comptes", "/docs", "/openapi.json")
+                     "/api/comptes", "/api/qualite", "/docs", "/openapi.json")
 PAGES_LIBRES = ("/validateur/connexion.html",)
 from starlette.responses import RedirectResponse as _Redir, Response
 
@@ -366,12 +366,16 @@ def valider(iid: str, v: Validation, request: Request):
         if v.attendu_statut and actuel["statut_validation"] != v.attendu_statut and actuel["statut_validation"] != "en_attente":
             raise HTTPException(409, f"Cette question vient d'être traitée par {actuel['validateur'] or 'un collègue'} "
                                      f"({actuel['statut_validation']}). Rechargez-la avant de statuer.")
-        corrige = False
+        avant = one(con, "SELECT * FROM items WHERE id=?", (iid,))
+        corrige, diffs = False, []
         for k, val in champs.items():
-            cur = one(con, f"SELECT {k} v FROM items WHERE id=?", (iid,))["v"]
+            cur = avant[k]
             if str(cur) != str(val):
                 corrige = True
+                diffs.append((k, cur, val))
                 con.execute(f"UPDATE items SET {k}=? WHERE id=?", (val, iid))
+        retours.enregistrer(con, item_id=iid, type_="item", decision=v.statut, validateur=v.validateur or "anonyme",
+                            motif=v.motif_rejet, observations=v.observations, meta=avant, diffs=diffs)
         if "tige" in champs:
             con.execute("UPDATE items SET nb_mots_tige=? WHERE id=?", (generation.compter_mots(champs["tige"]), iid))
         con.execute(
@@ -380,6 +384,20 @@ def valider(iid: str, v: Validation, request: Request):
             (v.statut, v.validateur, datetime.now().isoformat(timespec="minutes"), v.observations, v.motif_rejet,
              corrige, iid))
         return one(con, "SELECT * FROM items WHERE id=?", (iid,))
+
+
+@app.get("/api/qualite")
+def api_qualite(jours: int = 90):
+    """Tableau de bord qualité : ce que les relectures disent de la production (admin et rédacteurs)."""
+    with connect() as con:
+        return retours.tableau(con, jours)
+
+
+@app.get("/api/qualite/consignes")
+def api_qualite_consignes(discipline: str, sous_discipline: Optional[str] = None):
+    """Le bloc de retours tel qu'il sera joint à la prochaine commande dans cette matière."""
+    with connect() as con:
+        return {"discipline": discipline, "consignes": retours.consignes_pour(con, discipline, sous_discipline)}
 
 
 class Commande(BaseModel):

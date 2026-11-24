@@ -91,6 +91,12 @@
   @media(max-width:700px){.grille2{grid-template-columns:1fr}}
   .journal{font-size:13px;margin-top:10px;padding:10px;background:var(--ivoire);border-radius:9px;max-height:200px;overflow:auto}
   details summary{cursor:pointer;color:var(--encre-2);font-size:13px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:10px}
+  .kpi{padding:12px 14px;border:1px solid var(--filet);border-radius:11px;background:var(--ivoire)}
+  .kpi b{display:block;font:600 26px var(--serif);color:var(--nuit)} .kpi span{font-size:12.5px;color:var(--encre-2)}
+  .ligne-q{display:grid;grid-template-columns:1fr 150px 90px;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--filet);font-size:13.5px}
+  .ligne-q .barre{height:10px} .barre u{position:absolute;inset:0 auto 0 0;background:var(--rouge);border-radius:4px}
+  .diff{font-size:12.5px} .diff del{color:var(--rouge);background:var(--rouge-pale);text-decoration:line-through} .diff ins{color:var(--vert);background:var(--vert-pale);text-decoration:none}
   [hidden]{display:none !important}
 </style>
 </head>
@@ -106,7 +112,7 @@
   <div><label class="ch">Option (nomenclature E.32)</label><select id="opt"></select></div>
   <div><label class="ch">Jour de l'examen</label><select id="jour"></select></div>
   <div><label class="ch">Matière</label><select id="disc"><option value="">Toutes les matières</option></select></div>
-  <div class="onglets"><button class="on" data-vue="relire">Relire</button><button data-vue="produire" id="ong-produire">Produire</button><button data-vue="banque">Banque</button><button data-vue="comptes" id="ong-comptes" hidden>Comptes</button></div>
+  <div class="onglets"><button class="on" data-vue="relire">Relire</button><button data-vue="produire" id="ong-produire">Produire</button><button data-vue="banque">Banque</button><button data-vue="qualite" id="ong-qualite" hidden>Qualité</button><button data-vue="comptes" id="ong-comptes" hidden>Comptes</button></div>
 </div></div>
 
 <main>
@@ -161,6 +167,22 @@
       <div class="carte"><h2>État de la banque par épreuve</h2><div id="banque"></div></div>
     </div>
 
+    <div id="vue-qualite" hidden>
+      <div class="carte">
+        <div class="q-ent"><h2>Ce que les relectures disent de la production</h2><span class="muted">90 derniers jours</span></div>
+        <p class="muted">Chaque décision d'un enseignant est mémorisée (décision, motif, texte avant et après correction). À chaque nouvelle production, l'assistant reçoit les motifs de rejet les plus fréquents de la matière, des exemples de corrections d'enseignants et des questions validées telles quelles.</p>
+        <div id="q-total" class="kpis"></div>
+      </div>
+      <div class="grille2" style="margin-top:14px">
+        <div class="carte"><h2>Par matière</h2><div id="q-disc"></div></div>
+        <div class="carte"><h2>Motifs de rejet</h2><div id="q-motifs"></div></div>
+        <div class="carte"><h2>Chapitres les plus retouchés ou rejetés</h2><div id="q-chap"></div></div>
+        <div class="carte"><h2>Ce que les enseignants corrigent</h2><div id="q-champs"></div><h2 style="margin-top:14px">Relecteurs</h2><div id="q-val"></div></div>
+      </div>
+      <div class="carte" style="margin-top:14px"><h2>Consignes qui seront transmises à l'assistant</h2><div class="form-ligne"><div><label class="ch">Matière</label><select id="q-cdisc"></select></div><div><button class="btn sec" id="q-voir">Voir les consignes</button></div></div><pre id="q-consignes" class="journal" style="white-space:pre-wrap;max-height:360px"></pre></div>
+      <div class="carte" style="margin-top:14px"><h2>Dernières décisions</h2><table class="comptes" id="q-recents"></table></div>
+    </div>
+
     <div id="vue-comptes" hidden>
       <div class="carte">
         <h2>Comptes des enseignants</h2>
@@ -201,6 +223,7 @@ async function init() {
   $('#qui').textContent = MOI.nom + ' · ' + ({ admin: 'administrateur', redacteur: 'rédacteur', validateur: 'validateur' })[MOI.role];
   $('#validateur').value = MOI.nom;
   if (MOI.role === 'admin') $('#ong-comptes').hidden = false;
+  if (MOI.role !== 'validateur') $('#ong-qualite').hidden = false;
   if (MOI.role === 'validateur') $('#ong-produire').hidden = true;
   CFG = await api('/api/config');
   const fam = {}; for (const o of CFG.options) (fam[o.famille] = fam[o.famille] || []).push(o);
@@ -229,7 +252,7 @@ function majEpreuve() {
 }
 function majChapitres() { const d = $('#g-disc').value; const chs = CFG.programme.filter(p => p.discipline === d); $('#g-chap').innerHTML = '<option value="">Au choix de l\'assistant, selon le programme</option>' + chs.map(c => `<option>${esc(c.chapitre)}</option>`).join(''); }
 $('#opt').onchange = () => { majJours(); majEpreuve(); }; $('#jour').onchange = majEpreuve; $('#disc').onchange = () => chargerFile(); $('#g-disc').onchange = majChapitres;
-document.querySelectorAll('.onglets [data-vue]').forEach(b => b.onclick = () => { vue = b.dataset.vue; document.querySelectorAll('.onglets [data-vue]').forEach(x => x.classList.toggle('on', x === b)); for (const v of ['relire', 'produire', 'banque', 'comptes']) $('#vue-' + v).hidden = v !== vue; if (vue === 'banque') chargerBanque(); if (vue === 'comptes') chargerComptes(); });
+document.querySelectorAll('.onglets [data-vue]').forEach(b => b.onclick = () => { vue = b.dataset.vue; document.querySelectorAll('.onglets [data-vue]').forEach(x => x.classList.toggle('on', x === b)); for (const v of ['relire', 'produire', 'banque', 'qualite', 'comptes']) $('#vue-' + v).hidden = v !== vue; if (vue === 'banque') chargerBanque(); if (vue === 'comptes') chargerComptes(); if (vue === 'qualite') chargerQualite(); });
 document.querySelectorAll('[data-statut]').forEach(b => b.onclick = () => { statutFile = b.dataset.statut; document.querySelectorAll('[data-statut]').forEach(x => x.classList.toggle('on', x === b)); chargerFile(); });
 $('#g-quoi').onchange = () => { const q = $('#g-quoi').value; $('#g-mat').hidden = q === 'epreuve'; $('#g-chap-b').hidden = q === 'epreuve'; $('#g-n-b').hidden = q === 'epreuve'; };
 
@@ -350,6 +373,28 @@ async function ouvrirSituation(sid) {
 }
 
 // ------------------------------------------------------------ comptes (admin)
+// ------------------------------------------------------------ qualité (boucle d'amélioration)
+const pct = (a, b) => b ? Math.round(100 * a / b) : 0;
+function lignesTaux(rows, cle = 'cle') {
+  if (!rows.length) return '<p class="muted">Aucune relecture sur la période.</p>';
+  return rows.map(r => { const d = pct(r.valides_directs, r.relus), c = pct(r.valides_corriges, r.relus), k = pct(r.rejetes, r.relus);
+    return `<div class="ligne-q"><span>${esc(r[cle] || '—')}</span><span class="barre" title="${d} % validées telles quelles · ${c} % corrigées · ${k} % rejetées"><i style="width:${d}%"></i><em style="left:${d}%;width:${c}%"></em><u style="left:${d + c}%;width:${k}%"></u></span><span class="muted">${r.relus} relue${r.relus > 1 ? 's' : ''}</span></div>`; }).join('');
+}
+async function chargerQualite() {
+  const q = await api('/api/qualite');
+  const t = q.total || {}; const relus = t.relus || 0;
+  $('#q-total').innerHTML = [[relus, 'questions relues'], [pct(t.valides_directs, relus) + ' %', 'validées telles quelles'], [pct(t.valides_corriges, relus) + ' %', 'validées après correction'], [pct(t.rejetes, relus) + ' %', 'rejetées']].map(([v, l]) => `<div class="kpi"><b>${v}</b><span>${l}</span></div>`).join('');
+  $('#q-disc').innerHTML = '<p class="muted" style="margin-bottom:6px"><i style="display:inline-block;width:10px;height:10px;background:var(--vert);border-radius:2px"></i> telles quelles &nbsp; <i style="display:inline-block;width:10px;height:10px;background:var(--or);border-radius:2px"></i> corrigées &nbsp; <i style="display:inline-block;width:10px;height:10px;background:var(--rouge);border-radius:2px"></i> rejetées</p>' + lignesTaux(q.par_discipline);
+  $('#q-motifs').innerHTML = q.par_motif.length ? q.par_motif.map(m => `<div class="ligne-q" style="grid-template-columns:1fr auto"><span>${esc(m.cle)}</span><b>${m.n}</b></div>`).join('') + (q.par_motif_discipline.length ? '<details style="margin-top:8px"><summary>Détail par matière</summary>' + q.par_motif_discipline.map(m => `<div class="muted">${esc(m.discipline)} — ${esc(m.motif)} : ${m.n}</div>`).join('') + '</details>' : '') : '<p class="muted">Aucun rejet sur la période.</p>';
+  $('#q-chap').innerHTML = q.par_chapitre.length ? lignesTaux(q.par_chapitre) : '<p class="muted">Pas encore assez de relectures par chapitre (3 minimum).</p>';
+  $('#q-champs').innerHTML = q.champs_corriges.length ? q.champs_corriges.map(c => `<div class="ligne-q" style="grid-template-columns:1fr auto"><span>${esc(c.libelle)}</span><b>${c.n}</b></div>`).join('') : '<p class="muted">Aucune correction enregistrée.</p>';
+  $('#q-val').innerHTML = q.validateurs.length ? q.validateurs.map(v => `<div class="ligne-q" style="grid-template-columns:1fr auto"><span>${esc(v.cle || 'anonyme')}</span><span class="muted">${v.n} décision${v.n > 1 ? 's' : ''}, ${v.rejets} rejet${v.rejets > 1 ? 's' : ''}</span></div>`).join('') : '<p class="muted">—</p>';
+  const discs = [...new Set(CFG.quotas.map(x => x.discipline))].sort(); $('#q-cdisc').innerHTML = discs.map(d => `<option>${esc(d)}</option>`).join('');
+  $('#q-consignes').textContent = '';
+  $('#q-recents').innerHTML = `<tr><th>Date</th><th>Matière</th><th>Relecteur</th><th>Décision</th><th>Détail</th></tr>` + q.recents.map(r => { const dec = { valide: '<span class="pastille ok">validée</span>', rejete: '<span class="pastille ko">rejetée</span>', en_attente: '<span class="pastille att">enregistrée</span>' }[r.decision] || r.decision; let det = ''; if (r.champ) det = `<div class="diff"><b>${esc(({ tige: 'énoncé', reponse: 'bonne réponse', correction_detaillee: 'correction' })[r.champ] || r.champ)}</b> : <del>${esc((r.avant || '').slice(0, 140))}</del> <ins>${esc((r.apres || '').slice(0, 140))}</ins></div>`; if (r.motif) det += `<div class="muted">${esc(r.motif)}</div>`; if (r.observations) det += `<div class="muted">« ${esc(r.observations)} »</div>`; return `<tr><td class="muted" style="white-space:nowrap">${esc((r.date || '').replace('T', ' '))}</td><td>${esc(r.discipline || '')}</td><td>${esc(r.validateur || '')}</td><td>${dec}</td><td>${det || '<span class="muted">sans retouche</span>'}</td></tr>`; }).join('');
+}
+$('#q-voir').onclick = async () => { const r = await api('/api/qualite/consignes?discipline=' + encodeURIComponent($('#q-cdisc').value)); $('#q-consignes').textContent = r.consignes || 'Aucun retour encore mémorisé dans cette matière : la prochaine commande partira avec la charte seule.'; };
+
 async function chargerComptes() {
   const cs = await api('/api/comptes');
   const R = { admin: 'Administrateur', redacteur: 'Rédacteur', validateur: 'Validateur' };

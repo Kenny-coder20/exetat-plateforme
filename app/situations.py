@@ -7,6 +7,7 @@ from datetime import datetime
 
 from .assemblage import projeter
 from .contextes import decrire, plan_contextes
+from .retours import consignes_pour
 from .db import connect, one, rows
 from .generation import (MODELE, GenerationError, appeler_modele, compter_mots, inserer_items, repartir_chapitres,
                          verifier_item)
@@ -50,7 +51,8 @@ def composer_commande_situation(con, discipline, sous_discipline, chapitre, n):
     else:
         autres = [c for c in repartir_chapitres(con, discipline, sous_discipline, 4) if c != chapitre][:2]
     ctx = plan_contextes(3)[random.randrange(3)]
-    return PROMPT_SITUATION.format(
+    retours_txt = consignes_pour(con, discipline, sous_discipline)
+    return (retours_txt + "\n" if retours_txt else "") + PROMPT_SITUATION.format(
         discipline=discipline, sd=f" ({sous_discipline})" if sous_discipline else "", chapitre=chapitre, n=n,
         contexte=decrire(ctx),
         autres=(" en lien avec « " + " » et « ".join(autres) + " »") if autres else "")
@@ -148,9 +150,16 @@ def lister_situations(con, statut: str | None = None, discipline: str | None = N
 
 def statuer_situation(con, sid: str, statut: str, validateur: str, observations: str | None, motif: str | None,
                       champs: dict) -> dict:
+    avant = one(con, "SELECT * FROM situations WHERE id=?", (sid,))
+    diffs = []
     for k, v in champs.items():
         if k in ("titre", "texte", "document_texte", "document_latex", "synthese", "chapitres", "duree_min"):
+            if str(avant[k]) != str(v):
+                diffs.append((k, avant[k], v))
             con.execute(f"UPDATE situations SET {k}=?, version='corrigée' WHERE id=?", (v, sid))
+    from .retours import enregistrer
+    enregistrer(con, item_id=sid, type_="situation", decision=statut, validateur=validateur, motif=motif, observations=observations,
+                meta=avant, diffs=diffs)
     if "texte" in champs:
         con.execute("UPDATE situations SET nb_mots=? WHERE id=?", (compter_mots(champs["texte"]), sid))
     if statut == "valide":

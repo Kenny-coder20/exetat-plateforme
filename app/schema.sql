@@ -142,3 +142,24 @@ CREATE TABLE IF NOT EXISTS utilisateurs (
   cree_le TEXT,
   derniere_connexion TEXT
 );
+
+
+-- Mémoire des corrections et avis des validateurs (boucle d'amélioration)
+CREATE TABLE IF NOT EXISTS corrections (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  item_id TEXT,                   -- item ou situation concerné
+  type TEXT NOT NULL DEFAULT 'item',   -- item | situation
+  discipline TEXT,
+  sous_discipline TEXT,
+  epreuve_code TEXT,
+  chapitre TEXT,
+  validateur TEXT,
+  date TEXT NOT NULL,
+  decision TEXT NOT NULL,         -- valide | rejete | en_attente
+  motif TEXT,                     -- motif de rejet normalisé
+  observations TEXT,
+  champ TEXT,                     -- champ corrigé (NULL si décision sans retouche)
+  avant TEXT,
+  apres TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_corr_disc ON corrections(discipline, date);
