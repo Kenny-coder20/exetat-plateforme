@@ -318,12 +318,14 @@ const h = new Date().getHours();
 $('#salutation').textContent = (h < 12 ? 'Bonjour. ' : h < 18 ? 'Bon après-midi. ' : 'Bonsoir. ') + 'Que révisons-nous aujourd\'hui ?';
 
 // ------------------------------------------------------------------ banque locale
+const FORMAT_BANQUE = 3; // changer ce numéro force le rechargement de la banque sur tous les appareils
 async function chargerBanque(force) {
+  if (BANQUE && BANQUE.format !== FORMAT_BANQUE) force = true;
   if (BANQUE && !force) { afficherBanque(); return; }
   try {
     const r = await fetch('/api/banque.json', { cache: 'no-store' }); if (!r.ok) throw 0;
-    BANQUE = await r.json(); BANQUE.telechargee_le = new Date().toISOString(); DB.set('banque', BANQUE); afficherBanque(); if (force) toast('Banque mise à jour');
-  } catch { if (!BANQUE) $('#banque-info').textContent = 'Aucune question sur cet appareil et pas de réseau. Connecte-toi une première fois.'; else toast('Pas de réseau : la banque locale reste utilisée.'); }
+    BANQUE = await r.json(); BANQUE.telechargee_le = new Date().toISOString(); BANQUE.format = FORMAT_BANQUE; DB.set('banque', BANQUE); afficherBanque(); if (force) toast('Banque mise à jour');
+  } catch { if (!BANQUE) $('#banque-info').textContent = 'Aucune question sur cet appareil et pas de réseau. Connecte-toi une première fois.'; else { toast('Pas de réseau : la banque locale reste utilisée.'); if (BANQUE.option_epreuves) afficherBanque(); } }
 }
 // --- option courante et ses épreuves
 const optionCourante = () => DB.get('option', null) || $('#opt-accueil').value;
