@@ -97,6 +97,13 @@
   .ligne-q{display:grid;grid-template-columns:1fr 150px 90px;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--filet);font-size:13.5px}
   .ligne-q .barre{height:10px} .barre u{position:absolute;inset:0 auto 0 0;background:var(--rouge);border-radius:4px}
   .diff{font-size:12.5px} .diff del{color:var(--rouge);background:var(--rouge-pale);text-decoration:line-through} .diff ins{color:var(--vert);background:var(--vert-pale);text-decoration:none}
+  .kpis-s{grid-template-columns:repeat(3,1fr);gap:6px} .kpis-s .kpi{padding:8px 10px} .kpis-s .kpi b{font-size:20px}
+  .props.choix li{cursor:pointer} .props.choix li:hover{border-color:var(--nuit)} .props.choix li.choisie{border-color:var(--nuit);background:var(--ivoire)} .props.choix li.choisie .num{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+  .props li.mienne-ko{border-color:var(--rouge);background:var(--rouge-pale)} .props li.mienne-ko .num{background:var(--rouge);color:#fff;border-color:var(--rouge)}
+  .revele{margin:12px 0;padding:12px 14px;border-radius:11px;font-size:14.5px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .revele.ok{background:var(--vert-pale);color:var(--vert);border:1px solid var(--vert)} .revele.ko{background:var(--rouge-pale);color:#7a2525;border:1px solid var(--rouge)}
+  .revele .verdicts{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto} .revele .verdicts button{padding:7px 11px;border-radius:9px;border:1px solid currentColor;background:#fff;color:inherit;cursor:pointer;font-size:13px} .revele .verdicts button.on{background:currentColor} .revele .verdicts button.on span{color:#fff}
+  .chrono{font-size:12.5px;color:var(--encre-2)}
   [hidden]{display:none !important}
 </style>
 </head>
@@ -124,6 +131,11 @@
       <div class="onglets" style="margin-top:8px"><button class="on" data-statut="en_attente">En attente</button><button data-statut="valide">Validées</button><button data-statut="rejete">Rejetées</button></div>
       <ul class="file" id="file"></ul>
     </section>
+    <section class="carte" style="margin-top:14px" id="carte-moi">
+      <h2>Mes relectures</h2>
+      <div class="muted">Vous répondez d'abord, la clé s'affiche ensuite. Un désaccord suivi d'une correction de la clé est une détection à votre crédit.</div>
+      <div class="kpis kpis-s" id="moi-kpis"></div>
+    </section>
     <section class="carte" style="margin-top:14px">
       <h2>Avancement de l'épreuve</h2>
       <div class="muted">Validées (vert) et en attente (or), par rapport à quatre séries complètes.</div>
@@ -134,7 +146,7 @@
   <!-- colonne droite : vues -->
   <section>
     <div id="vue-relire">
-      <div class="carte" id="fiche"><div class="vide"><h2>Choisissez une question dans la liste</h2>Vous la verrez exactement comme l'élève, avec la bonne réponse en vert et la correction. Vous pourrez la valider, la corriger directement dans le texte, ou la rejeter.</div></div>
+      <div class="carte" id="fiche"><div class="vide"><h2>Choisissez une question dans la liste</h2>Vous la verrez d'abord exactement comme l'élève, sans la réponse : choisissez celle qui vous paraît juste. La clé et la correction s'affichent ensuite, et vous pourrez valider, corriger directement dans le texte, ou rejeter.</div></div>
     </div>
 
     <div id="vue-produire" hidden>
@@ -177,8 +189,12 @@
         <div class="carte"><h2>Par matière</h2><div id="q-disc"></div></div>
         <div class="carte"><h2>Motifs de rejet</h2><div id="q-motifs"></div></div>
         <div class="carte"><h2>Chapitres les plus retouchés ou rejetés</h2><div id="q-chap"></div></div>
-        <div class="carte"><h2>Ce que les enseignants corrigent</h2><div id="q-champs"></div><h2 style="margin-top:14px">Relecteurs</h2><div id="q-val"></div></div>
+        <div class="carte"><h2>Ce que les enseignants corrigent</h2><div id="q-champs"></div></div>
       </div>
+      <div class="carte" style="margin-top:14px"><div class="q-ent"><h2>Relecteurs</h2><span class="muted" id="q-req"></span></div>
+        <p class="muted">La concordance se mesure avec la clé <b>finale</b> (après corrections) : contredire une clé qui s'avère fausse est une détection, pas une erreur. Les relectures de moins de 8 secondes sont comptées à part.</p>
+        <table class="comptes" id="q-relecteurs"></table></div>
+      <div class="carte" style="margin-top:14px"><h2>Questions contestées</h2><p class="muted">Au moins un enseignant a choisi une autre réponse que la clé finale : à faire relire en priorité par un second enseignant.</p><table class="comptes" id="q-suspects"></table></div>
       <div class="carte" style="margin-top:14px"><h2>Consignes qui seront transmises à l'assistant</h2><div class="form-ligne"><div><label class="ch">Matière</label><select id="q-cdisc"></select></div><div><button class="btn sec" id="q-voir">Voir les consignes</button></div></div><pre id="q-consignes" class="journal" style="white-space:pre-wrap;max-height:360px"></pre></div>
       <div class="carte" style="margin-top:14px"><h2>Dernières décisions</h2><table class="comptes" id="q-recents"></table></div>
     </div>
@@ -230,7 +246,7 @@ async function init() {
   $('#opt').innerHTML = Object.entries(fam).map(([f, os]) => `<optgroup label="${esc(f)}">${os.map(o => `<option value="${o.code}">${o.code} — ${esc(o.nom)}</option>`).join('')}</optgroup>`).join('');
   $('#opt').value = localStorage.getItem('opt') || '1.02';
   majJours(); $('#jour').value = localStorage.getItem('jour') || '1'; if (!epCourante()) $('#jour').value = '1';
-  majEpreuve();
+  majEpreuve(); chargerMoi();
 }
 function majJours() {
   const oes = CFG.option_epreuves.filter(x => x.option_code === $('#opt').value);
@@ -247,7 +263,7 @@ function majEpreuve() {
   $('#g-disc').innerHTML = discs.map(d => `<option>${esc(d)}</option>`).join(''); majChapitres();
   $('#g-ep').textContent = `Épreuve ${ep.code}` + (ep.actif ? '' : ' — banque non ouverte');
   $('#g-go').disabled = !ep.actif;
-  courant = null; $('#fiche').innerHTML = '<div class="vide"><h2>Choisissez une question dans la liste</h2>Vous la verrez exactement comme l\'élève, avec la bonne réponse en vert et la correction.</div>';
+  courant = null; $('#fiche').innerHTML = '<div class="vide"><h2>Choisissez une question dans la liste</h2>Vous répondez d\'abord comme un élève ; la clé et la correction s\'affichent ensuite.</div>';
   chargerFile(); chargerAvancement(); chargerSituations();
 }
 function majChapitres() { const d = $('#g-disc').value; const chs = CFG.programme.filter(p => p.discipline === d); $('#g-chap').innerHTML = '<option value="">Au choix de l\'assistant, selon le programme</option>' + chs.map(c => `<option>${esc(c.chapitre)}</option>`).join(''); }
@@ -276,22 +292,67 @@ async function chargerAvancement() {
 }
 
 // ------------------------------------------------------------ fiche : la question comme l'élève la voit
-async function ouvrir(id) {
-  courant = await api('/api/items/' + id); const i = courant;
-  const anomalies = (i.observations || '').startsWith('ANOMALIES') ? i.observations.replace('ANOMALIES AUTO : ', '') : '';
-  $('#fiche').innerHTML = `
-    <div class="q-ent"><div><span class="pastille">${esc(i.discipline)}${i.sous_discipline ? ' · ' + esc(i.sous_discipline) : ''}</span><span class="pastille">${i.difficulte}</span><span class="pastille">${esc(i.chapitre || '')}</span></div>
+let chronoDebut = 0, chronoTimer = null;
+const enTete = i => `<div class="q-ent"><div><span class="pastille">${esc(i.discipline)}${i.sous_discipline ? ' · ' + esc(i.sous_discipline) : ''}</span><span class="pastille">${i.difficulte}</span><span class="pastille">${esc(i.chapitre || '')}</span>${i.publication && i.publication.requis > 1 ? `<span class="pastille ${i.publication.publiable ? 'ok' : 'att'}" title="Relectures concordantes requises avant publication aux élèves">${i.publication.concordants}/${i.publication.requis} relectures concordantes</span>` : ''}</div>
       <span class="pastille ${i.statut_validation === 'valide' ? 'ok' : i.statut_validation === 'rejete' ? 'ko' : 'att'}">${i.statut_validation === 'en_attente' ? 'en attente' : i.statut_validation === 'valide' ? 'validée' : 'rejetée'}</span></div>
-    ${i.situation ? `<div class="corr" style="border-color:var(--nuit)"><b>Situation : ${esc(i.situation.titre)}.</b> ${esc(i.situation.texte)}<br><span class="muted">${esc(i.situation.document_texte || '')}</span></div>` : ''}
+    ${i.situation ? `<div class="corr" style="border-color:var(--nuit)"><b>Situation : ${esc(i.situation.titre)}.</b> ${esc(i.situation.texte)}<br><span class="muted">${esc(i.situation.document_texte || '')}</span></div>` : ''}`;
+
+async function ouvrir(id) {
+  clearInterval(chronoTimer);
+  courant = await api('/api/items/' + id); const i = courant;
+  $('#file').querySelectorAll('li').forEach(li => li.classList.toggle('actif', li.dataset.id === id));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (i.aveugle) return afficherAveugle(i);
+  afficherFiche(i);
+}
+
+// temps 1 : la question nue, l'enseignant choisit
+function afficherAveugle(i) {
+  chronoDebut = Date.now();
+  $('#fiche').innerHTML = `${enTete(i)}
+    <div class="q-titre">${esc(i.titre)}</div>
+    <div class="q-tige">${esc(i.tige)}</div>
+    <ul class="props choix" id="props">${[1, 2, 3, 4, 5].map(k => `<li data-k="${k}"><span class="num">${k}</span><span class="txt">${esc(i['p' + k])}</span></li>`).join('')}</ul>
+    <div class="actions"><button class="btn" id="b-rep" disabled>C'est ma réponse <span class="raccourci">Entrée</span></button><span class="chrono" id="chrono">Choisissez une proposition (touches 1 à 5). La clé et la correction s'afficheront ensuite.</span><button class="btn sec" id="b-suiv" style="margin-left:auto" title="Passer sans répondre">Suivante <span class="raccourci">→</span></button></div>`;
+  let choix = null;
+  const lis = $('#props').querySelectorAll('li');
+  const choisir = k => { choix = k; lis.forEach(li => li.classList.toggle('choisie', +li.dataset.k === k)); $('#b-rep').disabled = false; };
+  lis.forEach(li => li.onclick = () => choisir(+li.dataset.k));
+  $('#b-suiv').onclick = suivante;
+  $('#b-rep').onclick = async () => {
+    if (!choix) return;
+    $('#b-rep').disabled = true;
+    try {
+      const r = await api('/api/items/' + i.id + '/relecture', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reponse: choix, duree_s: Math.round((Date.now() - chronoDebut) / 1000) }) });
+      courant = await api('/api/items/' + i.id);
+      afficherFiche(courant, r);
+      chargerMoi();
+    } catch (e) { toast(e.message); $('#b-rep').disabled = false; }
+  };
+  window.choisirAveugle = choisir;
+}
+
+// temps 2 : la clé, la correction, les actions
+function afficherFiche(i, rel) {
+  window.choisirAveugle = null;
+  const anomalies = (i.observations || '').startsWith('ANOMALIES') ? i.observations.replace('ANOMALIES AUTO : ', '') : '';
+  const mienne = rel || (i.ma_relecture ? { reponse_donnee: i.ma_relecture.reponse_donnee, cle: i.ma_relecture.cle_affichee, concordant: !!i.ma_relecture.concordant, id: i.ma_relecture.id, verdict: i.ma_relecture.verdict } : null);
+  let bandeau = '';
+  if (mienne) {
+    if (mienne.concordant) bandeau = `<div class="revele ok"><b>Vous avez répondu ${mienne.reponse_donnee}, comme la clé.</b> Vérifiez maintenant la correction et les autres propositions.</div>`;
+    else bandeau = `<div class="revele ko"><div><b>Vous avez répondu ${mienne.reponse_donnee} ; la clé prévue est ${mienne.cle}.</b><br>Après lecture de la correction, qu'en concluez-vous ?</div><div class="verdicts">${[['erreur_relecteur', "Je m'étais trompé(e)"], ['cle_fausse', 'La clé est fausse'], ['ambigu', 'Deux réponses défendables']].map(([v, l]) => `<button data-v="${v}" class="${mienne.verdict === v ? 'on' : ''}"><span>${l}</span></button>`).join('')}</div></div>`;
+  }
+  $('#fiche').innerHTML = `${enTete(i)}
+    ${bandeau}
     ${anomalies ? `<div class="alerte">Points signalés automatiquement : ${esc(anomalies)}</div>` : ''}
     <div class="q-titre" id="e-titre" contenteditable="true" spellcheck="true">${esc(i.titre)}</div>
     <div class="q-tige" id="e-tige" contenteditable="true" spellcheck="true">${esc(i.tige)}</div>
     ${i.support_latex ? `<p class="aide-edit">Cette question s'accompagne d'un tableau ou d'une figure, visible dans la version imprimée.</p>` : ''}
-    <ul class="props" id="props">${[1, 2, 3, 4, 5].map(k => `<li class="${i.reponse === k ? 'bonne' : ''}" data-k="${k}"><span class="num" title="Marquer comme bonne réponse">${k}</span><span class="txt" contenteditable="true" id="e-p${k}">${esc(i['p' + k])}</span></li>`).join('')}</ul>
+    <ul class="props" id="props">${[1, 2, 3, 4, 5].map(k => `<li class="${i.reponse === k ? 'bonne' : mienne && !mienne.concordant && mienne.reponse_donnee === k ? 'mienne-ko' : ''}" data-k="${k}"><span class="num" title="Marquer comme bonne réponse">${k}</span><span class="txt" contenteditable="true" id="e-p${k}">${esc(i['p' + k])}</span></li>`).join('')}</ul>
     <p class="aide-edit">Pour corriger : cliquez dans un texte et modifiez-le. Pour changer la bonne réponse : cliquez sur son numéro.</p>
     <div class="corr"><b>Correction.</b> <span id="e-corr" class="corr-txt" contenteditable="true">${esc(i.correction_detaillee)}</span>${i.erreurs_distracteurs ? `<br><span class="muted">Erreurs visées par les autres propositions : <span id="e-err" contenteditable="true">${esc(i.erreurs_distracteurs)}</span></span>` : '<span id="e-err" hidden></span>'}</div>
     <h3 style="font-size:15px;margin:16px 0 4px">Avant de valider, je confirme :</h3>
-    <div class="controle">${POINTS.map((p, k) => `<label><input type="checkbox" class="pt"> ${p}</label>`).join('')}</div>
+    <div class="controle">${POINTS.map((p, k) => `<label><input type="checkbox" class="pt" ${k === 0 && mienne && mienne.concordant ? 'checked' : ''}> ${p}</label>`).join('')}</div>
     <div class="actions">
       <button class="btn ok" id="b-ok">Valider <span class="raccourci">V</span></button>
       <button class="btn sec" id="b-save">Enregistrer mes corrections <span class="raccourci">E</span></button>
@@ -304,8 +365,17 @@ async function ouvrir(id) {
   $('#b-ko').onclick = () => { $('#motifs').classList.add('on'); $('#motifs').scrollIntoView({ behavior: 'smooth', block: 'nearest' }); };
   $('#b-annul').onclick = () => $('#motifs').classList.remove('on');
   $('#b-ko2').onclick = () => statuer('rejete');
-  $('#file').querySelectorAll('li').forEach(li => li.classList.toggle('actif', li.dataset.id === id));
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelectorAll('.revele .verdicts button').forEach(b => b.onclick = async () => {
+    try { await api('/api/relectures/' + mienne.id + '/verdict', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ verdict: b.dataset.v }) }); document.querySelectorAll('.revele .verdicts button').forEach(x => x.classList.toggle('on', x === b)); mienne.verdict = b.dataset.v;
+      if (b.dataset.v === 'cle_fausse') { toast('Cliquez sur le numéro de la bonne réponse, puis Enregistrer ou Valider.'); } if (b.dataset.v === 'ambigu') { toast('Rejetez avec le motif « Plusieurs réponses possibles », ou corrigez les propositions.'); } chargerMoi(); } catch (e) { toast(e.message); }
+  });
+}
+async function chargerMoi() {
+  try {
+    const m = await api('/api/moi/relectures');
+    const n = m.relectures || 0;
+    $('#moi-kpis').innerHTML = [[n, 'relecture' + (n > 1 ? 's' : '')], [m.taux_concordance_final == null ? '—' : m.taux_concordance_final + ' %', 'd\'accord avec la clé finale'], [m.detections || 0, 'détection' + (m.detections > 1 ? 's' : '')]].map(([v, l]) => `<div class="kpi"><b>${v}</b><span>${l}</span></div>`).join('');
+  } catch { $('#moi-kpis').innerHTML = ''; }
 }
 function lireFiche() {
   const bonne = +($('#props').querySelector('li.bonne') || { dataset: { k: courant.reponse } }).dataset.k;
@@ -316,6 +386,7 @@ function lireFiche() {
 }
 async function statuer(statut) {
   if (!courant) return;
+  if (courant.aveugle) { toast('Donnez d\'abord votre réponse.'); return; }
   if (!$('#validateur').value.trim()) { toast('Indiquez votre nom en haut à droite.'); $('#validateur').focus(); return; }
   if (statut === 'valide') { const nk = [...document.querySelectorAll('.pt')].filter(c => !c.checked).length; if (nk && !confirm(`${nk} point(s) ne sont pas cochés. Valider quand même ?`)) return; }
   const motif = statut === 'rejete' ? (document.querySelector('input[name=motif]:checked') || {}).value : null;
@@ -326,7 +397,9 @@ async function statuer(statut) {
   catch (e) { toast(e.message); if (/vient d'être traitée/.test(e.message)) { const id = courant.id; courant = null; await chargerFile(); } }
 }
 function suivante() { const lis = [...$('#file').querySelectorAll('li[data-id]')]; const k = lis.findIndex(l => l.dataset.id === (courant || {}).id); const n = lis[(k + 1) % lis.length]; if (n) ouvrir(n.dataset.id); }
-document.addEventListener('keydown', e => { if (!courant || e.target.isContentEditable || /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return; if (e.key === 'v' || e.key === 'V') statuer('valide'); if (e.key === 'r' || e.key === 'R') $('#b-ko').click(); if (e.key === 'e' || e.key === 'E') statuer('en_attente'); if (e.key === 'ArrowRight') suivante(); });
+document.addEventListener('keydown', e => { if (!courant || e.target.isContentEditable || /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+  if (window.choisirAveugle) { if (/^[1-5]$/.test(e.key)) window.choisirAveugle(+e.key); if (e.key === 'Enter') $('#b-rep') && $('#b-rep').click(); if (e.key === 'ArrowRight') suivante(); return; }
+  if (e.key === 'v' || e.key === 'V') statuer('valide'); if (e.key === 'r' || e.key === 'R') $('#b-ko').click(); if (e.key === 'e' || e.key === 'E') statuer('en_attente'); if (e.key === 'ArrowRight') suivante(); });
 
 // ------------------------------------------------------------ produire
 $('#g-go').onclick = async () => {
@@ -388,7 +461,11 @@ async function chargerQualite() {
   $('#q-motifs').innerHTML = q.par_motif.length ? q.par_motif.map(m => `<div class="ligne-q" style="grid-template-columns:1fr auto"><span>${esc(m.cle)}</span><b>${m.n}</b></div>`).join('') + (q.par_motif_discipline.length ? '<details style="margin-top:8px"><summary>Détail par matière</summary>' + q.par_motif_discipline.map(m => `<div class="muted">${esc(m.discipline)} — ${esc(m.motif)} : ${m.n}</div>`).join('') + '</details>' : '') : '<p class="muted">Aucun rejet sur la période.</p>';
   $('#q-chap').innerHTML = q.par_chapitre.length ? lignesTaux(q.par_chapitre) : '<p class="muted">Pas encore assez de relectures par chapitre (3 minimum).</p>';
   $('#q-champs').innerHTML = q.champs_corriges.length ? q.champs_corriges.map(c => `<div class="ligne-q" style="grid-template-columns:1fr auto"><span>${esc(c.libelle)}</span><b>${c.n}</b></div>`).join('') : '<p class="muted">Aucune correction enregistrée.</p>';
-  $('#q-val').innerHTML = q.validateurs.length ? q.validateurs.map(v => `<div class="ligne-q" style="grid-template-columns:1fr auto"><span>${esc(v.cle || 'anonyme')}</span><span class="muted">${v.n} décision${v.n > 1 ? 's' : ''}, ${v.rejets} rejet${v.rejets > 1 ? 's' : ''}</span></div>`).join('') : '<p class="muted">—</p>';
+  $('#q-req').textContent = q.relectures_requises > 1 ? `Publication après ${q.relectures_requises} relectures concordantes` : 'Publication après validation et une relecture concordante';
+  const decis = Object.fromEntries(q.validateurs.map(v => [v.cle, v]));
+  $('#q-relecteurs').innerHTML = q.relecteurs.length ? `<tr><th>Enseignant</th><th>Relectures</th><th>D'accord avec la clé finale</th><th>Détections</th><th>Erreurs reconnues</th><th>Ambiguïtés signalées</th><th>Temps médian</th><th>Trop rapides</th><th>Décisions · rejets</th></tr>` + q.relecteurs.map(r => { const d = decis[r.nom] || {}; return `<tr><td>${esc(r.nom || r.validateur)}<div class="muted">${r.disciplines.map(x => esc(x.discipline) + ' ' + x.relectures).join(' · ')}</div></td><td>${r.relectures}</td><td><b>${r.taux_concordance_final == null ? '—' : r.taux_concordance_final + ' %'}</b></td><td>${r.detections}</td><td>${r.erreurs_reconnues}</td><td>${r.ambigus}</td><td>${r.duree_mediane_s == null ? '—' : r.duree_mediane_s + ' s'}</td><td>${r.trop_rapides ? `<span class="pastille att">${r.trop_rapides}</span>` : '0'}</td><td class="muted">${d.n || 0} · ${d.rejets || 0}</td></tr>`; }).join('') : '<tr><td class="muted">Aucune relecture à l\'aveugle encore enregistrée.</td></tr>';
+  $('#q-suspects').innerHTML = q.items_suspects.length ? `<tr><th>Question</th><th>Matière</th><th>Statut</th><th>Relectures</th><th>Désaccords</th></tr>` + q.items_suspects.map(i => `<tr><td><button class="lien" data-ouvrir="${i.id}">${esc(i.titre)}</button></td><td>${esc(i.discipline)}</td><td>${i.statut_validation === 'valide' ? '<span class="pastille ok">validée</span>' : '<span class="pastille att">en attente</span>'}</td><td>${i.relectures}</td><td><b>${i.desaccords}</b>${i.ambigus ? ` <span class="muted">(${i.ambigus} ambiguïté)</span>` : ''}</td></tr>`).join('') : '<tr><td class="muted">Aucune question contestée.</td></tr>';
+  $('#q-suspects').querySelectorAll('[data-ouvrir]').forEach(b => b.onclick = () => { document.querySelector('.onglets [data-vue=relire]').click(); ouvrir(b.dataset.ouvrir); });
   const discs = [...new Set(CFG.quotas.map(x => x.discipline))].sort(); $('#q-cdisc').innerHTML = discs.map(d => `<option>${esc(d)}</option>`).join('');
   $('#q-consignes').textContent = '';
   $('#q-recents').innerHTML = `<tr><th>Date</th><th>Matière</th><th>Relecteur</th><th>Décision</th><th>Détail</th></tr>` + q.recents.map(r => { const dec = { valide: '<span class="pastille ok">validée</span>', rejete: '<span class="pastille ko">rejetée</span>', en_attente: '<span class="pastille att">enregistrée</span>' }[r.decision] || r.decision; let det = ''; if (r.champ) det = `<div class="diff"><b>${esc(({ tige: 'énoncé', reponse: 'bonne réponse', correction_detaillee: 'correction' })[r.champ] || r.champ)}</b> : <del>${esc((r.avant || '').slice(0, 140))}</del> <ins>${esc((r.apres || '').slice(0, 140))}</ins></div>`; if (r.motif) det += `<div class="muted">${esc(r.motif)}</div>`; if (r.observations) det += `<div class="muted">« ${esc(r.observations)} »</div>`; return `<tr><td class="muted" style="white-space:nowrap">${esc((r.date || '').replace('T', ' '))}</td><td>${esc(r.discipline || '')}</td><td>${esc(r.validateur || '')}</td><td>${dec}</td><td>${det || '<span class="muted">sans retouche</span>'}</td></tr>`; }).join('');

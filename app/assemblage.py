@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import random
 
+from .relecture import filtre_publiable
 from .db import connect, rows
 from .generation import repartition_difficulte
 
@@ -17,7 +18,7 @@ def tirer(con, *, discipline: str, sous_discipline: str | None, n: int, chapitre
     """Tire n items validés de la banque de l'épreuve, en respectant difficulté et diversité des chapitres."""
     rnd = random.Random(graine)
     exclure = exclure or set()
-    sql = "SELECT * FROM items WHERE statut_validation='valide' AND situation_id IS NULL AND discipline=?"
+    sql = f"SELECT * FROM items WHERE {filtre_publiable()} AND situation_id IS NULL AND discipline=?"
     params: list = [discipline]
     if epreuve_code:
         sql += " AND epreuve_code=?"
@@ -122,7 +123,7 @@ def banque_validee() -> dict:
         quotas = rows(con, "SELECT * FROM quotas ORDER BY epreuve_code, ordre")
         option_epreuves = rows(con, "SELECT * FROM option_epreuves ORDER BY option_code, jour")
         programme = rows(con, "SELECT discipline, sous_discipline, chapitre, poids, source FROM programme ORDER BY id")
-        items = [projeter(i) for i in rows(con, "SELECT * FROM items WHERE statut_validation='valide' AND situation_id IS NULL")]
+        items = [projeter(i) for i in rows(con, f"SELECT * FROM items WHERE {filtre_publiable()} AND situation_id IS NULL")]
     from .situations import situations_validees
     sits = situations_validees()
     return {"options": options, "epreuves": epreuves, "quotas": quotas, "option_epreuves": option_epreuves,

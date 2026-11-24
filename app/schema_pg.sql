@@ -162,3 +162,22 @@ CREATE TABLE IF NOT EXISTS corrections (
   apres TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_corr_disc ON corrections(discipline, date);
+
+
+-- Relecture à l'aveugle : l'enseignant répond avant de voir la clé
+CREATE TABLE IF NOT EXISTS relectures (
+  id SERIAL PRIMARY KEY,
+  item_id TEXT NOT NULL,
+  validateur TEXT NOT NULL,
+  nom TEXT,
+  discipline TEXT,
+  epreuve_code TEXT,
+  reponse_donnee INTEGER NOT NULL,
+  cle_affichee INTEGER NOT NULL,
+  concordant INTEGER NOT NULL,
+  duree_s INTEGER,
+  verdict TEXT,
+  date TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_relectures_item ON relectures(item_id);
+CREATE INDEX IF NOT EXISTS idx_relectures_val ON relectures(validateur, date);

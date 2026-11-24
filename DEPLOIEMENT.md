@@ -50,3 +50,4 @@ format `{"items":[...]}` ; ou exécutez localement `python -m app.cli banque` et
 | `CLE_SECRETE` | signature des sessions (générée automatiquement par le Blueprint) |
 | `MODELE_IA` | identifiant du modèle IA utilisé pour la génération |
 | `EXETAT_DEMO` | `1` charge la démo si la banque est vide |
+| `RELECTURES_REQUISES` | nombre d'enseignants distincts devant avoir donné, à l'aveugle, la même réponse que la clé avant qu'une question validée soit publiée aux élèves (`1` par défaut ; `2` = double relecture) |

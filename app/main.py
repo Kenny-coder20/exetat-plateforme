@@ -11,7 +11,7 @@ from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from . import retours, assemblage, auth, export, generation, situations, taches
+from . import relecture, retours, assemblage, auth, export, generation, situations, taches
 from .db import connect, one, preparer, rows
 import os
 import secrets
@@ -27,7 +27,7 @@ app = FastAPI(title="Plateforme items EXETAT", version="0.2")
 # Chaque enseignant se connecte avec ses identifiants (cookie de session signé). Les écritures et les pages de
 # l'atelier exigent une session ; l'espace élève et l'API de lecture restent libres.
 PREFIXES_PROTEGES = ("/validateur", "/api/generer", "/api/importer", "/api/situations/generer", "/api/export/", "/api/taches",
-                     "/api/comptes", "/api/qualite", "/docs", "/openapi.json")
+                     "/api/comptes", "/api/qualite", "/api/relectures", "/api/moi/relectures", "/docs", "/openapi.json")
 PAGES_LIBRES = ("/validateur/connexion.html",)
 from starlette.responses import RedirectResponse as _Redir, Response
 
@@ -235,13 +235,24 @@ def lister_items(statut: Optional[str] = None, discipline: Optional[str] = None,
 
 
 @app.get("/api/items/{iid}")
-def lire_item(iid: str):
+def lire_item(iid: str, request: Request):
+    """Pour un enseignant connecté qui n'a pas encore relu la question à l'aveugle, la clé et la correction sont retenues
+    côté serveur jusqu'à ce qu'il ait donné sa propre réponse (POST /api/items/{id}/relecture)."""
+    u = utilisateur_courant(request)
     with connect() as con:
         it = one(con, "SELECT * FROM items WHERE id=?", (iid,))
-        if it and it.get("situation_id"):
+        if not it:
+            raise HTTPException(404)
+        if it.get("situation_id"):
             it["situation"] = one(con, "SELECT * FROM situations WHERE id=?", (it["situation_id"],))
-    if not it:
-        raise HTTPException(404)
+        if u:
+            mienne = relecture.deja_relu(con, iid, u["identifiant"])
+            it["ma_relecture"] = mienne
+            it["publication"] = relecture.etat_publication(con, iid)
+            if mienne is None and it["statut_validation"] != "rejete":
+                it["aveugle"] = True
+                for k in ("reponse", "correction_detaillee", "erreurs_distracteurs"):
+                    it[k] = None
     return it
 
 
@@ -367,6 +378,8 @@ def valider(iid: str, v: Validation, request: Request):
             raise HTTPException(409, f"Cette question vient d'être traitée par {actuel['validateur'] or 'un collègue'} "
                                      f"({actuel['statut_validation']}). Rechargez-la avant de statuer.")
         avant = one(con, "SELECT * FROM items WHERE id=?", (iid,))
+        if v.statut == "valide" and u and not relecture.deja_relu(con, iid, u["identifiant"]):
+            raise HTTPException(400, "Donnez d'abord votre propre réponse à la question (relecture à l'aveugle) avant de la valider.")
         corrige, diffs = False, []
         for k, val in champs.items():
             cur = avant[k]
@@ -390,7 +403,11 @@ def valider(iid: str, v: Validation, request: Request):
 def api_qualite(jours: int = 90):
     """Tableau de bord qualité : ce que les relectures disent de la production (admin et rédacteurs)."""
     with connect() as con:
-        return retours.tableau(con, jours)
+        t = retours.tableau(con, jours)
+        t["relecteurs"] = relecture.tableau_relecteurs(con, jours)
+        t["items_suspects"] = relecture.items_suspects(con, jours)
+        t["relectures_requises"] = relecture.relectures_requises()
+        return t
 
 
 @app.get("/api/qualite/consignes")
@@ -398,6 +415,55 @@ def api_qualite_consignes(discipline: str, sous_discipline: Optional[str] = None
     """Le bloc de retours tel qu'il sera joint à la prochaine commande dans cette matière."""
     with connect() as con:
         return {"discipline": discipline, "consignes": retours.consignes_pour(con, discipline, sous_discipline)}
+
+
+class Reponse(BaseModel):
+    reponse: int
+    duree_s: Optional[int] = None
+
+
+@app.post("/api/items/{iid}/relecture")
+def api_relecture(iid: str, r: Reponse, request: Request):
+    """Relecture à l'aveugle : enregistre la réponse de l'enseignant et révèle la clé."""
+    u = getattr(request.state, "utilisateur", None)
+    if not u:
+        raise HTTPException(401)
+    with connect() as con:
+        it = one(con, "SELECT * FROM items WHERE id=?", (iid,))
+        if not it:
+            raise HTTPException(404)
+        try:
+            res = relecture.enregistrer(con, item=it, validateur=u["identifiant"], nom=u["nom"], reponse=r.reponse, duree_s=r.duree_s)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+        res["publication"] = relecture.etat_publication(con, iid)
+        return res
+
+
+class Verdict(BaseModel):
+    verdict: str
+
+
+@app.post("/api/relectures/{rid}/verdict")
+def api_verdict(rid: int, v: Verdict, request: Request):
+    u = getattr(request.state, "utilisateur", None)
+    if not u:
+        raise HTTPException(401)
+    with connect() as con:
+        try:
+            relecture.verdict(con, rid, u["identifiant"], v.verdict)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+    return {"ok": True}
+
+
+@app.get("/api/moi/relectures")
+def api_mes_relectures(request: Request):
+    u = getattr(request.state, "utilisateur", None)
+    if not u:
+        raise HTTPException(401)
+    with connect() as con:
+        return relecture.mes_relectures(con, u["identifiant"])
 
 
 class Commande(BaseModel):
