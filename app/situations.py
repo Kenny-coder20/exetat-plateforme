@@ -1,19 +1,25 @@
 """Situations étendues : génération, insertion, assemblage, validation."""
 from __future__ import annotations
 
+import random
 import uuid
 from datetime import datetime
 
 from .assemblage import projeter
+from .contextes import decrire, plan_contextes
 from .db import connect, one, rows
 from .generation import (MODELE, GenerationError, appeler_modele, compter_mots, inserer_items, repartir_chapitres,
                          verifier_item)
 
-PROMPT_SITUATION = """COMMANDE : génère UNE situation étendue (exercice de synthèse) en {discipline}{sd}, option 1.02 Sciences,
+PROMPT_SITUATION = """COMMANDE : génère UNE situation étendue (exercice de synthèse) en {discipline}{sd} (Examen d'État, E.32),
 centrée sur le chapitre « {chapitre} »{autres}, suivie de {n} questions QCM qui en découlent.
 
+CONTEXTE IMPOSÉ POUR CETTE SITUATION : {contexte}
+Pas de cadre scolaire par défaut (ni classe, ni élève, ni professeur, ni devoir) : la situation se passe dans le monde
+réel, avec un acteur dont le métier ou le rôle est précis, ou sans acteur si le contexte imposé le dit.
+
 RÈGLES DU FORMAT « SITUATION ÉTENDUE » (elles s'ajoutent à la charte et au cahier des charges)
-- Situation de 150 à 300 mots : un acteur, un lieu congolais réel, un problème concret à résoudre, toutes les données
+- Situation de 150 à 300 mots : un problème concret à résoudre, dans l'univers imposé ci-dessus, toutes les données
   numériques nécessaires avec leurs unités, regroupées dans un DOCUMENT (tableau de données, fiche technique, schéma,
   graphique). Décris le document en LaTeX (tabular, TikZ ou pgfplots) dans `document_latex` ET en texte lisible dans
   `document_texte`.
@@ -43,8 +49,10 @@ def composer_commande_situation(con, discipline, sous_discipline, chapitre, n):
         chapitre, autres = chaps[0], [c for c in chaps[1:] if c != chaps[0]]
     else:
         autres = [c for c in repartir_chapitres(con, discipline, sous_discipline, 4) if c != chapitre][:2]
+    ctx = plan_contextes(3)[random.randrange(3)]
     return PROMPT_SITUATION.format(
         discipline=discipline, sd=f" ({sous_discipline})" if sous_discipline else "", chapitre=chapitre, n=n,
+        contexte=decrire(ctx),
         autres=(" en lien avec « " + " » et « ".join(autres) + " »") if autres else "")
 
 

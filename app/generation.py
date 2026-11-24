@@ -9,6 +9,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+from .contextes import CONSIGNE_VARIETE, decrire, plan_contextes
 from .db import connect, rows
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -80,14 +81,19 @@ def composer_commande(con, *, discipline: str, sous_discipline: str | None, n: i
         # entrelacer pour éviter trois difficiles consécutifs
         diffs = sorted(diffs, key=lambda d: DIFFICULTES.index(d))
         diffs = diffs[::2] + diffs[1::2]
-    plan = "\n".join(f"- Item {i+1} : chapitre « {c} », difficulté {d}" for i, (c, d) in enumerate(zip(chapitres, diffs)))
+    ctx = plan_contextes(n)
+    plan = "\n".join(
+        f"- Item {i+1} : chapitre « {c} », difficulté {d}\n    contexte imposé → {decrire(ctx[i])}"
+        for i, (c, d) in enumerate(zip(chapitres, diffs))
+    )
     sd = f" (sous-discipline : {sous_discipline})" if sous_discipline else ""
     s = f", série {serie}" if serie else ""
     j = f", épreuve {epreuve_code}" if epreuve_code else ""
     return (
         f"COMMANDE : génère {n} items de {discipline}{sd}{j}{s} (Examen d'État, E.32), selon le plan suivant.\n"
-        f"{plan}\n"
-        "Respecte le plan item par item (chapitre et difficulté). Varie les familles de contexte et la position "
+        f"{plan}\n\n"
+        f"{CONSIGNE_VARIETE}\n"
+        "Respecte le plan item par item (chapitre, difficulté, contexte imposé). Varie la position "
         "de la bonne réponse. Réponds uniquement par le JSON demandé."
     )
 
