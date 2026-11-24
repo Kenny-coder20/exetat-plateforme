@@ -6,7 +6,7 @@ pour l'option **1.02 Sciences**, 4e des humanités, selon la *Charte de rédacti
 
 ```
 exetat-platform/
-├── app/            backend : base SQLite, génération (API Claude), assemblage, export, API FastAPI, CLI
+├── app/            backend : base SQLite, génération (assistant IA), assemblage, export, API FastAPI, CLI
 ├── docs/           charte, cahier des charges, prompt système de l'agent
 ├── static/
 │   ├── validateur/ atelier : file d'attente, checklist, génération, import
@@ -67,7 +67,7 @@ python -m app.cli generer --discipline SVT --sous-discipline Écologie -n 5 --di
 Chaque quota du E.32 donne lieu à un appel API ; les items arrivent **en attente**, avec les anomalies
 mécaniques détectées (nombre de mots, 5 propositions, réponse dans 1..5, répartition des réponses…).
 
-Sans clé API : bouton « Copier le prompt », collez-le dans Claude.ai, puis « Importer un JSON ».
+Sans clé API : bouton « Copier le prompt », collez-le dans votre assistant IA, puis « Importer un JSON ».
 
 ### 2. Valider (atelier)
 File d'attente → item → relecture et correction éventuelle des champs → checklist de la charte →
@@ -140,7 +140,7 @@ Les gabarits, l'assemblage et l'application élève suivent automatiquement.
 | Variable | Rôle |
 | --- | --- |
 | `ANTHROPIC_API_KEY` | clé API pour la génération |
-| `CLAUDE_MODEL` | modèle utilisé (défaut `claude-sonnet-4-5`) |
+| `MODELE_IA` | identifiant du modèle IA utilisé pour la génération |
 | `EXETAT_DB` | chemin de la base SQLite |
 
 ## Limites de cette V1 et suite prévue

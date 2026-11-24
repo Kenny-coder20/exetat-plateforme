@@ -57,7 +57,7 @@
       <div id="liste" class="liste"></div>
     </section>
     <section class="panel" style="margin-top:14px">
-      <h2>Générer (API Claude)</h2>
+      <h2>Générer (assistant IA)</h2>
       <div class="row"><select id="g-jour"><option value="">— épreuve complète : jour —</option></select></div>
       <div class="muted" style="text-align:center">ou</div>
       <div class="row"><select id="g-disc"></select><select id="g-sous"><option value="">sous-discipline</option></select></div>
@@ -66,7 +66,7 @@
       <div class="row"><button id="g-go">Générer des items</button><button id="g-sit" class="secondary">Générer une situation étendue</button></div>
       <div class="row"><button id="g-prompt" class="secondary">Copier le prompt (sans API)</button></div>
       <div id="g-msg" class="muted"></div>
-      <details style="margin-top:8px"><summary class="muted">Importer un JSON produit dans Claude.ai</summary>
+      <details style="margin-top:8px"><summary class="muted">Importer un JSON produit avec l'assistant IA</summary>
         <textarea id="imp-json" placeholder='{"items":[...]}'></textarea><div class="row"><button id="imp-go" class="secondary">Importer</button></div></details>
     </section>
     <section class="panel" style="margin-top:14px"><h2>Banque</h2><div id="stats"></div>
@@ -204,21 +204,33 @@ async function statuer(statut) {
 
 $('#g-go').onclick = async () => {
   const jour = $('#g-jour').value; const body = jour ? { jour: +jour } : { discipline: $('#g-disc').value, sous_discipline: $('#g-sous').value || null, chapitre: $('#g-chap').value || null, difficulte: $('#g-diff').value || null, n: +$('#g-n').value };
-  $('#g-msg').textContent = 'Génération en cours… (une épreuve complète prend plusieurs minutes)';
-  try { const r = await api('/api/generer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); $('#g-msg').textContent = 'Reçu : ' + JSON.stringify(r); await chargerListe(); await chargerStats(); }
+  try { const r = await api('/api/generer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); suivreTache(r.tache); }
   catch (e) { $('#g-msg').textContent = 'Erreur : ' + e.message; }
 };
+async function suivreTache(tid) {
+  $('#g-go').disabled = true; $('#g-sit').disabled = true;
+  const debut = Date.now();
+  const tick = async () => {
+    let t; try { t = await api('/api/taches/' + tid); } catch (e) { $('#g-msg').textContent = 'Suivi interrompu : ' + e.message; return fin(); }
+    const sec = Math.round((Date.now() - debut) / 1000);
+    const etapes = t.etapes.map(e => '• ' + e.texte).join('<br>');
+    if (t.statut === 'en_cours') { $('#g-msg').innerHTML = `<b>${t.libelle}</b> — en cours (${sec} s). Vous pouvez continuer à valider pendant ce temps.<br>${etapes}`; setTimeout(tick, 4000); }
+    else if (t.statut === 'termine') { $('#g-msg').innerHTML = `<b>${t.libelle}</b> — terminé en ${sec} s.<br>${etapes}`; await chargerListe(); await chargerStats(); fin(); }
+    else { $('#g-msg').innerHTML = `<b>${t.libelle}</b> — échec : ${t.erreur}<br>${etapes}`; fin(); }
+  };
+  const fin = () => { $('#g-go').disabled = false; $('#g-sit').disabled = false; };
+  tick();
+}
 $('#g-sit').onclick = async () => {
   const body = { discipline: $('#g-disc').value, sous_discipline: $('#g-sous').value || null, chapitre: $('#g-chap').value || null, n: Math.min(6, Math.max(4, +$('#g-n').value || 5)) };
-  $('#g-msg').textContent = 'Génération de la situation en cours (1 à 2 minutes)…';
-  try { const r = await api('/api/situations/generer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); $('#g-msg').textContent = `Situation ${r.situation_id} : ${r.nb_questions} questions.`; $('#f-type').value = 'situations'; await chargerListe(); await chargerStats(); }
+  try { const r = await api('/api/situations/generer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); $('#f-type').value = 'situations'; suivreTache(r.tache); }
   catch (e) { $('#g-msg').textContent = 'Erreur : ' + e.message; }
 };
 $('#g-prompt').onclick = async () => {
   const p = new URLSearchParams({ discipline: $('#g-disc').value, n: $('#g-n').value }); if ($('#g-sous').value) p.set('sous_discipline', $('#g-sous').value); if ($('#g-chap').value) p.set('chapitre', $('#g-chap').value); if ($('#g-diff').value) p.set('difficulte', $('#g-diff').value);
   const r = await api('/api/prompt?' + p);
   await navigator.clipboard.writeText('INSTRUCTIONS SYSTÈME :\n' + r.systeme + '\n\n' + r.commande);
-  toast('Prompt copié : collez-le dans Claude.ai, puis importez le JSON reçu.');
+  toast('Prompt copié : collez-le dans votre assistant IA, puis importez le JSON reçu.');
 };
 $('#imp-go').onclick = async () => {
   try { const j = JSON.parse($('#imp-json').value); const r = await api('/api/importer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items: j.items || j, discipline: $('#g-disc').value }) }); toast(r.nb + ' items importés'); $('#imp-json').value = ''; chargerListe(); chargerStats(); }

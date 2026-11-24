@@ -93,7 +93,7 @@ def main(argv=None):
     sp = p.add_subparsers(dest="cmd", required=True)
     s = sp.add_parser("init", help="créer la base et charger le E.32"); s.add_argument("--reset-programme", action="store_true"); s.set_defaults(f=cmd_init)
     s = sp.add_parser("programme", help="importer le programme officiel (CSV)"); s.add_argument("fichier"); s.set_defaults(f=cmd_programme)
-    s = sp.add_parser("generer", help="générer des items via l'API Claude")
+    s = sp.add_parser("generer", help="générer des items via l'assistant IA")
     s.add_argument("--jour", type=int); s.add_argument("--serie", default=None)
     s.add_argument("--discipline"); s.add_argument("--sous-discipline"); s.add_argument("--chapitre")
     s.add_argument("--difficulte", choices=["facile", "moyen", "difficile"]); s.add_argument("-n", type=int, default=5)

@@ -11,7 +11,7 @@ from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from . import assemblage, export, generation, situations
+from . import assemblage, export, generation, situations, taches
 from .db import connect, one, preparer, rows
 import os
 import secrets
@@ -28,7 +28,7 @@ app = FastAPI(title="Plateforme items EXETAT", version="0.2")
 # et les opérations d'écriture : indispensable dès que la plateforme est accessible sur Internet.
 ATELIER_UTILISATEUR = os.environ.get("ATELIER_UTILISATEUR", "atelier")
 ATELIER_MOT_DE_PASSE = os.environ.get("ATELIER_MOT_DE_PASSE", "")
-PREFIXES_PROTEGES = ("/validateur", "/api/generer", "/api/importer", "/api/situations/generer", "/api/export/", "/docs", "/openapi.json")
+PREFIXES_PROTEGES = ("/validateur", "/api/generer", "/api/importer", "/api/situations/generer", "/api/export/", "/api/taches", "/docs", "/openapi.json")
 import base64
 from starlette.responses import Response
 
@@ -133,8 +133,10 @@ class CommandeSituation(BaseModel):
 @app.post("/api/situations/generer")
 def api_generer_situation(c: CommandeSituation):
     try:
-        return situations.generer_situation(discipline=c.discipline, sous_discipline=c.sous_discipline,
-                                            chapitre=c.chapitre, n=max(3, min(7, c.n)))
+        if not os.environ.get("ANTHROPIC_API_KEY"):
+            raise generation.GenerationError("ANTHROPIC_API_KEY manquante dans la configuration du serveur.")
+        return {"tache": taches.lancer_situation(discipline=c.discipline, sous_discipline=c.sous_discipline,
+                                                 chapitre=c.chapitre, n=max(3, min(7, c.n)))}
     except generation.GenerationError as e:
         raise HTTPException(400, str(e))
     except Exception as e:  # noqa: BLE001
@@ -256,25 +258,39 @@ class Commande(BaseModel):
 
 @app.post("/api/generer")
 def api_generer(c: Commande):
+    """Lance la génération en arrière-plan et renvoie l'identifiant de la tâche (suivi : GET /api/taches/{id})."""
     try:
+        if not os.environ.get("ANTHROPIC_API_KEY"):
+            raise generation.GenerationError("ANTHROPIC_API_KEY manquante dans la configuration du serveur.")
         if c.jour and not c.discipline:
-            res = generation.generer_epreuve(c.jour, c.serie)
-            return {"lots": [{"quota": r["quota"], "nb": len(r["ids"]), "usage": r["usage"]} for r in res]}
+            return {"tache": taches.lancer_epreuve(c.jour, c.serie)}
         if not c.discipline:
             raise HTTPException(400, "discipline ou jour requis")
-        r = generation.generer(discipline=c.discipline, sous_discipline=c.sous_discipline, n=c.n,
-                               chapitre=c.chapitre, difficulte=c.difficulte, jour=c.jour, serie=c.serie)
-        return {"nb": len(r["ids"]), "usage": r["usage"], "anomalies_serie": r["anomalies_serie"]}
+        return {"tache": taches.lancer_items(discipline=c.discipline, sous_discipline=c.sous_discipline, n=c.n,
+                                             chapitre=c.chapitre, difficulte=c.difficulte, jour=c.jour, serie=c.serie)}
     except generation.GenerationError as e:
         raise HTTPException(400, str(e))
     except Exception as e:  # noqa: BLE001
         raise HTTPException(500, f"Erreur interne pendant la génération : {type(e).__name__} : {e}")
 
 
+@app.get("/api/taches")
+def api_taches():
+    return taches.liste()
+
+
+@app.get("/api/taches/{tid}")
+def api_tache(tid: str):
+    t = taches.etat(tid)
+    if not t:
+        raise HTTPException(404)
+    return t
+
+
 @app.get("/api/prompt")
 def prompt_pour_copier(discipline: str, sous_discipline: Optional[str] = None, n: int = 5,
                        chapitre: Optional[str] = None, difficulte: Optional[str] = None):
-    """Commande prête à coller dans Claude.ai si l'API n'est pas configurée."""
+    """Commande prête à coller dans un assistant IA si l'API n'est pas configurée."""
     with connect() as con:
         cmd = generation.composer_commande(con, discipline=discipline, sous_discipline=sous_discipline, n=n,
                                            chapitre=chapitre, difficulte=difficulte)
@@ -288,7 +304,7 @@ class Import(BaseModel):
 
 @app.post("/api/importer")
 def importer(imp: Import):
-    """Importer un JSON produit dans Claude.ai (mode sans API)."""
+    """Importer un JSON produit avec un assistant IA (mode sans API)."""
     with connect() as con:
         for it in imp.items:
             it.setdefault("discipline", imp.discipline or "")

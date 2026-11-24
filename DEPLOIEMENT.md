@@ -47,5 +47,5 @@ format `{"items":[...]}` ; ou exécutez localement `python -m app.cli banque` et
 | `DATABASE_URL` | renseignée par Render (PostgreSQL) ; vide = SQLite local |
 | `ANTHROPIC_API_KEY` | génération IA |
 | `ATELIER_MOT_DE_PASSE`, `ATELIER_UTILISATEUR` | protection de l'atelier et des écritures |
-| `CLAUDE_MODEL` | modèle (défaut `claude-sonnet-4-5`) |
+| `MODELE_IA` | identifiant du modèle IA utilisé pour la génération |
 | `EXETAT_DEMO` | `1` charge la démo si la banque est vide |

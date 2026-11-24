@@ -6,7 +6,7 @@ from datetime import datetime
 
 from .assemblage import projeter
 from .db import connect, one, rows
-from .generation import (MODELE, GenerationError, appeler_claude, compter_mots, inserer_items, repartir_chapitres,
+from .generation import (MODELE, GenerationError, appeler_modele, compter_mots, inserer_items, repartir_chapitres,
                          verifier_item)
 
 PROMPT_SITUATION = """COMMANDE : génère UNE situation étendue (exercice de synthèse) en {discipline}{sd}, option 1.02 Sciences,
@@ -104,7 +104,7 @@ def generer_situation(*, discipline: str, sous_discipline: str | None = None, ch
         lot = con.execute("INSERT INTO lots_generation(commande, modele, nb_demandes) VALUES(?,?,?)",
                           (commande, MODELE, n)).lastrowid
         try:
-            data, usage = appeler_claude(commande, max_tokens=12000)
+            data, usage = appeler_modele(commande, max_tokens=12000)
         except Exception as e:  # noqa: BLE001
             con.execute("UPDATE lots_generation SET erreur=? WHERE id=?", (str(e), lot))
             raise

@@ -1,4 +1,4 @@
-"""Service de génération : construit la commande, appelle l'API Claude, vérifie, insère en attente."""
+"""Service de génération : construit la commande, appelle le modèle IA, vérifie, insère en attente."""
 from __future__ import annotations
 
 import json
@@ -18,7 +18,7 @@ PROMPT_SYSTEME = (ROOT / "docs" / "prompt_systeme.md").read_text(encoding="utf-8
 CHARTE = (ROOT / "docs" / "charte.md").read_text(encoding="utf-8")
 CAHIER = (ROOT / "docs" / "cahier_des_charges.md").read_text(encoding="utf-8")
 
-MODELE = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
+MODELE = os.environ.get("MODELE_IA") or os.environ.get("CLAUDE_MODEL") or "claude-sonnet-5-5"
 # si le modèle configuré n'existe pas pour la clé, on essaie ces identifiants dans l'ordre
 MODELES_SECOURS = [m for m in ("claude-sonnet-5-5", "claude-sonnet-4-5", "claude-opus-5-5") if m != MODELE]
 DIFFICULTES = ("facile", "moyen", "difficile")
@@ -94,7 +94,7 @@ def composer_commande(con, *, discipline: str, sous_discipline: str | None, n: i
 
 # ---------------------------------------------------------------- appel API
 
-def appeler_claude(commande: str, max_tokens: int = 16000) -> tuple[dict, dict]:
+def appeler_modele(commande: str, max_tokens: int = 16000) -> tuple[dict, dict]:
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         raise GenerationError("ANTHROPIC_API_KEY manquante : copiez .env.example vers .env et renseignez la clé.")
@@ -120,7 +120,7 @@ def appeler_claude(commande: str, max_tokens: int = 16000) -> tuple[dict, dict]:
         except anthropic.NotFoundError as e:
             if k == len(essais) - 1:
                 raise GenerationError(f"Aucun modèle utilisable pour cette clé API (essayés : {', '.join(essais)}). "
-                                      f"Renseignez CLAUDE_MODEL avec un identifiant valide. ({e})")
+                                      f"Renseignez MODELE_IA avec un identifiant valide. ({e})")
         except anthropic.AuthenticationError:
             raise GenerationError("Clé API Anthropic refusée : vérifiez ANTHROPIC_API_KEY.")
         except anthropic.APIStatusError as e:
@@ -230,7 +230,7 @@ def generer(*, discipline: str, sous_discipline: str | None = None, n: int = 5, 
         lot = con.execute("INSERT INTO lots_generation(commande, modele, nb_demandes) VALUES(?,?,?)",
                           (commande, MODELE, n)).lastrowid
         try:
-            data, usage = appeler_claude(commande)
+            data, usage = appeler_modele(commande)
         except Exception as e:  # noqa: BLE001
             con.execute("UPDATE lots_generation SET erreur=? WHERE id=?", (str(e), lot))
             raise
