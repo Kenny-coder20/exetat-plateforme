@@ -184,6 +184,53 @@ def seed(replace_programme: bool = False) -> None:
                 "INSERT INTO programme(discipline, sous_discipline, chapitre, poids, source) VALUES(?,?,?,?,?)",
                 PROGRAMME,
             )
+        completer_programme(con)
+        activer_epreuves_couvertes(con)
+
+
+def activer_epreuves_couvertes(con) -> int:
+    """Une épreuve est active (proposée à la production) dès que toutes ses disciplines ont un programme."""
+    prog = {r["discipline"] for r in con.execute("SELECT DISTINCT discipline FROM programme").fetchall()}
+    n = 0
+    for code, (lib, nb, ns, h, quotas) in E32_EPREUVES.items():
+        actif = 1 if all(d in prog for d, _, _ in quotas) else 0
+        con.execute("UPDATE epreuves SET actif=? WHERE code=?", (actif, code))
+        n += actif
+    return n
+
+
+ALIAS_DISCIPLINES = {  # discipline du E.32 -> discipline dont on copie le programme
+    "Éducation à la citoyenneté": "Civisme",
+    "Notions d'informatique": "Informatique",
+    "Questions d'actualité": None, "Actualité": None,
+}
+
+
+def completer_programme(con) -> int:
+    """Ajoute, pour les disciplines du E.32 encore sans programme, les chapitres issus des sommaires de manuels conformes
+    (docs/programmes/complement_manuels.json, source marquée « à confirmer ») et les alias. Idempotent."""
+    import json
+    from pathlib import Path
+
+    presentes = {r["discipline"] for r in con.execute("SELECT DISTINCT discipline FROM programme").fetchall()}
+    ajout = 0
+    f = Path(__file__).resolve().parent.parent / "docs" / "programmes" / "complement_manuels.json"
+    if f.is_file():
+        for l in json.loads(f.read_text(encoding="utf-8"))["programme"]:
+            if l["discipline"] in presentes:
+                continue
+            con.execute("INSERT INTO programme(discipline, sous_discipline, chapitre, poids, source) VALUES(?,?,?,?,?)",
+                        (l["discipline"], l.get("sous_discipline"), l["chapitre"], l.get("poids", 1), l["source"]))
+            ajout += 1
+    presentes = {r["discipline"] for r in con.execute("SELECT DISTINCT discipline FROM programme").fetchall()}
+    for alias, origine in ALIAS_DISCIPLINES.items():
+        if alias in presentes or not origine or origine not in presentes:
+            continue
+        for r in con.execute("SELECT sous_discipline, chapitre, poids, source FROM programme WHERE discipline=?", (origine,)).fetchall():
+            con.execute("INSERT INTO programme(discipline, sous_discipline, chapitre, poids, source) VALUES(?,?,?,?,?)",
+                        (alias, r["sous_discipline"], r["chapitre"], r["poids"], f"{r['source']} (alias de {origine})"))
+            ajout += 1
+    return ajout
 
 
 def import_programme(path: str) -> int:
