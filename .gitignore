@@ -2,3 +2,9 @@
 data/*.sqlite
 exports/
 __pycache__/
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
