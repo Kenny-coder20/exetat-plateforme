@@ -122,6 +122,9 @@ def consigne_actualite() -> str:
         "- La correction détaillée cite la source (institution ou média et date) pour permettre la relecture par les enseignants.\n"
         "- Compétences visées : identifier (qui, quoi, où, quand), situer (chronologie, géographie), relier (cause, conséquence, rôle d'une institution).\n"
         "- Le contexte imposé du plan n'est qu'une amorce d'une ou deux phrases ; les noms, lieux et dates réels de l'événement priment toujours sur lui.\n"
+        "- Après tes recherches, ta réponse finale est UNIQUEMENT le JSON complet demandé (tous les champs de chaque item : id, titre, tige, "
+        "propositions, reponse, savoir_essentiel, chapitre, difficulte, competence, famille_contexte, correction_detaillee, erreurs_distracteurs, type_item), "
+        "sans commentaire ni citation hors JSON.\n"
         "- Les distracteurs sont des confusions plausibles (pays voisin, institution voisine, année voisine, fonction voisine), jamais des inventions absurdes."
     )
 
@@ -274,11 +277,37 @@ def verifier_serie(items: list[dict]) -> list[str]:
 
 # ---------------------------------------------------------------- insertion
 
+def normaliser_item(it: dict) -> None:
+    """Complète les champs qu'un modèle peut omettre (surtout après une recherche web) pour que l'item soit enregistré
+    et signalé en anomalie plutôt que de faire échouer tout le lot."""
+    props = it.get("propositions")
+    if isinstance(props, dict):
+        props = [props.get(k) for k in sorted(props)]
+    if not isinstance(props, list):
+        props = []
+    it["propositions"] = [str(x if x is not None else "") for x in props][:5]
+    it.setdefault("chapitre", None)
+    if not it.get("savoir_essentiel"):
+        it["savoir_essentiel"] = it.get("chapitre") or it.get("titre") or "(à préciser)"
+    if not it.get("titre"):
+        it["titre"] = " ".join(str(it.get("tige", "")).split()[:8]) or "(sans titre)"
+    if not it.get("correction_detaillee"):
+        it["correction_detaillee"] = "(correction manquante : à rédiger par le relecteur)"
+    if not it.get("difficulte") in DIFFICULTES:
+        it["difficulte"] = "moyen"
+    try:
+        it["reponse"] = int(it.get("reponse") or 1)
+    except (TypeError, ValueError):
+        it["reponse"] = 1
+
 def inserer_items(con, items: list[dict], *, option_code=None, jour=None, epreuve_code=None,
                   serie=None, numero_depart=1, modele=MODELE) -> list[str]:
     ids = []
     for k, it in enumerate(items):
+        if not isinstance(it, dict) or not (it.get("tige") or "").strip():
+            continue  # réponse inexploitable : on n'enregistre pas un item sans énoncé
         anomalies = verifier_item(it)
+        normaliser_item(it)
         obs = it.get("observations") or ""
         if anomalies:
             obs = ("ANOMALIES AUTO : " + " ; ".join(anomalies) + ". " + obs).strip()
