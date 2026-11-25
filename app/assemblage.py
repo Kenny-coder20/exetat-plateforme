@@ -1,6 +1,8 @@
 """Assemblage de séries à partir de la banque d'items validés (sans IA)."""
 from __future__ import annotations
 
+import hashlib
+
 import random
 
 from .relecture import filtre_publiable
@@ -20,9 +22,8 @@ def tirer(con, *, discipline: str, sous_discipline: str | None, n: int, chapitre
     exclure = exclure or set()
     sql = f"SELECT * FROM items WHERE {filtre_publiable()} AND situation_id IS NULL AND discipline=?"
     params: list = [discipline]
-    if epreuve_code:
-        sql += " AND epreuve_code=?"
-        params.append(epreuve_code)
+    # Les questions sont transversales : une question d'une matière sert à toute épreuve dont les quotas contiennent
+    # cette matière (jour 1 commun, matières partagées entre options). epreuve_code n'est donc plus un filtre.
     if sous_discipline:
         sql += " AND sous_discipline=?"
         params.append(sous_discipline)
@@ -124,7 +125,23 @@ def banque_validee() -> dict:
         option_epreuves = rows(con, "SELECT * FROM option_epreuves ORDER BY option_code, jour")
         programme = rows(con, "SELECT discipline, sous_discipline, chapitre, poids, source FROM programme ORDER BY id")
         items = [projeter(i) for i in rows(con, f"SELECT * FROM items WHERE {filtre_publiable()} AND situation_id IS NULL")]
+        par_disc: dict[str, set] = {}
+        for q in quotas:
+            par_disc.setdefault(q["discipline"], set()).add(q["epreuve_code"])
+        figures: dict[str, str] = {}
+        for it in items:  # figures mutualisées (plusieurs questions portent souvent sur la même figure)
+            svg = it.get("figure_svg")
+            if svg:
+                h = hashlib.sha1(svg.encode("utf-8")).hexdigest()[:12]
+                figures.setdefault(h, svg)
+                it["figure_id"] = h
+                it["figure_svg"] = None
+        for it in items:  # épreuves où la question peut servir (transversalité par matière)
+            eps = set(par_disc.get(it["discipline"], set()))
+            if it.get("epreuve_code"):
+                eps.add(it["epreuve_code"])
+            it["epreuves"] = sorted(eps)
     from .situations import situations_validees
     sits = situations_validees()
     return {"options": options, "epreuves": epreuves, "quotas": quotas, "option_epreuves": option_epreuves,
-            "programme": programme, "items": items, "nb_items": len(items), "situations": sits, "nb_situations": len(sits)}
+            "programme": programme, "items": items, "nb_items": len(items), "situations": sits, "nb_situations": len(sits), "figures": figures}

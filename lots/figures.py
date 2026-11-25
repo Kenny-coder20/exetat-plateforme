@@ -40,6 +40,24 @@ def fmt(v: float) -> str:
     return f"{v:g}".replace(".", ",")
 
 
+def simplifier(pts: list, eps: float = 0.35) -> list:
+    """Douglas-Peucker : garde les points nécessaires à 0,35 px près (SVG 5 à 10 fois plus légers)."""
+    if len(pts) < 3:
+        return pts
+    (x0, y0), (x1, y1) = pts[0], pts[-1]
+    dx, dy = x1 - x0, y1 - y0
+    L = math.hypot(dx, dy) or 1e-9
+    imax, dmax = 0, 0.0
+    for i in range(1, len(pts) - 1):
+        px, py = pts[i]
+        dist = abs(dy * px - dx * py + x1 * y0 - y1 * x0) / L
+        if dist > dmax:
+            imax, dmax = i, dist
+    if dmax > eps:
+        return simplifier(pts[:imax + 1], eps)[:-1] + simplifier(pts[imax:], eps)
+    return [pts[0], pts[-1]]
+
+
 # ------------------------------------------------------------------ repère et courbes
 
 class Plot:
@@ -115,6 +133,7 @@ class Plot:
         if pts:
             segs.append(pts)
         d = f" stroke-dasharray='{dash}'" if dash else ""
+        segs = [simplifier(s) for s in segs]
         for s in segs:
             self.parts.append(f"<polyline clip-path='url(#cp{self.u})' fill='none' stroke='{color}' stroke-width='{width}'{d} stroke-linejoin='round' points='" +
                               " ".join(f"{x:.1f},{y:.1f}" for x, y in s) + "'/>")

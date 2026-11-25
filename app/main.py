@@ -219,8 +219,8 @@ def stats():
 def lister_items(statut: Optional[str] = None, discipline: Optional[str] = None, limite: int = 200,
                  situation: Optional[str] = None, epreuve: Optional[str] = None):
     sql, p = "SELECT * FROM items WHERE 1=1", []
-    if epreuve:
-        sql += " AND epreuve_code=?"; p.append(epreuve)
+    if epreuve:  # transversalité : toute question d'une matière de l'épreuve
+        sql += " AND (epreuve_code=? OR discipline IN (SELECT discipline FROM quotas WHERE epreuve_code=?))"; p += [epreuve, epreuve]
     if situation:
         sql += " AND situation_id=?"; p.append(situation)
     else:

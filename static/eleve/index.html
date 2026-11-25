@@ -319,7 +319,7 @@ const h = new Date().getHours();
 $('#salutation').textContent = (h < 12 ? 'Bonjour. ' : h < 18 ? 'Bon après-midi. ' : 'Bonsoir. ') + 'Que révisons-nous aujourd\'hui ?';
 
 // ------------------------------------------------------------------ banque locale
-const FORMAT_BANQUE = 4; // changer ce numéro force le rechargement de la banque sur tous les appareils
+const FORMAT_BANQUE = 6; // changer ce numéro force le rechargement de la banque sur tous les appareils
 async function chargerBanque(force) {
   if (BANQUE && BANQUE.format !== FORMAT_BANQUE) force = true;
   if (BANQUE && !force) { afficherBanque(); return; }
@@ -330,6 +330,9 @@ async function chargerBanque(force) {
 }
 // --- option courante et ses épreuves
 const optionCourante = () => DB.get('option', null) || $('#opt-accueil').value;
+const figSvg = it => it.figure_svg || ((BANQUE.figures || {})[it.figure_id] || '');
+const dans = (i, code) => (i.epreuves || [i.epreuve_code]).includes(code);
+const dansOpt = (i, codes) => (i.epreuves || [i.epreuve_code]).some(c => codes.includes(c));
 const epreuvesOption = () => (BANQUE.option_epreuves || []).filter(x => x.option_code === optionCourante()).map(x => ({ jour: x.jour, ...BANQUE.epreuves.find(e => e.code === x.epreuve_code) }));
 const epDuJour = j => epreuvesOption().find(e => e.jour === j);
 const quotasEp = code => BANQUE.quotas.filter(q => q.epreuve_code === code);
@@ -343,11 +346,11 @@ function afficherBanque() {
   $('#opt-accueil').value = memo;
   const o = BANQUE.options.find(x => x.code === optionCourante()); $('#sous-titre').textContent = 'Préparation · ' + (o ? o.code + ' ' + o.nom : '');
   $('#opt-nom').textContent = o ? `${o.code} — ${o.nom}` : '';
-  const codes = codesOption(); const nbOpt = BANQUE.items.filter(i => codes.includes(i.epreuve_code)).length;
+  const codes = codesOption(); const nbOpt = BANQUE.items.filter(i => dansOpt(i, codes)).length;
   $('#banque-info').innerHTML = `<b>${nbOpt}</b> questions pour cette option (${BANQUE.nb_items} au total) · ${BANQUE.nb_situations || 0} exercice(s) de synthèse · ${d.toLocaleDateString('fr')}`;
   $('#opt').value = optionCourante();
   const codes2 = codesOption();
-  $('#jours-opt').innerHTML = epreuvesOption().map(e => { const qs = quotasEp(e.code); const nb = BANQUE.items.filter(i => i.epreuve_code === e.code).length; return `<div class="jour ${e.actif && nb ? 'ok' : ''}"><div class="n">Jour ${e.jour}</div><div class="c">${e.code}</div><div class="l">${[...new Set(qs.map(q => q.discipline))].slice(0, 3).join(', ')}${[...new Set(qs.map(q => q.discipline))].length > 3 ? '…' : ''}</div><div class="p">${e.actif ? (nb ? nb + ' questions prêtes' : 'en préparation') : 'bientôt'}</div></div>`; }).join('');
+  $('#jours-opt').innerHTML = epreuvesOption().map(e => { const qs = quotasEp(e.code); const nb = BANQUE.items.filter(i => dans(i, e.code)).length; return `<div class="jour ${e.actif && nb ? 'ok' : ''}"><div class="n">Jour ${e.jour}</div><div class="c">${e.code}</div><div class="l">${[...new Set(qs.map(q => q.discipline))].slice(0, 3).join(', ')}${[...new Set(qs.map(q => q.discipline))].length > 3 ? '…' : ''}</div><div class="p">${e.actif ? (nb ? nb + ' questions prêtes' : 'en préparation') : 'bientôt'}</div></div>`; }).join('');
   const optJ = epreuvesOption().map(e => `<option value="${e.jour}" ${e.actif ? '' : 'disabled'}>Jour ${e.jour} — ${e.code} · ${esc(e.libelle)}${e.actif ? '' : ' (bientôt)'}</option>`).join('');
   $('#jour').innerHTML = optJ; $('#jour2').innerHTML = optJ;
   const premier = epreuvesOption().find(e => e.actif); if (premier) { $('#jour').value = premier.jour; $('#jour2').value = premier.jour; }
@@ -359,7 +362,7 @@ function afficherBanque() {
 $('#opt-accueil').onchange = () => { DB.set('option', $('#opt-accueil').value); afficherBanque(); };
 const majJour = () => { const e = epDuJour(+$('#jour').value); if (!e) { $('#desc-jour').textContent = ''; return; } const qs = quotasEp(e.code); $('#desc-jour').textContent = `${e.nb_items} questions · ${e.duree_h} h — ` + qs.map(q => `${q.discipline}${q.sous_discipline ? ' (' + q.sous_discipline + ')' : ''} ${q.nb_items}`).join(', '); };
 const majDisc = () => { const e = epDuJour(+$('#jour2').value); $('#disc').innerHTML = e ? [...new Set(quotasEp(e.code).map(q => q.discipline))].map(d => `<option>${d}</option>`).join('') : ''; };
-const majChap = () => { const d = $('#disc3').value, codes = codesOption(); const chs = [...new Set(BANQUE.items.filter(i => i.discipline === d && codes.includes(i.epreuve_code)).map(i => i.chapitre))]; $('#chap').innerHTML = chs.length ? chs.map(c => `<option>${c}</option>`).join('') : '<option value="">(aucune question validée)</option>'; };
+const majChap = () => { const d = $('#disc3').value, codes = codesOption(); const chs = [...new Set(BANQUE.items.filter(i => i.discipline === d && dansOpt(i, codes)).map(i => i.chapitre))]; $('#chap').innerHTML = chs.length ? chs.map(c => `<option>${c}</option>`).join('') : '<option value="">(aucune question validée)</option>'; };
 let sitChoisie = null;
 function majSit() {
   const d = $('#disc4').value, codes = codesOption(); const sits = (BANQUE.situations || []).filter(s => s.discipline === d && (!s.epreuve_code || codes.includes(s.epreuve_code))); sitChoisie = sits[0] || null;
@@ -379,7 +382,7 @@ $('#voile').onclick = e => { if (e.target === $('#voile')) $('#voile').classList
 const rep = n => { const f = Math.round(n * .25), d = Math.round(n * .25); return { facile: f, moyen: n - f - d, difficile: d } };
 const melanger = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]] } return a };
 function tirer({ discipline, sous_discipline, n, chapitre, difficulte, code, codes }) {
-  let pool = BANQUE.items.filter(i => i.discipline === discipline && (!sous_discipline || i.sous_discipline === sous_discipline) && (!chapitre || i.chapitre === chapitre) && (code ? i.epreuve_code === code : true) && (codes ? codes.includes(i.epreuve_code) : true));
+  let pool = BANQUE.items.filter(i => i.discipline === discipline && (!sous_discipline || i.sous_discipline === sous_discipline) && (!chapitre || i.chapitre === chapitre) && (code ? dans(i, code) : true) && (codes ? dansOpt(i, codes) : true));
   melanger(pool); const vus = {}; const prendre = (c, k) => { c.sort((a, b) => (vus[a.chapitre] || 0) - (vus[b.chapitre] || 0)); const p = c.slice(0, k); p.forEach(r => vus[r.chapitre] = (vus[r.chapitre] || 0) + 1); return p };
   const cibles = difficulte ? { [difficulte]: n } : rep(n); let choisis = [];
   for (const [d, k] of Object.entries(cibles)) { const p = prendre(pool.filter(i => i.difficulte === d), k); choisis.push(...p); pool = pool.filter(i => !p.includes(i)); }
@@ -434,7 +437,7 @@ function rendreQuestion() {
     <div class="q-ent"><b>Question ${S.k + 1} <span style="font-weight:400;color:var(--encre-2)">/ ${n}</span></b><span>${esc(it.discipline)}${it.sous_discipline ? ' · ' + esc(it.sous_discipline) : ''} · ${it.difficulte}</span></div>
     ${S.situation ? '' : `<div class="q-titre">${esc(it.titre)}</div>`}
     <div class="q-tige">${esc(it.tige)}</div>
-    ${it.figure_svg ? `<figure class="figure">${it.figure_svg}${it.figure_legende ? `<figcaption>${esc(it.figure_legende)}</figcaption>` : ''}</figure>` : ''}
+    ${figSvg(it) ? `<figure class="figure">${figSvg(it)}${it.figure_legende ? `<figcaption>${esc(it.figure_legende)}</figcaption>` : ''}</figure>` : ''}
     <ul class="props">${[1, 2, 3, 4, 5].map(p => `<li><input type="radio" id="o${p}" name="rep" value="${p}" ${r === p ? 'checked' : ''}><label for="o${p}"><span class="num">${p}</span><span class="txt">${esc(it['p' + p])}</span></label></li>`).join('')}</ul>`;
   $('#question').querySelectorAll('input[name=rep]').forEach(i => i.onchange = e => { S.reponses[S.k] = +e.target.value; });
   $('#prec').disabled = S.k === 0; $('#suiv').textContent = S.k === n - 1 ? 'Terminer' : 'Suivante';
@@ -472,7 +475,7 @@ function terminer() {
   $('#revue').innerHTML = s.items.map((it, k) => { const r = s.reponses[k]; const v = r === it.reponse ? ['ok', 'Juste'] : r ? ['ko', 'Faux'] : ['na', 'Sans réponse']; return `<div class="revue">
     <div class="q-ent"><b>Question ${k + 1}</b><span class="verdict ${v[0]}">${v[1]}</span></div>
     <div class="q-titre">${esc(it.titre)}</div><div class="q-tige" style="font-size:15.5px">${esc(it.tige)}</div>
-    ${it.figure_svg ? `<figure class="figure">${it.figure_svg}${it.figure_legende ? `<figcaption>${esc(it.figure_legende)}</figcaption>` : ''}</figure>` : ''}
+    ${figSvg(it) ? `<figure class="figure">${figSvg(it)}${it.figure_legende ? `<figcaption>${esc(it.figure_legende)}</figcaption>` : ''}</figure>` : ''}
     <ul class="props">${[1, 2, 3, 4, 5].map(p => `<li><label class="${p === it.reponse ? 'juste' : p === r ? 'faux' : ''}"><span class="num">${p}</span><span class="txt">${esc(it['p' + p])}</span></label></li>`).join('')}</ul>
     <div class="corr"><b>Réponse ${it.reponse}.</b> ${esc(it.correction_detaillee)}${it.erreurs_distracteurs ? `<span class="err">Erreurs fréquentes — ${esc(it.erreurs_distracteurs)}</span>` : ''}</div></div>`; }).join('')
     + (s.situation && s.situation.synthese ? `<div class="synthese"><b>Synthèse</b>${esc(s.situation.synthese)}</div>` : '');
