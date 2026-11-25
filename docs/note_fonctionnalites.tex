@@ -1,0 +1,143 @@
+% Note de présentation — Plateforme EXETAT
+% Compilation : pdflatex note_fonctionnalites.tex (deux passes)
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\IfFileExists{french.ldf}{\usepackage[french]{babel}}{\usepackage{babel}} % babel-french si disponible
+\usepackage{lmodern}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\definecolor{nuit}{HTML}{1B2A4A}
+\definecolor{or}{HTML}{B8922E}
+\definecolor{vert}{HTML}{2E7D5B}
+\definecolor{ivoire}{HTML}{F7F4EC}
+\definecolor{encre2}{HTML}{5E6677}
+
+\hypersetup{colorlinks=true, linkcolor=nuit, urlcolor=nuit, pdftitle={Plateforme EXETAT — note de présentation}}
+\titleformat{\section}{\color{nuit}\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\color{nuit}\normalsize\bfseries}{\thesubsection.}{0.6em}{}
+\setlist[itemize]{leftmargin=1.4em, itemsep=2pt, topsep=3pt}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{encre2}Plateforme EXETAT — note de présentation}
+\fancyhead[R]{\small\color{encre2}Novembre 2026}
+\fancyfoot[C]{\small\color{encre2}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\newtcolorbox{encadre}[1][]{colback=ivoire, colframe=or, boxrule=0.6pt, arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt, fonttitle=\bfseries\color{nuit}, #1}
+
+\begin{document}
+
+\begin{center}
+  {\color{or}\small\scshape Ministère de l'Éducation nationale — Examen d'État}\\[6pt]
+  {\color{nuit}\LARGE\bfseries Plateforme EXETAT}\\[4pt]
+  {\color{nuit}\large Préparation à l'Examen d'État par questions à choix multiples\\ conformes au programme national et à la nomenclature E.32}\\[6pt]
+  {\color{encre2}\small Note de présentation des fonctionnalités — version du 25 novembre 2026}
+\end{center}
+
+\vspace{6pt}
+\begin{encadre}[title=En une phrase]
+Une plateforme en deux étages : un \textbf{atelier} où une intelligence artificielle rédige des questions d'entraînement sous le contrôle d'enseignants qui les relisent à l'aveugle, et une \textbf{application élève} qui fonctionne hors connexion, pour toutes les options de l'Examen d'État, avec des corrections détaillées lisibles par un élève seul.
+\end{encadre}
+
+\section{Fidélité au cadre officiel}
+
+\begin{itemize}
+  \item \textbf{Nomenclature E.32 session 2026 intégrée en totalité} : 48 options, 4 jours d'épreuves, quotas de questions par matière et par sous-discipline, nombre de séries et durées. Une épreuve assemblée par la plateforme respecte mécaniquement le gabarit de l'option (par exemple, pour Sciences : jour 2, 30 questions dont 15 de mathématiques et 15 de SVT réparties en Biologie 7, Écologie 5, Géologie et Évolution 3).
+  \item \textbf{Épreuves communes reconnues} : l'épreuve de culture générale du jour 1, partagée par plusieurs options, est produite et relue une fois et sert à toutes les options concernées.
+  \item \textbf{Programmes officiels chargés} : chaque question est rattachée à un chapitre du programme national en vigueur (sciences 2021, français 2009, civisme, histoire, géographie, disciplines pédagogiques, commerciales et techniques), avec la source du programme. Vingt-six épreuves sont aujourd'hui couvertes ; les programmes manquants sont signalés et ajoutables par simple import.
+  \item \textbf{Charte de rédaction et cahier des charges fusionnés} : micro-contexte de 35 à 75 mots, question directe, cinq propositions numérotées, une seule réponse exacte, distracteurs fondés sur les erreurs réelles des élèves, difficulté répartie 25~\% / 50~\% / 25~\%, corrigé détaillé en fin de série.
+\end{itemize}
+
+\section{Qualité des questions}
+
+\subsection{Deux types d'items}
+\begin{itemize}
+  \item \textbf{Item classique} : valeur, identification, interprétation ou explication, dans un cadre situé.
+  \item \textbf{Item « décision »} (QCM situationnel à calcul justificatif implicite) : l'énoncé ne demande aucun calcul, mais l'élève doit en conduire un pour choisir la bonne décision, le bon diagnostic ou la bonne justification parmi des décisions plausibles fondées sur des erreurs typiques. Ce type est imposé par quotas dans chaque série (environ une question sur deux en physique et chimie, deux sur cinq en mathématiques) et contrôlé automatiquement : toute consigne de calcul explicite ou toute proposition sans justification est signalée au relecteur.
+\end{itemize}
+
+\subsection{Variété des contextes}
+Chaque question reçoit, avant même sa rédaction, un \textbf{contexte imposé} tiré sans répétition dans la série : une forme d'entrée (document à lire, donnée brute, objet observé, dialogue, décision d'un professionnel, événement collectif, erreur à repérer, fait historique\ldots), un univers (marché, atelier, pirogue, radio communautaire, centrale hydroélectrique, mine artisanale, tribunal de paix, savonnerie\ldots), et des règles strictes : au plus une question sur trois nomme un lieu, au moins une sur trois ne met en scène aucune personne, le cadre scolaire n'apparaît qu'une fois par série au plus. Fin du moule « dans une classe de telle ville, un élève\ldots ».
+
+\subsection{Questions avec schémas et graphiques}
+Courbes, tableaux de mesures, circuits, montages de laboratoire, figures géométriques, échiquiers de croisement, arbres généalogiques, frises : les figures sont \textbf{tracées par programme à partir de données exactes}, en format vectoriel, nettes sur tout écran, embarquées hors ligne et converties pour l'impression. La figure est toujours nécessaire à la résolution, jamais décorative. Un premier lot de 40 questions à figures pour l'option Sciences est en relecture.
+
+\subsection{Exercices de synthèse}
+Format « situation étendue » : une situation documentée (texte, données, document) suivie de quatre à six questions indépendantes de difficulté croissante, à la manière des sujets de physique du baccalauréat, pour entraîner à la lecture longue et au raisonnement enchaîné.
+
+\section{Relecture par les enseignants : rigueur et simplicité}
+
+\begin{itemize}
+  \item \textbf{Relecture à l'aveugle.} L'enseignant voit d'abord la question exactement comme l'élève, sans la réponse ni la correction, retenues côté serveur. Il choisit sa réponse ; la clé et la correction s'affichent ensuite. Un désaccord ouvre un choix : « je m'étais trompé », « la clé est fausse » (corrigée d'un clic), « deux réponses défendables ». Aucune question ne peut être validée sans cette étape. C'est le détecteur le plus sûr des clés fausses et des énoncés ambigus.
+  \item \textbf{Fiche de relecture fluide.} Correction directe dans le texte (énoncé, propositions, correction), changement de la bonne réponse par un clic sur son numéro, six points de contrôle, décision par bouton ou raccourci clavier (V, E, R), passage à la question suivante. Huit motifs de rejet normalisés dont « figure ou tableau incorrect ». Aucun outil technique n'est exposé aux enseignants.
+  \item \textbf{Comptes individuels et travail simultané.} Chaque enseignant dispose de ses identifiants et d'un rôle (administrateur, rédacteur, validateur) ; les sessions sont signées et sans état serveur, les décisions concurrentes sur une même question sont détectées (verrou optimiste). Des dizaines de relecteurs et des milliers d'élèves peuvent travailler en parallèle.
+  \item \textbf{Double relecture configurable.} Un paramètre fixe le nombre d'enseignants distincts devant, à l'aveugle, concorder avec la clé avant qu'une question validée soit publiée aux élèves.
+\end{itemize}
+
+\section{Une production qui apprend de ses relecteurs}
+
+\begin{encadre}[title=Boucle d'amélioration en trois étages]
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Mémoire des corrections} : chaque décision est conservée avec son motif, la remarque de l'enseignant et, champ par champ, le texte \emph{avant} et \emph{après} correction.
+  \item \textbf{Réinjection automatique} : à chaque nouvelle production, l'assistant reçoit, pour la matière concernée, les motifs de rejet les plus fréquents traduits en consignes, des exemples réels de corrections d'enseignants (avant/après), leurs remarques, et des questions validées telles quelles comme référence. Les retours entrent comme données, jamais comme instructions brutes.
+  \item \textbf{Tableau de bord Qualité} : taux de questions validées telles quelles, corrigées ou rejetées, par matière, par motif, par chapitre ; champs les plus corrigés ; questions contestées ; aperçu des consignes transmises à l'assistant.
+\end{enumerate}
+\end{encadre}
+
+\textbf{Indicateurs par relecteur}, mesurés avec discernement : la concordance se calcule par rapport à la clé \emph{finale} (après corrections), si bien qu'un enseignant qui contredit à raison une clé fausse est crédité d'une \emph{détection}, et non pénalisé. Sont suivis le nombre de relectures, le taux d'accord, les détections, les erreurs reconnues, les ambiguïtés signalées, le temps médian et les relectures trop rapides. Chaque enseignant voit ses propres chiffres ; la coordination voit l'ensemble ; il n'existe pas de classement public.
+
+\section{L'expérience élève}
+
+\begin{itemize}
+  \item \textbf{Choix de l'option d'abord}, selon la nomenclature E.32, puis quatre parcours : l'épreuve complète d'un jour, une matière, un chapitre choisi, un exercice de synthèse.
+  \item \textbf{Passation fidèle à l'examen} : une question par écran, chronomètre, grille de récapitulation, puis résultat avec bilan par matière et correction détaillée de chaque question, y compris l'explication de l'erreur représentée par chaque proposition.
+  \item \textbf{Hors connexion.} L'application s'installe comme une application sur téléphone ou ordinateur ; la banque de questions validées est embarquée et mise à jour automatiquement dès qu'une connexion est disponible ; les résultats sont conservés localement et synchronisés ensuite.
+  \item \textbf{Seules les questions validées par des enseignants} parviennent aux élèves ; une question corrigée ou rejetée après coup disparaît de la banque à la mise à jour suivante.
+\end{itemize}
+
+\section{Industrialisation et sûreté}
+
+\begin{itemize}
+  \item \textbf{Production d'une épreuve complète en quelques minutes}, toutes matières en parallèle, suivie en arrière-plan ; production ciblée par matière, chapitre, nombre, difficulté et type de questions ; mode sans assistant (consigne à copier, résultat à importer).
+  \item \textbf{Assemblage automatique} d'épreuves conformes aux quotas, avec diversité des chapitres et position variable de la bonne réponse ; export imprimable pour les coordinateurs.
+  \item \textbf{Import de lots préparés} (questions à figures, banques externes) sans doublon, avec les mêmes circuits de relecture.
+  \item \textbf{Traçabilité complète} : version initiale et corrigée, validateur, date, motif, modèle de rédaction utilisé, lot de production.
+  \item \textbf{Déploiement} : accessible en ligne sur une base de données partagée, ou installée localement en un clic sur un ordinateur isolé ; code et données sous le contrôle de l'institution.
+\end{itemize}
+
+\section{Ce que cela change}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.42\linewidth}>{\raggedright\arraybackslash}p{0.52\linewidth}}
+\toprule
+\textbf{Pratique habituelle} & \textbf{Plateforme EXETAT} \\
+\midrule
+Recueils de sujets anciens, souvent sans correction & Questions nouvelles, inépuisables, chacune avec sa correction détaillée \\
+Exercices « nus », déconnectés de la vie & Micro-contextes congolais variés, items de décision à calcul implicite \\
+Relecture en lisant la bonne réponse & Relecture à l'aveugle : l'enseignant répond d'abord \\
+Qualité qui dépend de chaque rédacteur & Qualité qui s'améliore à chaque relecture, pour tous \\
+Accès conditionné à la connexion & Application hors ligne, mise à jour dès que possible \\
+Une option, un format & 48 options, quotas E.32, deux types d'items, figures \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\begin{encadre}[title=Prochaines étapes]
+Relecture du premier lot de questions à figures par les enseignants ; production de plusieurs centaines de questions à schémas et graphiques, par lots, pour les options scientifiques puis pour la culture générale ; complément des programmes des options techniques et commerciales ; passage à la double relecture dès que chaque matière compte deux enseignants.
+\end{encadre}
+
+\end{document}
