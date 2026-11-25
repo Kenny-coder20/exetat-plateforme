@@ -208,3 +208,15 @@ Le contexte doit refléter les usages effectifs des élèves et des établisseme
 
 | **En synthèse, la charte à retenir est la suivante :** rester dans le format classique de l’EXETAT, mais remplacer l’exercice nu par un micro-contexte fonctionnel, plausible, curriculaire, réaliste et sobre. L’intelligence artificielle peut accélérer et enrichir la production, à condition que la responsabilité scientifique, pédagogique et éditoriale demeure pleinement humaine. |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+## Annexe — Matière « Actualité »
+
+L'Actualité n'a pas de programme d'événements mais un **programme de thèmes stables** (15 chapitres en trois sous-disciplines : vie nationale, Afrique, monde ; `docs/programmes/actualite.json`). À chaque session le jury fixe la **fenêtre temporelle** de référence (`ACTUALITE_DEBUT` / `ACTUALITE_FIN`) ; par défaut, du 1er janvier de l'année précédente à la date de génération.
+
+Règles propres à cette matière :
+- faits **vérifiables et stabilisés** uniquement (nominations, résultats officiels, dates, décisions, textes promulgués, chiffres officiels) ; ni pronostic, ni opinion, ni fait divers ;
+- **vérification par recherche web** au moment de la génération, item par item ; aucun item écrit de mémoire ;
+- la correction détaillée **cite la source** (institution ou média, date) ;
+- **neutralité** : faits institutionnels, jamais de jugement de valeur, jamais de personne privée ;
+- distracteurs = confusions plausibles (pays, institution, année, fonction voisins) ;
+- pas d'items de type « décision » ; compétences : identifier, situer, relier.

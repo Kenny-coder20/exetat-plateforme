@@ -202,7 +202,7 @@ def activer_epreuves_couvertes(con) -> int:
 ALIAS_DISCIPLINES = {  # discipline du E.32 -> discipline dont on copie le programme
     "Éducation à la citoyenneté": "Civisme",
     "Notions d'informatique": "Informatique",
-    "Questions d'actualité": None, "Actualité": None,
+    "Questions d'actualité": "Actualité",  # thèmes stables : docs/programmes/actualite.json
 }
 
 
@@ -214,8 +214,11 @@ def completer_programme(con) -> int:
 
     presentes = {r["discipline"] for r in con.execute("SELECT DISTINCT discipline FROM programme").fetchall()}
     ajout = 0
-    f = Path(__file__).resolve().parent.parent / "docs" / "programmes" / "complement_manuels.json"
-    if f.is_file():
+    dossier = Path(__file__).resolve().parent.parent / "docs" / "programmes"
+    for nom in ("complement_manuels.json", "actualite.json"):
+        f = dossier / nom
+        if not f.is_file():
+            continue
         for l in json.loads(f.read_text(encoding="utf-8"))["programme"]:
             if l["discipline"] in presentes:
                 continue

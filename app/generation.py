@@ -69,7 +69,7 @@ def repartir_chapitres(con, discipline: str, sous_discipline: str | None, n: int
 
 # Part d'items « décision » (QCM situationnel à calcul justificatif implicite) selon la discipline, en mode mélange
 PART_DECISION = {"Mathématiques": 0.4, "Physique": 0.5, "Chimie": 0.5, "SVT": 0.35, "Géographie": 0.35, "TIC": 0.35,
-                 "Civisme": 0.25, "Histoire": 0.15, "Philosophie": 0.2}
+                 "Civisme": 0.25, "Histoire": 0.15, "Philosophie": 0.2, "Actualité": 0.0, "Questions d'actualité": 0.0}
 PART_DECISION_DEFAUT = 0.4  # disciplines techniques et commerciales
 
 
@@ -79,7 +79,7 @@ def plan_types(discipline: str, n: int, type_item: str | None) -> list[str]:
         return [type_item] * n
     part = PART_DECISION.get(discipline, PART_DECISION_DEFAUT)
     k = round(n * part)
-    if n >= 2:
+    if n >= 2 and part > 0:
         k = max(1, k)
     types = ["classique"] * n
     if k:
@@ -87,6 +87,43 @@ def plan_types(discipline: str, n: int, type_item: str | None) -> list[str]:
         for i in range(k):
             types[min(n - 1, int(i * pas + pas / 2))] = "decision"
     return types
+
+
+DISCIPLINES_ACTUALITE = {"Actualité", "Questions d'actualité"}
+
+
+def est_actualite(discipline: str | None) -> bool:
+    return (discipline or "") in DISCIPLINES_ACTUALITE
+
+
+def fenetre_actualite() -> tuple[str, str]:
+    """Période de référence fixée par le jury (ACTUALITE_DEBUT / ACTUALITE_FIN, AAAA-MM-JJ) ;
+    par défaut du 1er janvier de l'année précédente à aujourd'hui."""
+    import datetime as _dt
+    auj = _dt.date.today()
+    debut = os.environ.get("ACTUALITE_DEBUT") or f"{auj.year - 1}-01-01"
+    fin = os.environ.get("ACTUALITE_FIN") or auj.isoformat()
+    return debut, fin
+
+
+def consigne_actualite() -> str:
+    debut, fin = fenetre_actualite()
+    return (
+        "=== MATIÈRE ACTUALITÉ — RÈGLES PARTICULIÈRES ===\n"
+        f"- Fenêtre temporelle fixée par le jury : du {debut} au {fin}. Chaque item porte sur un fait survenu dans cette fenêtre ; "
+        "aucun fait postérieur, aucun fait antérieur sauf pour situer un contexte.\n"
+        "- Tu disposes d'un outil de recherche web : UTILISE-LE avant de rédiger, pour chaque item, afin de vérifier le fait, la date, "
+        "les noms et les chiffres auprès d'une source fiable (institution, agence de presse, organisation internationale, média de référence). "
+        "N'écris jamais un item de mémoire.\n"
+        "- Faits vérifiables et stabilisés uniquement : nominations, résultats officiels, dates, décisions, textes promulgués, chiffres officiels. "
+        "Pas de pronostic, pas d'opinion, pas de fait divers, pas de rumeur.\n"
+        "- Neutralité : les items de vie politique portent sur des faits institutionnels (qui occupe quelle fonction, quel texte a été adopté, "
+        "quelle décision a été prise), jamais sur des jugements de valeur ni sur des personnes privées.\n"
+        "- La correction détaillée cite la source (institution ou média et date) pour permettre la relecture par les enseignants.\n"
+        "- Compétences visées : identifier (qui, quoi, où, quand), situer (chronologie, géographie), relier (cause, conséquence, rôle d'une institution).\n"
+        "- Le contexte imposé du plan n'est qu'une amorce d'une ou deux phrases ; les noms, lieux et dates réels de l'événement priment toujours sur lui.\n"
+        "- Les distracteurs sont des confusions plausibles (pays voisin, institution voisine, année voisine, fonction voisine), jamais des inventions absurdes."
+    )
 
 
 def composer_commande(con, *, discipline: str, sous_discipline: str | None, n: int,
@@ -116,10 +153,12 @@ def composer_commande(con, *, discipline: str, sous_discipline: str | None, n: i
     s = f", série {serie}" if serie else ""
     j = f", épreuve {epreuve_code}" if epreuve_code else ""
     retours_txt = consignes_pour(con, discipline, sous_discipline, epreuve_code)
+    actu_txt = consigne_actualite() if est_actualite(discipline) else ""
     return (
         f"COMMANDE : génère {n} items de {discipline}{sd}{j}{s} (Examen d'État, E.32), selon le plan suivant.\n"
         f"{plan}\n\n"
         f"{CONSIGNE_VARIETE}\n"
+        + (actu_txt + "\n" if actu_txt else "")
         + (retours_txt + "\n" if retours_txt else "")
         + "Respecte le plan item par item (chapitre, difficulté, contexte imposé). Varie la position "
         "de la bonne réponse. Réponds uniquement par le JSON demandé."
@@ -128,7 +167,7 @@ def composer_commande(con, *, discipline: str, sous_discipline: str | None, n: i
 
 # ---------------------------------------------------------------- appel API
 
-def appeler_modele(commande: str, max_tokens: int = 16000) -> tuple[dict, dict]:
+def appeler_modele(commande: str, max_tokens: int = 16000, recherche_web: bool = False) -> tuple[dict, dict]:
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         raise GenerationError("ANTHROPIC_API_KEY manquante : copiez .env.example vers .env et renseignez la clé.")
@@ -144,12 +183,11 @@ def appeler_modele(commande: str, max_tokens: int = 16000) -> tuple[dict, dict]:
     essais = [MODELE] + MODELES_SECOURS
     for k, modele in enumerate(essais):
         try:
-            msg = client.messages.create(
-                model=modele,
-                max_tokens=max_tokens,
-                system=system,
-                messages=[{"role": "user", "content": commande}],
-            )
+            params = dict(model=modele, max_tokens=max_tokens, system=system,
+                          messages=[{"role": "user", "content": commande}])
+            if recherche_web:  # outil de recherche web côté serveur Anthropic (matière Actualité)
+                params["tools"] = [{"type": "web_search_20250305", "name": "web_search", "max_uses": int(os.environ.get("ACTUALITE_RECHERCHES_MAX", "10"))}]
+            msg = client.messages.create(**params)
             break
         except anthropic.NotFoundError as e:
             if k == len(essais) - 1:
@@ -161,6 +199,9 @@ def appeler_modele(commande: str, max_tokens: int = 16000) -> tuple[dict, dict]:
             raise GenerationError(f"Erreur de l'API Anthropic ({e.status_code}) : {e.message}")
     texte = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
     usage = {"in": msg.usage.input_tokens, "out": msg.usage.output_tokens}
+    recherches = getattr(getattr(msg.usage, "server_tool_use", None), "web_search_requests", 0) or 0
+    if recherches:
+        usage["recherches_web"] = recherches
     return parser_json(texte), usage
 
 
@@ -273,7 +314,7 @@ def generer(*, discipline: str, sous_discipline: str | None = None, n: int = 5, 
         lot = con.execute("INSERT INTO lots_generation(commande, modele, nb_demandes) VALUES(?,?,?)",
                           (commande, MODELE, n)).lastrowid
         try:
-            data, usage = appeler_modele(commande)
+            data, usage = appeler_modele(commande, recherche_web=est_actualite(discipline))
         except Exception as e:  # noqa: BLE001
             con.execute("UPDATE lots_generation SET erreur=? WHERE id=?", (str(e), lot))
             raise

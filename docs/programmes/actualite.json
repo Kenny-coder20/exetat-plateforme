@@ -1,0 +1,110 @@
+{
+ "note": "Programme de thèmes stables pour la matière Actualité du E.32 ; la fenêtre temporelle est fixée par le jury à chaque session (ACTUALITE_DEBUT / ACTUALITE_FIN). Proposition du 25 novembre 2026, à confirmer.",
+ "programme": [
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Vie nationale (RDC)",
+   "chapitre": "Institutions et vie politique nationale : Présidence, Gouvernement, Parlement, CENI, Cour constitutionnelle, réformes en cours, calendrier électoral",
+   "poids": 4,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Vie nationale (RDC)",
+   "chapitre": "Paix, sécurité et situation dans l'Est : processus de paix, accords, MONUSCO et forces régionales, déplacés",
+   "poids": 4,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Vie nationale (RDC)",
+   "chapitre": "Économie et finances publiques : budget, franc congolais, mines et contrats, ZLECAf, inflation, prix des produits de base",
+   "poids": 3,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Vie nationale (RDC)",
+   "chapitre": "Société, santé et éducation : gratuité de l'enseignement, EXETAT et réformes, épidémies et campagnes de vaccination, couverture santé universelle",
+   "poids": 3,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Vie nationale (RDC)",
+   "chapitre": "Infrastructures, énergie et environnement : routes, barrages dont Inga, forêt du bassin du Congo, COP et crédits carbone, catastrophes naturelles",
+   "poids": 2,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Vie nationale (RDC)",
+   "chapitre": "Culture, sport et personnalités congolaises : Léopards, rumba classée UNESCO, prix et distinctions, disparitions marquantes",
+   "poids": 2,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Afrique",
+   "chapitre": "Union africaine et organisations régionales : UA, SADC, CEEAC, EAC, CIRGL (sommets, présidences, décisions)",
+   "poids": 3,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Afrique",
+   "chapitre": "Vie politique et crises du continent : élections, transitions, coups d'État, conflits, médiations",
+   "poids": 3,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Afrique",
+   "chapitre": "Économie et intégration africaines : ZLECAf, monnaies, dette, grands projets, ressources naturelles",
+   "poids": 2,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Afrique",
+   "chapitre": "Sport et culture africains : CAN, Jeux africains, prix littéraires et musicaux, cinéma",
+   "poids": 2,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Monde",
+   "chapitre": "Organisations internationales : ONU et ses agences, Conseil de sécurité, OMS, FMI et Banque mondiale, Francophonie, CPI (dirigeants, décisions, rapports marquants)",
+   "poids": 3,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Monde",
+   "chapitre": "Grandes crises et relations internationales : guerres en cours, négociations de paix, sanctions, élections majeures, grandes puissances et Afrique",
+   "poids": 3,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Monde",
+   "chapitre": "Économie mondiale : croissance, pétrole, cours des métaux stratégiques (cobalt, cuivre, lithium), énergie, chaînes d'approvisionnement",
+   "poids": 2,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Monde",
+   "chapitre": "Sciences, techniques et environnement : intelligence artificielle, espace, climat et rapports du GIEC, santé mondiale, prix Nobel",
+   "poids": 2,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  },
+  {
+   "discipline": "Actualité",
+   "sous_discipline": "Monde",
+   "chapitre": "Sport et culture mondiaux : Coupe du monde, Jeux olympiques, grands prix culturels, disparitions de personnalités",
+   "poids": 2,
+   "source": "à confirmer (proposition thèmes stables 2026)"
+  }
+ ]
+}

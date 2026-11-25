@@ -31,6 +31,10 @@ services:
         value: "1"
       - key: RELECTURES_REQUISES
         value: "1"
+      - key: ACTUALITE_DEBUT
+        sync: false
+      - key: ACTUALITE_FIN
+        sync: false
 
 databases:
   - name: exetat-db
