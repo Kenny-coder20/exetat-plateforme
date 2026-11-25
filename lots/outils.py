@@ -46,7 +46,11 @@ def chapitre(discipline: str, *mots: str) -> str:
 def fmt(v: float, d: int = 2) -> str:
     if abs(v - round(v)) < 1e-9:
         return str(int(round(v)))
-    s = f"{v:.{d}f}".rstrip("0").rstrip(".")
+    s = f"{v:.{d}f}"
+    if "." in s:
+        s = s.rstrip("0").rstrip(".")
+    if s in ("-0", "-"):
+        s = "0"
     return s.replace(".", ",")
 
 
